@@ -1,0 +1,41 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{geometry} %Set page layouts
+\usepackage{lastpage} %Reference the number of pages in your LATEX
+\usepackage[german]{babel}
+\usepackage{fontspec}
+\usepackage{float}
+%\usepackage{showframe} %For debugging
+
+\geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=75pt, includeheadfoot, portrait}
+
+\setmainfont{Calibri}
+
+%Path relative to the .tex file containing the \includegraphics command
+\graphicspath{ {graphics/}}
+
+\begin{document}
+	\begin{large}
+			\begin{tabular}{p{5cm}l l }
+			\textbf{Bildungsgang:} & Klasse B18-if3.1 Informatik \\
+			\textbf{Fach:} & Datenbank \& Web Engineering \\
+			\textbf{Semester:} & Semester 3 – 2019/2020 \\
+			\textbf{Autoren:} & Oliver Egloff, Leonardo Wiedemeier, Samuel Salomon
+		\end{tabular}
+	\end{large}
+	
+		
+		\vspace{1cm}
+		\hrule
+		\vspace{1cm}
+		\centering
+		\LARGE{\textbf{Semesterarbeit – Visual Board GmbH}}
+		
+		\vspace{20pt}
+		
+		\begin{figure}[h]
+			\centering
+			\includegraphics{graphics/title.png}
+		\end{figure}
+\end{document}
