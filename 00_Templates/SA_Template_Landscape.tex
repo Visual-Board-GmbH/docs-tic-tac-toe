@@ -2,16 +2,21 @@
 
 \usepackage{geometry} %Set page layouts
 \usepackage{pdfpages} %Include pdf files
-\usepackage{fancyhdr} %Header and Footer
 \usepackage{graphicx} %Inlcude graphics
 \usepackage{lastpage} %Reference the number of pages in your LATEX
 \usepackage[german]{babel}
 \usepackage{fontspec}
 \usepackage{float}
+\usepackage{hyperref}
 
 %\usepackage{showframe} %For debugging
 
-
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=magenta,
+	urlcolor=cyan,
+}
 
 
 \geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=35pt, includeheadfoot, landscape}
@@ -31,24 +36,7 @@
 
 \begin{document}
 	
-	%Define header & footer for twoside documents
-	\fancyhead{} %Clear all header fields
-	\fancyhead[L]{\includegraphics{graphics/header_img_abb2.png}}
-	\fancyfoot{} %Clear all footer fields
-	\fancyfoot[RO, LE]{\small \thepage \textbar \pageref{LastPage}}
-	\fancyfoot[LO, RE]{\small \dname}
-	\renewcommand{\footrulewidth}{0.4pt}
-	\renewcommand{\headrulewidth}{0.4pt}
 	
-	%Define header & footer for oneside documents
-	%\fancyhead{} %Clear all header fields
-	%\fancyhead[L]{\includegraphics{graphics/header_img_abb2.png}}
-	%\fancyfoot{}
-	%\fancyfoot[R]{\small \thepage \textbar \pageref{LastPage}}
-	%\fancyfoot[L]{\dname}
-	%\renewcommand{\footrulewidth}{0.4pt}
-	%\renewcommand{\headrulewidth}{0.4pt}
-	\pagestyle{fancy}
 	
 	
 	\tableofcontents
@@ -112,11 +100,12 @@
 	\section{Example Image}
 	\begin{figure}[H]
 		\centering
-		\includegraphics{graphics/title.png}
+		\includegraphics{title.png}
 		\caption{Example for a Figure}
 	\end{figure}
 	
 	\section{Example Include PDF}
+	%\includepdf[pagecommand={\pagestyle{fancy}}]{<NameDesPDF>.pdf}
 	
 	
 	
