@@ -1,0 +1,31 @@
+\documentclass[11pt, a4paper, twoside]{article}
+\usepackage{geometry} %Set page layouts
+\usepackage{pdfpages} %Include pdf files
+\usepackage{fancyhdr} %Header and Footer
+\usepackage{graphicx} %Inlcude graphics
+\usepackage{lastpage} %Reference the number of pages in your LATEX
+\usepackage[german]{babel}
+\usepackage{fontspec}
+\usepackage{float}
+\usepackage{hyperref}\usepackage{tocloft}
+%\usepackage{showframe} %For debugging
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=magenta,
+	urlcolor=cyan,
+}
+
+\geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=35pt, includeheadfoot, portrait}
+\setmainfont{Calibri}
+%Path relative to the .tex file containing the \includegraphics command
+\graphicspath{ {01_Grafiken/}}
+
+%Define variables for document
+\newcommand{\shortAuthor}{OEG-LWI-SSA}
+\newcommand{\dstate}{Draft} %Draft, Progress, Closed
+\newcommand{\dversion}{0.1}
+\newcommand{\dname}{\shortAuthor\_YYYYMMDD\_\dversion\_\dstate\_\pageref{LastPage}}
+
+\begin{document}	%Define header & footer for twoside documents	\fancyhead{} %Clear all header fields	\fancyhead[L]{\includegraphics{header_img_abb2.png}}	\fancyfoot{} %Clear all footer fields	\fancyfoot[RO, LE]{\small \thepage \textbar \pageref{LastPage}}	\fancyfoot[LO, RE]{\small \dname}	\renewcommand{\footrulewidth}{0.4pt}	\renewcommand{\headrulewidth}{0.4pt}	%Define header & footer for oneside documents	%\fancyhead{} %Clear all header fields	%\fancyhead[L]{\includegraphics{01_Grafiken/header_img_abb2.png}}	%\fancyfoot{}	%\fancyfoot[R]{\small \thepage \textbar \pageref{LastPage}}	%\fancyfoot[L]{\dname}	%\renewcommand{\footrulewidth}{0.4pt}	%\renewcommand{\headrulewidth}{0.4pt}	\pagestyle{fancy}		\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}	\tableofcontents	\clearpage		\section{Section}	\subsection{Subsection}	\subsubsection{SubsubSection}	\paragraph{Paragraph}	\subparagraph{Subparagraph}		\clearpage	\listoffigures		\clearpage	\listoftables\end{document}
+
