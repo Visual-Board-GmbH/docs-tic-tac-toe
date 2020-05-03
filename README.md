@@ -15,7 +15,7 @@ Alle Templates sind im Ordner 00_Templates zu finden un die Ordner müssen immer
 
 Mitjedem Template Ordner werden die folgenden Ordner mitkopiert.
 * 01_ Grafiken --> Wird verwendet um im Dokument verlinkte Grafiken zu speichern.
-* 02_Unterstützende Dokumente --> Wird verwendet um im Dokument verlinkte PDF Dateien zu sichern
+* 02_Dokumente --> Wird verwendet um im Dokument verlinkte PDF Dateien zu sichern
 
 ## Grafiken Verlinken
 Wie bereits erwähnt müssen Grafik im Ordner 01_Grafiken abgelegt werden damit sie später verlinkt werden können.
