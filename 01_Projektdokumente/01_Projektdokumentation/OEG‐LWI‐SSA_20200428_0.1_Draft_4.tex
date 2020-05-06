@@ -22,7 +22,7 @@
 }
 
 \geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=35pt, includeheadfoot, portrait}
-\setmainfont{Calibri}
+%\setmainfont{Calibri}
 
 %Path relative to the .tex file containing the \includegraphics command
 \graphicspath{{01_Grafiken/}}
@@ -74,6 +74,30 @@
 	\section{Aufgabenstellung}
 	\section{Projektmanagement}
 	\section{Situationsanalyse}
+	\subsection{Vorgänger Projekt}
+	Die Visual Board GmbH hat bereits mit der ABBTS (Rolf Hirschi) zusammengearbeitet und einen Prototypen erstellt um Bilder auf einer RGB-LED-Matrix anzuzeigen.
+	Die RGB-LED-Matrix wurde funktionsfähig gestellt und es sollte ein Programm geschrieben werden um Bilder wie gewünscht auf der Matrix anzuzeigen. Darunter ist das korrekte transformieren, aufbereiten und weitergeben an die Matrix zu verstehen.
+	
+	Der Prototyp wurde von der Visual Board GmbH mit einer REST-Api in Java umgesetzt welche auf dem Raspberry Pi der Hardware, oder einem externen Windows Computer läuft.
+	So wurde die RGB-LED-Matrix, dem Netwerk in welchem sie sich befindet hat, zur verfügung gsetellt. Und es ist möglich mit den korrekten "requests" Bilder direkt oder mit dem Webinterface an die Matrix zu schicken.
+		
+	Der Visual Board GmbH wurde die komplette Hardware durch die ABBTS gestellt wurde.
+	\newline
+	Teil der Projektorganisiton waren:
+	\begin{itemize}
+		\item ABBTS (Rolf Hirschi) als Auftraggeber
+		\item Visual Board GmbH als Arbeitnehmer. Samuel Salomon hat die Position als Projektleiter eingenommen.
+		\item Herr Künzli und Herr Jenzer jeweils als Mitglied des PSG (Projektsteuerungs-Gremium)
+		\item Herr Künzli hatte zudem die Position des PPC  (Projektportfolio-Controller
+	\end{itemize}
+
+	\subsection{ Weiteres Vorgehen}
+	Die ABBTS hat sich entschieden auf den Prototypen der Visual Board GmbH aufzubauen und die Spiellogic für ein Tic-Tac-Toe Spiel umzusetzen.
+	Es soll die Möglichkeit bestehen das mehrere Spieler, auf verschiedenen Endgeräten, gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgiebt. Hier für werden wir das komplette Vorgänger Projekt verwenden, da die Matrix bereits einsatzbereit ist. Es werden allenfalls Schnittstellen angepasst oder neue erstellt.
+	Zusätzlich zur implementierung der Spiellogic, soll diese auch auf einen Webserver laufen und so erreichbar gemacht werden.
+	
+	Die Visual Board GmbH wird daher im Rahmen des Projektes die Spiellogic mit Benutzeroberfläche implementieren und den nötigen Webserver einrichten. Für diese Arbeiten stehen 300 Arbeitsstunden der kompletten Projektabwicklung zur Verfügung.
+		
 	\section{Zielsetzung}
 	\section{Lösungssuche}
 	\section{Lösungswahl}
