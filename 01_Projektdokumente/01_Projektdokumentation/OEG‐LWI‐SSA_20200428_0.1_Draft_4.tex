@@ -22,7 +22,7 @@
 }
 
 \geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=35pt, includeheadfoot, portrait}
-\setmainfont{Calibri}
+%\setmainfont{Calibri}
 
 %Path relative to the .tex file containing the \includegraphics command
 \graphicspath{{01_Grafiken/}}
@@ -62,7 +62,10 @@
 	\section*{Änderungsverzeichnis}
 	\begin{tabularx}{\columnwidth}{l l l X}
 		\textbf{Version} & \textbf{Datum} & \textbf{Autor} & \textbf{Beschreibung}\\
-		0.1 & 28.04.2020 & SSA & Dokumentation und Gliederung erstellt
+		0.1 & 28.04.2020 & SSA & Dokumentation und Gliederung erstellt \\
+		0.2 & 04.05.2020 & LWI & Einfügen der Risikoanalyse \\
+		0.3 & 06.05.2020 & LWI & Einfügen der Situationsanalyse \\
+		0.4 & 07.05.2020 & LWI & Einfügen der Rollenbeschreibung
 	\end{tabularx}
 	
 	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -74,8 +77,15 @@
 	\section{Aufgabenstellung}
 	\section{Projektmanagement}
     \subsection{Projektorganisation}
-    %\includepdf[pagecommand={\pagestyle{fancy}}]{../02_Dokumente/01_Projektorganisation/Projektorganisation.pdf}
-	\includegraphics[width=\columnwidth]{Projektorganisation.png}
+    \begin{figure}[!hbt]
+    	\centering
+    	\includegraphics[width=\columnwidth]{Projektorganisation.png}
+    	\caption{Projektorganisation}
+    	\label{fig:projektorganisation}
+    \end{figure}
+	
+	\newpage
+	
 	\section{Situationsanalyse}
 	\subsection{Vorgänger Projekt}
 	Die Visual Board GmbH hat bereits mit der ABBTS (Rolf Hirschi) zusammengearbeitet und einen Prototypen erstellt um Bilder auf einer RGB-LED-Matrix anzuzeigen.
