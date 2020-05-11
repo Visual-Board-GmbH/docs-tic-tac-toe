@@ -22,7 +22,7 @@
 }
 
 \geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=35pt, includeheadfoot, portrait}
-\setmainfont{Calibri}
+%\setmainfont{Calibri}
 
 %Path relative to the .tex file containing the \includegraphics command
 \graphicspath{{01_Grafiken/}}
@@ -62,7 +62,10 @@
 	\section*{Änderungsverzeichnis}
 	\begin{tabularx}{\columnwidth}{l l l X}
 		\textbf{Version} & \textbf{Datum} & \textbf{Autor} & \textbf{Beschreibung}\\
-		0.1 & 28.04.2020 & SSA & Dokumentation und Gliederung erstellt
+		0.1 & 28.04.2020 & SSA & Dokumentation und Gliederung erstellt \\
+		0.2 & 04.05.2020 & LWI & Einfügen der Risikoanalyse \\
+		0.3 & 06.05.2020 & LWI & Einfügen der Situationsanalyse \\
+		0.4 & 07.05.2020 & LWI & Einfügen der Rollenbeschreibung + kleine Design Änderungen \\
 	\end{tabularx}
 	
 	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -74,8 +77,51 @@
 	\section{Aufgabenstellung}
 	\section{Projektmanagement}
     \subsection{Projektorganisation}
-    %\includepdf[pagecommand={\pagestyle{fancy}}]{../02_Dokumente/01_Projektorganisation/Projektorganisation.pdf}
-	\includegraphics[width=\columnwidth]{Projektorganisation.png}
+    \begin{figure}[!hbt]
+    	\centering
+    	\includegraphics[width=\columnwidth]{Projektorganisation.png}
+    	\caption{Projektorganisation}
+    	\label{fig:projektorganisation}
+    \end{figure}
+	
+	\newpage
+	
+	\subsubsection{Rollenbeschreibung}
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{gray!30}{gray!10}
+		\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+			\textbf{Kürzel} & \textbf{Beschreibung} \\ \hline
+			Auftraggeber & Er ist der Kunde und liefert das Lastenheft. \\ \hline
+			
+			Projektsteuerungs-Gremium & Trifft wichtige Entscheidungen und ist bei Problemen umgehend zu informieren. \\ \hline
+			
+			Projektportfolio-Controller & Hat alle laufenden Projekte im Überblick und ist Ansprechpartner für den Projektleiter und die Projektträger. \\ \hline
+			
+			Projektleiter & Die führende Kraft im Projektteam. Ist Ansprechpartner für die Involvierten und Projektträger. \\ \hline
+			
+			Projektmitarbeiter & Alle Betroffenen und Involvierten Personen/Organisation, die am Projekt mitarbeiten. \\ \hline
+			
+			Frontend Entwicklung & Hauptverantwortlicher des Frontend. \\ \hline
+			
+			Backend Entwicklung & Hauptverantwortlicher des Backend. \\ \hline
+			
+			Entwicklungsleitung & Hat Übersicht des Zusammenspiels von Front- und Backend. \\ \hline
+			
+			Software \& System Architekt  &  Übersicht der eingesetzten Tools und des Systemaufbaus. \\ \hline
+			
+			Datenbank Manager \& Architekt  & Hauptverantwortlicher der Datenbank. \\ \hline
+			
+			Dokumentenverantwortlicher & Ist verantwortlich für den Aufbau und die Struktur der Dokumente. \\ \hline
+			
+			Requirements \& Business Engineering  & Hat die Übersicht über alle Anforderungen und ihrer Einhaltung \\ \hline
+			
+			Quality \& Testing  & Verantwortlich für die Qualität des Codes und das er getestet ist. \\
+		\end{tabular}
+		\caption{Rollenbeschreibung}
+		\label{fig:rollenbeschreibung}
+	\end{table}
+	
 	\section{Situationsanalyse}
 	\subsection{Vorgänger Projekt}
 	Die Visual Board GmbH hat bereits mit der ABBTS (Rolf Hirschi) zusammengearbeitet und einen Prototypen erstellt um Bilder auf einer RGB-LED-Matrix anzuzeigen.
@@ -175,11 +221,9 @@
 	\newpage
 	
 	\section{Abschluss}
-	\renewcommand\listfigurename{}
 	\section{Abbildungsverzeichnis}
 	\listoffigures
 	
-	\renewcommand\listoftables{}
 	\section{Tabellenverzeichnis}
 	\listoftables
 	

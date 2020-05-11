@@ -1,5 +1,6 @@
 \documentclass[11pt, a4paper, twoside]{article}
 
+\usepackage[table]{xcolor}
 \usepackage{geometry} %Set page layouts
 \usepackage{pdfpages} %Include pdf files
 \usepackage{fancyhdr} %Header and Footer
@@ -22,7 +23,7 @@
 
 
 \geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=35pt, includeheadfoot, portrait}
-\setmainfont{Calibri}
+%\setmainfont{Calibri}
 
 %Path relative to the .tex file containing the \includegraphics command
 \graphicspath{ {01_Grafiken/}}
@@ -66,6 +67,19 @@
 	\subsubsection{SubsubSection}
 	\paragraph{Paragraph}
 	\subparagraph{Subparagraph}
+	
+	% Table example
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{gray!30}{gray!10}
+		\begin{tabular}{p{0.02\textwidth}|p{0.45\textwidth}|p{0.45\textwidth}}
+			\textbf{Id} & \textbf{Risiko Beschreibung} & \textbf{Möglicher Schade} \\ \hline
+			test & test & test \\
+		\end{tabular}
+		
+		\caption{Caption}
+		\label{fig:figure}
+	\end{table}
 	
 	\clearpage
 	\listoffigures
