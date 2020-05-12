@@ -22,7 +22,7 @@
 }
 
 \geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=35pt, includeheadfoot, portrait}
-%\setmainfont{Calibri}
+\setmainfont{Calibri}
 
 %Path relative to the .tex file containing the \includegraphics command
 \graphicspath{{01_Grafiken/}}
@@ -68,6 +68,7 @@
 		0.4 & 07.05.2020 & LWI & Einfügen der Rollenbeschreibung + kleine Design Änderungen \\
 		0.5 & 08.05.2020 & LWI & Einfügen der Ressourcenplanung \\
 		0.6 & 11.05.2020 & LWI & Änderung R3/M3 in der Risikoanalyse \\
+		0.7 & 12.05.2020 & LWI & Änderung in der Risikoanalyse + Grafik \\
 	\end{tabularx}
 	
 	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -202,13 +203,13 @@
 		\begin{tabular}{p{0.02\textwidth}|p{0.45\textwidth}|p{0.45\textwidth}}
 			\textbf{Id} & \textbf{Risiko Beschreibung} & \textbf{Möglicher Schade} \\ \hline
 			
-			R1 & Kosteneinschätzungen werden überschritten & Projekt wird teurer als ursprünglich geplant. Projektziele können nicht eingehalten werden. \\ \hline
+			R1 & Kosteneinschätzungen werden überschritten & Projekt wird teurer als ursprünglich geplant. Projektbudget kann nicht eingehalten werden. \\ \hline
 			
 			R2 & Mitarbeiterausfall & Projektziele können nicht eingehalten werden. Die anderen Mitarbeiter müssen vermehrt Überzeit machen. \\ \hline
 			
 			R3 & Hardwareausfall & Nach Ausfall muss ausgetauscht / repariert werden was zu Verschiebungen im Zeitplan führen kann \\ \hline
 			
-			R4 & Projektplan wurde zu sportlich geschätzt. & Verlust von Hardware, Code, Räumlichkeiten. Ausfall von Mitarbeitern. Es kann vorkommen das der Projektplan nicht eingehalten werden kann oder es zur nicht Durchführung des Projektes kommen. \\ \hline
+			R4 & Projektplan wurde zu sportlich geschätzt. & Meilensteine/Projektziele können nicht eignehalten werden, was zu Verschiebungen im Zeitplan führen kann. \\ \hline
 			
 			R5 & Naturkatastrophe & Verlust von Hardware, Code, Räumlichkeiten. Ausfall von Mitarbeitern. Es kann vorkommen das der Projektplan nicht eingehalten werden kann oder es zur nicht Durchführung des Projektes kommen. \\ \hline
 			
@@ -234,11 +235,11 @@
 			
 			M2 & Einfordern eines Ferienabwesenheitsantrages sowie die Planung aller Ressourcen. Zudem sollte ein regelmässiger Know-How Transfer stattfinden. & Oliver Egloff, Leonardo Wiedemeier & & Bei Ferienabwesenheit \\ \hline
 			
-			M3 & Hardware angemessen behandel und mit dem Kunden (ABBTS) im Falle eines Ausfalls sofort reagieren & & & Während des ganzes Projektes \\ \hline
+			M3 & Hardware angemessen behandel und mit dem Kunden (ABBTS) im Falle eines Ausfalls sofort reagieren & Ganzes Team & & Während des ganzes Projektes \\ \hline
 			
-			M4 & Einplanen von zeitlichen Reserven & Samuel Salomon, Oliver Egloff, Leonardo Wiedemeier & & Zu Beginn der Planung und am Anfang einer neuen Phase \\ \hline
+			M4 & Einplanen von zeitlichen Reserven & Ganzes Team & 1x pro Woche & Zu Beginn der Planung und am Anfang einer neuen Phase \\ \hline
 			
-			M6 & Regelmässige Backups der Lösung und klare Definierungen wie gearbeitet wird. & Samuel Salomon, Leonardo Wiedemeier & 1x pro Woche & 1x pro Woche \\ \hline
+			M6 & Regelmässige Backups der Lösung und klare Definierungen wie gearbeitet wird. & Samuel Salomon, Leonardo Wiedemeier & 1x pro Woche & Ab Begin Projekt \\ \hline
 			
 			M7 & Über die Situation mit COVID-19 auf dem Laufenden bleiben und persönliche wie auch Geschäftliche Entscheidungen Frühzeitig angehen. & Alle am Projekt beteiligten Personen & Täglich & Täglich \\
 		\end{tabular}
