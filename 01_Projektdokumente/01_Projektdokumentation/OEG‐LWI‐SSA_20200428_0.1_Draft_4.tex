@@ -12,7 +12,10 @@
 \usepackage{hyperref}
 \usepackage{tocloft}
 \usepackage{tabularx}
-\usepackage{showframe} %For debugging
+\usepackage{import}
+\usepackage{lscape}
+\usepackage{pdflscape}
+% \usepackage{showframe} %For debugging
 
 \hypersetup{
     colorlinks=true,
@@ -91,9 +94,11 @@
     \end{figure}
 
     \newpage
+    \begin{landscape}
+        \subsection{Meeting- und Kommunikationsplan}
+        \input{02_Dokumente/02_Kommunikationsplan/Kommunikationsplan}
+    \end{landscape}
 
-    \subsection{Meeting- und Kommunikationsplan}
-    % \includepdf[pagecommand={\pagestyle{fancy}}]{02_Dokumente/02_Kommunikationsplan/Kommunikationsplan.pdf}
     \newpage
 
     \subsubsection{Rollenbeschreibung}
@@ -181,7 +186,6 @@
     \subsection{Risikoanalyse}
 
     \subsubsection{Risiken}
-
     \begin{table}[h]
         \centering
         \rowcolors{1}{gray!30}{gray!10}
