@@ -15,10 +15,10 @@
 \usepackage{showframe} %For debugging
 
 \hypersetup{
-	colorlinks=true,
-	linkcolor=black,
-	filecolor=magenta,
-	urlcolor=cyan,
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
 }
 
 \geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=35pt, includeheadfoot, portrait}
@@ -40,199 +40,227 @@
 
 
 %Define header & footer for twoside documents
-\fancyhead{} %Clear all header fields
-\fancyhead[L]{\includegraphics{header_img_abb2.png}}
-\fancyfoot{} %Clear all footer fields
-\fancyfoot[RO, LE]{\small \thepage \textbar \pageref{LastPage}}
-\fancyfoot[LO, RE]{\small \dname}
-\renewcommand{\footrulewidth}{0.4pt}
-\renewcommand{\headrulewidth}{0.4pt}
-\pagestyle{fancy}
+    \fancyhead{} %Clear all header fields
+    \fancyhead[L]{\includegraphics{header_img_abb2.png}}
+    \fancyfoot{} %Clear all footer fields
+    \fancyfoot[RO, LE]{\small \thepage \textbar \pageref{LastPage}}
+    \fancyfoot[LO, RE]{\small \dname}
+    \renewcommand{\footrulewidth}{0.4pt}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \pagestyle{fancy}
 
-	
-	\section*{Dokumentenmanagement}
-	
-	\begin{tabularx}{\columnwidth}{l X}
-		\textbf{Erstellungsdatum:} & 28.04.2020 \\
-		\textbf{Autotren:} & Samuel Salomon (SSA), Oliver Egloff (OEG), Leonardo Wiedemeier (LWI) \\
-		\textbf{Dateiname:} &\dname
-	\end{tabularx}
-	
-	
-	\section*{Änderungsverzeichnis}
-	\begin{tabularx}{\columnwidth}{l l l X}
-		\textbf{Version} & \textbf{Datum} & \textbf{Autor} & \textbf{Beschreibung}\\
-		0.1 & 28.04.2020 & SSA & Dokumentation und Gliederung erstellt \\
-		0.2 & 04.05.2020 & LWI & Einfügen der Risikoanalyse \\
-		0.3 & 06.05.2020 & LWI & Einfügen der Situationsanalyse \\
-		0.4 & 07.05.2020 & LWI & Einfügen der Rollenbeschreibung + kleine Design Änderungen \\
-	\end{tabularx}
-	
-	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-	\tableofcontents
-	
-	\clearpage
-	
-	\section{Managment Summary}
-	\section{Aufgabenstellung}
-	\section{Projektmanagement}
+
+    \section*{Dokumentenmanagement}
+
+    \begin{tabularx}{\columnwidth}{l X}
+        \textbf{Erstellungsdatum:} & 28.04.2020 \\
+        \textbf{Autotren:} & Samuel Salomon (SSA), Oliver Egloff (OEG), Leonardo Wiedemeier (LWI) \\
+        \textbf{Dateiname:} &\dname
+    \end{tabularx}
+
+
+    \section*{Änderungsverzeichnis}
+    \begin{tabularx}{\columnwidth}{l l l X}
+        \textbf{Version} & \textbf{Datum} & \textbf{Autor} & \textbf{Beschreibung}\\
+        0.1 & 28.04.2020 & SSA & Dokumentation und Gliederung erstellt \\
+        0.2 & 04.05.2020 & LWI & Einfügen der Risikoanalyse \\
+        0.3 & 06.05.2020 & LWI & Einfügen der Situationsanalyse \\
+        0.4 & 07.05.2020 & LWI & Einfügen der Rollenbeschreibung + kleine Design Änderungen \\
+    \end{tabularx}
+
+    \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+    \tableofcontents
+
+    \clearpage
+
+
+    \section{Managment Summary}
+
+
+    \section{Aufgabenstellung}
+
+
+    \section{Projektmanagement}
+
     \subsection{Projektorganisation}
     \begin{figure}[!hbt]
-    	\centering
-    	\includegraphics[width=\columnwidth]{Projektorganisation.png}
-    	\caption{Projektorganisation}
-    	\label{fig:projektorganisation}
+        \centering
+        \includegraphics[width=\columnwidth]{Projektorganisation.png}
+        \caption{Projektorganisation}
+        \label{fig:projektorganisation}
     \end{figure}
-	
-	\newpage
-	
-	\subsubsection{Rollenbeschreibung}
-	\begin{table}[h]
-		\centering
-		\rowcolors{1}{gray!30}{gray!10}
-		\begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
-			\textbf{Kürzel} & \textbf{Beschreibung} \\ \hline
-			Auftraggeber & Er ist der Kunde und liefert das Lastenheft. \\ \hline
-			
-			Projektsteuerungs-Gremium & Trifft wichtige Entscheidungen und ist bei Problemen umgehend zu informieren. \\ \hline
-			
-			Projektportfolio-Controller & Hat alle laufenden Projekte im Überblick und ist Ansprechpartner für den Projektleiter und die Projektträger. \\ \hline
-			
-			Projektleiter & Die führende Kraft im Projektteam. Ist Ansprechpartner für die Involvierten und Projektträger. \\ \hline
-			
-			Projektmitarbeiter & Alle Betroffenen und Involvierten Personen/Organisation, die am Projekt mitarbeiten. \\ \hline
-			
-			Frontend Entwicklung & Hauptverantwortlicher des Frontend. \\ \hline
-			
-			Backend Entwicklung & Hauptverantwortlicher des Backend. \\ \hline
-			
-			Entwicklungsleitung & Hat Übersicht des Zusammenspiels von Front- und Backend. \\ \hline
-			
-			Software \& System Architekt  &  Übersicht der eingesetzten Tools und des Systemaufbaus. \\ \hline
-			
-			Datenbank Manager \& Architekt  & Hauptverantwortlicher der Datenbank. \\ \hline
-			
-			Dokumentenverantwortlicher & Ist verantwortlich für den Aufbau und die Struktur der Dokumente. \\ \hline
-			
-			Requirements \& Business Engineering  & Hat die Übersicht über alle Anforderungen und ihrer Einhaltung \\ \hline
-			
-			Quality \& Testing  & Verantwortlich für die Qualität des Codes und das er getestet ist. \\
-		\end{tabular}
-		\caption{Rollenbeschreibung}
-		\label{fig:rollenbeschreibung}
-	\end{table}
-	
-	\section{Situationsanalyse}
-	\subsection{Vorgänger Projekt}
-	Die Visual Board GmbH hat bereits mit der ABBTS (Rolf Hirschi) zusammengearbeitet und einen Prototypen erstellt um Bilder auf einer RGB-LED-Matrix anzuzeigen.
-	Die RGB-LED-Matrix wurde funktionsfähig gestellt und es sollte ein Programm geschrieben werden um Bilder wie gewünscht auf der Matrix anzuzeigen. Darunter ist das korrekte transformieren, aufbereiten und weitergeben an die Matrix zu verstehen.
-	
-	Der Prototyp wurde von der Visual Board GmbH mit einer REST-Api in Java umgesetzt welche auf dem Raspberry Pi der Hardware, oder einem externen Windows Computer läuft.
-	So wurde die RGB-LED-Matrix, dem Netwerk in welchem sie sich befindet hat, zur verfügung gsetellt. Und es ist möglich mit den korrekten "requests" Bilder direkt oder mit dem Webinterface an die Matrix zu schicken.
-		
-	Der Visual Board GmbH wurde die komplette Hardware durch die ABBTS gestellt wurde.
-	\newline
-	Teil der Projektorganisiton waren:
-	\begin{itemize}
-		\item ABBTS (Rolf Hirschi) als Auftraggeber
-		\item Visual Board GmbH als Arbeitnehmer. Samuel Salomon hat die Position als Projektleiter eingenommen.
-		\item Herr Künzli und Herr Jenzer jeweils als Mitglied des PSG (Projektsteuerungs-Gremium)
-		\item Herr Künzli hatte zudem die Position des PPC  (Projektportfolio-Controller
-	\end{itemize}
 
-	\subsection{ Weiteres Vorgehen}
-	Die ABBTS hat sich entschieden auf den Prototypen der Visual Board GmbH aufzubauen und die Spiellogic für ein Tic-Tac-Toe Spiel umzusetzen.
-	Es soll die Möglichkeit bestehen das mehrere Spieler, auf verschiedenen Endgeräten, gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgiebt. Hier für werden wir das komplette Vorgänger Projekt verwenden, da die Matrix bereits einsatzbereit ist. Es werden allenfalls Schnittstellen angepasst oder neue erstellt.
-	Zusätzlich zur implementierung der Spiellogic, soll diese auch auf einen Webserver laufen und so erreichbar gemacht werden.
-	
-	Die Visual Board GmbH wird daher im Rahmen des Projektes die Spiellogic mit Benutzeroberfläche implementieren und den nötigen Webserver einrichten. Für diese Arbeiten stehen 300 Arbeitsstunden der kompletten Projektabwicklung zur Verfügung.
-		
-	\section{Zielsetzung}
-	\section{Lösungssuche}
-	\section{Lösungswahl}
-	\section{Detailkonzept}
-	\section{Realisierung}
-	\newpage
-	\section{Wirtschaftlichkeit und Risikoanalyse}
-	
-	\subsection{Risikoanalyse}
-	\subsubsection{Risiken}
-	
-	\begin{table}[h]
-		\centering
-		\rowcolors{1}{gray!30}{gray!10}
-		\begin{tabular}{p{0.02\textwidth}|p{0.45\textwidth}|p{0.45\textwidth}}
-			\textbf{Id} & \textbf{Risiko Beschreibung} & \textbf{Möglicher Schade} \\ \hline
-			
-			R1 & Kosteneinschätzungen werden überschritten & Projekt wird teurer als ursprünglich geplant. Projektziele können nicht eingehalten werden. \\ \hline
-			
-			R2 & Mitarbeiterausfall & Projektziele können nicht eingehalten werden. Die anderen Mitarbeiter müssen vermehrt Überzeit machen. \\ \hline
-			
-			R3 & Probleme mit Hosting / Hardware & Unstimmigkeiten oder Probleme vom Hosting Partner können zu Verschiebungen im Zeitplan oder Mehrkosten führen. \\ \hline
-			
-			R4 & Projektplan wurde zu sportlich geschätzt. & Verlust von Hardware, Code, Räumlichkeiten. Ausfall von Mitarbeitern. Es kann vorkommen das der Projektplan nicht eingehalten werden kann oder es zur nicht Durchführung des Projektes kommen. \\ \hline
-			
-			R5 & Naturkatastrophe & Verlust von Hardware, Code, Räumlichkeiten. Ausfall von Mitarbeitern. Es kann vorkommen das der Projektplan nicht eingehalten werden kann oder es zur nicht Durchführung des Projektes kommen. \\ \hline
-			
-			R6 & Fortschrittsverlust durch falsche Anwendung von Hilfsmitteln (z.B. falsche Versionierung von Dokumenten und Code) & Es geht sehr viel Zeit verloren, um die verlorene Arbeit wieder aufzuholen. Projektziele und Projektplan könnten damit gefährdet sein. \\ \hline
-			
-			R7 & COVID-19 & Die aktuelle Pandemie kann noch unbekannte Risiken und Einschränkungen mit sich ziehen. \\
-		\end{tabular}
+    \newpage
 
-		\caption{Risiken}
-		\label{fig:risiken}
-	\end{table}
+    \subsection{Meeting- und Kommunikationsplan}
 
-	\newpage
+    \newpage
 
-	\subsubsection{Massnahmen}
-	\begin{table}[h]
-		\centering
-		\rowcolors{1}{gray!30}{gray!10}
-		\begin{tabular}{p{0.03\textwidth}|p{0.3\textwidth}|p{0.2\textwidth}|p{0.1\textwidth}|p{0.2\textwidth}}
-			\textbf{Nr.} & \textbf{Was?} & \textbf{Wer mit wem?} & \textbf{Wie viel?} & \textbf{Wann?} \\ \hline
-			
-			M1 & Regelmässige Kontrolle der Kostenfortschritte sowie die Einplanung von Reserven & Oliver Egloff & & Immer zu Beginn einer neuen Phase \\ \hline
-			
-			M2 & Einfordern eines Ferienabwesenheitsantrages sowie die Planung aller Ressourcen. Zudem sollte ein regelmässiger Know-How Transfer stattfinden. & Oliver Egloff, Leonardo Wiedemeier & & Bei Ferienabwesenheit \\ \hline
-			
-			M3 & Mit dem Hosting in Kontakt bleiben und dafür sorgen das die eingesetzten Tools optimal laufen. & & & Ab der Realisierungsphase \\ \hline
-			
-			M4 & Einplanen von zeitlichen Reserven & Samuel Salomon, Oliver Egloff, Leonardo Wiedemeier & & Zu Beginn der Planung und am Anfang einer neuen Phase \\ \hline
-			
-			M6 & Regelmässige Backups der Lösung und klare Definierungen wie gearbeitet wird. & Samuel Salomon, Leonardo Wiedemeier & 1x pro Woche & 1x pro Woche \\ \hline
-			
-			M7 & Über die Situation mit COVID-19 auf dem Laufenden bleiben und persönliche wie auch Geschäftliche Entscheidungen Frühzeitig angehen. & Alle am Projekt beteiligten Personen & Täglich & Täglich \\
-		\end{tabular}
-		\caption{Massnahmen}
-		\label{fig:massnahmen}
-	\end{table}
+    \subsubsection{Rollenbeschreibung}
+    \begin{table}[h]
+        \centering
+        \rowcolors{1}{gray!30}{gray!10}
+        \begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+            \textbf{Kürzel} & \textbf{Beschreibung} \\ \hline
+            Auftraggeber & Er ist der Kunde und liefert das Lastenheft. \\ \hline
 
-	\newpage
+            Projektsteuerungs-Gremium & Trifft wichtige Entscheidungen und ist bei Problemen umgehend zu informieren. \\ \hline
 
-	\subsubsection{Risikomatrix}
-	\begin{figure}[!hbt]
-		\centering
-		\includegraphics[width=\columnwidth]{risikomatrix.png}
-		\caption{Risikomatrix}
-		\label{fig:risiko_matrix}
-	\end{figure}
+            Projektportfolio-Controller & Hat alle laufenden Projekte im Überblick und ist Ansprechpartner für den Projektleiter und die Projektträger. \\ \hline
 
-	\newpage
-	
-	\section{Abschluss}
-	\section{Abbildungsverzeichnis}
-	\listoffigures
-	
-	\section{Tabellenverzeichnis}
-	\listoftables
-	
-	
-	\section{Selbstständigkeitserklärung}
-	
-	\section{Anhang}
-	
-	
-	
+            Projektleiter & Die führende Kraft im Projektteam. Ist Ansprechpartner für die Involvierten und Projektträger. \\ \hline
+
+            Projektmitarbeiter & Alle Betroffenen und Involvierten Personen/Organisation, die am Projekt mitarbeiten. \\ \hline
+
+            Frontend Entwicklung & Hauptverantwortlicher des Frontend. \\ \hline
+
+            Backend Entwicklung & Hauptverantwortlicher des Backend. \\ \hline
+
+            Entwicklungsleitung & Hat Übersicht des Zusammenspiels von Front- und Backend. \\ \hline
+
+            Software \& System Architekt & Übersicht der eingesetzten Tools und des Systemaufbaus. \\ \hline
+
+            Datenbank Manager \& Architekt & Hauptverantwortlicher der Datenbank. \\ \hline
+
+            Dokumentenverantwortlicher & Ist verantwortlich für den Aufbau und die Struktur der Dokumente. \\ \hline
+
+            Requirements \& Business Engineering & Hat die Übersicht über alle Anforderungen und ihrer Einhaltung \\ \hline
+
+            Quality \& Testing & Verantwortlich für die Qualität des Codes und das er getestet ist. \\
+        \end{tabular}
+        \caption{Rollenbeschreibung}
+        \label{fig:rollenbeschreibung}
+    \end{table}
+
+
+    \section{Situationsanalyse}
+
+    \subsection{Vorgänger Projekt}
+    Die Visual Board GmbH hat bereits mit der ABBTS (Rolf Hirschi) zusammengearbeitet und einen Prototypen erstellt um Bilder auf einer RGB-LED-Matrix anzuzeigen.
+    Die RGB-LED-Matrix wurde funktionsfähig gestellt und es sollte ein Programm geschrieben werden um Bilder wie gewünscht auf der Matrix anzuzeigen. Darunter ist das korrekte transformieren, aufbereiten und weitergeben an die Matrix zu verstehen.
+
+    Der Prototyp wurde von der Visual Board GmbH mit einer REST-Api in Java umgesetzt welche auf dem Raspberry Pi der Hardware, oder einem externen Windows Computer läuft.
+    So wurde die RGB-LED-Matrix, dem Netwerk in welchem sie sich befindet hat, zur verfügung gsetellt. Und es ist möglich mit den korrekten "requests" Bilder direkt oder mit dem Webinterface an die Matrix zu schicken.
+
+    Der Visual Board GmbH wurde die komplette Hardware durch die ABBTS gestellt wurde.
+    \newline
+    Teil der Projektorganisiton waren:
+    \begin{itemize}
+        \item ABBTS (Rolf Hirschi) als Auftraggeber
+        \item Visual Board GmbH als Arbeitnehmer. Samuel Salomon hat die Position als Projektleiter eingenommen.
+        \item Herr Künzli und Herr Jenzer jeweils als Mitglied des PSG (Projektsteuerungs-Gremium)
+        \item Herr Künzli hatte zudem die Position des PPC  (Projektportfolio-Controller
+    \end{itemize}
+
+    \subsection{ Weiteres Vorgehen}
+    Die ABBTS hat sich entschieden auf den Prototypen der Visual Board GmbH aufzubauen und die Spiellogic für ein Tic-Tac-Toe Spiel umzusetzen.
+    Es soll die Möglichkeit bestehen das mehrere Spieler, auf verschiedenen Endgeräten, gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgiebt. Hier für werden wir das komplette Vorgänger Projekt verwenden, da die Matrix bereits einsatzbereit ist. Es werden allenfalls Schnittstellen angepasst oder neue erstellt.
+    Zusätzlich zur implementierung der Spiellogic, soll diese auch auf einen Webserver laufen und so erreichbar gemacht werden.
+
+    Die Visual Board GmbH wird daher im Rahmen des Projektes die Spiellogic mit Benutzeroberfläche implementieren und den nötigen Webserver einrichten. Für diese Arbeiten stehen 300 Arbeitsstunden der kompletten Projektabwicklung zur Verfügung.
+
+
+    \section{Zielsetzung}
+
+
+    \section{Lösungssuche}
+
+
+    \section{Lösungswahl}
+
+
+    \section{Detailkonzept}
+
+
+    \section{Realisierung}
+    \newpage
+
+
+    \section{Wirtschaftlichkeit und Risikoanalyse}
+
+    \subsection{Risikoanalyse}
+
+    \subsubsection{Risiken}
+
+    \begin{table}[h]
+        \centering
+        \rowcolors{1}{gray!30}{gray!10}
+        \begin{tabular}{p{0.02\textwidth}|p{0.45\textwidth}|p{0.45\textwidth}}
+            \textbf{Id} & \textbf{Risiko Beschreibung} & \textbf{Möglicher Schade} \\ \hline
+
+            R1 & Kosteneinschätzungen werden überschritten & Projekt wird teurer als ursprünglich geplant. Projektziele können nicht eingehalten werden. \\ \hline
+
+            R2 & Mitarbeiterausfall & Projektziele können nicht eingehalten werden. Die anderen Mitarbeiter müssen vermehrt Überzeit machen. \\ \hline
+
+            R3 & Probleme mit Hosting / Hardware & Unstimmigkeiten oder Probleme vom Hosting Partner können zu Verschiebungen im Zeitplan oder Mehrkosten führen. \\ \hline
+
+            R4 & Projektplan wurde zu sportlich geschätzt. & Verlust von Hardware, Code, Räumlichkeiten. Ausfall von Mitarbeitern. Es kann vorkommen das der Projektplan nicht eingehalten werden kann oder es zur nicht Durchführung des Projektes kommen. \\ \hline
+
+            R5 & Naturkatastrophe & Verlust von Hardware, Code, Räumlichkeiten. Ausfall von Mitarbeitern. Es kann vorkommen das der Projektplan nicht eingehalten werden kann oder es zur nicht Durchführung des Projektes kommen. \\ \hline
+
+            R6 & Fortschrittsverlust durch falsche Anwendung von Hilfsmitteln (z.B. falsche Versionierung von Dokumenten und Code) & Es geht sehr viel Zeit verloren, um die verlorene Arbeit wieder aufzuholen. Projektziele und Projektplan könnten damit gefährdet sein. \\ \hline
+
+            R7 & COVID-19 & Die aktuelle Pandemie kann noch unbekannte Risiken und Einschränkungen mit sich ziehen. \\
+        \end{tabular}
+
+        \caption{Risiken}
+        \label{fig:risiken}
+    \end{table}
+
+    \newpage
+
+    \subsubsection{Massnahmen}
+    \begin{table}[h]
+        \centering
+        \rowcolors{1}{gray!30}{gray!10}
+        \begin{tabular}{p{0.03\textwidth}|p{0.3\textwidth}|p{0.2\textwidth}|p{0.1\textwidth}|p{0.2\textwidth}}
+            \textbf{Nr.} & \textbf{Was?} & \textbf{Wer mit wem?} & \textbf{Wie viel?} & \textbf{Wann?} \\ \hline
+
+            M1 & Regelmässige Kontrolle der Kostenfortschritte sowie die Einplanung von Reserven & Oliver Egloff & & Immer zu Beginn einer neuen Phase \\ \hline
+
+            M2 & Einfordern eines Ferienabwesenheitsantrages sowie die Planung aller Ressourcen. Zudem sollte ein regelmässiger Know-How Transfer stattfinden. & Oliver Egloff, Leonardo Wiedemeier & & Bei Ferienabwesenheit \\ \hline
+
+            M3 & Mit dem Hosting in Kontakt bleiben und dafür sorgen das die eingesetzten Tools optimal laufen. & & & Ab der Realisierungsphase \\ \hline
+
+            M4 & Einplanen von zeitlichen Reserven & Samuel Salomon, Oliver Egloff, Leonardo Wiedemeier & & Zu Beginn der Planung und am Anfang einer neuen Phase \\ \hline
+
+            M6 & Regelmässige Backups der Lösung und klare Definierungen wie gearbeitet wird. & Samuel Salomon, Leonardo Wiedemeier & 1x pro Woche & 1x pro Woche \\ \hline
+
+            M7 & Über die Situation mit COVID-19 auf dem Laufenden bleiben und persönliche wie auch Geschäftliche Entscheidungen Frühzeitig angehen. & Alle am Projekt beteiligten Personen & Täglich & Täglich \\
+        \end{tabular}
+        \caption{Massnahmen}
+        \label{fig:massnahmen}
+    \end{table}
+
+    \newpage
+
+    \subsubsection{Risikomatrix}
+    \begin{figure}[!hbt]
+        \centering
+        \includegraphics[width=\columnwidth]{risikomatrix.png}
+        \caption{Risikomatrix}
+        \label{fig:risiko_matrix}
+    \end{figure}
+
+    \newpage
+
+
+    \section{Abschluss}
+
+
+    \section{Abbildungsverzeichnis}
+    \listoffigures
+
+
+    \section{Tabellenverzeichnis}
+    \listoftables
+
+
+    \section{Selbstständigkeitserklärung}
+
+
+    \section{Anhang}
+
+
 \end{document}
 
