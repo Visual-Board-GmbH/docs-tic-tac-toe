@@ -12,7 +12,11 @@
 \usepackage{hyperref}
 \usepackage{tocloft}
 \usepackage{tabularx}
-\usepackage{showframe} %For debugging
+\usepackage{import}
+\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{multirow}
+%\usepackage{showframe} %For debugging
 
 \hypersetup{
 	colorlinks=true,
@@ -69,6 +73,7 @@
 		0.6 & 11.05.2020 & LWI & Änderung R3/M3 in der Risikoanalyse \\
 		0.7 & 12.05.2020 & LWI & Änderung in der Risikoanalyse + Grafik \\
 		0.8 & 19.05.2020 & LWI & Risikomatrix mit Texten erweitern \\
+		0.9 & 06.07.2020 & LWI & Lösungssuche und Lösungswahl vorbereitet \\
 	\end{tabularx}
 	
 	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -214,7 +219,7 @@
 	Die RGB-LED-Matrix wurde funktionsfähig gestellt und es sollte ein Programm geschrieben werden um Bilder wie gewünscht auf der Matrix anzuzeigen. Darunter ist das korrekte transformieren, aufbereiten und weitergeben an die Matrix zu verstehen.
 	
 	Der Prototyp wurde von der Visual Board GmbH mit einer REST-Api in Java umgesetzt welche auf dem Raspberry Pi der Hardware, oder einem externen Windows Computer läuft.
-	So wurde die RGB-LED-Matrix, dem Netwerk in welchem sie sich befindet hat, zur verfügung gsetellt. Und es ist möglich mit den korrekten "requests" Bilder direkt oder mit dem Webinterface an die Matrix zu schicken.
+	So wurde die RGB-LED-Matrix, dem Netzwerk in welchem sie sich befindet hat, zur Verfügung gestellt. Und es ist möglich mit den korrekten "requests" Bilder direkt oder mit dem Webinterface an die Matrix zu schicken.
 		
 	Der Visual Board GmbH wurde die komplette Hardware durch die ABBTS gestellt wurde.
 	\newline
@@ -226,16 +231,81 @@
 		\item Herr Künzli hatte zudem die Position des PPC  (Projektportfolio-Controller
 	\end{itemize}
 
-	\subsection{ Weiteres Vorgehen}
-	Die ABBTS hat sich entschieden auf den Prototypen der Visual Board GmbH aufzubauen und die Spiellogic für ein Tic-Tac-Toe Spiel umzusetzen.
-	Es soll die Möglichkeit bestehen das mehrere Spieler, auf verschiedenen Endgeräten, gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgiebt. Hier für werden wir das komplette Vorgänger Projekt verwenden, da die Matrix bereits einsatzbereit ist. Es werden allenfalls Schnittstellen angepasst oder neue erstellt.
-	Zusätzlich zur implementierung der Spiellogic, soll diese auch auf einen Webserver laufen und so erreichbar gemacht werden.
+	\subsection{Weiteres Vorgehen}
+	Die ABBTS hat sich entschieden auf den Prototypen der Visual Board GmbH aufzubauen und die Spiellogik für ein Tic-Tac-Toe Spiel umzusetzen.
+	Es soll die Möglichkeit bestehen das mehrere Spieler, auf verschiedenen Endgeräten, gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgibt. Hier für werden wir das komplette Vorgänger Projekt verwenden, da die Matrix bereits einsatzbereit ist. Es werden allenfalls Schnittstellen angepasst oder neue erstellt.
+	Zusätzlich zur Implementierung der Spiellogik, soll diese auch auf einen Webserver laufen und so erreichbar gemacht werden.
 	
 	Die Visual Board GmbH wird daher im Rahmen des Projektes die Spiellogic mit Benutzeroberfläche implementieren und den nötigen Webserver einrichten. Für diese Arbeiten stehen 300 Arbeitsstunden der kompletten Projektabwicklung zur Verfügung.
 		
 	\section{Zielsetzung}
 	\section{Lösungssuche}
+	TODO wieder mit Hilfe eines MindMaps darstellen?
+	
+	\subsection{Vorstudie zur Erhebung der Programmiersprachen}
+	\subsubsection{PHP}
+	Eine weit verbreitet Open source Skriptsprache welche zur Laufzeit kompiliert wird. Sie zeichnet sich durch ihre Einfachheit, Geschwindigkeit und Stabilität aus. Es gibt eine umfangreiche Anzahl von Frameworks wie auch eine grosse Community, welche durch Open source ein gewisses Mitspracherecht an der Zukunft der Sprache hat. So können simple Kommandozeilen Scripts wie auch umfangreiche Webapplikationen erstellt werden.  
+	\subsubsection{Java}
+	Java ist eine objektorientierte Programmiersprache, mit welcher sich plattformunabhängige Anwendungen entwickeln lassen können. Die Sprache hat sich gut durchgesetzt und ist weit verbreitet. Die Haupteigenschaften der Programmiersprache sind Sicherheit, Robustheit und Einfachheit. Java hat eine Vielzahl an Frameworks und eine grosse Community.
+	
+	Beide Sprache bieten eine grosse Community und ein umfangreiches Toolset mit dem die Anforderungen an das System erfüllt werden können. Mit Hilfe einer morphologischen Analyse wird nun entschieden mit welchen Varianten die Sprachen in der Lösungswahl berücksichtigt werden.
+	
+	\subsection{Black Box}
+	\subsection{Morphologische Analyse}
+	
+		
 	\section{Lösungswahl}
+	Die Lösungswahl wird aufgrund der Zielerreichung, Nutzwertanalyse und den weiteren Risiken getroffen.
+	\subsection{Zielerreichung}
+	In der Zielerreichung wird analysiert, ob die Lösungsvarianten die geforderten Systemziele erfüllen können. So werden ungeeignete Lösungen bereits in einer frühen Phase aus der Studie herausgefiltert.
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{gray!30}{gray!10}
+		\begin{tabular}{p{0.25\textwidth}|p{0.2\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}}
+			\textbf{Systemziel-Nr.} & \textbf{Gewicht (M,S,K)} & \textbf{V1} & \textbf{V2} \\ \hline
+			& & &
+		\end{tabular}
+		\caption{Zielerreichung}
+		\label{fig:zielerreichung}
+	\end{table}
+	
+	\newpage
+
+	\begin{landscape}
+	\subsection{Nutzwertanalyse}
+	Die Gewichtung wird in Form einer Zahl zwischen 1-10 definiert, wobei die 1 die tiefste und 10 die höchste Gewichtung ist.
+	\begin{table}[h]
+		\centering
+		%\rowcolors{1}{gray!30}{gray!10}
+		\begin{tabular}{p{0.4\textwidth}|p{0.25\textwidth}|p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth}}
+			\multirow{2}{*}{\textbf{Kriterien}} & \multirow{2}{*}{\textbf{Gewichtung}} & \multicolumn{2}{c}{\textbf{Variante 1: PHP}} & \multicolumn{2}{c}{\textbf{Variante 2: Java}} \\
+			& & \textbf{Punkte} & \textbf{Bewertung} & \textbf{Punkte} & \textbf{Bewertung}  \\ \hline
+			Risiken & 123 & & & &  \\ \hline
+			Nachhaltigkeit & 123 & & & &  \\ \hline
+			& X & & & & \\ \hline
+			\textbf{Nutzwert} & & & \cellcolor{green} xxx & & \cellcolor{orange} \\ \hline
+		\end{tabular}
+		\caption{Nutzwerkanalyse}
+		\label{fig:nutzwerkanalyse}
+	\end{table}
+	\end{landscape}
+
+	\newpage
+	
+	\subsection{Weitere Risiken}
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{gray!30}{gray!10}
+		\begin{tabular}{p{0.24\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}}
+			\textbf{Beurteilungskriterien} & \textbf{V1} & \textbf{V2} \\ \hline
+			Risiken & & \\ \hline
+			Nachhaltigkeit & &
+		\end{tabular}
+		\caption{Weitere Risiken}
+		\label{fig:weitere-risiken}
+	\end{table}
+	\subsection{Empfehlung}
+	
 	\section{Detailkonzept}
 	\section{Realisierung}
 	\newpage
