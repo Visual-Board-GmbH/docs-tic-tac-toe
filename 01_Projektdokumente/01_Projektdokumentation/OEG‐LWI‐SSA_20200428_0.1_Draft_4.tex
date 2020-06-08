@@ -74,6 +74,7 @@
 		0.7 & 12.05.2020 & LWI & Änderung in der Risikoanalyse + Grafik \\
 		0.8 & 19.05.2020 & LWI & Risikomatrix mit Texten erweitern \\
 		0.9 & 06.07.2020 & LWI & Lösungssuche und Lösungswahl vorbereitet \\
+		0.10 & 08.07.2020 & SSA, OEG, LWI & Mind Map für die Lösungssuche erstellt\\
 	\end{tabularx}
 	
 	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -137,7 +138,7 @@
 		\centering
 		\rowcolors{1}{gray!30}{gray!10}
 		\begin{tabular}{p{0.1\textwidth}|p{0.34\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}}
-			\textbf{Nummer} & \textbf{Leistung} & \textbf{ABBTS} & \textbf{SSA} & \textbf{OEG} & \textbf{LWI} \\ \hline
+			\textbf{Nr.} & \textbf{Leistung} & \textbf{ABBTS} & \textbf{SSA} & \textbf{OEG} & \textbf{LWI} \\ \hline
 			L1 & Projektanalyse & & & &  \\ \hline
 			AP1.1 & Situationsanalyse & I & M & M & D  \\ \hline
 			AP1.2 & Anforderungskatalog  & I & D & M & M  \\ \hline
@@ -240,19 +241,30 @@
 		
 	\section{Zielsetzung}
 	\section{Lösungssuche}
-	TODO wieder mit Hilfe eines MindMaps darstellen?
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{01_Grafiken/loesungs_mind_map.png}
+		\caption{Lösungs Mind Map}
+		\label{fig:mind_map}
+	\end{figure}
 	
 	\subsection{Vorstudie zur Erhebung der Programmiersprachen}
 	\subsubsection{PHP}
 	Eine weit verbreitet Open source Skriptsprache welche zur Laufzeit kompiliert wird. Sie zeichnet sich durch ihre Einfachheit, Geschwindigkeit und Stabilität aus. Es gibt eine umfangreiche Anzahl von Frameworks wie auch eine grosse Community, welche durch Open source ein gewisses Mitspracherecht an der Zukunft der Sprache hat. So können simple Kommandozeilen Scripts wie auch umfangreiche Webapplikationen erstellt werden.  
 	\subsubsection{Java}
 	Java ist eine objektorientierte Programmiersprache, mit welcher sich plattformunabhängige Anwendungen entwickeln lassen können. Die Sprache hat sich gut durchgesetzt und ist weit verbreitet. Die Haupteigenschaften der Programmiersprache sind Sicherheit, Robustheit und Einfachheit. Java hat eine Vielzahl an Frameworks und eine grosse Community.
-	
+	\\ \\
 	Beide Sprache bieten eine grosse Community und ein umfangreiches Toolset mit dem die Anforderungen an das System erfüllt werden können. Mit Hilfe einer morphologischen Analyse wird nun entschieden mit welchen Varianten die Sprachen in der Lösungswahl berücksichtigt werden.
 	
-	\subsection{Black Box}
-	\subsection{Morphologische Analyse}
+	//TODO frontend sprachen LWI 08.06.2020
 	
+	\subsection{Black Box}
+	TODO: \\
+	- Blackbox für Frontend / Backend / DB \\
+	- Varianten definieren
+	\subsection{Morphologische Analyse (//TODO Mit Herrn Hirschi absprechen öb nötig)}
+	
+	\newpage
 		
 	\section{Lösungswahl}
 	Die Lösungswahl wird aufgrund der Zielerreichung, Nutzwertanalyse und den weiteren Risiken getroffen.
@@ -283,7 +295,7 @@
 			Risiken & 123 & & & &  \\ \hline
 			Nachhaltigkeit & 123 & & & &  \\ \hline
 			& X & & & & \\ \hline
-			\textbf{Nutzwert} & & & \cellcolor{green} xxx & & \cellcolor{orange} \\ \hline
+			\textbf{Nutzwert} & & & \cellcolor{orange} xxx & & \cellcolor{green} \\ \hline
 		\end{tabular}
 		\caption{Nutzwerkanalyse}
 		\label{fig:nutzwerkanalyse}
