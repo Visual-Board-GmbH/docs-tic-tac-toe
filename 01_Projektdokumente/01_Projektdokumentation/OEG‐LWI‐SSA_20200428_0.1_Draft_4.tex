@@ -276,11 +276,6 @@
 		\caption{Black Box Frontend}
 		\label{fig:bb_frontend}
 	\end{figure}
-
-	\paragraph{Variante 1}
-	//TODO lösung mit Vue
-	\paragraph{Variante 2}
-	//TODO lösung mit react
 	
 	\subsubsection{Backend}
 
@@ -291,10 +286,22 @@
 		\label{fig:bb_backend}
 	\end{figure}
 
-	\paragraph{Variante 1}
-	//TODO lösung mit Java
-	\paragraph{Variante 2}
-	//TODO lösung mit PHP
+	\newpage
+
+	\subsection{Variante 1}
+	
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{01_Grafiken/architektur.png}
+		\caption{Architektur}
+		\label{fig:architektur}
+	\end{figure}
+
+	Da es sich um ein Nachfolgerprojekt der LED-RGB-Matrix handelt und es die Matrix als unabhängiger Service programmiert wurde ist dieser Teil bereits "abgeschlossen". Es handelt sich um eine Rest-API welche vom jetzigen Projekt einfach angesprochen werden kann.
+	Der Tic-Tac-Toe Service (Spiellogik + Datenbank) wird das Backend bilden. Es wird auf einer Seite via JSON mit der LED-RGB-Matrix API kommunizieren und auf der anderen via MQTT mit den jeweiligen Clients. Hier muss noch entschieden werden mit welcher Technologie, Java oder PHP, das Backend umgesetzt wird. Bei der Datenbank wird es sich um MYSQL handel welche mit der jeweiligen Sprache dann angesprochen wird.
+	
+	Im Frontend steht die Entscheidung der Programmiersprache auch noch offen, Vue.js oder React.js.
+	Das Frontend wird fähig sein via MQTT mit dem Backend zu kommunizieren und so dynamisch die View für den Benutzer anpassen. Weiteres ist die View responsive für Mobile wie auch Computer.
 
 	\subsection{Morphologische Analyse (//TODO Mit Herrn Hirschi absprechen öb nötig)}
 	
