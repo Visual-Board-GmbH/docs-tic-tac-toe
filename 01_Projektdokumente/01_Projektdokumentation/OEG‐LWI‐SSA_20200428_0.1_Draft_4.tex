@@ -51,36 +51,38 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \pagestyle{fancy}
 
-	
+
 	\section*{Dokumentenmanagement}
-	
+
 	\begin{tabularx}{\columnwidth}{l X}
 		\textbf{Erstellungsdatum:} & 28.04.2020 \\
 		\textbf{Autotren:} & Samuel Salomon (SSA), Oliver Egloff (OEG), Leonardo Wiedemeier (LWI) \\
 		\textbf{Dateiname:} &\dname
 	\end{tabularx}
-	
-	
-	\section*{Änderungsverzeichnis}
+
+
+\section*{Änderungsverzeichnis}
 	\begin{tabularx}{\columnwidth}{l l l X}
-		\textbf{Version} & \textbf{Datum} & \textbf{Autor} & \textbf{Beschreibung}\\
-		0.1 & 28.04.2020 & SSA & Dokumentation und Gliederung erstellt \\
-		0.2 & 04.05.2020 & LWI & Einfügen der Risikoanalyse \\
-		0.3 & 06.05.2020 & LWI & Einfügen der Situationsanalyse \\
-		0.4 & 07.05.2020 & LWI & Einfügen der Rollenbeschreibung + kleine Design Änderungen \\
-		0.5 & 08.05.2020 & LWI & Einfügen der Ressourcenplanung \\
-		0.6 & 11.05.2020 & LWI & Änderung R3/M3 in der Risikoanalyse \\
-		0.7 & 12.05.2020 & LWI & Änderung in der Risikoanalyse + Grafik \\
+        \textbf{Version} & \textbf{Datum} & \textbf{Autor} & \textbf{Beschreibung}\\
+        0.1 & 28.04.2020 & SSA & Dokumentation und Gliederung erstellt \\
+        0.2 & 04.05.2020 & LWI & Einfügen der Risikoanalyse \\
+        0.3 & 06.05.2020 & LWI & Einfügen der Situationsanalyse \\
+        0.4 & 07.05.2020 & LWI & Einfügen der Rollenbeschreibung + kleine Design Änderungen \\
+        0.5 & 08.05.2020 & LWI & Einfügen der Ressourcenplanung \\
+        0.6 & 11.05.2020 & LWI & Änderung R3/M3 in der Risikoanalyse \\
+        0.7 & 12.05.2020 & LWI & Änderung in der Risikoanalyse + Grafik \\
         0.8 & 13.05.2020 & OEG & Einfügen des Kommunikationsplans \\
-        0.9 & 19.05.2020 & LWI & Risikomatrix mit Texten erweitern \\
+        0.9 & 15.05.2020 & OEG & Einfügen Anhang Kick-Off Meeting \\
+        0.10 & 19.05.2020 & LWI & Risikomatrix mit Texten erweitern \\
     \end{tabularx}
-	
-	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 	\tableofcontents
-	
-	\clearpage
-	
-	\section{Managment Summary}
+
+\clearpage
+
+
+\section{Managment Summary}
 	\section{Aufgabenstellung}
 	\section{Projektmanagement}
     \subsection{Projektorganisation}
@@ -194,14 +196,14 @@
 		\rowcolors{1}{gray!30}{gray!10}
 		\begin{tabular}{p{0.15\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}}
 			\textbf{Ressourcenname} & \textbf{Typ} & \textbf{Initials} &\textbf{Rolle}&\textbf{Stundensatz}&\textbf{Kosten pro Stunde} \\ \hline
-			
-			Oliver Egloff & Person / Gruppe & OEG & Projektmanagement & CHF 100.00/h & CHF 0.00 \\\hline
-			
-			Leonardo Wiedemeier & Person / Gruppe & LWI & Projectworker & CHF 100.00/h & CHF 0.00 \\\hline
-			
-			Samuel Salomon & Person / Gruppe & SSA & Projektworker & CHF 100.00/h & CHF 0.00 \\\hline
-			
-			Stakeholder & Person / Gruppe & S & Gremium & CHF 0.00 & CHF 0.00 \\
+
+            Oliver Egloff & Person / Gruppe & OEG & Projektmanagement & CHF 100.00/h & CHF 0.00 \\\hline
+
+            Leonardo Wiedemeier & Person / Gruppe & LWI & Projectworker & CHF 100.00/h & CHF 0.00 \\\hline
+
+            Samuel Salomon & Person / Gruppe & SSA & Projektworker & CHF 100.00/h & CHF 0.00 \\\hline
+
+            Stakeholder & Person / Gruppe & S & Gremium & CHF 0.00 & CHF 0.00 \\
 		\end{tabular}
 		\caption{Stundensatz}
 		\label{fig:stundensatz}
@@ -230,39 +232,40 @@
 	Die ABBTS hat sich entschieden auf den Prototypen der Visual Board GmbH aufzubauen und die Spiellogic für ein Tic-Tac-Toe Spiel umzusetzen.
 	Es soll die Möglichkeit bestehen das mehrere Spieler, auf verschiedenen Endgeräten, gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgiebt. Hier für werden wir das komplette Vorgänger Projekt verwenden, da die Matrix bereits einsatzbereit ist. Es werden allenfalls Schnittstellen angepasst oder neue erstellt.
 	Zusätzlich zur implementierung der Spiellogic, soll diese auch auf einen Webserver laufen und so erreichbar gemacht werden.
-	
-	Die Visual Board GmbH wird daher im Rahmen des Projektes die Spiellogic mit Benutzeroberfläche implementieren und den nötigen Webserver einrichten. Für diese Arbeiten stehen 300 Arbeitsstunden der kompletten Projektabwicklung zur Verfügung.
-		
-	\section{Zielsetzung}
+
+    Die Visual Board GmbH wird daher im Rahmen des Projektes die Spiellogic mit Benutzeroberfläche implementieren und den nötigen Webserver einrichten. Für diese Arbeiten stehen 300 Arbeitsstunden der kompletten Projektabwicklung zur Verfügung.
+
+
+\section{Zielsetzung}
 	\section{Lösungssuche}
 	\section{Lösungswahl}
 	\section{Detailkonzept}
 	\section{Realisierung}
 	\newpage
 	\section{Wirtschaftlichkeit und Risikoanalyse}
-	
-	\subsection{Risikoanalyse}
+
+\subsection{Risikoanalyse}
 	\subsubsection{Risiken}
-	
-	\begin{table}[h]
+
+\begin{table}[h]
 		\centering
 		\rowcolors{1}{gray!30}{gray!10}
 		\begin{tabular}{p{0.02\textwidth}|p{0.45\textwidth}|p{0.45\textwidth}}
 			\textbf{Id} & \textbf{Risiko Beschreibung} & \textbf{Möglicher Schade} \\ \hline
-			
-			R1 & Kosteneinschätzungen werden überschritten & Projekt wird teurer als ursprünglich geplant. Projektbudget kann nicht eingehalten werden. \\ \hline
-			
-			R2 & Mitarbeiterausfall & Projektziele können nicht eingehalten werden. Die anderen Mitarbeiter müssen vermehrt Überzeit machen. \\ \hline
-			
-			R3 & Hardwareausfall & Nach Ausfall muss ausgetauscht / repariert werden was zu Verschiebungen im Zeitplan führen kann \\ \hline
-			
-			R4 & Projektplan wurde zu sportlich geschätzt. & Meilensteine/Projektziele können nicht eingehalten werden, was zu Verschiebungen im Zeitplan führen kann. \\ \hline
-			
-			R5 & Naturkatastrophe & Verlust von Hardware, Code, Räumlichkeiten. Ausfall von Mitarbeitern. Es kann vorkommen das der Projektplan nicht eingehalten werden kann oder es zur nicht Durchführung des Projektes kommen. \\ \hline
-			
-			R6 & Fortschrittsverlust durch falsche Anwendung von Hilfsmitteln (z.B. falsche Versionierung von Dokumenten und Code) & Es geht sehr viel Zeit verloren, um die verlorene Arbeit wieder aufzuholen. Projektziele und Projektplan könnten damit gefährdet sein. \\ \hline
-			
-			R7 & COVID-19 & Die aktuelle Pandemie kann noch unbekannte Risiken und Einschränkungen mit sich ziehen. \\
+
+            R1 & Kosteneinschätzungen werden überschritten & Projekt wird teurer als ursprünglich geplant. Projektbudget kann nicht eingehalten werden. \\ \hline
+
+            R2 & Mitarbeiterausfall & Projektziele können nicht eingehalten werden. Die anderen Mitarbeiter müssen vermehrt Überzeit machen. \\ \hline
+
+            R3 & Hardwareausfall & Nach Ausfall muss ausgetauscht / repariert werden was zu Verschiebungen im Zeitplan führen kann \\ \hline
+
+            R4 & Projektplan wurde zu sportlich geschätzt. & Meilensteine/Projektziele können nicht eingehalten werden, was zu Verschiebungen im Zeitplan führen kann. \\ \hline
+
+            R5 & Naturkatastrophe & Verlust von Hardware, Code, Räumlichkeiten. Ausfall von Mitarbeitern. Es kann vorkommen das der Projektplan nicht eingehalten werden kann oder es zur nicht Durchführung des Projektes kommen. \\ \hline
+
+            R6 & Fortschrittsverlust durch falsche Anwendung von Hilfsmitteln (z.B. falsche Versionierung von Dokumenten und Code) & Es geht sehr viel Zeit verloren, um die verlorene Arbeit wieder aufzuholen. Projektziele und Projektplan könnten damit gefährdet sein. \\ \hline
+
+            R7 & COVID-19 & Die aktuelle Pandemie kann noch unbekannte Risiken und Einschränkungen mit sich ziehen. \\
 		\end{tabular}
 
         \caption{Risiken}
@@ -281,8 +284,8 @@
 		\rowcolors{1}{gray!30}{gray!10}
 		\begin{tabular}{p{0.03\textwidth}|p{0.3\textwidth}|p{0.2\textwidth}|p{0.1\textwidth}|p{0.2\textwidth}}
 			\textbf{Nr.} & \textbf{Was?} & \textbf{Wer mit wem?} & \textbf{Wie viel?} & \textbf{Wann?} \\ \hline
-			
-			M1 & Regelmässige Kontrolle der Kostenfortschritte sowie die Einplanung von Reserven & Oliver Egloff, Leonardo Wiedemeier & & Immer zu Beginn einer neuen Phase \\ \hline
+
+            M1 & Regelmässige Kontrolle der Kostenfortschritte sowie die Einplanung von Reserven & Oliver Egloff, Leonardo Wiedemeier & & Immer zu Beginn einer neuen Phase \\ \hline
 
 			M2 & Einfordern eines Ferienabwesenheitsantrages sowie die Planung aller Ressourcen. Zudem sollte ein regelmässiger Know-How Transfer stattfinden. & Oliver Egloff, Leonardo Wiedemeier & & Bei Ferienabwesenheit \\ \hline
 
@@ -313,20 +316,31 @@
 	Die Risikomatrix zeigt auf wie, die von uns definierten und eingeschätzten, die Risiken (gelbe Kugeln) nach Anwendung der Massnahmen (Schwarze Pfeile) entschärft und neu eingestuft werden (blaue Kugeln).
 
 	\newpage
-	
-	\section{Abschluss}
-	\section{Abbildungsverzeichnis}
-	\listoffigures
-	
-	\section{Tabellenverzeichnis}
-	\listoftables
-	
-	
-	\section{Selbstständigkeitserklärung}
-	
-	\section{Anhang}
-	
-	
-	
+
+
+\section{Abschluss}
+
+
+\section{Abbildungsverzeichnis}
+\listoffigures
+
+
+\section{Tabellenverzeichnis}
+\listoftables
+
+
+\section{Selbstständigkeitserklärung}
+
+
+\section{Anhang}
+\newpage
+
+\subsubsection{Präsentationen}
+\caption{Kick-Off Meeting vom 13.05.2020}
+    % commented out because of compiling speed
+    % \includepdf[pages=-, landscape=true, pagecommand={}]{../../05_Anhänge/01_Präsentationen/01_KickOff_Meeting/Gruppe_1_SA_KickOff_Meeting_VisualBoardGmbH.pdf}
+
+
+
 \end{document}
 
