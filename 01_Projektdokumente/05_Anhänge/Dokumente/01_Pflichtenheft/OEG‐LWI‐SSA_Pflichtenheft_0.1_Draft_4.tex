@@ -1,0 +1,112 @@
+\documentclass[11pt, a4paper, twoside]{article}
+
+\usepackage[table]{xcolor}
+\usepackage{geometry} %Set page layouts
+\usepackage{pdfpages} %Include pdf files
+\usepackage{fancyhdr} %Header and Footer
+\usepackage{graphicx} %Inlcude graphics
+\usepackage{lastpage} %Reference the number of pages in your LATEX
+\usepackage[german]{babel}
+\usepackage{fontspec}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{tabularx}
+\usepackage{import}
+\usepackage{lscape}
+\usepackage{pdflscape}
+% \usepackage{showframe} %For debugging
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+\geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=35pt, includeheadfoot, portrait}
+\setmainfont{Calibri}
+
+%Path relative to the .tex file containing the \includegraphics command
+\graphicspath{{01_Grafiken/}}
+
+\tocloftpagestyle{fancy}
+
+%Define variables for document
+\newcommand{\shortAuthor}{OEG-LWI-SSA}
+\newcommand{\dstate}{Draft} %Draft, Progress, Closed
+\newcommand{\dversion}{0.1}
+\newcommand{\dname}{\shortAuthor\_20200428\_\dversion\_\dstate\_\pageref{LastPage}}
+
+\begin{document}
+
+    \section*{Pflichtenheft}
+    \newpage
+    %Define header & footer for twoside documents
+    \fancyhead{} %Clear all header fields
+    \fancyhead[L]{\includegraphics{header_img_abb2.png}}
+    \fancyfoot{} %Clear all footer fields
+    \fancyfoot[RO, LE]{\small \thepage \textbar \pageref{LastPage}}
+    \fancyfoot[LO, RE]{\small \dname}
+    \renewcommand{\footrulewidth}{0.4pt}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \pagestyle{fancy}
+
+
+    \section*{Dokumentenmanagement}
+
+    \begin{tabularx}{\columnwidth}{l X}
+        \textbf{Erstellungsdatum:} & 14.06.2020 \\
+        \textbf{Autotren:} & Oliver Egloff (OEG), Samuel Salomon (SSA), Leonardo Wiedemeier (LWI) \\
+        \textbf{Dateiname:} &\dname
+    \end{tabularx}
+
+    \section*{Änderungsverzeichnis}
+    \begin{tabularx}{\columnwidth}{l l l X}
+        \textbf{Version} & \textbf{Datum} & \textbf{Autor} & \textbf{Beschreibung}\\
+        0.1 & 14.06.2020 & OEG & Pflichtenheft erstellt \\
+    \end{tabularx}
+
+    \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+    \tableofcontents
+
+    \clearpage
+
+
+    \section{Kurzbeschreibung}
+
+
+    \section{System- und Sortimentsanforderungen}
+
+
+    \section{Einsatzbedingungen und Applikation}
+
+    \subsection{Einsatzbereich}
+
+    \subsection{Einsatzbedingungen}
+
+
+    \section{Anforderungen an das System / Produkt / Dienstleistungen}
+
+
+    \section{Anforderungen an den Betrieb / Produktion und Beschaffung}
+
+
+    \section{Anforderungen an Service, Reparatur und Entsorgung}
+
+
+    \section{Beilage}
+
+
+    \section{Vertrag}
+    \begin{tabularx}{\columnwidth}{l l l X}
+        \textbf & \textbf{Datum, Ort} & \textbf{Name} & \textbf{Visum} \\
+        & & &   \\
+        \textbf{Projektleiter} & ...................................... & ...................................... & ......................................  \\
+        & & &   \\
+        \textbf{Auftraggeber} & & & \\
+        \textbf{(ABB Technikerschule)} & ...................................... & ...................................... & ...................................... \\
+    \end{tabularx}
+
+\end{document}
+
