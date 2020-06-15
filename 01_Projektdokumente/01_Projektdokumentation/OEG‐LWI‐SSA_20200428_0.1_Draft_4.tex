@@ -288,7 +288,7 @@
 
 	\newpage
 
-	\subsection{Variante 1}
+	\subsection{Lösung //TODO needs new name}
 	
 	\begin{figure}[!hbt]
 		\centering
@@ -297,11 +297,33 @@
 		\label{fig:architektur}
 	\end{figure}
 
-	Da es sich um ein Nachfolgerprojekt der LED-RGB-Matrix handelt und es die Matrix als unabhängiger Service programmiert wurde ist dieser Teil bereits "abgeschlossen". Es handelt sich um eine Rest-API welche vom jetzigen Projekt einfach angesprochen werden kann.
-	Der Tic-Tac-Toe Service (Spiellogik + Datenbank) wird das Backend bilden. Es wird auf einer Seite via JSON mit der LED-RGB-Matrix API kommunizieren und auf der anderen via MQTT mit den jeweiligen Clients. Hier muss noch entschieden werden mit welcher Technologie, Java oder PHP, das Backend umgesetzt wird. Bei der Datenbank wird es sich um MYSQL handel welche mit der jeweiligen Sprache dann angesprochen wird.
+	Es wurde eine Variante erstellt welche durch das Vorgängerprojekt, der LED-RGB-Matrix, den Rahmenbedingungen und dem Architekturvorschlag (Abbildung: \ref{fig:architektur}) definiert wurde.
+	\\ \\
+	Die LED-RGB-Matrix wurde als unabhängiger Service programmiert und kann daher ohne Anpassung in das laufende Projekt integriert werden. Es handelt sich um eine Rest-API, an welche Bilder mit gewünschten Transformationsparamtern gesendet und dargestellt werden können.
+	\\ \\
+	Das Tic-Tac-Toe Game (Spiellogik + Datenbank) wird das Backend bilden. Dies beinhaltet folgende Aufgaben:
+	\begin{itemize}
+		\item Ist für die gesamte Spiellogik zuständig
+		\begin{itemize}
+			\item Spielverlauf, Spielerinformation und Spielstand mit der Datenbank verwalten
+			\item Assets verwalten
+			\item Reagieren auf Zustandsänderungen des Frontends
+		\end{itemize}
+		\item Kommunizieren mit dem Frontend (über MQTT) und rendern der View
+		\item Aufbereiten und senden des Spielfeldes an die LED-RGB-Matrix (REST)
+	\end{itemize}
 	
-	Im Frontend steht die Entscheidung der Programmiersprache auch noch offen, Vue.js oder React.js.
-	Das Frontend wird fähig sein via MQTT mit dem Backend zu kommunizieren und so dynamisch die View für den Benutzer anpassen. Weiteres ist die View responsive für Mobile wie auch Computer.
+	Bei der Datenbank wird es sich um MYSQL handel, was vom Kunden so gewünscht wurde.
+	\\
+	Das Frontend wird über MQTT mit dem Backend kommunizieren und die interaktive Spieloberfläche sein über welche dann Tic-Tac-Toe gespielt werden kann. Sie reagiert dynamisch auf die Eingaben des Benutzers und passt die View an.
+	\\
+	\subsubsection{Varianten}
+	Es wurde eine Lösung erarbeitet welche mit Verschiedenen Programmiersprachen umgesetzt werden kann.
+	\paragraph{Frontend}
+	Im Frontend kann jeweils mit Vue.js oder React.js umgesetzt werden.
+	
+	\paragraph{Backend}
+	Im Backend besteht die Möglichkeit es mit Java oder PHP zum implementieren.
 
 	\subsection{Morphologische Analyse (//TODO Mit Herrn Hirschi absprechen öb nötig)}
 	
@@ -311,15 +333,42 @@
 	Die Lösungswahl wird aufgrund der Zielerreichung, Nutzwertanalyse und den weiteren Risiken getroffen.
 	\subsection{Zielerreichung}
 	In der Zielerreichung wird analysiert, ob die Lösungsvarianten die geforderten Systemziele erfüllen können. So werden ungeeignete Lösungen bereits in einer frühen Phase aus der Studie herausgefiltert.
+	
+	\subsubsection{Frontend}
+	
 	\begin{table}[h]
 		\centering
 		\rowcolors{1}{gray!30}{gray!10}
 		\begin{tabular}{p{0.25\textwidth}|p{0.2\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}}
-			\textbf{Systemziel-Nr.} & \textbf{Gewicht (M,S,K)} & \textbf{V1} & \textbf{V2} \\ \hline
-			& & &
+			\textbf{Systemziel-Nr.} & \textbf{Gewicht (M,S,K)} & \textbf{Vue.js} & \textbf{React.js} \\ \hline
+			1 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			2 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			5 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			7 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			8 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
 		\end{tabular}
-		\caption{Zielerreichung}
-		\label{fig:zielerreichung}
+		\caption{Zielerreichung des Frontend}
+		\label{fig:zielerreichung_frontend}
+	\end{table}
+
+	
+	\subsubsection{Backend}
+	
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{gray!30}{gray!10}
+		\begin{tabular}{p{0.25\textwidth}|p{0.2\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}}
+			\textbf{Systemziel-Nr.} & \textbf{Gewicht (M,S,K)} & \textbf{Java} & \textbf{PHP} \\ \hline
+			1 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			2 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			3 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			4 & S & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			6 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			7 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			8 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+		\end{tabular}
+		\caption{Zielerreichung des Backend}
+		\label{fig:zielerreichung_backend}
 	\end{table}
 	
 	\newpage
@@ -329,7 +378,6 @@
 	Die Gewichtung wird in Form einer Zahl zwischen 1-10 definiert, wobei die 1 die tiefste und 10 die höchste Gewichtung ist.
 	\begin{table}[h]
 		\centering
-		%\rowcolors{1}{gray!30}{gray!10}
 		\begin{tabular}{p{0.4\textwidth}|p{0.25\textwidth}|p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth}}
 			\multirow{2}{*}{\textbf{Kriterien}} & \multirow{2}{*}{\textbf{Gewichtung}} & \multicolumn{2}{c}{\textbf{Variante 1: PHP}} & \multicolumn{2}{c}{\textbf{Variante 2: Java}} \\
 			& & \textbf{Punkte} & \textbf{Bewertung} & \textbf{Punkte} & \textbf{Bewertung}  \\ \hline
