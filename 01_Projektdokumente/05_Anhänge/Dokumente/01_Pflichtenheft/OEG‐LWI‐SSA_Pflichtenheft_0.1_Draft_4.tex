@@ -77,6 +77,7 @@
     Das Unternehmen Visual GmbH soll für die ABB Technikerschule ein weiteres Projekt realisieren. \\
     Der Prototyp aus dem letzten Projekt soll weiter ausgebaut werden. Im Unterschied zum letzten Projekt wird hier mehr Wert auf die Entwicklung und das Produkt gelegt.
     Die Idee ist es, das Projekt möglichst realitätsnah zu gestalten.
+    \clearpage
 
 
     \section{Allgemeines}
@@ -94,21 +95,48 @@
     Herr Jenzer begleitet als Dozent der Klasse B20-if die Semesterarbeit in der Rolle des Projektsteuerungs-Gremium. \\
 
     \subsection{Projektbezug}
-    Das vorliegende Projekt ist ein auf die Semesterarbeit des 3. Semesters aufbauendes Projekt. \\
-    Das Endprodukt aus dem 3. Semesterarbeit, die RGB-LED-Matrix, gilt als Grundbaustein für dieses Projekt. Das Produkt wird um ein Tic-Tac-Toe Spiel ausgebaut.
+    Die Visual Board GmbH hat bereits mit der ABBTS (Rolf Hirschi) zusammengearbeitet und
+    einen Prototypen erstellt um Bilder auf einer RGB-LED-Matrix anzuzeigen.
+    Das vorliegende Projekt ist ein auf jenes Projekt (aus der Semesterarbeit des 3. Semesters) aufbauendes Projekt.
+    Die RGB-LED-Matrix wurde funktionsfähig gestellt und es sollte ein Programm geschrieben werden um Bilder
+    wie gewünscht auf der Matrix anzuzeigen. Darunter ist das korrekte transformieren, aufbereiten
+    und weitergeben an die Matrix zu verstehen.
+    Der Prototyp wurde von der Visual Board GmbH mit einer REST-Api in Java umgesetzt,
+    welche auf dem Raspberry Pi der Hardware, oder einem externen Windows Computer läuft.
+    So wurde die RGB-LED-Matrix, dem Netwerk in welchem sie sich befindet hat, zur verfügung gestellt.
+    Und es ist möglich mit den korrekten requests”Bilder direkt oder mit dem Webinterface
+    an die Matrix zu schicken.
+    Der Visual Board GmbH wurde die komplette Hardware durch die ABBTS gestellt wurde.
+    \newline
+    Teil der Projektorganisiton waren:
+    \begin{itemize}
+        \item ABBTS (Rolf Hirschi) als Auftraggeber
+        \item Visual Board GmbH als Arbeitnehmer
+        \subitem Samuel Salomon hat die Position als Projektleiter eingenommen
+        \subitem Oliver Egloff hat die Position als stellvertretender Projektleiter eingenommen
+        \subitem Leonardo Wiedemeier hat die Position als Projektmitglied eingenommen
+        \item Herr Künzli und Herr Jenzer jeweils als Mitglied des PSG (Projektsteuerungs-Gremium)
+        \item Herr Künzli hatte zudem die Position des PPC (Projektportfolio-Controller)
+    \end{itemize}
+    \\
+    Das Endprodukt aus dem 3. Semesterarbeit, die RGB-LED-Matrix, gilt als Grundbaustein für dieses Projekt.
+    Das Produkt wird um ein Tic-Tac-Toe Spiel ausgebaut.
 
-    \subsection{Abkürzungen}
+    \clearpage
 
-    \begin{tabularx}{\columnwidth}{l X}
-        \textbf{Abkürzung} & \textbf{Beschreibung} \\
-        PL & Projektleiter
-        OEG & Oliver Egloff \\
-        SSA & Samuel Salomon \\
-        LWI & Leonardo Wiedemeier \\
-    \end{tabularx}
-
-    \newpage
     \begin{landscape}
+        \subsection{Abkürzungen}
+
+        \begin{tabularx}{\columnwidth}{l X}
+            \textbf{Abkürzung} & \textbf{Beschreibung} \\
+            PL & Projektleiter \\
+            PM & Projektmitglied \\
+            OEG & Oliver Egloff \\
+            SSA & Samuel Salomon \\
+            stv & Stellvertreter[in] \\
+            LWI & Leonardo Wiedemeier \\
+        \end{tabularx}
+
         \subsection{Teams und Abkürzungen}
         In diesem Absatz sind alle wichtigen Rollen, welche für den Auftraggeber relevant sind aufgelistet.
         \\
@@ -122,12 +150,15 @@
             Projektmitglied & Samuel Salomon & samuel.salomon@stud.abbts.ch & Visual Board GmbH \\
         \end{tabularx}
     \end{landscape}
+    \clearpage
 
 
     \section{Konzept}
 
     \subsection{Ziele des Anbieters}
-    Hier wird aufgeführt, welche Ziele der Auftragnehmer verfolgt. Auch wenn das Produkt letztendlich vom Endanwender genutzt wird, sollten die Ziele des Anbieters nicht vernachlässigt werden. Diese können die Anforderungen ebenso stark beeinflussen wie die Ziele der künftigen Anwender.
+    Das Ziel der Visual Board GmbH und deren Projektmitglieder ist es, die Fähigkeiten der Projektmitglieder unter Beweis zu stellen und zu vertiefen.
+    Jedes Projektmitglied besitzt gute Erfahrungen in seinem Fachgebiet und kann dieses Wissen seinen Projektkollegen weitervermitteln.
+    Des Weiteren möchten wir die Zusammenarbeit innerhalb der Projektmitarbeiter aber auch mit dem Arbeitgeber stärken, um zukünftige Projekte noch besser zu bewältigen.
 
     \subsection{Ziele und Nutzen des Anwenders}
 
