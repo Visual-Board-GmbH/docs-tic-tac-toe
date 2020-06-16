@@ -333,6 +333,8 @@
 	Die Lösungswahl wird aufgrund der Zielerreichung, Nutzwertanalyse und den weiteren Risiken getroffen.
 	\subsection{Zielerreichung}
 	In der Zielerreichung wird analysiert, ob die Lösungsvarianten die geforderten Systemziele erfüllen können. So werden ungeeignete Lösungen bereits in einer frühen Phase aus der Studie herausgefiltert.
+	\\
+	Es wurden jeweils nur die Umgebungsrelevanten Systemziele berücksichtigt.
 	
 	\subsubsection{Frontend}
 	
@@ -376,19 +378,48 @@
 	\begin{landscape}
 	\subsection{Nutzwertanalyse}
 	Die Gewichtung wird in Form einer Zahl zwischen 1-10 definiert, wobei die 1 die tiefste und 10 die höchste Gewichtung ist.
+	
+	 \subsubsection{Frontend}
+	
 	\begin{table}[h]
 		\centering
 		\begin{tabular}{p{0.4\textwidth}|p{0.25\textwidth}|p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth}}
-			\multirow{2}{*}{\textbf{Kriterien}} & \multirow{2}{*}{\textbf{Gewichtung}} & \multicolumn{2}{c}{\textbf{Variante 1: PHP}} & \multicolumn{2}{c}{\textbf{Variante 2: Java}} \\
+			\multirow{2}{*}{\textbf{Kriterien}} & \multirow{2}{*}{\textbf{Gewichtung}} & \multicolumn{2}{c}{\textbf{Variante 1: Vue.js}} & \multicolumn{2}{c}{\textbf{Variante 2: React.js}} \\
 			& & \textbf{Punkte} & \textbf{Bewertung} & \textbf{Punkte} & \textbf{Bewertung}  \\ \hline
-			Risiken & 123 & & & &  \\ \hline
-			Nachhaltigkeit & 123 & & & &  \\ \hline
-			& X & & & & \\ \hline
+			Vorhandenes Know-How & 6 & 2 & 12 & 2 & 12  \\ \hline
+			Geringer Entwicklungsaufwand & 7 & 8 & 56 & 6 & 42 \\ \hline
+			Community / Dokumentation & 9 & 9 & 81 & 8 & 72 \\ \hline
+			Verfügbare Libraries & 5 & 10 & 50 & 10 & 50 \\ \hline
+			Zukunftssicher / Vortlaufende Entwicklung & 8 & 10 & 80 & 10 & 80 \\ \hline
+			Erweiterbarkeit & 5 & & & & \\ \hline
 			\textbf{Nutzwert} & & & \cellcolor{orange} xxx & & \cellcolor{green} \\ \hline
 		\end{tabular}
-		\caption{Nutzwerkanalyse}
-		\label{fig:nutzwerkanalyse}
+		\caption{Nutzwerkanalyse Frontend}
+		\label{fig:nutzwerkanalyse_frontend}
 	\end{table}
+
+	Unsere Recherche wurde hauptsächlich von der folgenden Seite bezogen: \href{https://www.codica.com/blog/react-vs-vue-2019/#react-vs-vue-comparison-summary}{https://codica.com}
+
+	\end{landscape}
+
+	\newpage
+	
+	\begin{landscape}
+		\subsubsection{Backend}
+		
+		\begin{table}[h]
+			\centering
+			\begin{tabular}{p{0.4\textwidth}|p{0.25\textwidth}|p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth}}
+				\multirow{2}{*}{\textbf{Kriterien}} & \multirow{2}{*}{\textbf{Gewichtung}} & \multicolumn{2}{c}{\textbf{Variante 1: PHP}} & \multicolumn{2}{c}{\textbf{Variante 2: Java}} \\
+				& & \textbf{Punkte} & \textbf{Bewertung} & \textbf{Punkte} & \textbf{Bewertung}  \\ \hline
+				Risiken & 123 & & & &  \\ \hline
+				Nachhaltigkeit & 123 & & & &  \\ \hline
+				& X & & & & \\ \hline
+				\textbf{Nutzwert} & & & \cellcolor{orange} xxx & & \cellcolor{green} \\ \hline
+			\end{tabular}
+			\caption{Nutzwerkanalyse Backend}
+			\label{fig:nutzwerkanalyse_backend}
+		\end{table}
 	\end{landscape}
 
 	\newpage
