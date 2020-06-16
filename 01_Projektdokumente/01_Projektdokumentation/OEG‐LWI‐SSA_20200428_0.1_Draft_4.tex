@@ -75,6 +75,7 @@
 		0.8 & 19.05.2020 & LWI & Risikomatrix mit Texten erweitern \\
 		0.9 & 06.07.2020 & LWI & Lösungssuche und Lösungswahl vorbereitet \\
 		0.10 & 08.07.2020 & SSA, OEG, LWI & Mind Map für die Lösungssuche erstellt\\
+		0.11 & 16.06.2020 & LWI & fertigstellen der Lösungssuche und Lösungswahl
 	\end{tabularx}
 	
 	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -360,7 +361,7 @@
 		\centering
 		\rowcolors{1}{gray!30}{gray!10}
 		\begin{tabular}{p{0.25\textwidth}|p{0.2\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}}
-			\textbf{Systemziel-Nr.} & \textbf{Gewicht (M,S,K)} & \textbf{Java} & \textbf{PHP} \\ \hline
+			\textbf{Systemziel-Nr.} & \textbf{Gewicht (M,S,K)} & \textbf{PHP} & \textbf{Java} \\ \hline
 			1 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
 			2 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
 			3 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
@@ -391,8 +392,8 @@
 			Community / Dokumentation & 9 & 9 & 81 & 8 & 72 \\ \hline
 			Verfügbare Libraries & 5 & 10 & 50 & 10 & 50 \\ \hline
 			Zukunftssicher / Vortlaufende Entwicklung & 8 & 10 & 80 & 10 & 80 \\ \hline
-			Erweiterbarkeit & 5 & & & & \\ \hline
-			\textbf{Nutzwert} & & & \cellcolor{orange} xxx & & \cellcolor{green} \\ \hline
+			Erweiterbarkeit & 5 & 9 & 45 & 9 & 45 \\ \hline
+			\textbf{Nutzwert} & & & \cellcolor{green} 324 & & \cellcolor{orange} 301 \\ \hline
 		\end{tabular}
 		\caption{Nutzwerkanalyse Frontend}
 		\label{fig:nutzwerkanalyse_frontend}
@@ -412,10 +413,13 @@
 			\begin{tabular}{p{0.4\textwidth}|p{0.25\textwidth}|p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth}}
 				\multirow{2}{*}{\textbf{Kriterien}} & \multirow{2}{*}{\textbf{Gewichtung}} & \multicolumn{2}{c}{\textbf{Variante 1: PHP}} & \multicolumn{2}{c}{\textbf{Variante 2: Java}} \\
 				& & \textbf{Punkte} & \textbf{Bewertung} & \textbf{Punkte} & \textbf{Bewertung}  \\ \hline
-				Risiken & 123 & & & &  \\ \hline
-				Nachhaltigkeit & 123 & & & &  \\ \hline
-				& X & & & & \\ \hline
-				\textbf{Nutzwert} & & & \cellcolor{orange} xxx & & \cellcolor{green} \\ \hline
+				Vorhandenes Know-How & 6 & 7 & 42 & 8 & 48  \\ \hline
+				Geringer Entwicklungsaufwand & 7 & 7 & 49 & 9 & 63 \\ \hline
+				Community / Dokumentation & 9 & 9 & 81 & 8 & 72 \\ \hline
+				Verfügbare Libraries & 5 & 10 & 50 & 10 & 50 \\ \hline
+				Zukunftssicher / Fortlaufende Entwicklung & 8 & 10 & 80 & 10 & 80 \\ \hline
+				Erweiterbarkeit & 5 & 9 & 45 & 9 & 45 \\ \hline
+				\textbf{Nutzwert} & & & \cellcolor{orange} 347 & & \cellcolor{green} 358 \\ \hline
 			\end{tabular}
 			\caption{Nutzwerkanalyse Backend}
 			\label{fig:nutzwerkanalyse_backend}
@@ -425,18 +429,38 @@
 	\newpage
 	
 	\subsection{Weitere Risiken}
+	
+	\subsubsection{Frontend}
+	
 	\begin{table}[h]
 		\centering
 		\rowcolors{1}{gray!30}{gray!10}
 		\begin{tabular}{p{0.24\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}}
-			\textbf{Beurteilungskriterien} & \textbf{V1} & \textbf{V2} \\ \hline
-			Risiken & & \\ \hline
-			Nachhaltigkeit & &
+			\textbf{Beurteilungskriterien} & \textbf{Vue.js} & \textbf{React.js} \\ \hline
+			Risiken & Durch das geringe Know-How kann es zu Verspätungen in der Entwicklung kommen & Durch das geringe Know-How kann es zu Verspätungen in der Entwicklung kommen \\ \hline
+			Nachhaltigkeit & OpenSource & OpenSource
 		\end{tabular}
-		\caption{Weitere Risiken}
-		\label{fig:weitere-risiken}
+		\caption{Weitere Risiken im Frontend}
+		\label{fig:weitere-risiken_frontend}
 	\end{table}
+
+	\subsubsection{Backend}
+
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{gray!30}{gray!10}
+		\begin{tabular}{p{0.24\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}}
+			\textbf{Beurteilungskriterien} & \textbf{PHP} & \textbf{Java} \\ \hline
+			Risiken & Durch das geringe Know-How gewisser Mitglieder, kann es zu Verspätungen in der Entwicklung kommen & Durch das geringe Know-How gewisser Mitglieder, kann es zu Verspätungen in der Entwicklung kommen \\ \hline
+			Nachhaltigkeit & OpenSource & OpenSource und Proprietäre möglich
+		\end{tabular}
+		\caption{Weitere Risiken im Backend}
+		\label{fig:weitere-risiken_backend}
+	\end{table}
+
 	\subsection{Empfehlung}
+	Das Projektteam hat bereits Know-How in JavaScrit wie auch teils in PHP und Java.
+	Da in den Nutzwertanalysen klar heraus geht das für dass Frontend \textbf{Vue.js} und im Backend \textbf{Java} verwendet werden sollte, wird dies auch von uns Empfohlen.
 	
 	\section{Detailkonzept}
 	\section{Realisierung}
