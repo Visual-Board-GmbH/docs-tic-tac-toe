@@ -12,9 +12,10 @@
 \usepackage{hyperref}
 \usepackage{tocloft}
 \usepackage{tabularx}
-\usepackage{makecell}
 \usepackage{import}
 \usepackage{lscape}
+\usepackage{multirow}
+\usepackage{makecell}
 \usepackage{pdflscape}
 % \usepackage{showframe} %For debugging
 
@@ -64,23 +65,27 @@
 
 \section*{Änderungsverzeichnis}
 	\begin{tabularx}{\columnwidth}{l l l X}
-        \textbf{Version} & \textbf{Datum} & \textbf{Autor} & \textbf{Beschreibung}\\
-        0.1 & 28.04.2020 & SSA & Dokumentation und Gliederung erstellt \\
-        0.2 & 04.05.2020 & LWI & Einfügen der Risikoanalyse \\
-        0.3 & 06.05.2020 & LWI & Einfügen der Situationsanalyse \\
-        0.4 & 07.05.2020 & LWI & Einfügen der Rollenbeschreibung + kleine Design Änderungen \\
-        0.5 & 08.05.2020 & LWI & Einfügen der Ressourcenplanung \\
-        0.6 & 11.05.2020 & LWI & Änderung R3/M3 in der Risikoanalyse \\
-        0.7 & 12.05.2020 & LWI & Änderung in der Risikoanalyse + Grafik \\
-        0.8 & 13.05.2020 & OEG & Einfügen des Kommunikationsplans \\
-        0.9 & 15.05.2020 & OEG & Einfügen Anhang Kick-Off Meeting \\
-        0.10 & 19.05.2020 & LWI & Risikomatrix mit Texten erweitern \\
-        0.11 & 17.06.2020 & SSA & Zieldefinition \\
-    \end{tabularx}
-
-\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-
+		\textbf{Version} & \textbf{Datum} & \textbf{Autor} & \textbf{Beschreibung}\\
+		0.1 & 28.04.2020 & SSA & Dokumentation und Gliederung erstellt \\
+		0.2 & 04.05.2020 & LWI & Einfügen der Risikoanalyse \\
+		0.3 & 06.05.2020 & LWI & Einfügen der Situationsanalyse \\
+		0.4 & 07.05.2020 & LWI & Einfügen der Rollenbeschreibung + kleine Design Änderungen \\
+		0.5 & 08.05.2020 & LWI & Einfügen der Ressourcenplanung \\
+		0.6 & 11.05.2020 & LWI & Änderung R3/M3 in der Risikoanalyse \\
+		0.7 & 12.05.2020 & LWI & Änderung in der Risikoanalyse + Grafik \\
+		0.8 & 13.05.2020 & OEG & Einfügen des Kommunikationsplans \\
+		0.9 & 15.05.2020 & OEG & Einfügen Anhang Kick-Off Meeting \\
+		0.10 & 19.05.2020 & LWI & Risikomatrix mit Texten erweitern \\
+		0.11 & 06.06.2020 & LWI & Lösungssuche und Lösungswahl vorbereitet \\
+		0.12 & 08.06.2020 & SSA, OEG, LWI & Mind Map für die Lösungssuche erstellt\\
+		0.13 & 16.06.2020 & LWI & fertigstellen der Lösungssuche und Lösungswahl \\
+		0.14 & 17.06.2020 & SSA & Zieldefinition \\
+	\end{tabularx}
+	
+	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+	
 	\tableofcontents
+
 
 \clearpage
 
@@ -153,7 +158,7 @@
 		\centering
 		\rowcolors{1}{gray!30}{gray!10}
 		\begin{tabular}{p{0.1\textwidth}|p{0.34\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}}
-			\textbf{Nummer} & \textbf{Leistung} & \textbf{ABBTS} & \textbf{SSA} & \textbf{OEG} & \textbf{LWI} \\ \hline
+			\textbf{Nr.} & \textbf{Leistung} & \textbf{ABBTS} & \textbf{SSA} & \textbf{OEG} & \textbf{LWI} \\ \hline
 			L1 & Projektanalyse & & & &  \\ \hline
 			AP1.1 & Situationsanalyse & I & M & M & D  \\ \hline
 			AP1.2 & Anforderungskatalog  & I & D & M & M  \\ \hline
@@ -212,30 +217,31 @@
 		\label{fig:stundensatz}
 	\end{table}
 
-    \section{Situationsanalyse}
+	\newpage
+	
+	\section{Situationsanalyse}
+	\subsection{Vorgänger Projekt}
+	Die Visual Board GmbH hat bereits mit der ABBTS (Rolf Hirschi) zusammengearbeitet und einen Prototypen erstellt um Bilder auf einer RGB-LED-Matrix anzuzeigen.
+	Die RGB-LED-Matrix wurde funktionsfähig gestellt und es sollte ein Programm geschrieben werden um Bilder wie gewünscht auf der Matrix anzuzeigen. Darunter ist das korrekte transformieren, aufbereiten und weitergeben an die Matrix zu verstehen.
+	
+	Der Prototyp wurde von der Visual Board GmbH mit einer REST-Api in Java umgesetzt welche auf dem Raspberry Pi der Hardware, oder einem externen Windows Computer läuft.
+	So wurde die RGB-LED-Matrix, dem Netzwerk in welchem sie sich befindet hat, zur Verfügung gestellt. Und es ist möglich mit den korrekten "requests" Bilder direkt oder mit dem Webinterface an die Matrix zu schicken.
+		
+	Der Visual Board GmbH wurde die komplette Hardware durch die ABBTS gestellt wurde.
+	\newline
+	Teil der Projektorganisiton waren:
+	\begin{itemize}
+		\item ABBTS (Rolf Hirschi) als Auftraggeber
+		\item Visual Board GmbH als Arbeitnehmer. Samuel Salomon hat die Position als Projektleiter eingenommen.
+		\item Herr Künzli und Herr Jenzer jeweils als Mitglied des PSG (Projektsteuerungs-Gremium)
+		\item Herr Künzli hatte zudem die Position des PPC  (Projektportfolio-Controller
+	\end{itemize}
 
-    \subsection{Vorgänger Projekt}
-    Die Visual Board GmbH hat bereits mit der ABBTS (Rolf Hirschi) zusammengearbeitet und einen Prototypen erstellt um Bilder auf einer RGB-LED-Matrix anzuzeigen.
-    Die RGB-LED-Matrix wurde funktionsfähig gestellt und es sollte ein Programm geschrieben werden um Bilder wie gewünscht auf der Matrix anzuzeigen. Darunter ist das korrekte transformieren, aufbereiten und weitergeben an die Matrix zu verstehen.
-
-    Der Prototyp wurde von der Visual Board GmbH mit einer REST-Api in Java umgesetzt welche auf dem Raspberry Pi der Hardware, oder einem externen Windows Computer läuft.
-    So wurde die RGB-LED-Matrix, dem Netwerk in welchem sie sich befindet hat, zur verfügung gsetellt. Und es ist möglich mit den korrekten "requests" Bilder direkt oder mit dem Webinterface an die Matrix zu schicken.
-
-    Der Visual Board GmbH wurde die komplette Hardware durch die ABBTS gestellt wurde.
-    \newline
-    Teil der Projektorganisiton waren:
-    \begin{itemize}
-        \item ABBTS (Rolf Hirschi) als Auftraggeber
-        \item Visual Board GmbH als Arbeitnehmer. Samuel Salomon hat die Position als Projektleiter eingenommen.
-        \item Herr Künzli und Herr Jenzer jeweils als Mitglied des PSG (Projektsteuerungs-Gremium)
-        \item Herr Künzli hatte zudem die Position des PPC  (Projektportfolio-Controller
-    \end{itemize}
-
-	\subsection{ Weiteres Vorgehen}
-	Die ABBTS hat sich entschieden auf den Prototypen der Visual Board GmbH aufzubauen und die Spiellogic für ein Tic-Tac-Toe Spiel umzusetzen.
-	Es soll die Möglichkeit bestehen das mehrere Spieler, auf verschiedenen Endgeräten, gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgiebt. Hier für werden wir das komplette Vorgänger Projekt verwenden, da die Matrix bereits einsatzbereit ist. Es werden allenfalls Schnittstellen angepasst oder neue erstellt.
-	Zusätzlich zur implementierung der Spiellogic, soll diese auch auf einen Webserver laufen und so erreichbar gemacht werden.
-
+	\subsection{Weiteres Vorgehen}
+	Die ABBTS hat sich entschieden auf den Prototypen der Visual Board GmbH aufzubauen und die Spiellogik für ein Tic-Tac-Toe Spiel umzusetzen.
+	Es soll die Möglichkeit bestehen das mehrere Spieler, auf verschiedenen Endgeräten, gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgibt. Hier für werden wir das komplette Vorgänger Projekt verwenden, da die Matrix bereits einsatzbereit ist. Es werden allenfalls Schnittstellen angepasst oder neue erstellt.
+	Zusätzlich zur Implementierung der Spiellogik, soll diese auch auf einen Webserver laufen und so erreichbar gemacht werden.
+   
     Die Visual Board GmbH wird daher im Rahmen des Projektes die Spiellogic mit Benutzeroberfläche implementieren und den nötigen Webserver einrichten. Für diese Arbeiten stehen 300 Arbeitsstunden der kompletten Projektabwicklung zur Verfügung.
 
 
@@ -261,7 +267,6 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 \subsubsection{Systemziele}
 \begin{table}[h]
 	\centering
-	
 	\begin{tabularx}{\columnwidth}{l X r}
 		\textbf{\thead{Nr}} & \textbf{\thead{Zielbeschreibung}} & \textbf{\thead{Priorität \\ (M, S, K)}}\\ \Xhline{2pt}
 		1 & Das Tic-Tac-Toe spiel muss Multiplayer fähig sein & M \\ \Xhline{1pt}
@@ -315,7 +320,226 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	\caption{Mehrwert Ziele}
 \end{table}
 	\section{Lösungssuche}
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{01_Grafiken/loesungs_mind_map.png}
+		\caption{Lösungs Mind Map}
+		\label{fig:mind_map}
+	\end{figure}
+	
+	\subsection{Vorstudie zur Erhebung der Programmiersprachen}
+	\subsubsection{Backend}
+	\paragraph{PHP}
+	Eine weit verbreitet Open source Skriptsprache welche zur Laufzeit kompiliert wird. Sie zeichnet sich durch ihre Einfachheit, Geschwindigkeit und Stabilität aus. Es gibt eine umfangreiche Anzahl von Frameworks wie auch eine grosse Community, welche durch Open source ein gewisses Mitspracherecht an der Zukunft der Sprache hat. So können simple Kommandozeilen Scripts wie auch umfangreiche Webapplikationen erstellt werden.  
+	\paragraph{Java}
+	Java ist eine objektorientierte Programmiersprache, mit welcher sich plattformunabhängige Anwendungen entwickeln lassen können. Die Sprache hat sich gut durchgesetzt und ist weit verbreitet. Die Haupteigenschaften der Programmiersprache sind Sicherheit, Robustheit und Einfachheit. Java hat eine Vielzahl an Frameworks und eine grosse Community.
+	\\ \\
+	Beide Sprache bieten eine grosse Community und ein umfangreiches Toolset mit dem die Anforderungen an das System erfüllt werden können. Mit Hilfe einer Nutzwertanalyse wird nun entschieden mit welchen Varianten die Sprachen in der Lösungswahl berücksichtigt werden.
+	
+	\subsubsection{Frontend}
+	\paragraph{Vue.js}
+	Ist ein clientseitiges JavaScript-Webframework zum Erstellen von Single-Page-Webanwendungen nach dem MVVM-Muster, es kann allerdings auch in Multipage Webseiten für einzelne Abschnitte verwendet werden. Serverseitiges Rendern ist auch unterstützt. \\
+	Vue.js ist ein "relativ" junges Framework, hat aber trotzdem eine wachsende Community und wird immer mehr verwendet. Wie zum Beispiel von GitLab.
+	\paragraph{React}
+	Gibt es bereits etwas länger als Vue.js und bietet ähnliche Funktionalitäten als Frontend Framework. Es wurde damals von Facebook ins leben gerufen und auch noch heute verwendet. Daher geniesst React eine grosse Community und ist weit verbreitet.
+	\\ \\
+	Beide Sprachen bieten ähnliche Funktionalitäten und Syntax. Vue.js gilt als flexiblere Sprache und daher für Neulinge besser zum einsteigen. React.js geniesst eine grosse Community und Facebook als Mitentwickler hinter der Sprache (ist aber wie Vue.js OpenSource). Auch hier soll durch eine Nutzwertanalyse 
+	
+	\subsection{Black Box}
+	
+	\subsubsection{Frontend}
+	
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{01_Grafiken/black-box_Frotend.png}
+		\caption{Black Box Frontend}
+		\label{fig:bb_frontend}
+	\end{figure}
+	
+	\subsubsection{Backend}
+
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{01_Grafiken/black-box_Backend.png}
+		\caption{Black Box Backend}
+		\label{fig:bb_backend}
+	\end{figure}
+
+	\newpage
+
+	\subsection{Lösung //TODO needs new name}
+	
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{01_Grafiken/architektur.png}
+		\caption{Architektur}
+		\label{fig:architektur}
+	\end{figure}
+
+	Es wurde eine Variante erstellt welche durch das Vorgängerprojekt, der LED-RGB-Matrix, den Rahmenbedingungen und dem Architekturvorschlag (Abbildung: \ref{fig:architektur}) definiert wurde.
+	\\ \\
+	Die LED-RGB-Matrix wurde als unabhängiger Service programmiert und kann daher ohne Anpassung in das laufende Projekt integriert werden. Es handelt sich um eine Rest-API, an welche Bilder mit gewünschten Transformationsparamtern gesendet und dargestellt werden können.
+	\\ \\
+	Das Tic-Tac-Toe Game (Spiellogik + Datenbank) wird das Backend bilden. Dies beinhaltet folgende Aufgaben:
+	\begin{itemize}
+		\item Ist für die gesamte Spiellogik zuständig
+		\begin{itemize}
+			\item Spielverlauf, Spielerinformation und Spielstand mit der Datenbank verwalten
+			\item Assets verwalten
+			\item Reagieren auf Zustandsänderungen des Frontends
+		\end{itemize}
+		\item Kommunizieren mit dem Frontend (über MQTT) und rendern der View
+		\item Aufbereiten und senden des Spielfeldes an die LED-RGB-Matrix (REST)
+	\end{itemize}
+	
+	Bei der Datenbank wird es sich um MYSQL handel, was vom Kunden so gewünscht wurde.
+	\\
+	Das Frontend wird über MQTT mit dem Backend kommunizieren und die interaktive Spieloberfläche sein über welche dann Tic-Tac-Toe gespielt werden kann. Sie reagiert dynamisch auf die Eingaben des Benutzers und passt die View an.
+	\\
+	\subsubsection{Varianten}
+	Es wurde eine Lösung erarbeitet welche mit Verschiedenen Programmiersprachen umgesetzt werden kann.
+	\paragraph{Frontend}
+	Im Frontend kann jeweils mit Vue.js oder React.js umgesetzt werden.
+	
+	\paragraph{Backend}
+	Im Backend besteht die Möglichkeit es mit Java oder PHP zum implementieren.
+
+	\subsection{Morphologische Analyse (//TODO Mit Herrn Hirschi absprechen öb nötig)}
+	
+	\newpage
+		
 	\section{Lösungswahl}
+	Die Lösungswahl wird aufgrund der Zielerreichung, Nutzwertanalyse und den weiteren Risiken getroffen.
+	\subsection{Zielerreichung}
+	In der Zielerreichung wird analysiert, ob die Lösungsvarianten die geforderten Systemziele erfüllen können. So werden ungeeignete Lösungen bereits in einer frühen Phase aus der Studie herausgefiltert.
+	\\
+	Es wurden jeweils nur die Umgebungsrelevanten Systemziele berücksichtigt.
+	
+	\subsubsection{Frontend}
+	
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{gray!30}{gray!10}
+		\begin{tabular}{p{0.25\textwidth}|p{0.2\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}}
+			\textbf{Systemziel-Nr.} & \textbf{Gewicht (M,S,K)} & \textbf{Vue.js} & \textbf{React.js} \\ \hline
+			1 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			2 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			5 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			7 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			8 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+		\end{tabular}
+		\caption{Zielerreichung des Frontend}
+		\label{fig:zielerreichung_frontend}
+	\end{table}
+
+	
+	\subsubsection{Backend}
+	
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{gray!30}{gray!10}
+		\begin{tabular}{p{0.25\textwidth}|p{0.2\textwidth}|p{0.22\textwidth}|p{0.22\textwidth}}
+			\textbf{Systemziel-Nr.} & \textbf{Gewicht (M,S,K)} & \textbf{PHP} & \textbf{Java} \\ \hline
+			1 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			2 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			3 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			4 & S & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			6 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			7 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+			8 & M & \cellcolor{green} Ja & \cellcolor{green} Ja \\ \hline
+		\end{tabular}
+		\caption{Zielerreichung des Backend}
+		\label{fig:zielerreichung_backend}
+	\end{table}
+	
+	\newpage
+
+	\begin{landscape}
+	\subsection{Nutzwertanalyse}
+	Die Gewichtung wird in Form einer Zahl zwischen 1-10 definiert, wobei die 1 die tiefste und 10 die höchste Gewichtung ist.
+	
+	 \subsubsection{Frontend}
+	
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{p{0.4\textwidth}|p{0.25\textwidth}|p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth}}
+			\multirow{2}{*}{\textbf{Kriterien}} & \multirow{2}{*}{\textbf{Gewichtung}} & \multicolumn{2}{c}{\textbf{Variante 1: Vue.js}} & \multicolumn{2}{c}{\textbf{Variante 2: React.js}} \\
+			& & \textbf{Punkte} & \textbf{Bewertung} & \textbf{Punkte} & \textbf{Bewertung}  \\ \hline
+			Vorhandenes Know-How & 6 & 2 & 12 & 2 & 12  \\ \hline
+			Geringer Entwicklungsaufwand & 7 & 8 & 56 & 6 & 42 \\ \hline
+			Community / Dokumentation & 9 & 9 & 81 & 8 & 72 \\ \hline
+			Verfügbare Libraries & 5 & 10 & 50 & 10 & 50 \\ \hline
+			Zukunftssicher / Vortlaufende Entwicklung & 8 & 10 & 80 & 10 & 80 \\ \hline
+			Erweiterbarkeit & 5 & 9 & 45 & 9 & 45 \\ \hline
+			\textbf{Nutzwert} & & & \cellcolor{green} 324 & & \cellcolor{orange} 301 \\ \hline
+		\end{tabular}
+		\caption{Nutzwerkanalyse Frontend}
+		\label{fig:nutzwerkanalyse_frontend}
+	\end{table}
+
+	Unsere Recherche wurde hauptsächlich von der folgenden Seite bezogen: \href{https://www.codica.com/blog/react-vs-vue-2019/#react-vs-vue-comparison-summary}{https://codica.com}
+
+	\end{landscape}
+
+	\newpage
+	
+	\begin{landscape}
+		\subsubsection{Backend}
+		
+		\begin{table}[h]
+			\centering
+			\begin{tabular}{p{0.4\textwidth}|p{0.25\textwidth}|p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth} | p{0.2\textwidth}}
+				\multirow{2}{*}{\textbf{Kriterien}} & \multirow{2}{*}{\textbf{Gewichtung}} & \multicolumn{2}{c}{\textbf{Variante 1: PHP}} & \multicolumn{2}{c}{\textbf{Variante 2: Java}} \\
+				& & \textbf{Punkte} & \textbf{Bewertung} & \textbf{Punkte} & \textbf{Bewertung}  \\ \hline
+				Vorhandenes Know-How & 6 & 7 & 42 & 8 & 48  \\ \hline
+				Geringer Entwicklungsaufwand & 7 & 7 & 49 & 9 & 63 \\ \hline
+				Community / Dokumentation & 9 & 9 & 81 & 8 & 72 \\ \hline
+				Verfügbare Libraries & 5 & 10 & 50 & 10 & 50 \\ \hline
+				Zukunftssicher / Fortlaufende Entwicklung & 8 & 10 & 80 & 10 & 80 \\ \hline
+				Erweiterbarkeit & 5 & 9 & 45 & 9 & 45 \\ \hline
+				\textbf{Nutzwert} & & & \cellcolor{orange} 347 & & \cellcolor{green} 358 \\ \hline
+			\end{tabular}
+			\caption{Nutzwerkanalyse Backend}
+			\label{fig:nutzwerkanalyse_backend}
+		\end{table}
+	\end{landscape}
+
+	\newpage
+	
+	\subsection{Weitere Risiken}
+	
+	\subsubsection{Frontend}
+	
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{gray!30}{gray!10}
+		\begin{tabular}{p{0.24\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}}
+			\textbf{Beurteilungskriterien} & \textbf{Vue.js} & \textbf{React.js} \\ \hline
+			Risiken & Durch das geringe Know-How kann es zu Verspätungen in der Entwicklung kommen & Durch das geringe Know-How kann es zu Verspätungen in der Entwicklung kommen \\ \hline
+			Nachhaltigkeit & OpenSource & OpenSource
+		\end{tabular}
+		\caption{Weitere Risiken im Frontend}
+		\label{fig:weitere-risiken_frontend}
+	\end{table}
+
+	\subsubsection{Backend}
+
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{gray!30}{gray!10}
+		\begin{tabular}{p{0.24\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}}
+			\textbf{Beurteilungskriterien} & \textbf{PHP} & \textbf{Java} \\ \hline
+			Risiken & Durch das geringe Know-How gewisser Mitglieder, kann es zu Verspätungen in der Entwicklung kommen & Durch das geringe Know-How gewisser Mitglieder, kann es zu Verspätungen in der Entwicklung kommen \\ \hline
+			Nachhaltigkeit & OpenSource & OpenSource und Proprietäre möglich
+		\end{tabular}
+		\caption{Weitere Risiken im Backend}
+		\label{fig:weitere-risiken_backend}
+	\end{table}
+
+	\subsection{Empfehlung}
+	Das Projektteam hat bereits Know-How in JavaScrit wie auch teils in PHP und Java.
+	Da in den Nutzwertanalysen klar heraus geht das für dass Frontend \textbf{Vue.js} und im Backend \textbf{Java} verwendet werden sollte, wird dies auch von uns Empfohlen.
+	
 	\section{Detailkonzept}
 	\section{Realisierung}
 	\newpage
