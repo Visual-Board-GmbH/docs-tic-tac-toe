@@ -34,5 +34,29 @@ Mit \includepdf{<NameDesPDF>.pdf} wird der Header des verlinkten Dokumentes übe
 ## Tips und Trick
 * Mit Strg + Klick auf Package name wird die enstprechende Dokumentation des Packages geöffnet
 * Änderungen im Inhaltsverzeichnis (Sections) sind erst sichtbar wenn das Dokument zwei mal kompiliert wurde.
+* 
+
+## Table
+```\begin{table}[h]
+					\centering
+					\begin{tabularx}{\columnwidth}{l X r}
+						\textbf{\thead{Nr}} & \textbf{\thead{Zielbeschreibung}} & \textbf{\thead{Priorität \\ (M, S, K)}}\\ \Xhline{2pt}
+						1 & Der Prototyp soll bis zum 27.01.2020 fertig sein. & M \\ \Xhline{1pt}
+						2 & Der Prototyp soll am 10.02.2020 den Stakeholdern präsentiert werden. & M \\ \Xhline{1pt}
+						3 & Das Projekt wird nach dem Wasserfallmodell umgesetzt. & M \\ \Xhline{1pt}
+						4 & Am 11.11.2019 findet das Kick-off-Meeting statt, in welchem die Initialisierungsphase besprochen wird und der Übergang in die Konzeptphase stattfindet.& M \\ \Xhline{1pt}
+						5 &Bis zum 09.12.2019 muss die Konzeptionelle Planung abgeschlossen sein, um anschliessend mit der Umsetzung zu beginnen & M \\ \Xhline{1pt}
+						6 & Das Projekt wird im Wasserfall-Modell in Kombination mit Agile Projektmethoden umgesetzt. & M \\ \Xhline{1pt}
+						7 & Folgende Personen sind zu 100\% in das Projekt involviert:
+						-  Oliver Egloff
+						-	Leonardo Wiedemeier
+						-	Samuel Salomon & M \\ \Xhline{1pt}
+						8 & Es muss mindestens jede zweite Woche mit dem Kunden kommuniziert werden. & M  \\ \Xhline{1pt}
+						9 &	Die angefallenen Kosten sind zu jedem Zeitpunkt aktuell zu halten und mit dem Soll-Zustand zu vergleichen. & M
+						
+						
+					\end{tabularx}
+					\caption{Prozessziele}
+				\end{table}
 
 

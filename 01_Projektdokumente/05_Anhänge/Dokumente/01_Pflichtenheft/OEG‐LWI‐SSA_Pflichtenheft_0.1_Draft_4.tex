@@ -1,0 +1,251 @@
+\documentclass[11pt, a4paper, twoside]{article}
+
+\usepackage[table]{xcolor}
+\usepackage{geometry} %Set page layouts
+\usepackage{pdfpages} %Include pdf files
+\usepackage{fancyhdr} %Header and Footer
+\usepackage{graphicx} %Inlcude graphics
+\usepackage{lastpage} %Reference the number of pages in your LATEX
+\usepackage[german]{babel}
+\usepackage{fontspec}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{tabularx}
+\usepackage{import}
+\usepackage{lscape}
+\usepackage{pdflscape}
+% \usepackage{showframe} %For debugging
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+\geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=35pt, includeheadfoot, portrait}
+\setmainfont{Calibri}
+
+%Path relative to the .tex file containing the \includegraphics command
+\graphicspath{{01_Grafiken/}}
+
+\tocloftpagestyle{fancy}
+
+%Define variables for document
+\newcommand{\shortAuthor}{OEG-LWI-SSA}
+\newcommand{\dstate}{Draft} %Draft, Progress, Closed
+\newcommand{\dversion}{0.1}
+\newcommand{\dname}{\shortAuthor\_20200428\_\dversion\_\dstate\_\pageref{LastPage}}
+
+\begin{document}
+
+    \section*{Pflichtenheft}
+    \newpage
+    %Define header & footer for twoside documents
+    \fancyhead{} %Clear all header fields
+    \fancyhead[L]{\includegraphics{header_img_abb2.png}}
+    \fancyfoot{} %Clear all footer fields
+    \fancyfoot[RO, LE]{\small \thepage \textbar \pageref{LastPage}}
+    \fancyfoot[LO, RE]{\small \dname}
+    \renewcommand{\footrulewidth}{0.4pt}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \pagestyle{fancy}
+
+
+    \section*{Dokumentenmanagement}
+
+    \begin{tabularx}{\columnwidth}{l X}
+        \textbf{Erstellungsdatum:} & 14.06.2020 \\
+        \textbf{Autotren:} & Oliver Egloff (OEG), Samuel Salomon (SSA), Leonardo Wiedemeier (LWI) \\
+        \textbf{Dateiname:} &\dname
+    \end{tabularx}
+
+    \section*{Änderungsverzeichnis}
+    \begin{tabularx}{\columnwidth}{l l l X}
+        \textbf{Version} & \textbf{Datum} & \textbf{Autor} & \textbf{Beschreibung}\\
+        0.1 & 14.06.2020 & OEG & Pflichtenheft erstellt \\
+    \end{tabularx}
+
+    \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+    \tableofcontents
+
+    \clearpage
+
+
+    \section{Einleitung}
+    Das Unternehmen Visual GmbH soll für die ABB Technikerschule ein weiteres Projekt realisieren. \\
+    Der Prototyp aus dem letzten Projekt soll weiter ausgebaut werden. Im Unterschied zum letzten Projekt wird hier mehr Wert auf die Entwicklung und das Produkt gelegt.
+    Die Idee ist es, das Projekt möglichst realitätsnah zu gestalten.
+    \clearpage
+
+
+    \section{Allgemeines}
+
+    \subsection{Ziel und Zweck des Dokumentes}
+    Die vorliegende Pflichtenheft enthält die funktionalen und nichtfunktionalen Anforderungen an das zu entwickelnde Produkt.
+    Es dient als Grundlage für die Ausschreibung und Vertragsgestaltung und bildet die Vorgabe für die Erstellung von Angeboten.
+    Würde in der Praxis ein Vertrag zwischen Auftragnehmer und Auftraggeber zustande kommen, wäre das vorliegende Pflichtenheft rechtsverbindlich.
+    In der Regel verlieren durch das Pflichtenheft alle bisherigen Vereinbarungen zwischen Auftraggeber und Auftragnehmer ihre Gültigkeit - sofern hier nichts Gegenteiliges vermerkt ist.
+    Die Anforderungen legen die Rahmenbedingungen für die Entwicklung fest, die vom Auftragnehmer im Pflichtenheft konkretisiert werden.
+
+    \subsection{Ausgangssituation}
+    Die Visual Board GmbH ist ein von Schüler erfundenes fiktives Unternehmen, welches in der Klasse B20-if an der ABB Technikerschule Semesterarbeiten entgegennimmt und diese Umsetzt. \\
+    Herr Hirschi ist der Studiengangleiter der Klasse B20-if an der ABB Technikerschule und besitzt in diesem Projekt die Rolle des Auftraggebers. \\
+    Herr Jenzer begleitet als Dozent der Klasse B20-if die Semesterarbeit in der Rolle des Projektsteuerungs-Gremium. \\
+
+    \subsection{Projektbezug}
+    Die Visual Board GmbH hat bereits mit der ABBTS (Rolf Hirschi) zusammengearbeitet und
+    einen Prototypen erstellt um Bilder auf einer RGB-LED-Matrix anzuzeigen.
+    Das vorliegende Projekt ist ein auf jenes Projekt (aus der Semesterarbeit des 3. Semesters) aufbauendes Projekt.
+    Die RGB-LED-Matrix wurde funktionsfähig gestellt und es sollte ein Programm geschrieben werden um Bilder
+    wie gewünscht auf der Matrix anzuzeigen. Darunter ist das korrekte transformieren, aufbereiten
+    und weitergeben an die Matrix zu verstehen.
+    Der Prototyp wurde von der Visual Board GmbH mit einer REST-Api in Java umgesetzt,
+    welche auf dem Raspberry Pi der Hardware, oder einem externen Windows Computer läuft.
+    So wurde die RGB-LED-Matrix, dem Netwerk in welchem sie sich befindet hat, zur verfügung gestellt.
+    Und es ist möglich mit den korrekten requests”Bilder direkt oder mit dem Webinterface
+    an die Matrix zu schicken.
+    Der Visual Board GmbH wurde die komplette Hardware durch die ABBTS gestellt wurde.
+    \newline
+    Teil der Projektorganisiton waren:
+    \begin{itemize}
+        \item ABBTS (Rolf Hirschi) als Auftraggeber
+        \item Visual Board GmbH als Arbeitnehmer
+        \subitem Samuel Salomon hat die Position als Projektleiter eingenommen
+        \subitem Oliver Egloff hat die Position als stellvertretender Projektleiter eingenommen
+        \subitem Leonardo Wiedemeier hat die Position als Projektmitglied eingenommen
+        \item Herr Künzli und Herr Jenzer jeweils als Mitglied des PSG (Projektsteuerungs-Gremium)
+        \item Herr Künzli hatte zudem die Position des PPC (Projektportfolio-Controller)
+    \end{itemize}
+    \\
+    Das Endprodukt aus dem 3. Semesterarbeit, die RGB-LED-Matrix, gilt als Grundbaustein für dieses Projekt.
+    Das Produkt wird um ein Tic-Tac-Toe Spiel ausgebaut.
+
+    \clearpage
+
+    \begin{landscape}
+        \subsection{Abkürzungen}
+
+        \begin{tabularx}{\columnwidth}{l X}
+            \textbf{Abkürzung} & \textbf{Beschreibung} \\
+            PL & Projektleiter \\
+            PM & Projektmitglied \\
+            OEG & Oliver Egloff \\
+            SSA & Samuel Salomon \\
+            stv & Stellvertreter[in] \\
+            LWI & Leonardo Wiedemeier \\
+        \end{tabularx}
+
+        \subsection{Teams und Abkürzungen}
+        In diesem Absatz sind alle wichtigen Rollen, welche für den Auftraggeber relevant sind aufgelistet.
+        \\
+        \\
+        \begin{tabularx}{\columnwidth}{l l l X}
+            \textbf{Rolle(n)} & \textbf{Name} & \textbf{E-Mail} & \textbf{Unternehmen} \\
+            Auftraggeber & Rolf Hirschi & r.hirschi@abbts.ch & ABB Technikerschule \\
+            Projektsteuerungs-Gremium & Marc Jenzer & marc.jenzer@doz.abbts.ch & ABB Technikerschule \\
+            Projektleiter & Oliver Egloff & oliver.egloff@stud.abbts.ch & Visual Board GmbH \\
+            stv. Projektleiter & Leonardo Wiedemeier & leonardo.wiedemeier@stud.abbts.ch & Visual Board GmbH \\
+            Projektmitglied & Samuel Salomon & samuel.salomon@stud.abbts.ch & Visual Board GmbH \\
+        \end{tabularx}
+    \end{landscape}
+    \clearpage
+
+    \section{Konzept}
+
+    \subsection{Ziele des Anbieters}
+    Das Ziel der Visual Board GmbH und deren Projektmitglieder ist es, die Fähigkeiten der Projektmitglieder unter Beweis zu stellen und zu vertiefen.
+    Jedes Projektmitglied besitzt gute Erfahrungen in seinem Fachgebiet und kann dieses Wissen seinen Projektkollegen weitervermitteln.
+    Des Weiteren möchten wir die Zusammenarbeit innerhalb der Projektmitarbeiter aber auch mit dem Arbeitgeber stärken, um zukünftige Projekte noch besser zu bewältigen.
+
+    \subsection{Ziele und Nutzen des Anwenders}
+    Die ABBTS hat sich entschieden auf den Prototypen der Visual Board GmbH auszubauen und die Spiellogik um ein Tic-Tac-Toe Spiel zu erweitern.
+    Es soll die Möglichkeit bestehen das mehrere Spieler, auf verschiedenen Endgeräten, gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgiebt.
+    Der Anwender soll in der Rolle als Spieler viel Spass und Freue am Spiel haben.
+    Detailliertere Ausführungen findet man im Kapitel \ref{anforderungen}.
+
+    \subsection{Zielgruppe(n)}
+
+    Unter diesem Abschnitt wird definiert wer genau die Anwender des Produkts sein sollen und wodurch sie sich auszeichnen.
+    Auch hieraus können wichtige Anforderungen abgeleitet werden.
+    Als vereinfachtes Beispiel könnte das Interface einer Software, die auch von Senioren genutzt werden soll,
+    dementsprechend entworfen werden (z.B. sparsam eingesetzte, größere und auffälligere Buttons, die eindeutig auf die Funktion hindeuten, die sie auslösen).
+
+    \clearpage
+
+    \section{Anforderungen} \label{anforderungen}
+
+    \subsection{Funktionale Anforderungen}
+    Funktionale Anforderungen sind gewünschte Funktionalitäten oder Verhalten eines Systems bzw. Produkts. Sie beschreiben, was das zu entwickelnde Produkt tun oder können soll.
+
+    \subsubsection{Anforderung 1}
+
+    \subsubsection{Anforderung 2}
+
+    \subsubsection{Anforderung 3}
+
+    \subsection{Nichtfunktionale Anforderungen}
+
+    Nichtfunktionale Anforderungen sind Anforderungen an die Qualität, in welcher die geforderte Funktionalität zu erbringen ist. Dazu zählen beispielsweise auch das Design, Konformität zu bestimmten Gesetzen/Vorschriften oder die Reaktionszeit des Systems.
+
+    \subsection{Allgemeine Anforderungen}
+
+    \subsection{Gesetzliche Anforderungen}
+
+    \subsection{Technische Anforderungen}
+
+    \subsection{[weitere]}
+
+    \clearpage
+
+    \section{Rahmenbedingungen}
+
+    Hier gehen Sie zum Beispiel auf die gesamte Bearbeitungszeit ein. Beschreiben Sie ruhig auch die geplanten Betriebs- und Arbeitszeiten.
+
+    \subsection{Zeitplan}
+
+    Wie viel Zeit wird für einzelne Phasen voraussichtlich aufgwendet? Hier sollte eine Übersicht folgen, die möglichst auch Arbeitszeiten oder ggf. Betriebspausen miteinbezieht.
+
+    \subsection{Technische Anforderungen}
+
+    Hier halten Sie fest, was Sie für die Umsetzung brauchen – zum Beispiel Hard- und Software. An dieser Stelle ist es sinnvoll auszuführen, welches Equipment Sie für welche Aufgabe benötigen.
+
+    \subsection{Problemanalyse}
+
+    Fassen Sie die wichtigsten Probleme zusammen, die Sie erwarten. Wichtig ist vor allem, dass Sie für die wahrscheinlichsten Probleme bereits einen Lösungsansatz formulieren, um später Zeit zu sparen. Machen Sie sich auch über unwahrscheinliche Probleme Gedanken.
+
+    \subsection{Qualität}
+
+    Welche Anforderungen stellen Sie an die Qualität? Beschreiben Sie auch, wie die Qualitätssicherung, -kontrolle und -abnahme aussieht.
+
+
+    \clearpage
+
+
+    \section{Liefer- und Abnahmebedingungen}
+
+    Hier wird festgehalten, in welchem Umfang und zu welchem Preis Sie an Ihren Kunden wann und wo liefern sollen.
+    Witerhin wird hier spezifiziert, wann das Projekt als abgeschlossen gilt und wer definiert, ob die Qualität stimmt. Es sollte klar festgelegt werden, wer für die Abnahme verantwortlich ist.
+
+    \clearpage
+
+
+    \section{Genehmigung}
+    \begin{tabularx}{\columnwidth}{l l l X}
+        \textbf & \textbf{Datum, Ort} & \textbf{Name} & \textbf{Visum} \\
+        & & &   \\
+        \textbf{Projektleiter} & ...................................... & ...................................... & ......................................  \\
+        & & &   \\
+        \textbf{Auftraggeber} & & & \\
+        \textbf{(ABB Technikerschule)} & ...................................... & ...................................... & ...................................... \\
+    \end{tabularx}
+
+    \clearpage
+
+    \section{Anhang}
+    Alle weiteren Dokumente oder Zahlen und Fakten, die als Hintergrund zu dem Projekt dienen.
+
+
+\end{document}
+
