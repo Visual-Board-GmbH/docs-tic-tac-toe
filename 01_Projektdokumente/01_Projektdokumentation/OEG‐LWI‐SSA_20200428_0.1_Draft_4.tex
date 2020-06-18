@@ -14,15 +14,16 @@
 \usepackage{tabularx}
 \usepackage{import}
 \usepackage{lscape}
-\usepackage{pdflscape}
 \usepackage{multirow}
-%\usepackage{showframe} %For debugging
+\usepackage{makecell}
+\usepackage{pdflscape}
+% \usepackage{showframe} %For debugging
 
 \hypersetup{
-	colorlinks=true,
-	linkcolor=black,
-	filecolor=magenta,
-	urlcolor=cyan,
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
 }
 
 \geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=35pt, includeheadfoot, portrait}
@@ -38,7 +39,7 @@
 \newcommand{\dstate}{Draft} %Draft, Progress, Closed
 \newcommand{\dversion}{0.1}
 \newcommand{\dname}{\shortAuthor\_20200428\_\dversion\_\dstate\_\pageref{LastPage}}
-
+\renewcommand\theadfont{\normalsize}
 \begin{document}
 
 
@@ -52,17 +53,17 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \pagestyle{fancy}
 
-	
+
 	\section*{Dokumentenmanagement}
-	
+
 	\begin{tabularx}{\columnwidth}{l X}
 		\textbf{Erstellungsdatum:} & 28.04.2020 \\
 		\textbf{Autotren:} & Samuel Salomon (SSA), Oliver Egloff (OEG), Leonardo Wiedemeier (LWI) \\
 		\textbf{Dateiname:} &\dname
 	\end{tabularx}
-	
-	
-	\section*{Änderungsverzeichnis}
+
+
+\section*{Änderungsverzeichnis}
 	\begin{tabularx}{\columnwidth}{l l l X}
 		\textbf{Version} & \textbf{Datum} & \textbf{Autor} & \textbf{Beschreibung}\\
 		0.1 & 28.04.2020 & SSA & Dokumentation und Gliederung erstellt \\
@@ -72,65 +73,83 @@
 		0.5 & 08.05.2020 & LWI & Einfügen der Ressourcenplanung \\
 		0.6 & 11.05.2020 & LWI & Änderung R3/M3 in der Risikoanalyse \\
 		0.7 & 12.05.2020 & LWI & Änderung in der Risikoanalyse + Grafik \\
-		0.8 & 19.05.2020 & LWI & Risikomatrix mit Texten erweitern \\
-		0.9 & 06.07.2020 & LWI & Lösungssuche und Lösungswahl vorbereitet \\
-		0.10 & 08.07.2020 & SSA, OEG, LWI & Mind Map für die Lösungssuche erstellt\\
-		0.11 & 16.06.2020 & LWI & fertigstellen der Lösungssuche und Lösungswahl
+		0.8 & 13.05.2020 & OEG & Einfügen des Kommunikationsplans \\
+		0.9 & 15.05.2020 & OEG & Einfügen Anhang Kick-Off Meeting \\
+		0.10 & 19.05.2020 & LWI & Risikomatrix mit Texten erweitern \\
+		0.11 & 06.06.2020 & LWI & Lösungssuche und Lösungswahl vorbereitet \\
+		0.12 & 08.06.2020 & SSA, OEG, LWI & Mind Map für die Lösungssuche erstellt\\
+		0.13 & 16.06.2020 & LWI & fertigstellen der Lösungssuche und Lösungswahl \\
+		0.14 & 17.06.2020 & SSA & Zieldefinition \\
 	\end{tabularx}
 	
 	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+	
 	\tableofcontents
-	
-	\clearpage
-	
-	\section{Managment Summary}
+
+
+\clearpage
+
+
+\section{Managment Summary}
 	\section{Aufgabenstellung}
 	\section{Projektmanagement}
     \subsection{Projektorganisation}
     \begin{figure}[!hbt]
-    	\centering
-    	\includegraphics[width=\columnwidth]{Projektorganisation.png}
-    	\caption{Projektorganisation}
-    	\label{fig:projektorganisation}
+        \centering
+        \includegraphics[width=\columnwidth]{Projektorganisation.png}
+        \caption{Projektorganisation}
+        \label{fig:projektorganisation}
     \end{figure}
-	
-	\newpage
-	
-	\subsubsection{Rollenbeschreibung}
-	\begin{table}[h]
-		\centering
-		\rowcolors{1}{gray!30}{gray!10}
-		\begin{tabular}{p{0.3\textwidth}|p{0.64\textwidth}}
-			\textbf{Kürzel} & \textbf{Beschreibung} \\ \hline
-			Auftraggeber & Er ist der Kunde und liefert das Lastenheft. \\ \hline
-			
-			Projektsteuerungs-Gremium & Trifft wichtige Entscheidungen und ist bei Problemen umgehend zu informieren. \\ \hline
-			
-			Projektportfolio-Controller & Hat alle laufenden Projekte im Überblick und ist Ansprechpartner für den Projektleiter und die Projektträger. \\ \hline
-			
-			Projektleiter & Die führende Kraft im Projektteam. Ist Ansprechpartner für die Involvierten und Projektträger. \\ \hline
-			
-			Projektmitarbeiter & Alle Betroffenen und Involvierten Personen/Organisation, die am Projekt mitarbeiten. \\ \hline
-			
-			Frontend Entwicklung & Hauptverantwortlicher des Frontend. \\ \hline
-			
-			Backend Entwicklung & Hauptverantwortlicher des Backend. \\ \hline
-			
-			Entwicklungsleitung & Hat Übersicht des Zusammenspiels von Front- und Backend. \\ \hline
-			
-			Software \& System Architekt  &  Übersicht der eingesetzten Tools und des Systemaufbaus. \\ \hline
-			
-			Datenbank Manager \& Architekt  & Hauptverantwortlicher der Datenbank. \\ \hline
-			
-			Dokumentenverantwortlicher & Ist verantwortlich für den Aufbau und die Struktur der Dokumente. \\ \hline
-			
-			Requirements \& Business Engineering  & Hat die Übersicht über alle Anforderungen und ihrer Einhaltung \\ \hline
-			
-			Quality \& Testing  & Verantwortlich für die Qualität des Codes und das er getestet ist. \\
-		\end{tabular}
-		\caption{Rollenbeschreibung}
-		\label{fig:rollenbeschreibung}
-	\end{table}
+
+    \newpage
+    \begin{landscape}
+        \subsection{Meeting- und Kommunikationsplan}
+        \input{02_Dokumente/02_Kommunikationsplan/Kommunikationsplan}
+    \end{landscape}
+    \begin{figure}[!hbt]
+        \centering
+        \includegraphics[width=\columnwidth]{02_Dokumente/02_Kommunikationsplan/Kommunikationsplan.png}
+        \caption{Kommunikationswege}
+        \label{fig:kommunikations_wege}
+    \end{figure}
+
+    \newpage
+
+    \subsubsection{Rollenbeschreibung}
+    \begin{table}[h]
+        \centering
+        \rowcolors{1}{gray!30}{gray!10}
+        \begin{tabular}{p{0.3\textwidth}|p{0.65\textwidth}}
+            \textbf{Kürzel} & \textbf{Beschreibung} \\ \hline
+            Auftraggeber & Er ist der Kunde und liefert das Lastenheft. \\ \hline
+
+            Projektsteuerungs-Gremium & Trifft wichtige Entscheidungen und ist bei Problemen umgehend zu informieren. \\ \hline
+
+            Projektportfolio-Controller & Hat alle laufenden Projekte im Überblick und ist Ansprechpartner für den Projektleiter und die Projektträger. \\ \hline
+
+            Projektleiter & Die führende Kraft im Projektteam. Ist Ansprechpartner für die Involvierten und Projektträger. \\ \hline
+
+            Projektmitarbeiter & Alle Betroffenen und Involvierten Personen/Organisation, die am Projekt mitarbeiten. \\ \hline
+
+            Frontend Entwicklung & Hauptverantwortlicher des Frontend. \\ \hline
+
+            Backend Entwicklung & Hauptverantwortlicher des Backend. \\ \hline
+
+            Entwicklungsleitung & Hat Übersicht des Zusammenspiels von Front- und Backend. \\ \hline
+
+            Software \& System Architekt & Übersicht der eingesetzten Tools und des Systemaufbaus. \\ \hline
+
+            Datenbank Manager \& Architekt & Hauptverantwortlicher der Datenbank. \\ \hline
+
+            Dokumentenverantwortlicher & Ist verantwortlich für den Aufbau und die Struktur der Dokumente. \\ \hline
+
+            Requirements \& Business Engineering & Hat die Übersicht über alle Anforderungen und ihrer Einhaltung \\ \hline
+
+            Quality \& Testing & Verantwortlich für die Qualität des Codes und das er getestet ist. \\
+        \end{tabular}
+        \caption{Rollenbeschreibung}
+        \label{fig:rollenbeschreibung}
+    \end{table}
 
 	\newpage
 
@@ -185,32 +204,17 @@
 		\rowcolors{1}{gray!30}{gray!10}
 		\begin{tabular}{p{0.15\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}}
 			\textbf{Ressourcenname} & \textbf{Typ} & \textbf{Initials} &\textbf{Rolle}&\textbf{Stundensatz}&\textbf{Kosten pro Stunde} \\ \hline
-			
-			Oliver Egloff & Person / Gruppe & OEG & Projektmanagement & CHF 100.00/h & CHF 0.00 \\\hline
-			
-			Leonardo Wiedemeier & Person / Gruppe & LWI & Projectworker & CHF 100.00/h & CHF 0.00 \\\hline
-			
-			Samuel Salomon & Person / Gruppe & SSA & Projektworker & CHF 100.00/h & CHF 0.00 \\\hline
-			
-			Stakeholder & Person / Gruppe & S & Gremium & CHF 0.00 & CHF 0.00 \\
+
+            Oliver Egloff & Person / Gruppe & OEG & Projektmanagement & CHF 100.00/h & CHF 0.00 \\\hline
+
+            Leonardo Wiedemeier & Person / Gruppe & LWI & Projectworker & CHF 100.00/h & CHF 0.00 \\\hline
+
+            Samuel Salomon & Person / Gruppe & SSA & Projektworker & CHF 100.00/h & CHF 0.00 \\\hline
+
+            Stakeholder & Person / Gruppe & S & Gremium & CHF 0.00 & CHF 0.00 \\
 		\end{tabular}
 		\caption{Stundensatz}
 		\label{fig:stundensatz}
-	\end{table}
-
-	\begin{table}[h]
-		\centering
-		\rowcolors{1}{gray!30}{gray!10}
-		\begin{tabular}{p{0.23\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.15\textwidth}}
-			\textbf{Name} & \textbf{Aktueller Aufwand} & \textbf{Geplanter Aufwand} & \textbf{Differenz} \\ \hline
-			Oliver Egloff & 5 hrs  & 100 hrs & 0 hrs \\
-			Leonardo Wiedemeier & 5 hrs  & 100 hrs & 0 hrs \\
-			Samuel Salomon & 9.5 hrs  & 100 hrs & 0 hrs \\
-			Stakeholder & 0 hrs & 0 hrs & 0 hrs \\
-		\end{tabular}
-	
-		\caption{Aufwand}
-		\label{fig:aufwand}
 	\end{table}
 
 	\newpage
@@ -237,10 +241,84 @@
 	Die ABBTS hat sich entschieden auf den Prototypen der Visual Board GmbH aufzubauen und die Spiellogik für ein Tic-Tac-Toe Spiel umzusetzen.
 	Es soll die Möglichkeit bestehen das mehrere Spieler, auf verschiedenen Endgeräten, gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgibt. Hier für werden wir das komplette Vorgänger Projekt verwenden, da die Matrix bereits einsatzbereit ist. Es werden allenfalls Schnittstellen angepasst oder neue erstellt.
 	Zusätzlich zur Implementierung der Spiellogik, soll diese auch auf einen Webserver laufen und so erreichbar gemacht werden.
+   
+    Die Visual Board GmbH wird daher im Rahmen des Projektes die Spiellogic mit Benutzeroberfläche implementieren und den nötigen Webserver einrichten. Für diese Arbeiten stehen 300 Arbeitsstunden der kompletten Projektabwicklung zur Verfügung.
+
+
+\section{Zielsetzung}
+Das Ziel dieses Projektes ist ein webbasiertes Tic-Tac-Toe Spiel zu realisieren. Bereits bestehende Erfahrungen sowie Ergebnisse des RGB-LED-Matrix Prototypen werden wiederverwendet, um z.B. den Spielstand auf der RGB-LED-Matrix darzustellen. Ausgehend vom Projektziel werden Ziele untenstehend strukturiert nach
+\begin{itemize}
+	\item Systemzielen
+	\item Prozesszielen
+	\item Mehrwert Zielen
+\end{itemize}
+
+aufgelistet. Sämtliche Ziele sind nach den SMART Kriterien definiert:
+\begin{itemize}
 	
-	Die Visual Board GmbH wird daher im Rahmen des Projektes die Spiellogic mit Benutzeroberfläche implementieren und den nötigen Webserver einrichten. Für diese Arbeiten stehen 300 Arbeitsstunden der kompletten Projektabwicklung zur Verfügung.
+	\item Spezifisch
+	\item Messbar
+	\item Akzeptiert
+	\item Realistisch
+	\item Terminiert
+\end{itemize}
+\subsection{Zieldefinition}
+Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtigkeit der Ziele wird anhand der Priorität eingestuft: Muss (M), Soll (S) und Kann (K)
+\subsubsection{Systemziele}
+\begin{table}[h]
+	\centering
+	\begin{tabularx}{\columnwidth}{l X r}
+		\textbf{\thead{Nr}} & \textbf{\thead{Zielbeschreibung}} & \textbf{\thead{Priorität \\ (M, S, K)}}\\ \Xhline{2pt}
+		1 & Das Tic-Tac-Toe spiel muss Multiplayer fähig sein & M \\ \Xhline{1pt}
+		2 & Spielhistorien müssen vom benutzer abgerufen werden können & M \\ \Xhline{1pt}
+		3 & Aktuelle Spielzüge müssen auf der RGB-LED-Matrix dargestellt werden & M \\ \Xhline{1pt}
+		4 & Objekte sollen in Universellen Formaten gespeichert werden um Sie für späterew Projekte wieder zu verwenden & S \\ \Xhline{1pt}
+		5 & Dem Benutzer muss ein Web-GUI zur Verfügung gestellt werden & M \\ \Xhline{1pt}
+		6 & Vom Benutzer erzeugte Daten müssen in einer zentralen MySQL Datenbank abgelegt werden & M \\ \Xhline{1pt}
+		7 & Der Benutzer muss sich am System anmelden können & M \\ \Xhline{1pt}
+		8 & Die allgemeinen Speilregelen des offiziellen Tic-Tac-Toe Spiels müssen abgebildet werden & M \\ \Xhline{1pt}
+	\end{tabularx}
+	\caption{Systemziele}
+\end{table}
+
+
+\subsubsection{Prozessziele}
+\begin{table}[h]
+	\centering
+	\begin{tabularx}{\columnwidth}{l X r}
+		\textbf{\thead{Nr}} & \textbf{\thead{Zielbeschreibung}} & \textbf{\thead{Priorität \\ (M, S, K)}}\\ \Xhline{2pt}
+		1 & Das System muss bis zum 26.08.2020 fertiggestellt werden. & M \\ \Xhline{1pt}
+		2 & Der Prototyp soll am 26.08.2020 den Stakeholdern präsentiert werden. & M \\ \Xhline{1pt}
+		3 & Das Projekt wird nach dem Wasserfallmodell unter Berücksichtigung Agiler Projektmethoden für die Entwicklung umgesetzt. & M \\ \Xhline{1pt}
+		4 & Am 13.05.2020 findet das Kick-off-Meeting statt, in welchem die Initialisierungsphase besprochen wird und der Übergang in die Konzeptphase stattfindet. Mit der Freigabe der Stakeholder können erste Ideen geplant und Lösungen evaluiert werden& M \\ \Xhline{1pt}
+		5 &Bis zum 26.06.2020 muss die Konzeptionelle Planung abgeschlossen sein, um anschliessend mit der Realisierung zu beginnen & M \\ \Xhline{1pt}
+		6 & Folgende Personen sind zu 100\% in das Projekt involviert:
+		-  Oliver Egloff
+		-	Leonardo Wiedemeier
+		-	Samuel Salomon & M \\ \Xhline{1pt}
+		7 &	Die angefallenen Kosten sind zu jedem Zeitpunkt aktuell zu halten und mit dem Soll-Zustand zu vergleichen. Dies erfordert ein ständiges Nachführen der geleisteten Stunden aller Projektmitarbeiter & M
 		
-	\section{Zielsetzung}
+		
+	\end{tabularx}
+	\caption{Prozessziele}
+\end{table}
+
+\subsubsection{Mehrwert Ziele}
+\begin{table}[h]
+	\centering
+	
+	\begin{tabularx}{\columnwidth}{l X r}
+		\textbf{\thead{Nr}} & \textbf{\thead{Zielbeschreibung}} & \textbf{\thead{Priorität \\ (M, S, K)}}\\ \Xhline{2pt}
+		1 & Know-How in der Entwicklung von Web Applikationen ausweiten & M \\ \Xhline{1pt}
+		2 &	Projektmethoden richtig anwenden & M \\ \Xhline{1pt}
+		3 &	Agile Methoden im GIT Umfeld sowie im Projektmanagement anwenden &	M \\ \Xhline{1pt}
+		4 &	Know-How in Projektmitarbeit ausweiten & M \\ \Xhline{1pt}
+		5 &	Umgang mit MQTT-Brokern sowie weiteren Web-Technologien wie HTML, CCS und Javascript verbessern & M \\ \Xhline{1pt}
+		6 & Erlernen aktueller Web-Technologien & S \\ \Xhline{1pt}
+		7 &	Erfahrungen mit Projektmethoden (Wasserfall und Agile) sammeln & M
+	\end{tabularx}
+	\caption{Mehrwert Ziele}
+\end{table}
 	\section{Lösungssuche}
 	\begin{figure}[!hbt]
 		\centering
@@ -466,37 +544,37 @@
 	\section{Realisierung}
 	\newpage
 	\section{Wirtschaftlichkeit und Risikoanalyse}
-	
-	\subsection{Risikoanalyse}
+
+\subsection{Risikoanalyse}
 	\subsubsection{Risiken}
-	
-	\begin{table}[h]
+
+\begin{table}[h]
 		\centering
 		\rowcolors{1}{gray!30}{gray!10}
 		\begin{tabular}{p{0.02\textwidth}|p{0.45\textwidth}|p{0.45\textwidth}}
 			\textbf{Id} & \textbf{Risiko Beschreibung} & \textbf{Möglicher Schade} \\ \hline
-			
-			R1 & Kosteneinschätzungen werden überschritten & Projekt wird teurer als ursprünglich geplant. Projektbudget kann nicht eingehalten werden. \\ \hline
-			
-			R2 & Mitarbeiterausfall & Projektziele können nicht eingehalten werden. Die anderen Mitarbeiter müssen vermehrt Überzeit machen. \\ \hline
-			
-			R3 & Hardwareausfall & Nach Ausfall muss ausgetauscht / repariert werden was zu Verschiebungen im Zeitplan führen kann \\ \hline
-			
-			R4 & Projektplan wurde zu sportlich geschätzt. & Meilensteine/Projektziele können nicht eingehalten werden, was zu Verschiebungen im Zeitplan führen kann. \\ \hline
-			
-			R5 & Naturkatastrophe & Verlust von Hardware, Code, Räumlichkeiten. Ausfall von Mitarbeitern. Es kann vorkommen das der Projektplan nicht eingehalten werden kann oder es zur nicht Durchführung des Projektes kommen. \\ \hline
-			
-			R6 & Fortschrittsverlust durch falsche Anwendung von Hilfsmitteln (z.B. falsche Versionierung von Dokumenten und Code) & Es geht sehr viel Zeit verloren, um die verlorene Arbeit wieder aufzuholen. Projektziele und Projektplan könnten damit gefährdet sein. \\ \hline
-			
-			R7 & COVID-19 & Die aktuelle Pandemie kann noch unbekannte Risiken und Einschränkungen mit sich ziehen. \\
+
+            R1 & Kosteneinschätzungen werden überschritten & Projekt wird teurer als ursprünglich geplant. Projektbudget kann nicht eingehalten werden. \\ \hline
+
+            R2 & Mitarbeiterausfall & Projektziele können nicht eingehalten werden. Die anderen Mitarbeiter müssen vermehrt Überzeit machen. \\ \hline
+
+            R3 & Hardwareausfall & Nach Ausfall muss ausgetauscht / repariert werden was zu Verschiebungen im Zeitplan führen kann \\ \hline
+
+            R4 & Projektplan wurde zu sportlich geschätzt. & Meilensteine/Projektziele können nicht eingehalten werden, was zu Verschiebungen im Zeitplan führen kann. \\ \hline
+
+            R5 & Naturkatastrophe & Verlust von Hardware, Code, Räumlichkeiten. Ausfall von Mitarbeitern. Es kann vorkommen das der Projektplan nicht eingehalten werden kann oder es zur nicht Durchführung des Projektes kommen. \\ \hline
+
+            R6 & Fortschrittsverlust durch falsche Anwendung von Hilfsmitteln (z.B. falsche Versionierung von Dokumenten und Code) & Es geht sehr viel Zeit verloren, um die verlorene Arbeit wieder aufzuholen. Projektziele und Projektplan könnten damit gefährdet sein. \\ \hline
+
+            R7 & COVID-19 & Die aktuelle Pandemie kann noch unbekannte Risiken und Einschränkungen mit sich ziehen. \\
 		\end{tabular}
 
-		\caption{Risiken}
-		\label{fig:risiken}
-	\end{table}
+        \caption{Risiken}
+        \label{fig:risiken}
+    \end{table}
 
 	Naturkatastrophen sind in der Schweiz ein kleines Risiko. Können sich aber trotzdem, z.B. Überschwemmungen oder Stürme, stark auf den Projektverlauf auswirken.
-	
+
 	Den Coronavirus (COVID-19) haben wir mit als Risiko aufgenommen da es die Aktuelle Lage stark beeinflusst. Wir können nicht vorhersagen welche Folgen der Coronavirus noch mit sich ziehen wird. Zum Beispiel wie stark die Wirtschaft einbrechen und den Fortschritt des Projekts in jeder Hinsicht beeinflussen wird. Oder jeder Beteiligte am Projekt Privat beeinflusst wird.
 
 	\newpage
@@ -507,17 +585,17 @@
 		\rowcolors{1}{gray!30}{gray!10}
 		\begin{tabular}{p{0.03\textwidth}|p{0.3\textwidth}|p{0.2\textwidth}|p{0.1\textwidth}|p{0.2\textwidth}}
 			\textbf{Nr.} & \textbf{Was?} & \textbf{Wer mit wem?} & \textbf{Wie viel?} & \textbf{Wann?} \\ \hline
-			
-			M1 & Regelmässige Kontrolle der Kostenfortschritte sowie die Einplanung von Reserven & Oliver Egloff, Leonardo Wiedemeier & & Immer zu Beginn einer neuen Phase \\ \hline
-			
+
+            M1 & Regelmässige Kontrolle der Kostenfortschritte sowie die Einplanung von Reserven & Oliver Egloff, Leonardo Wiedemeier & & Immer zu Beginn einer neuen Phase \\ \hline
+
 			M2 & Einfordern eines Ferienabwesenheitsantrages sowie die Planung aller Ressourcen. Zudem sollte ein regelmässiger Know-How Transfer stattfinden. & Oliver Egloff, Leonardo Wiedemeier & & Bei Ferienabwesenheit \\ \hline
-			
+
 			M3 & Hardware angemessen behandel und mit dem Kunden (ABBTS) im Falle eines Ausfalls sofort reagieren & Ganzes Team & & Während des ganzes Projektes \\ \hline
-			
+
 			M4 & Einplanen von zeitlichen Reserven & Ganzes Team & 1x pro Woche & Zu Beginn der Planung und am Anfang einer neuen Phase \\ \hline
-			
+
 			M6 & Regelmässige Backups der Lösung und klare Definierungen wie gearbeitet wird. & Samuel Salomon, Leonardo Wiedemeier & 1x pro Woche & Ab Beginn Projekt \\ \hline
-			
+
 			M7 & Über die Situation mit COVID-19 auf dem Laufenden bleiben und persönliche wie auch geschäftliche Entscheidungen frühzeitig angehen. & Alle am Projekt beteiligten Personen & Täglich & Täglich \\
 		\end{tabular}
 		\caption{Massnahmen}
@@ -535,24 +613,38 @@
 		\caption{Risikomatrix}
 		\label{fig:risiko_matrix}
 	\end{figure}
-	
+
 	Die Risikomatrix zeigt auf wie, die von uns definierten und eingeschätzten, die Risiken (gelbe Kugeln) nach Anwendung der Massnahmen (Schwarze Pfeile) entschärft und neu eingestuft werden (blaue Kugeln).
 
 	\newpage
-	
-	\section{Abschluss}
-	\section{Abbildungsverzeichnis}
-	\listoffigures
-	
-	\section{Tabellenverzeichnis}
-	\listoftables
-	
-	
-	\section{Selbstständigkeitserklärung}
-	
-	\section{Anhang}
-	
-	
-	
+
+
+\section{Abschluss}
+
+
+\section{Abbildungsverzeichnis}
+\listoffigures
+
+
+\section{Tabellenverzeichnis}
+\listoftables
+
+
+\section{Selbstständigkeitserklärung}
+
+
+\section{Anhang}
+\newpage
+
+\subsubsection{Dokumente}
+\caption{Pflichtenheft}
+% commented out because of compiling speed
+%\includepdf[pages=-, landscape=true, pagecommand={}]{../../05_Anhänge/Dokumente/01_Pflichtenheft/OEG‐LWI‐SSA_Pflichtenheft_0.1_Draft_4.pdf}
+
+\subsubsection{Präsentationen}
+\caption{Kick-Off Meeting vom 13.05.2020}
+    % commented out because of compiling speed
+    % \includepdf[pages=-, landscape=true, pagecommand={}]{../../05_Anhänge/01_Präsentationen/01_KickOff_Meeting/Gruppe_1_SA_KickOff_Meeting_VisualBoardGmbH.pdf}
+
 \end{document}
 
