@@ -1,0 +1,153 @@
+\documentclass[11pt, a4paper, twoside]{article}
+
+\usepackage[table]{xcolor}
+\usepackage{geometry} %Set page layouts
+\usepackage{pdfpages} %Include pdf files
+\usepackage{fancyhdr} %Header and Footer
+\usepackage{graphicx} %Inlcude graphics
+\usepackage{lastpage} %Reference the number of pages in your LATEX
+\usepackage[german]{babel}
+\usepackage{fontspec}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{tabularx}
+\usepackage{import}
+\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{verbatim}
+% \usepackage{showframe} %For debugging
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+\geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=35pt, includeheadfoot, portrait}
+\setmainfont{Calibri}
+
+%Path relative to the .tex file containing the \includegraphics command
+\graphicspath{{01_Grafiken/}}
+
+\tocloftpagestyle{fancy}
+
+%Define variables for document
+\newcommand{\shortAuthor}{OEG-LWI-SSA}
+\newcommand{\dstate}{Draft} %Draft, Progress, Closed
+\newcommand{\dversion}{0.1}
+\newcommand{\dname}{\shortAuthor\_Backend\_Coding\_Guidelines\_\dversion\_\dstate\_\pageref{LastPage}}
+
+\begin{document}
+
+    \section*{Java Coding Guidelines - Visual Board GmbH}
+    \newpage
+    %Define header & footer for twoside documents
+    \fancyhead{} %Clear all header fields
+    \fancyhead[L]{\includegraphics{header_img_abb2.png}}
+    \fancyfoot{} %Clear all footer fields
+    \fancyfoot[RO, LE]{\small \thepage \textbar \pageref{LastPage}}
+    \fancyfoot[LO, RE]{\small \dname}
+    \renewcommand{\footrulewidth}{0.4pt}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \pagestyle{fancy}
+
+
+    \section*{Dokumentenmanagement}
+
+    \begin{tabularx}{\columnwidth}{l X}
+        \textbf{Erstellungsdatum:} & 21.06.2020 \\
+        \textbf{Autoren:} & Oliver Egloff (OEG) \\
+        \textbf{Dateiname:} &\dname
+    \end{tabularx}
+
+    \section*{Änderungsverzeichnis}
+    \begin{tabularx}{\columnwidth}{l l l X}
+        \textbf{Version} & \textbf{Datum} & \textbf{Autor} & \textbf{Beschreibung}\\
+        0.1 & 21.06.2020 & OEG & Coding Guidelines erstellt \\
+    \end{tabularx}
+
+    \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+    \tableofcontents
+
+    \clearpage
+
+    \section{Code Style}
+    In unseren Java Projekten verwenden wir den Code Styleguide von Google.
+    Dieser kann für IntelliJ hier heruntergeladen werden https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml
+    Den Styleguide kann in IntelliJ wie folgt eingerichtet werden: https://www.jetbrains.com/help/idea/configuring-code-style.html
+    \\
+
+    \section{Logging}
+    Abweichung zu Konstanten-Style → Klein- und Kurzschreibung
+    \begin{verbatim}
+    private final static Logger log = new Logger(....class);
+    \end{verbatim}
+
+    \section{Validierung}
+    Für die Validierung sind folgende 2 Konstrukte zulässig: \\
+    \textbf{boolean is}Valid / \textbf{has}Valid...(Email) \\
+    \textbf{void validate}... / \textbf{check}...(Email) \textbf{throws} ...Exception
+
+    \section{Variablenbennenung}
+    Für die Validierung sind folgende 2 Konstrukte zulässig: \\
+    \begin{tabularx}{\columnwidth}{l X}
+        \textbf{Regel} & \textbf{Beispiel} \\
+        Programmieren immer auf Englisch \\ auch bei Variablennamen & spielerName → nickname \\
+        ganze Wörter & pId → playerId \\
+        camelCase & playername → playerName \\
+    \end{tabularx}
+    \\
+    Ausnahme: ``Exception e`` in einem Catch-Block
+
+    \section{Verwendung von primitives und object types}
+    \begin{itemize}
+        \item Wenn möglich immer primitives verwenden.
+        \subitem Für Flags / boolische Werte immer den primitiven Datentyp anwenden
+        \item Kommen boolean values aus einer Datenbank und können auf dieser Ebene nicht sauber true / false zugeordnet werden, so gilt:
+        \subitem Wenn Wert == null → false, sonst Wert = DB value
+    \end{itemize}
+
+    \section{Spring Boot}
+    \subsection{Bean Deklaration}
+    \begin{itemize}
+        \item services classes → \textbf{@Service(``AUTO GENERATED UUID``)} → um verschiedene Versionen zu unterscheiden
+        \item controller → \textbf{@RestController(``AUTO GENERATED UUID``)} → um verschiedene Versionen zu unterscheiden
+        \item alle Klassen, welche die als Bean für dependency injection verfügbar sein sollen \\ → \textbf{@Component(``AUTO GENERATED UUID``)}
+        \item BeanConfigurations (Klassen mit Bean Factory Methoden) \\ → @Configuration (https://stackoverflow.com/a/39175018)
+    \end{itemize}
+
+    \subsection{POJO Namensgebung - DAO und DTO}
+    Objekte (POJOs) werden für den Datenaustausch in der Applikation und zwischen Client und Server immer \textbf{DTO} verwendet. \\
+    Mapped ein Objekt eine Datenbank Tabelle, dann soll dafür ein \textbf{DAO} verwendet werden.
+    Soll ein Datenbank Objekt dem Client zur Verfügung gestellt werden, dann muss es zuerst mithilfe einer Mapper-Klasse auf ein DTO gemapped werden. \\
+    \begin{tabularx}{\columnwidth}{l X}
+        \textbf{POJO Namensgebung} & \textbf{Beispiel} \\
+        DAO & SomeObject...\textbf{DAO} \\
+        DTO & SomeObject...\textbf{DTO} \\
+    \end{tabularx}
+    
+    \subsection{Config-Objekte}
+    Config Objekte für die \textit{application.yml} Dateien, müssem mit @Component und @ConfigurationProperties(``CONFIG PREFIX``) \\
+    In Config Objekten werden die Getter und Setter NICHT durch lombok generiert!
+
+    \subsection{lombok}
+    Das “Lombok” Plugin kann hier heruntergeladen werden: https://plugins.jetbrains.com/plugin/6317-lombok \\
+    Generell nur für DTOs und DAOs verwenden. In Config-Objekten immer eigene Getter und Setter erzeugen.
+
+    \section{Tests}
+    \begin{itemize}
+        \item Für Tests verwenden wir JUnit 5 (Jupiter)
+        \item Mock Objekte werden mit dem Präfix \textbf{mock}SomeObject
+        \item Test Method Naming
+        \subitem Der Name einer Test-Methode zeigt immer auf, was genau getestet wird
+        \subitem Für die Schreibweise wird camelCase oder mixedCamel\_withSnakeCase verwendet
+        \subitem Beispiel Test Methoden Namen
+        \subsubitem testGetCustomerByIdTrowsExceptionOnNull
+        \subsubitem doesFetchData
+        \subsubitem buildSomeObjectIsSuccessful
+    \end{itemize}
+
+\end{document}
+
