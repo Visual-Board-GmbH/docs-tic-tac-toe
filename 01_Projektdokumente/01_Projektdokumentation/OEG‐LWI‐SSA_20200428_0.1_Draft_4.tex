@@ -17,6 +17,7 @@
 \usepackage{multirow}
 \usepackage{makecell}
 \usepackage{pdflscape}
+\usepackage{longtable}
 % \usepackage{showframe} %For debugging
 
 \hypersetup{
@@ -27,7 +28,7 @@
 }
 
 \geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=35pt, includeheadfoot, portrait}
-%\setmainfont{Calibri}
+\setmainfont{Calibri}
 
 %Path relative to the .tex file containing the \includegraphics command
 \graphicspath{{01_Grafiken/}}
@@ -39,7 +40,7 @@
 \newcommand{\dstate}{Draft} %Draft, Progress, Closed
 \newcommand{\dversion}{0.1}
 \newcommand{\dname}{\shortAuthor\_20200428\_\dversion\_\dstate\_\pageref{LastPage}}
-\renewcommand\theadfont{\normalsize}
+\renewcommand\tfont{\normalsize}
 \begin{document}
 
 
@@ -80,6 +81,7 @@
 		0.12 & 08.06.2020 & SSA, OEG, LWI & Mind Map für die Lösungssuche erstellt\\
 		0.13 & 16.06.2020 & LWI & fertigstellen der Lösungssuche und Lösungswahl \\
 		0.14 & 17.06.2020 & SSA & Zieldefinition \\
+		0.15 & 23.06.2020 & LWI & Funktionendiagramm \\
 	\end{tabularx}
 	
 	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -101,6 +103,7 @@
         \label{fig:projektorganisation}
     \end{figure}
 
+	\newpage
    
     \begin{landscape}
         \subsection{Meeting- und Kommunikationsplan}
@@ -153,41 +156,66 @@
 
 	\newpage
 
-	\subsubsection{Funktionsdiagramm}
-	\begin{table}[h]
-		\centering
+	\subsubsection{Funktionendiagramm}
+	\begin{center}
 		\rowcolors{1}{gray!30}{gray!10}
-		\begin{tabular}{p{0.1\textwidth}|p{0.34\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}}
-			\textbf{Nr.} & \textbf{Leistung} & \textbf{ABBTS} & \textbf{SSA} & \textbf{OEG} & \textbf{LWI} \\ \hline
-			L1 & Projektanalyse & & & &  \\ \hline
+		\begin{longtable}{|p{0.1\textwidth}|p{0.34\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|}
+			\hline \textbf{Nr.} & \textbf{Leistung} & \textbf{ABBTS} & \textbf{SSA} & \textbf{OEG} & \textbf{LWI} \\ \hline
+			\textbf{L1} & \textbf{Projektanalyse} & & & &  \\ \hline
 			AP1.1 & Situationsanalyse & I & M & M & D  \\ \hline
 			AP1.2 & Anforderungskatalog  & I & D & M & M  \\ \hline
 			AP1.3 & Ziele definieren & I & D & M & M \\ \hline
 			AP1.4 & Risikoanalyse & I & M & M & D  \\ \hline
-			L2 & Projektplanung  & & & &  \\ \hline
+			
+			\textbf{L2} & \textbf{Projektplanung}  & & & &  \\ \hline
 			AP2.1 & Funktionendiagramm  & I & M & M & D  \\ \hline
-			AP2.2 & Rollenbeschreibung & I & M & M & D  \\ \hline
 			AP2.3 & Kommunikationsplan  & I & M & D & M  \\ \hline
+			AP2.2 & Rollenbeschreibung & I & M & M & D  \\ \hline
 			AP2.4 & Projektorganisation & I & M & D & M  \\ \hline
 			AP2.5 & Projektrollen definieren & I & M & M & D \\ \hline
 			AP2.6 & Projektstrukturplan & I & D & D & D  \\ \hline
 			AP2.7 & Projektzeitplan & I & D & M & D \\ \hline
 			AP2.8 & Kostenplanung & I & M & D & M  \\ \hline
 			AP2.9 & Ressourcenplanung & I & D & D & D \\ \hline
-			L3 & Lösungsevaluation & & & &  \\ \hline
+			
+			\textbf{L3} & \textbf{Lösungsevaluation} & & & &  \\ \hline
 			AP3.1 & Lösungssuche & I & D & D & D  \\ \hline
 			AP3.2 & Lösungsevaluation & I & D & D & D  \\ \hline
 			AP3.3 & Lösungsentscheid & I & D & D & D \\ \hline
-			L4 & Pflichtenheft & & & &  \\ \hline
+			
+			\textbf{L4} & \textbf{Pflichtenheft} & & & &  \\ \hline
 			AP4.1 & Chancen \& Risiken analysieren & I & M & M & D \\ \hline
 			AP4.2 & Massnahmen definieren & I & M & M & D \\ \hline
 			AP4.3 & Technische Umsetzung planen & I & D & D & D  \\ \hline
 			AP4.4 & Vorbereitung Abnahme Pflichtenheft & I & M & D & D \\ \hline
-		\end{tabular}
-		\caption{Funktionsdiagramm}
-		\label{fig:funktionsdiagramm}
-	\end{table}
-
+			AP4.5 & Pflichtenheft Dokument erstellen & I & M & D & M \\ \hline
+			AP4.6 & Mockups für das Pflichtenheft erstellen & I & D & M & M \\ \hline
+			
+			\textbf{L5} & \textbf{Kommunikationsschnittstellen definieren (Backend)} & & & & \\ \hline
+			AP5.1 & Datenstrukturen definieren & I & D & D & D \\ \hline
+			AP5.2 & Datenbankanbindung & I & D & D & D \\ \hline
+			AP5.3 & Kommunikation mit LED-RGB-Matrix & I & D & M & M \\ \hline
+			AP5.4 & MQTT (Client) Kommunikation & I & D & D & D \\ \hline
+			
+			\textbf{L6} & \textbf{Spiellogik definieren (Backend)} & & & & \\ \hline
+			AP6.1 & Datenbank Schema & I & M & M & D \\ \hline
+			AP6.2 & Businesslogik (Spiellogik) & I & D & D & D \\ \hline
+			
+			\textbf{L7} & \textbf{Design \& Logik definieren (Frontend)} & & & & \\ \hline
+			AP7.1 & Frontend nach Mockups erstellen & I & D & D & D \\ \hline
+			AP7.2 & Spiellogik in Frontend einbinden & I & D & D & D \\ \hline
+			
+			\textbf{L8} & \textbf{Kommunikationsschnittstellen definieren (Frontend)} & & & & \\ \hline
+			AP8.1 & Kommunikation mit Backend (MQTT) & I & D & D & D \\ \hline
+			
+			\textbf{L9} & \textbf{Projektdokumentation} & & & & \\ \hline
+			AP9.1 & Klassendiagramm & I & M & D & M \\ \hline
+			AP9.1 & Lösungsdokumentation & I & D & D & D \\ \hline
+			\rowcolor{white} \caption{Funktionsdiagramm}
+			\label{fig:funktionsdiagramm}
+		\end{longtable}
+	\end{center}
+	
 	\begin{table}[h]
 		\centering
 		\begin{tabular}{|p{0.46\textwidth} p{0.46\textwidth}|}
@@ -197,6 +225,8 @@
 			M = Mitarbeiter, Beratung &  \\ \hline
 		\end{tabular}
 	\end{table}
+
+	\newpage
 
 	\subsection{Ressourcenplanung}
 	\begin{table}[h]
@@ -641,7 +671,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 % commented out because of compiling speed
 %\includepdf[pages=-, landscape=true, pagecommand={}]{../../05_Anhänge/Dokumente/01_Pflichtenheft/OEG‐LWI‐SSA_Pflichtenheft_0.1_Draft_4.pdf}
 
-\caption{Java Coding Guidelines}
+%\caption{Java Coding Guidelines}
 % commented out because of compiling speed
 % \includepdf[pages=-, landscape=true, pagecommand={}]{../../05_Anhänge/Dokumenten/01_Backend Java Guidelines/OEG‐LWI‐SSA_Backend_Coding_Guidelines_0.1_Draft_4.pdf}
 
