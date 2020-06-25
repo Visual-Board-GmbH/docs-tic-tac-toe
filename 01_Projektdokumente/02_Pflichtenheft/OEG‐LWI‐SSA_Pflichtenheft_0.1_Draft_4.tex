@@ -75,37 +75,36 @@
 
 
     \section{Einleitung}
-    Das Unternehmen Visual GmbH soll für die ABB Technikerschule ein weiteres Projekt realisieren. \\
-    Der Prototyp aus dem letzten Projekt soll weiter ausgebaut werden. Im Unterschied zum letzten Projekt wird hier mehr Wert auf die Entwicklung und das Produkt gelegt.
-    Die Idee ist es, das Projekt möglichst realitätsnah zu gestalten.
+    Das Unternehmen Visual Board GmbH soll für die ABB Technikerschule ein weiteres Projekt realisieren welches auf den Prototypen des letzten gemeinsamen Projektes aufbauen soll. Im Unterschied zum letzten Projekt wird hier mehr Wert auf die Entwicklung und das Produkt gelegt. Die Idee ist es, das Projekt möglichst realitätsnah zu gestalten.
+    
     \newpage
 
 
     \section{Allgemeines}
 
     \subsection{Ziel und Zweck des Dokumentes}
-    Die vorliegende Pflichtenheft enthält die funktionalen und nichtfunktionalen Anforderungen an das zu entwickelnde Produkt.
-    Es dient als Grundlage für die Ausschreibung und Vertragsgestaltung und bildet die Vorgabe für die Erstellung von Angeboten.
+    Die vorliegende Pflichtenheft enthält die funktionalen und nicht funktionalen Anforderungen an das zu entwickelnde Produkt.
+    Es dient als Grundlage für die Ausschreibung und Vertragsgestaltung. Wie auch bildet es die Vorgabe für die Erstellung von Angeboten.
     Würde in der Praxis ein Vertrag zwischen Auftragnehmer und Auftraggeber zustande kommen, wäre das vorliegende Pflichtenheft rechtsverbindlich.
-    In der Regel verlieren durch das Pflichtenheft alle bisherigen Vereinbarungen zwischen Auftraggeber und Auftragnehmer ihre Gültigkeit - sofern hier nichts Gegenteiliges vermerkt ist.
-    Die Anforderungen legen die Rahmenbedingungen für die Entwicklung fest, die vom Auftragnehmer im Pflichtenheft konkretisiert werden.
+    In der Regel verlieren durch das Pflichtenheft alle bisherigen Vereinbarungen zwischen Auftraggeber und Auftragnehmer ihre Gültigkeit - sofern diese hier nicht explizit hinterlegt sind.
+    Die Anforderungen legen Rahmenbedingungen für die Entwicklung fest, die vom Auftragnehmer im Pflichtenheft konkretisiert werden.
 
     \subsection{Ausgangssituation}
     Die Visual Board GmbH ist ein von Schüler erfundenes fiktives Unternehmen, welches in der Klasse B20-if an der ABB Technikerschule Semesterarbeiten entgegennimmt und diese Umsetzt. \\
-    Herr Hirschi ist der Studiengangleiter der Klasse B20-if an der ABB Technikerschule und besitzt in diesem Projekt die Rolle des Auftraggebers. \\
-    Herr Jenzer begleitet als Dozent der Klasse B20-if die Semesterarbeit in der Rolle des Projektsteuerungs-Gremium. \\
+    Herr Hirschi ist Studiengangleiter der Klasse B20-if an der ABB Technikerschule und besitzt in diesem Projekt die Rolle des Auftraggebers. \\
+    Herr Jenzer begleitet als Dozent der Klasse B20-if die Semesterarbeit in der Rolle des Projektsteuerungs-Gremium.
 
     \subsection{Projektbezug}
     Die Visual Board GmbH hat bereits mit der ABBTS (Rolf Hirschi) zusammengearbeitet und
     einen Prototypen erstellt um Bilder auf einer RGB-LED-Matrix anzuzeigen.
-    Das vorliegende Projekt ist ein auf jenes Projekt (aus der Semesterarbeit des 3. Semesters) aufbauendes Projekt.
+    Das vorliegende Projekt baut auf dieses Vorgängerprojekt (aus der Semesterarbeit des 3. Semesters) auf.
     Die RGB-LED-Matrix wurde funktionsfähig gestellt und es sollte ein Programm geschrieben werden um Bilder
     wie gewünscht auf der Matrix anzuzeigen. Darunter ist das korrekte transformieren, aufbereiten
     und weitergeben an die Matrix zu verstehen.
     Der Prototyp wurde von der Visual Board GmbH mit einer REST-Api in Java umgesetzt,
     welche auf dem Raspberry Pi der Hardware, oder einem externen Windows Computer läuft.
-    So wurde die RGB-LED-Matrix, dem Netwerk in welchem sie sich befindet hat, zur verfügung gestellt.
-    Und es ist möglich mit den korrekten requests” Bilder direkt oder mit dem Webinterface
+    So wurde die RGB-LED-Matrix, dem Netzwerk in welchem sie sich befindet hat, zur Verfügung gestellt.
+    Und es ist möglich mit den korrekten "requests" Bilder direkt oder mit dem Webinterface
     an die Matrix zu schicken.
     Der Visual Board GmbH wurde die komplette Hardware durch die ABBTS gestellt wurde.
     \newline
@@ -161,7 +160,7 @@
 
     \subsection{Ziele und Nutzen des Anwenders}
     Die ABBTS hat sich entschieden auf den Prototypen der Visual Board GmbH auszubauen und die Spiellogik um ein Tic-Tac-Toe Spiel zu erweitern.
-    Es soll die Möglichkeit bestehen das mehrere Spieler, auf verschiedenen Endgeräten, gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgiebt.
+    Es soll die Möglichkeit bestehen das mehrere Spieler, auf verschiedenen Endgeräten, gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgibt.
     Der Anwender soll in der Rolle als Spieler viel Spass und Freue am Spiel haben.
     Detailliertere Ausführungen findet man im Kapitel \ref{anforderungen}.
 
@@ -218,6 +217,8 @@
     \subsection{Problemanalyse}
 
     Fassen Sie die wichtigsten Probleme zusammen, die Sie erwarten. Wichtig ist vor allem, dass Sie für die wahrscheinlichsten Probleme bereits einen Lösungsansatz formulieren, um später Zeit zu sparen. Machen Sie sich auch über unwahrscheinliche Probleme Gedanken.
+    
+   	//TODO LWI: finde das noch schwierig und ist das wirklich nötig im Pflichtenheft? letztes jahr war einiges kleiner vom umfang
 
     \subsection{Qualität}
 
