@@ -1,0 +1,79 @@
+\documentclass[11pt, a4paper, twoside]{article}
+
+
+
+\usepackage{geometry} %Set page layouts
+\usepackage{pdfpages} %Include pdf files
+\usepackage{graphicx} %Inlcude graphics
+\usepackage{lastpage} %Reference the number of pages in your LATEX
+\usepackage[german]{babel}
+\usepackage{fontspec}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{tocloft}
+%\usepackage{showframe} %For debugging
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=magenta,
+	urlcolor=cyan,
+}
+
+\geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=35pt, includeheadfoot, portrait}
+\setmainfont{Calibri}
+
+%Path relative to the .tex file containing the \includegraphics command
+\graphicspath{ {01_Grafiken/}}
+
+%Set the pagestyle of content tables from plain to fancy
+\tocloftpagestyle{fancy}
+
+%Define variables for document
+\newcommand{\shortAuthor}{OEG-LWI-SSA}
+\newcommand{\dstate}{Draft} %Draft, Progress, Closed
+\newcommand{\dversion}{0.1}
+\newcommand{\dname}{\shortAuthor\_YYYYMMDD\_\dversion\_\dstate\_\pageref{LastPage}}
+
+
+\begin{document}
+	
+\begin{huge}
+	\centering
+	\vspace*{\fill}
+	1. Mockups
+	\vspace*{\fill}
+	
+	
+	
+	
+\end{huge}
+	
+	\newpage
+
+	\section{Startseite}
+		Die Startseite bietet dem Benutzer die Möglichkeit mit aktuellen Spielen oder vergangenen Spielen zu interagieren.
+		Dafür wird das Spielfeld zentral auf der Seite dargestellt. Links davon sind die getätigten Züge der beiden Spieler aufgelistet. Mit einem Klick auf eine der Schaltflächen kann zwischen den Spielzügen navigiert und somit die Historie des Spiels eingesehen werden. Oberhalb des Spielfelds wird angezeigt, welche Spieler gegeneinander antreten und falls gewünscht kann ein neues Spiel gestartet werden.
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{SSA-20200617_Frontend-Design - StartPage.png}
+			\caption{Startseite}
+		\end{figure}
+	\clearpage
+	\section{Verlauf}
+		Auf der Verlauf-Seite werden alle vergangenen Spiele dargestellt. Es ist ersichtlich welle Spiele noch nicht abgeschlossen, verloren oder gewonnen sind. Mit einem Klick auf eine der Schaltflächen, kann der Spieler das Spiel öffnen. 
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{SSA-20200617_Frontend-Design - Historie.png}
+			\caption{Spieleverlauf}
+		\end{figure}
+	\clearpage
+	\section{Profil}
+		Um Persönliche Informationen anzupassen, wird dem Benutzer auf der Profil-Seite die Möglichkeit gegeben seinen Spielername, Namen und Vornamen sowie seine persönlichen Objekte anzupassen.
+		\begin{figure}[H]
+			\includegraphics[width=\textwidth]{SSA-20200617_Frontend-Design - Profile.png}
+			\caption{Spielerprofil}
+		\end{figure}
+
+
+\end{document}
+
+
+
