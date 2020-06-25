@@ -1,12 +1,15 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7400 64-bit) (preloaded format=xelatex 2020.4.27)  28 APR 2020 19:17
+This is XeTeX, Version 3.14159265-2.6-0.999992 (MiKTeX 2.9.7350 64-bit) (preloaded format=xelatex 2020.5.4)  25 JUN 2020 20:46
 entering extended mode
 **./SA_Titlepage.tex
 (SA_Titlepage.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-04-06>
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
+L3 programming layer <2020-03-06>
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\artic
+le.cls"
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size10.clo"
+
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size1
+0.clo"
 File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count163
@@ -21,46 +24,46 @@ File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
 )
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx
-.sty"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\g
+raphicx.sty"
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.s
-ty"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\k
+eyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphics
-.sty"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\g
+raphics.sty"
 Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.sty
-"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\t
+rig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\grap
-hics.cfg"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-c
+fg\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 105.
 
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\xete
-x.def"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-d
+ef\xetex.def"
 File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
 ))
 \Gin@req@height=\dimen135
 \Gin@req@width=\dimen136
 )
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry
-.sty"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\g
+eometry.sty"
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\ifvtex.st
-y"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\if
+vtex.sty"
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\iftex.sty
-"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/iftex\if
+tex.sty"
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 ))
 \Gm@cnth=\count171
@@ -76,63 +79,64 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 \Gm@layoutvoffset=\dimen144
 \Gm@dimlist=\toks16
 
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/xelatex/xetexconfig\geo
-metry.cfg"))
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lastpage\lastpage
-.sty"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/xelatex/xetexcon
+fig\geometry.cfg"))
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lastpage\l
+astpage.sty"
 Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
 )
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.sty
-"
-Package: babel 2020/03/22 3.42 The Babel package
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\ba
+bel.sty"
+Package: babel 2020/02/28 3.41 The Babel package
 
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\switch.de
-f"
-File: switch.def 2020/03/22 3.42 Babel switching mechanism
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\sw
+itch.def"
+File: switch.def 2020/02/28 3.41 Babel switching mechanism
 )
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg
-"
+
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\bblo
+pts.cfg"
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-german\germ
-an.ldf"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-germ
+an\german.ldf"
 Language: german 2018/12/08 v2.11 German support for babel (pre-1996 orthograph
 y)
 
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-german\germ
-anb.ldf"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-germ
+an\germanb.ldf"
 Language: germanb 2018/12/08 v2.11 German support for babel (pre-1996 orthograp
 hy)
 
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def
-"
-File: babel.def 2020/03/22 3.42 Babel common definitions
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\ba
+bel.def"
+File: babel.def 2020/02/28 3.41 Babel common definitions
 \babel@savecnt=\count174
 \U@D=\dimen145
 
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\xebabel.d
-ef"
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.
-def"))
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\xe
+babel.def"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\tx
+tbabel.def"))
 \bbl@readstream=\read2
 \bbl@dirlevel=\count175
 )
 Package babel Info: Making " an active character on input line 135.
 )))
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fontspec\fontspec
-.sty"
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/xparse
-\xparse.sty"
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3.st
-y"
-Package: expl3 2020-04-06 L3 programming layer (loader) 
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fontspec\f
+ontspec.sty"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages
+/xparse\xparse.sty"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\e
+xpl3.sty"
+Package: expl3 2020-03-06 L3 programming layer (loader) 
 
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3backe
-nd-xdvipdfmx.def"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\
+l3backend-xdvipdfmx.def"
 File: l3backend-xdvipdfmx.def 2020-03-12 L3 backend support: xdvipdfmx
 \g__graphics_track_int=\count176
 \l__pdf_internal_box=\box45
@@ -147,8 +151,8 @@ Package: xparse 2020-03-06 L3 Experimental document command parser
 )
 Package: fontspec 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTeX
 
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fontspec\fontspec
--xetex.sty"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fontspec\f
+ontspec-xetex.sty"
 Package: fontspec-xetex 2020/02/21 v2.7i Font selection for XeLaTeX and LuaLaTe
 X
 \l__fontspec_script_int=\count183
@@ -166,12 +170,14 @@ X
 \l__fontspec_tmpb_dim=\dimen147
 \l__fontspec_tmpc_dim=\dimen148
 
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\fontenc.sty"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\fonte
+nc.sty"
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 )
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fontspec\fontspec
-.cfg")))
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/fontspec\f
+ontspec.cfg")))
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\floa
+t.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count194
 \float@exts=\toks17
@@ -211,7 +217,7 @@ text;"
 (fontspec)             <->"Calibri/BI/OT:script=latn;language=dflt;+smcp;mappin
 g=tex-text;"
 
-(SA_Titlepage.aux)
+ (SA_Titlepage.aux)
 \openout1 = `SA_Titlepage.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -226,7 +232,8 @@ LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
 8.
 
-("C:\Users\Samuel\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
+("C:\Users\SamuelSalomon\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cm
+r.fd"
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 18.
@@ -346,10 +353,10 @@ AED: lastpage setting LastPage
 
 ] (SA_Titlepage.aux) ) 
 Here is how much of TeX's memory you used:
- 4879 strings out of 414218
- 126494 string characters out of 2898077
- 437661 words of memory out of 3000000
- 22347 multiletter control sequences out of 15000+200000
+ 4873 strings out of 414221
+ 126603 string characters out of 2896709
+ 437434 words of memory out of 3000000
+ 22338 multiletter control sequences out of 15000+200000
  535226 words of font info for 52 fonts, out of 3000000 for 9000
  1348 hyphenation exceptions out of 8191
  44i,8n,82p,254b,239s stack positions out of 5000i,500n,10000p,200000b,50000s
