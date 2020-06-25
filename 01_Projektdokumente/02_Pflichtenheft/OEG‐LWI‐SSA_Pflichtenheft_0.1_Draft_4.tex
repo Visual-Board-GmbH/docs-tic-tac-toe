@@ -12,7 +12,6 @@
 \usepackage{hyperref}
 \usepackage{tocloft}
 \usepackage{tabularx}
-\usepackage{import}
 \usepackage{lscape}
 \usepackage{pdflscape}
 \usepackage{import}
@@ -98,7 +97,13 @@
     \section*{Änderungsverzeichnis}
     \begin{tabularx}{\columnwidth}{l l l X}
         \textbf{Version} & \textbf{Datum} & \textbf{Autor} & \textbf{Beschreibung}\\
-        0.1 & 14.06.2020 & OEG & Pflichtenheft erstellt \\
+        0.1 & 14.06.2020 & OEG & Pflichtenheft erstellt und Kapitel erfasst \\
+        0.2 & 24.06.2020 & SSA & Mockups angehängt \\
+        0.3 & 24.06.2020 & SSA, OEG & Projektzeitplan angehängt \\
+        0.4 & 24.06.2020 & LWI & Projektstrukturplan angehängt \\
+        0.5 & 24.06.2020 & SSA & Kostenplan \\
+        0.6 & 24.06.2020 & OEG & Anforderungen angehängt \\
+        0.7 & 24.06.2020 & OEG &  \\
     \end{tabularx}
 
     \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -283,23 +288,23 @@
     \section{Anhang}
     Alle weiteren Dokumente oder Zahlen und Fakten, die als Hintergrund zu dem Projekt dienen.
     \begin{enumerate}
-    	
-    	\item Mockups
+    	\item Anforderungen
     	\item Projektzeitplan
-    	\item Projektstrukturplan
-    	\item Kostenplan
+        \item Projektstrukturplan
+        \item Kostenplan
+        \item Mockups
     \end{enumerate}
 	
 	\newpage
-	\begin{huge}
-		\vspace*{\fill}
-		\centering
-		1. Mockups
-		\vspace*{\fill}
-	\end{huge}
-	\newpage
-	\includepdf[pages={1-},pagecommand={\pagestyle{fancy}}]{02_Dokumente/01_Mockups/OEG‐LWI‐SSA_Mockups_1.0_Closed.pdf}
-	
+    \begin{huge}
+        \vspace*{\fill}
+        \centering
+        1. Anforderungen
+        \vspace*{\fill}
+    \end{huge}
+    \newpage
+    \includepdf[pages={1-},pagecommand={\pagestyle{fancy}}]{02_Dokumente/01_Mockups/OEG‐LWI‐SSA_Mockups_1.0_Closed.pdf}
+
 	\newpage
 	\begin{huge}
 		\vspace*{\fill}
@@ -314,7 +319,7 @@
 	\begin{huge}
 		\vspace*{\fill}
 		\centering
-		2. Projektstrukturplan
+		3. Projektstrukturplan
 		\vspace*{\fill}
 	\end{huge}
 	\newpage
@@ -329,7 +334,15 @@
 	\end{huge}
 	\newpage
 	\includepdf[pages={1-},pagecommand={\pagestyle{fancy}},landscape=true]{02_Dokumente/04_Kostenplan/OEG‐LWI‐SSA_Kostenplan_1.0_Closed.pdf}
-	
+
+    \begin{huge}
+        \vspace*{\fill}
+        \centering
+        5. Mockups
+        \vspace*{\fill}
+    \end{huge}
+    \newpage
+    \includepdf[pages={1-},pagecommand={\pagestyle{fancy}}]{02_Dokumente/01_Mockups/OEG‐LWI‐SSA_Mockups_1.0_Closed.pdf}
 	
 
 \end{document}
