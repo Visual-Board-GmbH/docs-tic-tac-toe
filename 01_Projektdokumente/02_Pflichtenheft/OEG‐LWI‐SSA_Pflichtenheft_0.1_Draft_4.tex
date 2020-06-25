@@ -71,14 +71,14 @@
     \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
     \tableofcontents
 
-    \clearpage
+    \newpage
 
 
     \section{Einleitung}
     Das Unternehmen Visual GmbH soll für die ABB Technikerschule ein weiteres Projekt realisieren. \\
     Der Prototyp aus dem letzten Projekt soll weiter ausgebaut werden. Im Unterschied zum letzten Projekt wird hier mehr Wert auf die Entwicklung und das Produkt gelegt.
     Die Idee ist es, das Projekt möglichst realitätsnah zu gestalten.
-    \clearpage
+    \newpage
 
 
     \section{Allgemeines}
@@ -122,7 +122,7 @@
     Das Endprodukt aus dem 3. Semesterarbeit, die RGB-LED-Matrix, gilt als Grundbaustein für dieses Projekt.
     Das Produkt wird um ein Tic-Tac-Toe Spiel ausgebaut.
 
-    \clearpage
+    \newpage
 
     \begin{landscape}
         \subsection{Abkürzungen}
@@ -150,7 +150,7 @@
             Projektmitglied & Samuel Salomon & samuel.salomon@stud.abbts.ch & Visual Board GmbH \\
         \end{tabularx}
     \end{landscape}
-    \clearpage
+    \newpage
 
     \section{Konzept}
 
@@ -172,9 +172,13 @@
     Als vereinfachtes Beispiel könnte das Interface einer Software, die auch von Senioren genutzt werden soll,
     dementsprechend entworfen werden (z.B. sparsam eingesetzte, größere und auffälligere Buttons, die eindeutig auf die Funktion hindeuten, die sie auslösen).
 
-    \clearpage
+    \newpage
 
     \section{Anforderungen} \label{anforderungen}
+    
+    \begin{tabularx}{\columnwidth}{l l l X}
+    	\textbf{Rolle(n)} & \textbf{Name} & \textbf{E-Mail} & \textbf{Unternehmen} \\
+    \end{tabularx}
 
     \subsection{Funktionale Anforderungen}
     Funktionale Anforderungen sind gewünschte Funktionalitäten oder Verhalten eines Systems bzw. Produkts. Sie beschreiben, was das zu entwickelnde Produkt tun oder können soll.
@@ -197,7 +201,7 @@
 
     \subsection{[weitere]}
 
-    \clearpage
+    \newpage
 
     \section{Rahmenbedingungen}
 
@@ -220,7 +224,7 @@
     Welche Anforderungen stellen Sie an die Qualität? Beschreiben Sie auch, wie die Qualitätssicherung, -kontrolle und -abnahme aussieht.
 
 
-    \clearpage
+    \newpage
 
 
     \section{Liefer- und Abnahmebedingungen}
@@ -228,7 +232,7 @@
     Hier wird festgehalten, in welchem Umfang und zu welchem Preis Sie an Ihren Kunden wann und wo liefern sollen.
     Witerhin wird hier spezifiziert, wann das Projekt als abgeschlossen gilt und wer definiert, ob die Qualität stimmt. Es sollte klar festgelegt werden, wer für die Abnahme verantwortlich ist.
 
-    \clearpage
+    \newpage
 
 
     \section{Genehmigung}
@@ -241,11 +245,12 @@
         \textbf{(ABB Technikerschule)} & ...................................... & ...................................... & ...................................... \\
     \end{tabularx}
 
-    \clearpage
+    \newpage
 
     \section{Anhang}
     Alle weiteren Dokumente oder Zahlen und Fakten, die als Hintergrund zu dem Projekt dienen.
     \begin{enumerate}
+    	
     	\item Mockups
     	\item Projektzeitplan
     	\item Projektstrukturplan
@@ -270,7 +275,17 @@
 		\vspace*{\fill}
 	\end{huge}
 	\newpage
-	\includepdf[pages={1-},pagecommand={\pagestyle{fancy}},landscape=true,scale=0.8 ]{02_Dokumente/03_Projektzeitplan/OEG‐LWI‐SSA_Projektzeitplan_1.0_Closed.pdf}
+	\includepdf[pages={1-},pagecommand={\pagestyle{fancy}},landscape=true,scale=0.8 ]{02_Dokumente/02_Projektzeitplan/OEG‐LWI‐SSA_Projektzeitplan_1.0_Closed.pdf}
+	
+	\newpage
+	\begin{huge}
+		\vspace*{\fill}
+		\centering
+		2. Projektstrukturplan
+		\vspace*{\fill}
+	\end{huge}
+	\newpage
+	\includepdf[pages={1-},pagecommand={\pagestyle{fancy}},landscape=true,scale=0.8 ]{02_Dokumente/03_Projektstrukturplan/OEG‐LWI‐SSA_Projektstrukturplan_1.0_Closed.pdf}
 	
 	\newpage
 	\begin{huge}
@@ -280,7 +295,7 @@
 		\vspace*{\fill}
 	\end{huge}
 	\newpage
-	\includepdf[pages={1-},pagecommand={\pagestyle{fancy}},landscape=true]{02_Dokumente/02_Kostenplan/OEG‐LWI‐SSA_Kostenplan_1.0_Closed.pdf}
+	\includepdf[pages={1-},pagecommand={\pagestyle{fancy}},landscape=true]{02_Dokumente/04_Kostenplan/OEG‐LWI‐SSA_Kostenplan_1.0_Closed.pdf}
 	
 	
 
