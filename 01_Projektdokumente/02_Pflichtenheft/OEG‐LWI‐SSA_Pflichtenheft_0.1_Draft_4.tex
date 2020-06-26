@@ -12,9 +12,13 @@
 \usepackage{hyperref}
 \usepackage{tocloft}
 \usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{makecell}
 \usepackage{lscape}
 \usepackage{pdflscape}
 \usepackage{import}
+\usepackage{longtable}
+
 % \usepackage{showframe} %For debugging
 
 \hypersetup{
@@ -106,7 +110,8 @@
         0.7 & 24.06.2020 & OEG & Formatierungen \\
         0.8 & 25.06.2020 & LWI & Korrekturlesen \\
         0.9 & 25.06.2020 & OEG & Rechtschreibung, Abnahme Vorbereitungen \\
-        0.10 & 26.06.2020 & LWI & Rechtschreibung, Korrekturlesen
+        0.10 & 26.06.2020 & LWI & Rechtschreibung, Korrekturlesen \\
+        1.0 & 26.06.2020 & OEG & Abnahme Pflichtenheft \\
     \end{tabularx}
 
     \newpage
@@ -214,9 +219,6 @@
     Die genaueren Beschreibungen und Details zu den einzelnen Anforderungen befinden sich im Anhang auf Seite \pageref{anforderung_anhang}.
 
     \subsection{Funktionale Anforderungen}
-
-    Funktionale Anforderungen sind gewünschte Funktionalitäten oder Verhaltensweisen eines Systems bzw. Produkts.
-    Sie beschreiben, was das zu entwickelnde Produkt tun oder können soll.
     \\
     \begin{tabularx}{\columnwidth}{l l l X}
         \textbf{Task Nr.} & \textbf{Anforderung} & \textbf{Forderung / Wunsch} \\
@@ -234,8 +236,8 @@
     \end{tabularx}
 
     \subsection{Nichtfunktionale Anforderungen}
-
-    Nicht-funktionale Anforderungen sind Anforderungen an die Qualität, in welcher die geforderte Funktionalität zu erbringen ist. Dazu zählen beispielsweise auch das Design, Konformität zu bestimmten Gesetzen/Vorschriften oder die Reaktionszeit des Systems.
+    Aus dem Projektauftrag und im Gespräch mit dem Auftraggeber sind keine nichtfunktionalen Anforderungen entstanden. Die Visual Board GmbH pflegt aber einen hohen Qualitätsstandard und versucht stets bestehende Konzepte zu hinterfragen und zu verbessern.
+    Dieser hohe Standard ist in der folgenden Zielsetzung auf Seite \pageref{zielsetzung} ersichtlich.
 
     \subsection{Rahmenbedingung}
     \begin{tabularx}{\columnwidth}{l l l X}
@@ -246,25 +248,88 @@
         TTT-152 & Als Datenbank-Technologie muss MySQL verwendet werden & Forderung \\
     \end{tabularx}
 
-
-    \subsection{Gesetzliche Anforderungen}
-
-    \subsection{Technische Anforderungen}
-
-    \subsection{[weitere]}
-
     \end{landscape}
 
     \newpage
 
+    \section{Zielsetzung}
+Das Ziel dieses Projektes ist ein webbasiertes Tic-Tac-Toe Spiel zu realisieren. Bereits bestehende Erfahrungen sowie Ergebnisse des RGB-LED-Matrix Prototypen werden wiederverwendet, um z.B. den Spielstand auf der RGB-LED-Matrix darzustellen. Ausgehend vom Projektziel werden Ziele untenstehend strukturiert nach
+\begin{itemize}
+	\item Systemzielen
+	\item Prozesszielen
+	\item Mehrwert Zielen
+\end{itemize}
 
-    \section{Liefer- und Abnahmebedingungen}
+aufgelistet. Sämtliche Ziele sind nach den SMART Kriterien definiert:
+\begin{itemize}
 
-    Hier wird festgehalten, in welchem Umfang und zu welchem Preis Sie an Ihren Kunden wann und wo liefern sollen.
-    Witerhin wird hier spezifiziert, wann das Projekt als abgeschlossen gilt und wer definiert, ob die Qualität stimmt. Es sollte klar festgelegt werden, wer für die Abnahme verantwortlich ist.
+	\item Spezifisch
+	\item Messbar
+	\item Akzeptiert
+	\item Realistisch
+	\item Terminiert
+\end{itemize}
+\subsection{Zieldefinition}
+Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtigkeit der Ziele wird anhand der Priorität eingestuft: Muss (M), Soll (S) und Kann (K)
+\newpage
+    \subsubsection{Systemziele}
+\begin{table}[h]
+    	\centering
+	\begin{tabularx}{\columnwidth}{l X r}
+		\textbf{\thead{Nr}} & \textbf{\thead{Zielbeschreibung}} & \textbf{\thead{Priorität \\ (M, S, K)}}\\ \Xhline{2pt}
+		1 & Das Tic-Tac-Toe spiel muss Multiplayer fähig sein & M \\ \Xhline{1pt}
+		2 & Spielhistorien müssen vom benutzer abgerufen werden können & M \\ \Xhline{1pt}
+		3 & Aktuelle Spielzüge müssen auf der RGB-LED-Matrix dargestellt werden & M \\ \Xhline{1pt}
+		4 & Objekte sollen in Universellen Formaten gespeichert werden um Sie für späterew Projekte wieder zu verwenden & S \\ \Xhline{1pt}
+		5 & Dem Benutzer muss ein Web-GUI zur Verfügung gestellt werden & M \\ \Xhline{1pt}
+		6 & Vom Benutzer erzeugte Daten müssen in einer zentralen MySQL Datenbank abgelegt werden & M \\ \Xhline{1pt}
+		7 & Der Benutzer muss sich am System anmelden können & M \\ \Xhline{1pt}
+		8 & Die allgemeinen Speilregelen des offiziellen Tic-Tac-Toe Spiels müssen abgebildet werden & M \\ \Xhline{1pt}
+    \end{tabularx}
+	\caption{Systemziele}
+\end{table}
+
+\newpage
+    \subsubsection{Prozessziele}
+    \begin{table}[h]
+    	\centering
+    	\begin{tabularx}{\columnwidth}{l X r}
+    		\textbf{\thead{Nr}} & \textbf{\thead{Zielbeschreibung}} & \textbf{\thead{Priorität \\ (M, S, K)}}\\ \Xhline{2pt}
+    		1 & Das System muss bis zum 26.08.2020 fertiggestellt werden. & M \\ \Xhline{1pt}
+    		2 & Der Prototyp soll am 26.08.2020 den Stakeholdern präsentiert werden. & M \\ \Xhline{1pt}
+    		3 & Das Projekt wird nach dem Wasserfallmodell unter Berücksichtigung Agiler Projektmethoden für die Entwicklung umgesetzt. & M \\ \Xhline{1pt}
+    		4 & Am 13.05.2020 findet das Kick-off-Meeting statt, in welchem die Initialisierungsphase besprochen wird und der Übergang in die Konzeptphase stattfindet. Mit der Freigabe der Stakeholder können erste Ideen geplant und Lösungen evaluiert werden& M \\ \Xhline{1pt}
+    		5 &Bis zum 26.06.2020 muss die Konzeptionelle Planung abgeschlossen sein, um anschliessend mit der Realisierung zu beginnen & M \\ \Xhline{1pt}
+    		6 & Folgende Personen sind zu 100\% in das Projekt involviert:
+    		-  Oliver Egloff
+    		-	Leonardo Wiedemeier
+    		-	Samuel Salomon & M \\ \Xhline{1pt}
+    		7 &	Die angefallenen Kosten sind zu jedem Zeitpunkt aktuell zu halten und mit dem Soll-Zustand zu vergleichen. Dies erfordert ein ständiges Nachführen der geleisteten Stunden aller Projektmitarbeiter & M
+
+    	\end{tabularx}
+    	\caption{Prozessziele}
+    \end{table}
 
     \newpage
+    \subsubsection{Mehrwert Ziele}
+    \begin{table}[h]
+	\centering
+	\begin{tabularx}{\columnwidth}{l X r}
+		\textbf{\thead{Nr}} & \textbf{\thead{Zielbeschreibung}} & \textbf{\thead{Priorität \\ (M, S, K)}}\\ \Xhline{2pt}
+		1 & Know-How in der Entwicklung von Web Applikationen ausweiten & M \\ \Xhline{1pt}
+		2 &	Projektmethoden richtig anwenden & M \\ \Xhline{1pt}
+		3 &	Agile Methoden im GIT Umfeld sowie im Projektmanagement anwenden &	M \\ \Xhline{1pt}
+		4 &	Know-How in Projektmitarbeit ausweiten & M \\ \Xhline{1pt}
+		5 &	Umgang mit MQTT-Brokern sowie weiteren Web-Technologien wie HTML, CCS und Javascript verbessern & M \\ \Xhline{1pt}
+		6 & Erlernen aktueller Web-Technologien & S \\ \Xhline{1pt}
+		7 &	Erfahrungen mit Projektmethoden (Wasserfall und Agile) sammeln & M
 
+	\end{tabularx}
+	\caption{Mehrwert Ziele}
+    \end{table}
+    \\
+
+    \newpage
 
     \section{Genehmigung}
     \begin{tabularx}{\columnwidth}{l l l X}
