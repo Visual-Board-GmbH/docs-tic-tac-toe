@@ -104,7 +104,9 @@
         0.5 & 24.06.2020 & SSA & Kostenplan \\
         0.6 & 24.06.2020 & OEG & Anforderungen angehängt \\
         0.7 & 24.06.2020 & OEG & Formatierungen \\
-        0.8 & 25.06.2020 & OEG & Rechtschreibung, Abnahme Vorbereitungen  \\
+        0.8 & 25.06.2020 & LWI & Korrekturlesen \\
+        0.9 & 25.06.2020 & OEG & Rechtschreibung, Abnahme Vorbereitungen \\
+        0.10 & 26.06.2020 & LWI & Rechtschreibung, Korrekturlesen
     \end{tabularx}
 
     \newpage
@@ -116,38 +118,38 @@
 
 
     \section{Einleitung}
-    Das Unternehmen Visual Board GmbH soll für die ABB Technikerschule ein weiteres Projekt realisieren welches auf den Prototypen des letzten gemeinsamen Projektes aufbauen soll. Im Unterschied zum letzten Projekt wird hier mehr Wert auf die Entwicklung und das Produkt gelegt. Die Idee ist es, das Projekt möglichst realitätsnah zu gestalten.
+    Das Unternehmen Visual Board GmbH soll für die ABB Technikerschule ein weiteres Projekt realisieren, welches auf den Prototypen des letzten gemeinsamen Projektes aufbauen soll. Im Unterschied zum letzten Projekt wird hier mehr Wert auf die Entwicklung und das Produkt gelegt. Die Idee ist es, das Projekt möglichst realitätsnah zu gestalten.
     
     \newpage
 
 
     \section{Allgemeines}
 
-    \subsection{Ziel und Zweck des Dokumentes}
-    Die vorliegende Pflichtenheft enthält die funktionalen und nicht funktionalen Anforderungen an das zu entwickelnde Produkt.
-    Es dient als Grundlage für die Ausschreibung und Vertragsgestaltung. Wie auch bildet es die Vorgabe für die Erstellung von Angeboten.
-    Würde in der Praxis ein Vertrag zwischen Auftragnehmer und Auftraggeber zustande kommen, wäre das vorliegende Pflichtenheft rechtsverbindlich.
+    \subsection{Ziel und Zweck des Dokuments}
+    Das vorliegende Pflichtenheft enthält die funktionalen und nicht funktionalen Anforderungen an das zu entwickelnde Produkt.
+    Es dient als Grundlage für die Ausschreibung und Vertragsgestaltung. Zudem bildet es die Vorgabe für die Erstellung von Angeboten.
+    Würde in der Praxis ein Vertrag zwischen Auftragnehmer und Auftraggeber zustande kommen, wäre das vorliegende Pflichtenheft rechtsbindend.
     In der Regel verlieren durch das Pflichtenheft alle bisherigen Vereinbarungen zwischen Auftraggeber und Auftragnehmer ihre Gültigkeit - sofern diese hier nicht explizit hinterlegt sind.
     Die Anforderungen legen Rahmenbedingungen für die Entwicklung fest, die vom Auftragnehmer im Pflichtenheft konkretisiert werden.
 
     \subsection{Ausgangssituation}
-    Die Visual Board GmbH ist ein von Schüler erfundenes fiktives Unternehmen, welches in der Klasse B20-if an der ABB Technikerschule Semesterarbeiten entgegennimmt und diese Umsetzt. \\
-    Herr Hirschi ist Studiengangleiter der Klasse B20-if an der ABB Technikerschule und besitzt in diesem Projekt die Rolle des Auftraggebers. \\
+    Die Visual Board GmbH ist ein von Schüler erfundenes fiktives Unternehmen, welches in der Klasse B20-if an der ABB Technikerschule Semesterarbeiten entgegennimmt und diese umsetzt. \\
+    Herr Hirschi ist Studiengangleiter der Klasse B20-if an der ABB Technikerschule und nimmt in diesem Projekt die Rolle des Auftraggebers ein. \\
     Herr Jenzer begleitet als Dozent der Klasse B20-if die Semesterarbeit in der Rolle des Projektsteuerungs-Gremium.
 
     \subsection{Projektbezug}
     Die Visual Board GmbH hat bereits mit der ABBTS (Rolf Hirschi) zusammengearbeitet und
-    einen Prototypen erstellt um Bilder auf einer RGB-LED-Matrix anzuzeigen.
+    einen Prototypen erstellt, um Bilder auf einer RGB-LED-Matrix anzuzeigen.
     Das vorliegende Projekt baut auf dieses Vorgängerprojekt (aus der Semesterarbeit des 3. Semesters) auf.
-    Die RGB-LED-Matrix wurde funktionsfähig gestellt und es sollte ein Programm geschrieben werden um Bilder
+    Die RGB-LED-Matrix wurde funktionsfähig gestellt und es sollte ein Programm geschrieben werden, um Bilder
     wie gewünscht auf der Matrix anzuzeigen. Darunter ist das korrekte transformieren, aufbereiten
     und weitergeben an die Matrix zu verstehen.
     Der Prototyp wurde von der Visual Board GmbH mit einer REST-Api in Java umgesetzt,
-    welche auf dem Raspberry Pi der Hardware, oder einem externen Windows Computer läuft.
-    So wurde die RGB-LED-Matrix, dem Netzwerk in welchem sie sich befindet hat, zur Verfügung gestellt.
-    Und es ist möglich mit den korrekten "requests" Bilder direkt oder mit dem Webinterface
+    welche auf dem Raspberry Pi der Hardware oder einem externen Windows Computer läuft.
+    So wurde die RGB-LED-Matrix dem Netzwerk, in welchem sie sich befindet, zur Verfügung gestellt.
+    Es ist möglich mit den korrekten "Requests" Bilder direkt oder mit dem Webinterface
     an die Matrix zu schicken.
-    Der Visual Board GmbH wurde die komplette Hardware durch die ABBTS gestellt wurde.
+    Der Visual Board GmbH wurde die komplette Hardware durch die ABBTS zu Verfügung gestellt.
     \newline
     Teil der Projektorganisiton waren:
     \begin{itemize}
@@ -159,7 +161,7 @@
         \item Herr Jenzer jeweils als Mitglied des PSG (Projektsteuerungs-Gremium)
     \end{itemize}
     
-    Das Endprodukt aus dem 3. Semesterarbeit, die RGB-LED-Matrix, gilt als Grundbaustein für dieses Projekt.
+    Das Endprodukt aus der Semesterarbeit des dritten Semesters, die RGB-LED-Matrix, gilt als Grundbaustein für dieses Projekt.
     Das Produkt wird um ein Tic-Tac-Toe Spiel ausgebaut.
 
     \newpage
@@ -178,7 +180,7 @@
         \end{tabularx}
 
         \subsection{Teams und Abkürzungen}
-        In diesem Absatz sind alle wichtigen Rollen, welche für den Auftraggeber relevant sind aufgelistet.
+        In diesem Absatz sind alle wichtigen Rollen, welche für den Auftraggeber relevant sind, aufgelistet.
         \\
 
         \begin{tabularx}{\columnwidth}{l l l X}
@@ -197,43 +199,43 @@
     \subsection{Ziele des Anbieters}
     Das Ziel der Visual Board GmbH und deren Projektmitglieder ist es, die Fähigkeiten der Projektmitglieder unter Beweis zu stellen und zu vertiefen.
     Jedes Projektmitglied besitzt gute Erfahrungen in seinem Fachgebiet und kann dieses Wissen seinen Projektkollegen weitervermitteln.
-    Des Weiteren möchten wir die Zusammenarbeit innerhalb der Projektmitarbeiter aber auch mit dem Arbeitgeber stärken, um zukünftige Projekte noch besser zu bewältigen.
+    Des Weiteren möchten wir die Zusammenarbeit der Projektmitarbeiter untereinander, wie auch mit dem Arbeitgeber stärken, um zukünftige Projekte noch besser zu bewältigen.
 
     \subsection{Ziele und Nutzen des Anwenders}
-    Die ABBTS hat sich entschieden auf den Prototypen der Visual Board GmbH auszubauen und die Spiellogik um ein Tic-Tac-Toe Spiel zu erweitern.
-    Es soll die Möglichkeit bestehen das mehrere Spieler, auf verschiedenen Endgeräten, gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgibt.
-    Der Anwender soll in der Rolle als Spieler viel Spass und Freue am Spiel haben.
-    Detailliertere Ausführungen findet man im Kapitel \ref{anforderungen}.
+    Die ABBTS hat sich entschieden den Prototypen der Visual Board GmbH auszubauen und die Spiellogik um ein Tic-Tac-Toe Spiel zu erweitern.
+    Es soll die Möglichkeit bestehen, dass mehrere Spieler auf verschiedenen Endgeräten gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgibt.
+    Der Anwender soll in der Rolle als Spieler viel Spass und Freude am Spiel haben.
+    Für detailliertere Ausführungen siehe Kapitel \ref{anforderungen}.
 
     \newpage
 
     \begin{landscape}
     \section{Anforderungen} \label{anforderungen}
-    Die genaue Beschreibungen und Details zu den einzelnen Anforderungen befinden sich im Anhang auf Seite \pageref{anforderung_anhang}.
+    Die genaueren Beschreibungen und Details zu den einzelnen Anforderungen befinden sich im Anhang auf Seite \pageref{anforderung_anhang}.
 
     \subsection{Funktionale Anforderungen}
 
-    Funktionale Anforderungen sind gewünschte Funktionalitäten oder Verhalten eines Systems bzw. Produkts.
+    Funktionale Anforderungen sind gewünschte Funktionalitäten oder Verhaltensweisen eines Systems bzw. Produkts.
     Sie beschreiben, was das zu entwickelnde Produkt tun oder können soll.
     \\
     \begin{tabularx}{\columnwidth}{l l l X}
         \textbf{Task Nr.} & \textbf{Anforderung} & \textbf{Forderung / Wunsch} \\
         TTT-87 & Das System muss fähig sein, das Tic-Tac-Toe Spielfeld auf einer 16x16 Matrix anzuzeigen & Forderung \\
-        TTT-128 & Das System muss fähig sein Objekte in einem Universellen Format (Position, Grösse, Ausrichtung) zu speichern & Forderung \\
-        TTT-130 & Das System muss fähig sein über ein Web-GUI zu kommunizieren & Forderung \\
-        TTT-131 & Das System muss Daten die durch Benutzerinteraktionen erzeugt werden in einer Zentralen Datenbank speichern & Forderung \\
-        TTT-133 & Das System muss akiven Benutzern erlauben mehrere Spiele mit anderen Spielern zu starten & Forderung \\
-        TTT-134 & Das System muss dem Benutzer ermöglichen Objekte (Kreuze und Kreise) zu verwalten und generieren & Wunsch \\
+        TTT-128 & Das System muss fähig sein Objekte, in einem universellen Format (Position, Grösse, Ausrichtung) zu speichern & Forderung \\
+        TTT-130 & Das System muss fähig sein, über ein Web-GUI zu kommunizieren & Forderung \\
+        TTT-131 & Das System muss Daten, die durch Benutzerinteraktionen erzeugt werden, in einer zentralen Datenbank speichern & Forderung \\
+        TTT-133 & Das System muss akiven Benutzern erlauben, mehrere Spiele mit anderen Spielern zu starten & Forderung \\
+        TTT-134 & Das System muss dem Benutzer ermöglichen, Objekte (Kreuze und Kreise) zu verwalten und generieren & Wunsch \\
         TTT-135 & Das System muss Benutzerdaten speichern & Forderung \\
         TTT-136 & Das System muss Spielstände und Historien speichern & Forderung \\
         TTT-137 & Das System muss dem Benutzer erlauben sich anzumelden & Wunsch \\
-        TTT-138 & Das System muss dem Benutzer ermöglichen seine Spielzüge im Web-GUI zu machen & Forderung \\
+        TTT-138 & Das System muss dem Benutzer ermöglichen, seine Spielzüge im Web-GUI zu tätigen & Forderung \\
         TTT-145 & Das System soll einem Administrator eine Administrationsseite zur Verwaltung von Spielständen und Benutzerdaten anzeigen & Wunsch \\
     \end{tabularx}
 
     \subsection{Nichtfunktionale Anforderungen}
 
-    Nichtfunktionale Anforderungen sind Anforderungen an die Qualität, in welcher die geforderte Funktionalität zu erbringen ist. Dazu zählen beispielsweise auch das Design, Konformität zu bestimmten Gesetzen/Vorschriften oder die Reaktionszeit des Systems.
+    Nicht-funktionale Anforderungen sind Anforderungen an die Qualität, in welcher die geforderte Funktionalität zu erbringen ist. Dazu zählen beispielsweise auch das Design, Konformität zu bestimmten Gesetzen/Vorschriften oder die Reaktionszeit des Systems.
 
     \subsection{Rahmenbedingung}
     \begin{tabularx}{\columnwidth}{l l l X}
@@ -241,7 +243,7 @@
         TTT-129 & Das System muss plattformunabhängig realisert werden & Forderung \\
         TTT-132 & Das System muss Spielzüge mittels MQTT-Broker zwischen Server und Client übermitteln & Forderung \\
         TTT-144 & Das System muss die Spielregeln des Tic-Tac-Toe Spiels 1:1 abbilden & Forderung \\
-        TTT-152 & Als Datenbank Technologie muss MySQL verwendet werden & Forderung \\
+        TTT-152 & Als Datenbank-Technologie muss MySQL verwendet werden & Forderung \\
     \end{tabularx}
 
 
@@ -277,7 +279,7 @@
     \newpage
 
     \section{Anhang}
-    Alle weiteren Dokumente oder Zahlen und Fakten, die als Hintergrund zu dem Projekt dienen.
+    Alle weiteren Dokumente sowie Zahlen und Fakten, die als Hintergrund zu dem Projekt dienen.
     \begin{enumerate}
     	\item Anforderungen
     	\item Projektzeitplan
