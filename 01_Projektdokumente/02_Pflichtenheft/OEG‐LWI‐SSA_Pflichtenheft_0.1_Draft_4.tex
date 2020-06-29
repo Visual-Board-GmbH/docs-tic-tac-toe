@@ -12,10 +12,13 @@
 \usepackage{hyperref}
 \usepackage{tocloft}
 \usepackage{tabularx}
-\usepackage{import}
+\usepackage{multirow}
+\usepackage{makecell}
 \usepackage{lscape}
 \usepackage{pdflscape}
 \usepackage{import}
+\usepackage{longtable}
+
 % \usepackage{showframe} %For debugging
 
 \hypersetup{
@@ -35,14 +38,47 @@
 
 %Define variables for document
 \newcommand{\shortAuthor}{OEG-LWI-SSA}
-\newcommand{\dstate}{Draft} %Draft, Progress, Closed
-\newcommand{\dversion}{0.1}
-\newcommand{\dname}{\shortAuthor\_20200428\_\dversion\_\dstate\_\pageref{LastPage}}
+\newcommand{\dstate}{Closed} %Draft, Progress, Closed
+\newcommand{\dversion}{1.0}
+\newcommand{\dname}{Pflichtenheft\_\shortAuthor\_20200626\_\dversion\_\dstate\_\pageref{LastPage}}
 
 \begin{document}
-
-    \section*{Pflichtenheft}
-    \newpage
+	
+	\begin{large}
+		\begin{tabular}{p{5cm}l l }
+			\textbf{Bildungsgang:} & Klasse B20-if4.1 Informatik \\
+			\textbf{Fach:} & Datenbank \& Web Engineering \\
+			\textbf{Semester:} & Semester 4 – 2019/2020 \\
+			\textbf{Autoren:} & Oliver Egloff, Leonardo Wiedemeier, Samuel Salomon
+		\end{tabular}
+	\end{large}
+	
+	
+	\vspace{1cm}
+	\hrule
+	\vspace{1cm}
+	\begin{center}
+		\centering
+		\LARGE{\textbf{Semesterarbeit – Visual Board GmbH}}
+	\end{center}
+	
+	
+	\vspace{20pt}
+	
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics{title.png}
+	\end{figure}
+\begin{center}
+	\centering
+	\section*{Pflichtenheft}
+\end{center}
+	
+	\newpage
+	
+    
+    
     %Define header & footer for twoside documents
     \fancyhead{} %Clear all header fields
     \fancyhead[L]{\includegraphics{header_img_abb2.png}}
@@ -58,15 +94,28 @@
 
     \begin{tabularx}{\columnwidth}{l X}
         \textbf{Erstellungsdatum:} & 14.06.2020 \\
-        \textbf{Autotren:} & Oliver Egloff (OEG), Samuel Salomon (SSA), Leonardo Wiedemeier (LWI) \\
+        \textbf{Autoren:} & Oliver Egloff (OEG), Samuel Salomon (SSA), Leonardo Wiedemeier (LWI) \\
         \textbf{Dateiname:} &\dname
     \end{tabularx}
 
     \section*{Änderungsverzeichnis}
     \begin{tabularx}{\columnwidth}{l l l X}
         \textbf{Version} & \textbf{Datum} & \textbf{Autor} & \textbf{Beschreibung}\\
-        0.1 & 14.06.2020 & OEG & Pflichtenheft erstellt \\
+        0.1 & 14.06.2020 & OEG & Pflichtenheft erstellt und Kapitel erfasst \\
+        0.2 & 24.06.2020 & SSA & Mockups angehängt \\
+        0.3 & 24.06.2020 & SSA, OEG & Projektzeitplan angehängt \\
+        0.4 & 24.06.2020 & LWI & Projektstrukturplan angehängt \\
+        0.5 & 24.06.2020 & SSA & Kostenplan \\
+        0.6 & 24.06.2020 & OEG & Anforderungen angehängt \\
+        0.7 & 24.06.2020 & OEG & Formatierungen \\
+        0.8 & 25.06.2020 & LWI & Korrekturlesen \\
+        0.9 & 25.06.2020 & OEG & Rechtschreibung, Abnahme Vorbereitungen \\
+        0.10 & 26.06.2020 & LWI & Rechtschreibung, Korrekturlesen \\
+        0.11 & 26.06.2020 & OEG & Zielsetzung eingefügt \\
+        1.0 & 26.06.2020 & OEG & Abnahme Pflichtenheft \\
     \end{tabularx}
+
+    \newpage
 
     \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
     \tableofcontents
@@ -75,38 +124,38 @@
 
 
     \section{Einleitung}
-    Das Unternehmen Visual Board GmbH soll für die ABB Technikerschule ein weiteres Projekt realisieren welches auf den Prototypen des letzten gemeinsamen Projektes aufbauen soll. Im Unterschied zum letzten Projekt wird hier mehr Wert auf die Entwicklung und das Produkt gelegt. Die Idee ist es, das Projekt möglichst realitätsnah zu gestalten.
+    Das Unternehmen Visual Board GmbH soll für die ABB Technikerschule ein weiteres Projekt realisieren, welches auf den Prototypen des letzten gemeinsamen Projektes aufbauen soll. Im Unterschied zum letzten Projekt wird hier mehr Wert auf die Entwicklung und das Produkt gelegt. Die Idee ist es, das Projekt möglichst realitätsnah zu gestalten.
     
     \newpage
 
 
     \section{Allgemeines}
 
-    \subsection{Ziel und Zweck des Dokumentes}
-    Die vorliegende Pflichtenheft enthält die funktionalen und nicht funktionalen Anforderungen an das zu entwickelnde Produkt.
-    Es dient als Grundlage für die Ausschreibung und Vertragsgestaltung. Wie auch bildet es die Vorgabe für die Erstellung von Angeboten.
-    Würde in der Praxis ein Vertrag zwischen Auftragnehmer und Auftraggeber zustande kommen, wäre das vorliegende Pflichtenheft rechtsverbindlich.
+    \subsection{Ziel und Zweck des Dokuments}
+    Das vorliegende Pflichtenheft enthält die funktionalen und nicht funktionalen Anforderungen an das zu entwickelnde Produkt.
+    Es dient als Grundlage für die Ausschreibung und Vertragsgestaltung. Zudem bildet es die Vorgabe für die Erstellung von Angeboten.
+    Würde in der Praxis ein Vertrag zwischen Auftragnehmer und Auftraggeber zustande kommen, wäre das vorliegende Pflichtenheft rechtsbindend.
     In der Regel verlieren durch das Pflichtenheft alle bisherigen Vereinbarungen zwischen Auftraggeber und Auftragnehmer ihre Gültigkeit - sofern diese hier nicht explizit hinterlegt sind.
     Die Anforderungen legen Rahmenbedingungen für die Entwicklung fest, die vom Auftragnehmer im Pflichtenheft konkretisiert werden.
 
     \subsection{Ausgangssituation}
-    Die Visual Board GmbH ist ein von Schüler erfundenes fiktives Unternehmen, welches in der Klasse B20-if an der ABB Technikerschule Semesterarbeiten entgegennimmt und diese Umsetzt. \\
-    Herr Hirschi ist Studiengangleiter der Klasse B20-if an der ABB Technikerschule und besitzt in diesem Projekt die Rolle des Auftraggebers. \\
+    Die Visual Board GmbH ist ein von Schüler erfundenes fiktives Unternehmen, welches in der Klasse B20-if an der ABB Technikerschule Semesterarbeiten entgegennimmt und diese umsetzt. \\
+    Herr Hirschi ist Studiengangleiter der Klasse B20-if an der ABB Technikerschule und nimmt in diesem Projekt die Rolle des Auftraggebers ein. \\
     Herr Jenzer begleitet als Dozent der Klasse B20-if die Semesterarbeit in der Rolle des Projektsteuerungs-Gremium.
 
     \subsection{Projektbezug}
     Die Visual Board GmbH hat bereits mit der ABBTS (Rolf Hirschi) zusammengearbeitet und
-    einen Prototypen erstellt um Bilder auf einer RGB-LED-Matrix anzuzeigen.
+    einen Prototypen erstellt, um Bilder auf einer RGB-LED-Matrix anzuzeigen.
     Das vorliegende Projekt baut auf dieses Vorgängerprojekt (aus der Semesterarbeit des 3. Semesters) auf.
-    Die RGB-LED-Matrix wurde funktionsfähig gestellt und es sollte ein Programm geschrieben werden um Bilder
+    Die RGB-LED-Matrix wurde funktionsfähig gestellt und es sollte ein Programm geschrieben werden, um Bilder
     wie gewünscht auf der Matrix anzuzeigen. Darunter ist das korrekte transformieren, aufbereiten
     und weitergeben an die Matrix zu verstehen.
     Der Prototyp wurde von der Visual Board GmbH mit einer REST-Api in Java umgesetzt,
-    welche auf dem Raspberry Pi der Hardware, oder einem externen Windows Computer läuft.
-    So wurde die RGB-LED-Matrix, dem Netzwerk in welchem sie sich befindet hat, zur Verfügung gestellt.
-    Und es ist möglich mit den korrekten "requests" Bilder direkt oder mit dem Webinterface
+    welche auf dem Raspberry Pi der Hardware oder einem externen Windows Computer läuft.
+    So wurde die RGB-LED-Matrix dem Netzwerk, in welchem sie sich befindet, zur Verfügung gestellt.
+    Es ist möglich mit den korrekten "Requests" Bilder direkt oder mit dem Webinterface
     an die Matrix zu schicken.
-    Der Visual Board GmbH wurde die komplette Hardware durch die ABBTS gestellt wurde.
+    Der Visual Board GmbH wurde die komplette Hardware durch die ABBTS zu Verfügung gestellt.
     \newline
     Teil der Projektorganisiton waren:
     \begin{itemize}
@@ -118,7 +167,7 @@
         \item Herr Jenzer jeweils als Mitglied des PSG (Projektsteuerungs-Gremium)
     \end{itemize}
     
-    Das Endprodukt aus dem 3. Semesterarbeit, die RGB-LED-Matrix, gilt als Grundbaustein für dieses Projekt.
+    Das Endprodukt aus der Semesterarbeit des dritten Semesters, die RGB-LED-Matrix, gilt als Grundbaustein für dieses Projekt.
     Das Produkt wird um ein Tic-Tac-Toe Spiel ausgebaut.
 
     \newpage
@@ -137,9 +186,9 @@
         \end{tabularx}
 
         \subsection{Teams und Abkürzungen}
-        In diesem Absatz sind alle wichtigen Rollen, welche für den Auftraggeber relevant sind aufgelistet.
+        In diesem Absatz sind alle wichtigen Rollen, welche für den Auftraggeber relevant sind, aufgelistet.
         \\
-        \\
+
         \begin{tabularx}{\columnwidth}{l l l X}
             \textbf{Rolle(n)} & \textbf{Name} & \textbf{E-Mail} & \textbf{Unternehmen} \\
             Auftraggeber & Rolf Hirschi & r.hirschi@abbts.ch & ABB Technikerschule \\
@@ -156,85 +205,129 @@
     \subsection{Ziele des Anbieters}
     Das Ziel der Visual Board GmbH und deren Projektmitglieder ist es, die Fähigkeiten der Projektmitglieder unter Beweis zu stellen und zu vertiefen.
     Jedes Projektmitglied besitzt gute Erfahrungen in seinem Fachgebiet und kann dieses Wissen seinen Projektkollegen weitervermitteln.
-    Des Weiteren möchten wir die Zusammenarbeit innerhalb der Projektmitarbeiter aber auch mit dem Arbeitgeber stärken, um zukünftige Projekte noch besser zu bewältigen.
+    Des Weiteren möchten wir die Zusammenarbeit der Projektmitarbeiter untereinander, wie auch mit dem Arbeitgeber stärken, um zukünftige Projekte noch besser zu bewältigen.
 
     \subsection{Ziele und Nutzen des Anwenders}
-    Die ABBTS hat sich entschieden auf den Prototypen der Visual Board GmbH auszubauen und die Spiellogik um ein Tic-Tac-Toe Spiel zu erweitern.
-    Es soll die Möglichkeit bestehen das mehrere Spieler, auf verschiedenen Endgeräten, gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgibt.
-    Der Anwender soll in der Rolle als Spieler viel Spass und Freue am Spiel haben.
-    Detailliertere Ausführungen findet man im Kapitel \ref{anforderungen}.
-
-    \subsection{Zielgruppe(n)}
-
-    Unter diesem Abschnitt wird definiert wer genau die Anwender des Produkts sein sollen und wodurch sie sich auszeichnen.
-    Auch hieraus können wichtige Anforderungen abgeleitet werden.
-    Als vereinfachtes Beispiel könnte das Interface einer Software, die auch von Senioren genutzt werden soll,
-    dementsprechend entworfen werden (z.B. sparsam eingesetzte, größere und auffälligere Buttons, die eindeutig auf die Funktion hindeuten, die sie auslösen).
+    Die ABBTS hat sich entschieden den Prototypen der Visual Board GmbH auszubauen und die Spiellogik um ein Tic-Tac-Toe Spiel zu erweitern.
+    Es soll die Möglichkeit bestehen, dass mehrere Spieler auf verschiedenen Endgeräten gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgibt.
+    Der Anwender soll in der Rolle als Spieler viel Spass und Freude am Spiel haben.
+    Für detailliertere Ausführungen siehe Kapitel \ref{anforderungen}.
 
     \newpage
 
+    \begin{landscape}
     \section{Anforderungen} \label{anforderungen}
-    
-    \begin{tabularx}{\columnwidth}{l l l X}
-    	\textbf{Rolle(n)} & \textbf{Name} & \textbf{E-Mail} & \textbf{Unternehmen} \\
-    \end{tabularx}
+    Die genaueren Beschreibungen und Details zu den einzelnen Anforderungen befinden sich im Anhang auf Seite \pageref{anforderung_anhang}.
 
     \subsection{Funktionale Anforderungen}
-    Funktionale Anforderungen sind gewünschte Funktionalitäten oder Verhalten eines Systems bzw. Produkts. Sie beschreiben, was das zu entwickelnde Produkt tun oder können soll.
-
-    \subsubsection{Anforderung 1}
-
-    \subsubsection{Anforderung 2}
-
-    \subsubsection{Anforderung 3}
+    \\
+    \begin{tabularx}{\columnwidth}{l l l X}
+        \textbf{Task Nr.} & \textbf{Anforderung} & \textbf{Forderung / Wunsch} \\
+        TTT-87 & Das System muss fähig sein, das Tic-Tac-Toe Spielfeld auf einer 16x16 Matrix anzuzeigen & Forderung \\
+        TTT-128 & Das System muss fähig sein Objekte, in einem universellen Format (Position, Grösse, Ausrichtung) zu speichern & Forderung \\
+        TTT-130 & Das System muss fähig sein, über ein Web-GUI zu kommunizieren & Forderung \\
+        TTT-131 & Das System muss Daten, die durch Benutzerinteraktionen erzeugt werden, in einer zentralen Datenbank speichern & Forderung \\
+        TTT-133 & Das System muss akiven Benutzern erlauben, mehrere Spiele mit anderen Spielern zu starten & Forderung \\
+        TTT-134 & Das System muss dem Benutzer ermöglichen, Objekte (Kreuze und Kreise) zu verwalten und generieren & Wunsch \\
+        TTT-135 & Das System muss Benutzerdaten speichern & Forderung \\
+        TTT-136 & Das System muss Spielstände und Historien speichern & Forderung \\
+        TTT-137 & Das System muss dem Benutzer erlauben sich anzumelden & Wunsch \\
+        TTT-138 & Das System muss dem Benutzer ermöglichen, seine Spielzüge im Web-GUI zu tätigen & Forderung \\
+        TTT-145 & Das System soll einem Administrator eine Administrationsseite zur Verwaltung von Spielständen und Benutzerdaten anzeigen & Wunsch \\
+    \end{tabularx}
 
     \subsection{Nichtfunktionale Anforderungen}
+    Aus dem Projektauftrag und im Gespräch mit dem Auftraggeber sind keine nichtfunktionalen Anforderungen entstanden. Die Visual Board GmbH pflegt aber einen hohen Qualitätsstandard und versucht stets bestehende Konzepte zu hinterfragen und zu verbessern.
+    Dieser hohe Standard ist in der Zielsetzung ersichtlich.
 
-    Nichtfunktionale Anforderungen sind Anforderungen an die Qualität, in welcher die geforderte Funktionalität zu erbringen ist. Dazu zählen beispielsweise auch das Design, Konformität zu bestimmten Gesetzen/Vorschriften oder die Reaktionszeit des Systems.
+    \subsection{Rahmenbedingung}
+    \begin{tabularx}{\columnwidth}{l l l X}
+        \textbf{Task Nr.} & \textbf{Anforderung} & \textbf{Forderung / Wunsch} \\
+        TTT-129 & Das System muss plattformunabhängig realisert werden & Forderung \\
+        TTT-132 & Das System muss Spielzüge mittels MQTT-Broker zwischen Server und Client übermitteln & Forderung \\
+        TTT-144 & Das System muss die Spielregeln des Tic-Tac-Toe Spiels 1:1 abbilden & Forderung \\
+        TTT-152 & Als Datenbank-Technologie muss MySQL verwendet werden & Forderung \\
+    \end{tabularx}
 
-    \subsection{Allgemeine Anforderungen}
-
-    \subsection{Gesetzliche Anforderungen}
-
-    \subsection{Technische Anforderungen}
-
-    \subsection{[weitere]}
-
-    \newpage
-
-    \section{Rahmenbedingungen}
-
-    Hier gehen Sie zum Beispiel auf die gesamte Bearbeitungszeit ein. Beschreiben Sie ruhig auch die geplanten Betriebs- und Arbeitszeiten.
-
-    \subsection{Zeitplan}
-
-    Wie viel Zeit wird für einzelne Phasen voraussichtlich aufgwendet? Hier sollte eine Übersicht folgen, die möglichst auch Arbeitszeiten oder ggf. Betriebspausen miteinbezieht.
-
-    \subsection{Technische Anforderungen}
-
-    Hier halten Sie fest, was Sie für die Umsetzung brauchen – zum Beispiel Hard- und Software. An dieser Stelle ist es sinnvoll auszuführen, welches Equipment Sie für welche Aufgabe benötigen.
-
-    \subsection{Problemanalyse}
-
-    Fassen Sie die wichtigsten Probleme zusammen, die Sie erwarten. Wichtig ist vor allem, dass Sie für die wahrscheinlichsten Probleme bereits einen Lösungsansatz formulieren, um später Zeit zu sparen. Machen Sie sich auch über unwahrscheinliche Probleme Gedanken.
-    
-   	//TODO LWI: finde das noch schwierig und ist das wirklich nötig im Pflichtenheft? letztes jahr war einiges kleiner vom umfang
-
-    \subsection{Qualität}
-
-    Welche Anforderungen stellen Sie an die Qualität? Beschreiben Sie auch, wie die Qualitätssicherung, -kontrolle und -abnahme aussieht.
-
+    \end{landscape}
 
     \newpage
 
+    \section{Zielsetzung}
+Das Ziel dieses Projektes ist ein webbasiertes Tic-Tac-Toe Spiel zu realisieren. Bereits bestehende Erfahrungen sowie Ergebnisse des RGB-LED-Matrix Prototypen werden wiederverwendet, um z.B. den Spielstand auf der RGB-LED-Matrix darzustellen. Ausgehend vom Projektziel werden Ziele untenstehend strukturiert nach
+\begin{itemize}
+	\item Systemzielen
+	\item Prozesszielen
+	\item Mehrwert Zielen
+\end{itemize}
 
-    \section{Liefer- und Abnahmebedingungen}
+aufgelistet. Sämtliche Ziele sind nach den SMART Kriterien definiert:
+\begin{itemize}
 
-    Hier wird festgehalten, in welchem Umfang und zu welchem Preis Sie an Ihren Kunden wann und wo liefern sollen.
-    Witerhin wird hier spezifiziert, wann das Projekt als abgeschlossen gilt und wer definiert, ob die Qualität stimmt. Es sollte klar festgelegt werden, wer für die Abnahme verantwortlich ist.
+	\item Spezifisch
+	\item Messbar
+	\item Akzeptiert
+	\item Realistisch
+	\item Terminiert
+\end{itemize}
+\subsection{Zieldefinition}
+Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtigkeit der Ziele wird anhand der Priorität eingestuft: Muss (M), Soll (S) und Kann (K).
+\newpage
+    \subsubsection{Systemziele}
+\begin{table}[h]
+    	\centering
+	\begin{tabularx}{\columnwidth}{l X r}
+		\textbf{\thead{Nr}} & \textbf{\thead{Zielbeschreibung}} & \textbf{\thead{Priorität \\ (M, S, K)}}\\ \Xhline{2pt}
+		1 & Das Tic-Tac-Toe spiel muss multiplayerfähig sein. & M \\ \Xhline{1pt}
+		2 & Spielhistorien müssen vom Benutzer abgerufen werden können. & M \\ \Xhline{1pt}
+		3 & Aktuelle Spielzüge müssen auf der RGB-LED-Matrix dargestellt werden. & M \\ \Xhline{1pt}
+		4 & Objekte sollen in universellen Formaten gespeichert werden, um sie für spätere Projekte wieder zu verwenden. & S \\ \Xhline{1pt}
+		5 & Dem Benutzer muss ein Web-GUI zur Verfügung gestellt werden. & M \\ \Xhline{1pt}
+		6 & Vom Benutzer erzeugte Daten müssen in einer zentralen MySQL Datenbank abgelegt werden. & M \\ \Xhline{1pt}
+		7 & Der Benutzer muss sich am System anmelden können. & M \\ \Xhline{1pt}
+		8 & Die allgemeinen Spielregeln des offiziellen Tic-Tac-Toe Spiels müssen abgebildet werden. & M \\ \Xhline{1pt}
+    \end{tabularx}
+	\caption{Systemziele}
+\end{table}
+
+\newpage
+    \subsubsection{Prozessziele}
+    \begin{table}[h]
+    	\centering
+    	\begin{tabularx}{\columnwidth}{l X r}
+    		\textbf{\thead{Nr}} & \textbf{\thead{Zielbeschreibung}} & \textbf{\thead{Priorität \\ (M, S, K)}}\\ \Xhline{2pt}
+    		1 & Das System muss bis zum 26.08.2020 fertiggestellt werden. & M \\ \Xhline{1pt}
+    		2 & Der Prototyp soll am 26.08.2020 den Stakeholdern präsentiert werden. & M \\ \Xhline{1pt}
+    		3 & Das Projekt wird nach dem Wasserfallmodell unter Berücksichtigung Agiler Projektmethoden für die Entwicklung umgesetzt. & M \\ \Xhline{1pt}
+    		4 & Am 13.05.2020 findet das Kick-off-Meeting statt, in welchem die Initialisierungsphase besprochen wird und der Übergang in die Konzeptphase stattfindet. Mit der Freigabe der Stakeholder können erste Ideen geplant und Lösungen evaluiert werden. & M \\ \Xhline{1pt}
+    		5 &Bis zum 26.06.2020 muss die Konzeptionelle Planung abgeschlossen sein, um anschliessend mit der Realisierung zu beginnen. & M \\ \Xhline{1pt}
+    		6 & Folgende Personen sind zu 100\% in das Projekt involviert: Oliver Egloff, Leonardo Wiedemeier, Samuel Salomon & M \\ \Xhline{1pt}
+    		7 &	Die angefallenen Kosten sind zu jedem Zeitpunkt aktuell zu halten und mit dem Soll-Zustand zu vergleichen. Dies erfordert ein ständiges Nachführen der geleisteten Stunden aller Projektmitarbeiter. & M
+
+    	\end{tabularx}
+    	\caption{Prozessziele}
+    \end{table}
 
     \newpage
+    \subsubsection{Mehrwert Ziele}
+    \begin{table}[h]
+	\centering
+	\begin{tabularx}{\columnwidth}{l X r}
+		\textbf{\thead{Nr}} & \textbf{\thead{Zielbeschreibung}} & \textbf{\thead{Priorität \\ (M, S, K)}}\\ \Xhline{2pt}
+		1 & Know-How in der Entwicklung von Web Applikationen ausweiten & M \\ \Xhline{1pt}
+		2 &	Projektmethoden richtig anwenden & M \\ \Xhline{1pt}
+		3 &	Agile Methoden im GIT Umfeld sowie im Projektmanagement anwenden &	M \\ \Xhline{1pt}
+		4 &	Know-How in Projektmitarbeit ausweiten & M \\ \Xhline{1pt}
+		5 &	Umgang mit MQTT-Brokern sowie weiteren Web-Technologien wie HTML, CCS und Javascript verbessern & M \\ \Xhline{1pt}
+		6 & Erlernen aktueller Web-Technologien & S \\ \Xhline{1pt}
+		7 &	Erfahrungen mit Projektmethoden (Wasserfall und Agile) sammeln & M
 
+	\end{tabularx}
+	\caption{Mehrwert Ziele}
+    \end{table}
+    \\
+
+    \newpage
 
     \section{Genehmigung}
     \begin{tabularx}{\columnwidth}{l l l X}
@@ -249,25 +342,26 @@
     \newpage
 
     \section{Anhang}
-    Alle weiteren Dokumente oder Zahlen und Fakten, die als Hintergrund zu dem Projekt dienen.
+    Alle weiteren Dokumente sowie Zahlen und Fakten, die als Hintergrund zu dem Projekt dienen.
     \begin{enumerate}
-    	
-    	\item Mockups
+    	\item Anforderungen
     	\item Projektzeitplan
-    	\item Projektstrukturplan
-    	\item Kostenplan
+        \item Projektstrukturplan
+        \item Kostenplan
+        \item Mockups
     \end{enumerate}
 	
 	\newpage
-	\begin{huge}
-		\vspace*{\fill}
-		\centering
-		1. Mockups
-		\vspace*{\fill}
-	\end{huge}
-	\newpage
-	\includepdf[pages={1-},pagecommand={\pagestyle{fancy}}]{02_Dokumente/01_Mockups/OEG‐LWI‐SSA_Mockups_1.0_Closed.pdf}
-	
+    \label{anforderung_anhang}
+    \begin{huge}
+        \vspace*{\fill}
+        \centering
+        1. Anforderungen
+        \vspace*{\fill}
+    \end{huge}
+    \newpage
+    \includepdf[pages={1-},pagecommand={\pagestyle{fancy}}]{02_Dokumente/05_Anforderungen/Anforderungen.pdf}
+
 	\newpage
 	\begin{huge}
 		\vspace*{\fill}
@@ -282,7 +376,7 @@
 	\begin{huge}
 		\vspace*{\fill}
 		\centering
-		2. Projektstrukturplan
+		3. Projektstrukturplan
 		\vspace*{\fill}
 	\end{huge}
 	\newpage
@@ -297,7 +391,15 @@
 	\end{huge}
 	\newpage
 	\includepdf[pages={1-},pagecommand={\pagestyle{fancy}},landscape=true]{02_Dokumente/04_Kostenplan/OEG‐LWI‐SSA_Kostenplan_1.0_Closed.pdf}
-	
+
+    \begin{huge}
+        \vspace*{\fill}
+        \centering
+        5. Mockups
+        \vspace*{\fill}
+    \end{huge}
+    \newpage
+    \includepdf[pages={1-},pagecommand={\pagestyle{fancy}}]{02_Dokumente/01_Mockups/OEG‐LWI‐SSA_Mockups_1.0_Closed.pdf}
 	
 
 \end{document}
