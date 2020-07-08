@@ -1,0 +1,105 @@
+\documentclass[11pt, a4paper, twoside]{article}
+
+\usepackage[table]{xcolor}
+\usepackage{geometry} %Set page layouts
+\usepackage{pdfpages} %Include pdf files
+\usepackage{fancyhdr} %Header and Footer
+\usepackage{graphicx} %Inlcude graphics
+\usepackage{lastpage} %Reference the number of pages in your LATEX
+\usepackage[german]{babel}
+\usepackage{fontspec}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{tabularx}
+\usepackage{import}
+\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{verbatim}
+% \usepackage{showframe} %For debugging
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+\geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=35pt, includeheadfoot, portrait}
+\setmainfont{Calibri}
+
+%Path relative to the .tex file containing the \includegraphics command
+\graphicspath{{01_Grafiken/}}
+
+\tocloftpagestyle{fancy}
+
+%Define variables for document
+\newcommand{\shortAuthor}{OEG-LWI-SSA}
+\newcommand{\dstate}{Draft} %Draft, Progress, Closed
+\newcommand{\dversion}{0.1}
+\newcommand{\dname}{\shortAuthor\_Backend\_Coding\_Guidelines\_\dversion\_\dstate\_\pageref{LastPage}}
+
+\begin{document}
+
+    \section*{Git Guidelines - Visual Board GmbH}
+    \newpage
+    %Define header & footer for twoside documents
+    \fancyhead{} %Clear all header fields
+    \fancyhead[L]{\includegraphics{header_img_abb2.png}}
+    \fancyfoot{} %Clear all footer fields
+    \fancyfoot[RO, LE]{\small \thepage \textbar \pageref{LastPage}}
+    \fancyfoot[LO, RE]{\small \dname}
+    \renewcommand{\footrulewidth}{0.4pt}
+    \renewcommand{\headrulewidth}{0.4pt}
+    \pagestyle{fancy}
+
+
+    \section*{Dokumentenmanagement}
+
+    \begin{tabularx}{\columnwidth}{l X}
+        \textbf{Erstellungsdatum:} & 08.07.2020 \\
+        \textbf{Autoren:} & Leonardo Wiedemeier (LWI) \\
+        \textbf{Dateiname:} &\dname
+    \end{tabularx}
+
+    \section*{Änderungsverzeichnis}
+    \begin{tabularx}{\columnwidth}{l l l X}
+        \textbf{Version} & \textbf{Datum} & \textbf{Autor} & \textbf{Beschreibung}\\
+        0.1 & 08.07.2020 & LWI & Git Guidelines erstellt \\
+    \end{tabularx}
+
+    \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+    \tableofcontents
+
+    \newpage
+
+    \section{Master Branch}
+    Der Master Branch ist ``protected'' und ``default''.
+    \newline
+    Default bedeuted, er ist der standard Branch bei jedem neuen merge request auf welchen gemerged wird.
+    Auf Protected Branches kann nur gemerged werden. Direktes pushen ist auf diese Branches nicht möglich.
+    
+    \section{Naming}
+    Branches werden nach folgendem Schema bennant:
+    \begin{itemize}
+    	\item Issues \textbf{TTT-<issueNumber>\_<issueName>}
+    	\item Teilimplementierungen für einen Issue \textbf{feature/<was-wird-implementiert-oder-angepasst}
+    	\item fixes/hotfixes \textbf{fix/<was-wird-gefixed}
+    \end{itemize}
+
+    \section{Vorgehen}
+    \begin{enumerate}
+    	\item Es wird vom Master ausgehend der Issue Branch erstellt.
+    	\item Für ``jede'' Teilimplementation wird ein Feature Branch erstellt.
+    	\begin{itemize}
+    		\item es werden unnötig grosse Codereviews vermieden
+    		\item der jeweilige Code Teil kann übersichtlich von anderen Mitarbeiter kontrolliert und verstanden/kritisiert werden
+    	\end{itemize}
+    	\item Nach dem Codereview von mind. 1 Mitarbeiter, wird der Feature Branch in den Issue Branch gemerged.
+    	\item Sobald der Issue abgeschlossen wurde, kann dieser vom Verantwortlich in den Master Branch gemerged werden.
+    \end{enumerate}
+    	
+    	
+    	
+\end{document}
+
