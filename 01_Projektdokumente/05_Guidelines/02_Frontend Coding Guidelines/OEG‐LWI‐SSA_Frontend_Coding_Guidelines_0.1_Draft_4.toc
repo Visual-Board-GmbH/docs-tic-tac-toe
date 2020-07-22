@@ -6,7 +6,7 @@
 \contentsline {subsection}{\numberline {1.4}mixins}{3}{subsection.1.4}%
 \contentsline {subsection}{\numberline {1.5}router}{3}{subsection.1.5}%
 \contentsline {subsection}{\numberline {1.6}views}{3}{subsection.1.6}%
-\contentsline {section}{\numberline {2}Code Style}{3}{section.2}%
-\contentsline {section}{\numberline {3}Logging}{3}{section.3}%
-\contentsline {section}{\numberline {4}Validierung}{3}{section.4}%
+\contentsline {section}{\numberline {2}Dateibenennung}{3}{section.2}%
+\contentsline {section}{\numberline {3}Code Style}{3}{section.3}%
+\contentsline {section}{\numberline {4}Validierung}{4}{section.4}%
 \contentsline {section}{\numberline {5}Variablenbennenung}{4}{section.5}%
