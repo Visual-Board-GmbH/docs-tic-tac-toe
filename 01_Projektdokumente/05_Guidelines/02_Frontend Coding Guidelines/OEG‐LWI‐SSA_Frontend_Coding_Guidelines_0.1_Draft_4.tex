@@ -36,12 +36,12 @@
 %Define variables for document
 \newcommand{\shortAuthor}{OEG-LWI-SSA}
 \newcommand{\dstate}{Draft} %Draft, Progress, Closed
-\newcommand{\dversion}{0.1}
-\newcommand{\dname}{\shortAuthor\_Backend\_Coding\_Guidelines\_\dversion\_\dstate\_\pageref{LastPage}}
+\newcommand{\dversion}{0.2}
+\newcommand{\dname}{\shortAuthor\_Frontend\_Coding\_Guidelines\_\dversion\_\dstate\_\pageref{LastPage}}
 
 \begin{document}
 
-    \section*{Java Coding Guidelines - Visual Board GmbH}
+    \section*{Frontend Coding Guidelines - Visual Board GmbH}
     \newpage
     %Define header & footer for twoside documents
     \fancyhead{} %Clear all header fields
@@ -57,44 +57,79 @@
     \section*{Dokumentenmanagement}
 
     \begin{tabularx}{\columnwidth}{l X}
-        \textbf{Erstellungsdatum:} & 22.06.2020 \\
-        \textbf{Autoren:} & Oliver Egloff (OEG) \\
+        \textbf{Erstellungsdatum:} & 01.07.2020 \\
+        \textbf{Autoren:} & Samuel Salomon (SSA) \\
         \textbf{Dateiname:} &\dname
     \end{tabularx}
 
     \section*{Änderungsverzeichnis}
     \begin{tabularx}{\columnwidth}{l l l X}
         \textbf{Version} & \textbf{Datum} & \textbf{Autor} & \textbf{Beschreibung}\\
-        0.1 & 22.06.2020 & OEG & Coding Guidelines erstellt \\
+        0.1 & 01.07.2020 & SSA & Dokument erstellt \\
+        0.2 & 06.07.2020 & SSA & Coding Guidelines definiert \\
     \end{tabularx}
 
     \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
     \tableofcontents
 
     \clearpage
+    
+    \section{Ordnerstruktur}
+    	Alle Projektrelevanten Dateien befinden sich im im src Ordner des Projektes. Die verschiedenen Unterordner werden folgenden näher erklärt.
+    	In dem Hauptverzeichnis befinden sich bereits zwei Dateien (App.vue, main.js).
+    
+   
+   		\subsection{api}
+   		Falls API Anfragen nötig sind werden die dafür erforderlichen Dateien in diesem Ordner abgelegt.
+    	
+    	\subsection{assets}
+    	In diesem Ordner werden Daten wie Bilder, HTML Seiten oder ähnliches gespeichert die Später in die js Dateien importiert werden.
+    	
+    	\subsection{components}
+    	Beinhlatet alle Komponenten des Projektes die später in den Hauptansichten (views) verwendet werden. Komponenten sollten in weitere Unterordner strukturiert werden.
+    	
+    	\subsection{mixins}
+    	Die Mixins sind Teile des Javascript-Codes, die in verschiedenen Komponenten wiederverwendet werden. Demnach befinden sich in diesem Ordner Methoden die in jeder Komponente aus Vue.js wiederverwendet werden können.
+    	
+    	\subsection{router}
+    	Routen werden verwendet um Komponenten auf spezifische Pfade der Web Applikation zu mappen. JS Dateien mit Routen definiert werden in diesem Ordner abgelegt.
+    	
+    	\subsection{views}
+    	Geroutete Komponenten werden als Views definiert. Um das Projekt übersichtlicher zu gestalten werden diese getrennt von den anderen Komponenten in diesem Verzeichnis abgelegt.
+    	
+    
+    	
+    	
+    	
+    
+    \section{Dateibenennung}
+    Da Vue.js Komponentenbasiert ist sollen Komponenten wie folgt benant werde
+   	\\
+   	\\
+    	 \begin{tabularx}{\columnwidth}{l X}
+    		\textbf{Regel} & \textbf{Beispiel} \\
+    		Immer in Englisch & brettobjekt → boardobject \\
+    		camelCase & boardobject → boardObject \\
+    	\end{tabularx}
+    \\
+    \\
+    
+    Generell sollte die Namen der Komponenten so gewählt werden, dass sie die Funktion dieser beschreiben.
+    	
 
     \section{Code Style}
-    In unseren Java Projekten verwenden wir den Code Styleguide von Google.
-    Dieser kann für IntelliJ hier heruntergeladen werden https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml
-    Den Styleguide kann in IntelliJ wie folgt eingerichtet werden: https://www.jetbrains.com/help/idea/configuring-code-style.html
-    \\
-
-    \section{Logging}
-    Abweichung zu Konstanten-Style → Klein- und Kurzschreibung
-    \begin{verbatim}
-    private final static Logger log = new Logger(....class);
-    \end{verbatim}
+   	Vue JS besitzt eigene Code Style Empfehlungen auf die hier verwiesen werden. \href{https://vuejs.org/v2/style-guide/}{Vue.JS Style Guide}
 
     \section{Validierung}
     Für die Validierung sind folgende 2 Konstrukte zulässig: \\
     \textbf{boolean is}Valid / \textbf{has}Valid...(Email) \\
-    \textbf{void validate}... / \textbf{check}...(Email) \textbf{throws} ...Exception
+    \textbf{void validate}... / \textbf{check}...(Email)
 
     \section{Variablenbennenung}
     Für die Validierung sind folgende 2 Konstrukte zulässig: \\
     \begin{tabularx}{\columnwidth}{l X}
         \textbf{Regel} & \textbf{Beispiel} \\
-        Programmieren immer auf Englisch \\ auch bei Variablennamen & spielerName → nickname \\
+        Programmieren immer in Englisch \\ auch bei Variablennamen & spielerName →playername \\
         ganze Wörter & pId → playerId \\
         camelCase & playername → playerName \\
     \end{tabularx}
