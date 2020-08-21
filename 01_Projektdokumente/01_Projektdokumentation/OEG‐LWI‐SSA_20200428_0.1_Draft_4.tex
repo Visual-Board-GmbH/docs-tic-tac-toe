@@ -83,6 +83,9 @@
 		0.14 & 17.06.2020 & SSA & Zieldefinition \\
 		0.15 & 23.06.2020 & LWI & Funktionendiagramm \\
 		0.16 & 17.08.2020 & LWI & 9 Funktionale Tests eingetragen \\
+		0.17 & 19.08.2020 & LWI & Schnittstellen erfasst \\
+		0.18 & 20.08.2020 & LWI & Klassendiagramm Sektion bearbeitet \\
+		0.19 & 21.08.2020 & LWI & Ablaufdiagramm eingefügt + Verwendete Tools erstellt + Produktkonzept + Entwichkungsumgebung und Tool-Chain
 	\end{tabularx}
 	
 	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -228,6 +231,19 @@
 	\end{table}
 
 	\newpage
+	
+	\subsection{Projektstructurplan}{}
+	Der komplette Projektstrukturplan ist im Anhang des Dokuments zu finden.
+	
+	TODO in anhang einfügen
+
+
+	\subsection{Projektplan}
+	Der komplette Projektplan ist im Anhang des Dokuments zu finden.
+	
+	TODO projektplan im anhang
+
+	\newpage
 
 	\subsection{Ressourcenplanung}
 	\begin{table}[h]
@@ -248,7 +264,35 @@
 		\label{fig:stundensatz}
 	\end{table}
 
+ 	 TODO aktueller aufwand aller beteiligten als tabelle
+ 	 
+ 	 \newpage
+ 	 
+ 	 \subsection{Kostenplanung}
+ 	 TODO einfügen aller Lieferobjeckte und arbeitspakete mit zeiten
+
 	\newpage
+	
+	\subsection{Qualitätsmanagement}
+	\subsubsection{Anforderungs- und Risikobasierte Qualitätsziele}
+	
+	TODO
+	
+	\subsubsection{Massnahmen}
+	
+	TODO
+	
+	\subsection{Projektcontrolling}
+	
+	TODO
+	
+	\subsection{Meetings- und Informationsplan}
+	
+	TODO
+	
+	\subsection{Arbeitsjournal}
+	
+	TODO
 	
 	\section{Situationsanalyse}
 	\subsection{Vorgänger Projekt}
@@ -398,7 +442,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 
 	\newpage
 
-	\subsection{Lösung //TODO needs new name}
+	\subsection{Lösungen}
 	
 	\begin{figure}[!hbt]
 		\centering
@@ -577,8 +621,18 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	
 	\subsubsection{Produktkonzept}
 
+	Dieses Projekt baut auf das Vorprojekt der LED-RGB-Matrix auf. (Grün markierter Bereich)
+	Die Idee ist nun über diese LED-RGB-Matrix TicTacToe Spiele abwickeln zu können. Es wird ein Frontend entwickelt welches es den Usern ermöglicht übers Web 
 	
-	
+	 Hierfür wird (Blau markierter Bereich) ein GameServer implementiert werden, welcher die Businesslogik übernimmt und direkt mit der API der Matrix kommuniziert.
+
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{01_Grafiken/architektur.png}
+		\caption{Architektur}
+		\label{fig:architektur}
+	\end{figure}
+
 	\newpage
 	
 	\subsubsection{Ablaufdiagramm}
@@ -586,32 +640,45 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	
 	\newpage
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	\subsection{Entwicklungssicht}
 	
 	\subsubsection{Verwendete Tools}
 	\input{02_Dokumente/04_Verwendete-Tools/Verwendete-Tools}
 	
+	\subsubsection{Entwicklungsumgebung und Tool-Chain}
 	
+	\paragraph{Maven Webprojekt}
+	Maven ist ein Projekt-Build-Tool, das unter der Lizenz von Apache steht. Es gibt eine grosse Anzahl an Bibliotheken, welche im Maven-Repository verfügbar sind. Die im Projekt verwendeten Bibliotheken werden über Maven verwaltet.
+	Folgende Bibliotheken werden im Projekt verwendet:
 	
+	\paragraph{Spring Framework}
+	Die Kernfunktionen des Frameworks können von jeder Java-Anwendung genutzt werden; es gibt jedoch Erweiterungen wie beispielsweise für die Erstellung von Webanwendungen. Obwohl das Framework kein spezielles Programmiermodell vorschreibt, ist es in der Java-Community als Ergänzung oder sogar als Ersatz für das Enterprise JavaBeans (EJB)-Modell populär geworden. Das Spring-Framework ist quelloffen.
+	Die Applikation wird mit dem Spring Framework in der Version 5.2 entwickelt und enthält die folgenden Erweiterungen:
+	\begin{itemize}
+		\item spring-boot-starter
+		\item spring-boot-starter-web
+		\item spring-boot-starter-tomcat
+	\end{itemize}
+
+	\paragraph{jUnit 5, Mockito und Rest-Assured}
+	jUnit 5, Mockito und Rest-Assured sind Bibliotheken, welche von Entwicklern verwendet werden, um Unit-Tests in Java zu implementieren, die Programmiergeschwindigkeit zu beschleunigen und die Qualität des Codes zu erhöhen.
 	
+	\paragraph{Entwicklungsumgebung Intellij}
+	IntelliJ IDEA ist ein «integrated development environment» (IDE), welches in Java geschrieben ist, um Software zu entwickeln. Sie wird von JetBrains (früher bekannt als IntelliJ) entwickelt und ist als Community-Edition sowie als proprietäre kommerzielle Edition erhältlich. Beide können von kommerziellen Entwicklern verwendet werden.
+	Oliver Egloff und Leonardo Wiedemeier haben bereits gute Kenntnisse in der Anwendung dieser Software.
 	
+	\paragraph{Vue.js Framework}
+	Ist ein clientseitiges JavaScript-Webframework zum Erstellen von Single-Page-Webanwendungen nach dem MVVM-Muster, es kann allerdings auch in Multipage Webseiten für einzelne Abschnitte verwendet werden. Serverseitiges Rendern ist auch unterstützt. \\
+	Vue.js ist ein "relativ" junges Framework, hat aber trotzdem eine wachsende Community und wird immer mehr verwendet. Wie zum Beispiel von GitLab.
 	
+	\paragraph{Entwicklungsumgebung Webstorm}
+	Webstorm IDE ist ein "integrated development enivronment" (IDE), welches für JavaScript Entwicklung von JetBrains geschrieben wurde. Ist nur als kommerzielle Edition erhätlich.
 	
+	\paragraph{Versionierung mit Git (Gitlab)}
+	Der Source Coder der Applikation wird in Git abgelegt und versioniert. Es wird nach dem Feature Branch Workflow gearbeitet (\href{https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow}{Feature Branch Workflow}). Der Code in einem Feature Branch wird neben dem Entwickler mindestens von einer weiteren Person angeschaut und kontrolliert (Code Review), bevor er in den Master Branch zusammengeführt wird.
 	
-	
+	\paragraph{Docker}
+	Docker ist eine Virtualisierungssoftware um sogenannte Container bereitzustellen. Container sind voneinander isoliert und bündeln ihre eigene Software, Bibliotheken und Konfigurationsdateien. Zum Beispiel für die Virtualisierung und Verwendung einer MYSQL Datenbank oder eines MQTT Servers.
 	
 	\subsubsection{Schnittstellen}
 	
@@ -628,6 +695,9 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\caption{Schnittstellen}
 		\label{fig:schnittstellen}
 	\end{table}
+
+	\subsection{Pflichtenheft}
+	Das Pflichtenheft ist im Anhang unter dem Abschnitt «Pflichtenheft» ersichtlich.
 	
 	\newpage
 	
