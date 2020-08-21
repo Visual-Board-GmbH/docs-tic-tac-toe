@@ -575,6 +575,24 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	
 	\section{Realisierung}
 	
+	\subsection{Schnittstellen}
+	
+		\begin{table}[h]
+		\centering
+		\rowcolors{1}{gray!30}{gray!10}
+		\begin{tabular}{p{0.20\textwidth}|p{0.15\textwidth}|p{0.63\textwidth}}
+			\textbf{Syteme} & \textbf{Protokoll} & \textbf{Beschreibung} \\ \hline
+			Clients u. Game Server & MQTT via Port 3888 & Das erstellen und abhandeln von laufenden Spielen läuft zwischen Client und Server über MQTT ab. Die Daten werden jeweils in der Topic gebroadcasted. Server verarbeitet alle Anfragen die er bekommt. Der Client kann durch eine "requestId" identifizieren welche ihm gehören. \\ \hline
+			Clients u. Game Server & REST via Port 8080 & Via REST werden zusätzliche für das Frontend relevante Daten übertragen. Z.B. Login, Spielerinformationen  \\ \hline
+			Game Server u. API & REST via Port 8080 & Der Server kann über die REST-Schnittstelle mit der LED-REG-Matrix kommunizieren und so laufend neue Spielfelder mitteilen. Die Spielfelder werden vom Server zusammengestellt und dann mit den gewünschten Transformationsparametern an die API verschickt. So kann die API das Bild nach den Angaben verarbeiten und anschliessend auf der Matrix darstellen.  \\ \hline
+			API -> LED-RGB-Panel & Binary Code via Serial Port & Die aufbereiteten Daten werden von der API an das LED-RGB-Panel gesendet.
+		\end{tabular}
+		\caption{Schnittstellen}
+		\label{fig:schnittstellen}
+	\end{table}
+	
+	\newpage
+	
 	\subsection{Tests}
 	\subsubsection{Funktionale Tests}
 	Die hier aufgelisteten Funktionalen Tests wurden mit dem Anforderungskatalog als Vorlage erstellt und decken alle Anforderungen ab.
