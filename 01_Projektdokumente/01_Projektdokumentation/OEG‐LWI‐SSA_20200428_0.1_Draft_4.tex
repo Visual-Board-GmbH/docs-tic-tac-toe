@@ -82,6 +82,7 @@
 		0.13 & 16.06.2020 & LWI & fertigstellen der Lösungssuche und Lösungswahl \\
 		0.14 & 17.06.2020 & SSA & Zieldefinition \\
 		0.15 & 23.06.2020 & LWI & Funktionendiagramm \\
+		0.16 & 17.08.2020 & LWI & 9 Funktionale Tests eingetragen \\
 	\end{tabularx}
 	
 	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -569,8 +570,163 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	Da in den Nutzwertanalysen klar heraus geht das für dass Frontend \textbf{Vue.js} und im Backend \textbf{Java} verwendet werden sollte, wird dies auch von uns Empfohlen.
 	
 	\section{Detailkonzept}
-	\section{Realisierung}
+	
 	\newpage
+	
+	\section{Realisierung}
+	
+	\subsection{Tests}
+	\subsubsection{Funktionale Tests}
+	Die hier aufgelisteten Funktionalen Tests wurden mit dem Anforderungskatalog als Vorlage erstellt und decken alle Anforderungen ab.
+	
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{orange!30}{orange!10}
+		\begin{tabular}{p{0.25\textwidth}|p{0.74\textwidth}}
+			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{001} \\ \hline
+			\cellcolor{orange!80} \textbf{Testaufgabe:} & Raspberry PI starten und Frontend aufrufen \\ \hline
+			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Das Frontend ist erreichbar und die Loginmaske wird angezeigt \\ \hline
+			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Das Frontend wird mit der Loginmaske korrekt dargestellt \\ \hline
+			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
+		\end{tabular}
+		\caption{Testfall Nr 001}
+		\label{fig:testfall_br_001}
+	\end{table}
+
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{orange!30}{orange!10}
+		\begin{tabular}{p{0.25\textwidth}|p{0.74\textwidth}}
+			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{002} \\ \hline
+			\cellcolor{orange!80} \textbf{Testaufgabe:} & Registration eines neuen Users \\ \hline
+			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Es kann ein neuer Account erstellt und sich mit diesem eingeloggt werden \\ \hline
+			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Durch befolgen des Registrierungsformulars und anschliessender Eingabe des Namens und Passwortes kann man sich erfolgreich einloggen \\ \hline
+			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
+		\end{tabular}
+		\caption{Testfall Nr 002}
+		\label{fig:testfall_br_002}
+	\end{table}
+
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{orange!30}{orange!10}
+		\begin{tabular}{p{0.25\textwidth}|p{0.74\textwidth}}
+			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{003} \\ \hline
+			\cellcolor{orange!80} \textbf{Testaufgabe:} & Korrekte Authentifizierung \\ \hline
+			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Als nicht eingeloggter User hat meine keine Rechte auf gesicherten Routen. \\ \hline
+			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Als anonymer User der Webseite wird man immer auf die Loginseite umgeleitet. \\ \hline
+			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
+		\end{tabular}
+		\caption{Testfall Nr 003}
+		\label{fig:testfall_br_003}
+	\end{table}
+
+	\newpage
+
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{orange!30}{orange!10}
+		\begin{tabular}{p{0.25\textwidth}|p{0.74\textwidth}}
+			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{004} \\ \hline
+			\cellcolor{orange!80} \textbf{Testaufgabe:} & Ein- und Ausloggen \\ \hline
+			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Es kann sich mit einem bestehenden Account ein- und ausgeloggt werden \\ \hline
+			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Durch die Eingabe der korrekten Daten loggt man sich ein und wird auf die Übersichtsseite weitergeleitet. Beim klicken auf den ``Ausloggen`` Button wird man ausgeloggt und automatisch auf die Loginseite weitergeleitet. \\ \hline
+			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
+		\end{tabular}
+		\caption{Testfall Nr 004}
+		\label{fig:testfall_br_004}
+	\end{table}
+	
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{orange!30}{orange!10}
+		\begin{tabular}{p{0.25\textwidth}|p{0.74\textwidth}}
+			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{005} \\ \hline
+			\cellcolor{orange!80} \textbf{Testaufgabe:} & Darstellung fremder laufender Spiele auf der Übersichtsseite \\ \hline
+			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Auf der Übersichtsseite werden laufende Spiele aktualisiert und dargestellt \\ \hline
+			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Als eingeloggter User werden auf der Übersichtsseite periodisch neue laufende Spiele angezeigt und wieder entfernt sobald diese voll sind. \\ \hline
+			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
+		\end{tabular}
+		\caption{Testfall Nr 005}
+		\label{fig:testfall_br_005}
+	\end{table}
+	
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{orange!30}{orange!10}
+		\begin{tabular}{p{0.25\textwidth}|p{0.74\textwidth}}
+			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{006} \\ \hline
+			\cellcolor{orange!80} \textbf{Testaufgabe:} & Erstellung eines Spiels \\ \hline
+			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Von der Übersichtsseite aus kann ein neues Spiel erstellt werden. \\ \hline
+			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Als eingeloggter User kann von der Übersichtsseite aus über den Button das erstellt Formular gestartet werden. Nach erfolgreichem Ausfüllen wird der User in die Lobby des neuen Spiel weitergeleitet. \\ \hline
+			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
+		\end{tabular}
+		\caption{Testfall Nr 006}
+		\label{fig:testfall_br_006}
+	\end{table}
+	
+	\newpage
+	
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{orange!30}{orange!10}
+		\begin{tabular}{p{0.25\textwidth}|p{0.74\textwidth}}
+			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{007} \\ \hline
+			\cellcolor{orange!80} \textbf{Testaufgabe:} & Tic-Tac-Toe spielen \\ \hline
+			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Zwei Personen können ein Tic-Tac-Toe Spiel durchspielen \\ \hline
+			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Zwei Personen im gleichen Spiel können abwechselnd ein komplettes Tic-Tac-Toe spiel beenden. Es kann der HOST, GUEST oder niemand gewinnen. (Unentschieden) \\ \hline
+			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
+		\end{tabular}
+		\caption{Testfall Nr 007}
+		\label{fig:testfall_br_007}
+	\end{table}
+	
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{orange!30}{orange!10}
+		\begin{tabular}{p{0.25\textwidth}|p{0.74\textwidth}}
+			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{008} \\ \hline
+			\cellcolor{orange!80} \textbf{Testaufgabe:} & Laufendes Spiel verlassen \\ \hline
+			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Während einem laufenden Spiel kann man als GUEST oder HOST verlassen und wieder beitreten. \\ \hline
+			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Ein Spielteilnehmer kann das laufende Spiel verlassen und landet auf der Übersichtsseite. Dort werden alle seine laufende Spiele angezeigt. Durch klicken kann diesem wieder beigetreten werden. \\ \hline
+			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
+		\end{tabular}
+		\caption{Testfall Nr 008}
+		\label{fig:testfall_br_008}
+	\end{table}
+	
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{orange!30}{orange!10}
+		\begin{tabular}{p{0.25\textwidth}|p{0.74\textwidth}}
+			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{009} \\ \hline
+			\cellcolor{orange!80} \textbf{Testaufgabe:} & Die eigene Gamehistory einsehen \\ \hline
+			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Seine eigene Gamehistory einsehen und einzelne vergangene Spiele anschauen \\ \hline
+			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Als eingeloggter User ist es möglich beendete Spiele in der Gamehistory anzuschauen und diese Schritt für Schritt anzuschauen. \\ \hline
+			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
+		\end{tabular}
+		\caption{Testfall Nr 009}
+		\label{fig:testfall_br_009}
+	\end{table}
+	
+	\newpage
+	
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{orange!30}{orange!10}
+		\begin{tabular}{p{0.25\textwidth}|p{0.74\textwidth}}
+			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{010} \\ \hline
+			\cellcolor{orange!80} \textbf{Testaufgabe:} & Die eigene Gamehistory einsehen \\ \hline
+			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Seine eigene Gamehistory einsehen und einzelne vergangene Spiele anschauen \\ \hline
+			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Als eingeloggter User ist es möglich beendete Spiele in der Gamehistory anzuschauen und diese Schritt für Schritt anzuschauen. \\ \hline
+			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
+		\end{tabular}
+		\caption{Testfall Nr 010}
+		\label{fig:testfall_br_010}
+	\end{table}
+	
+	\newpage
+	
 	\section{Wirtschaftlichkeit und Risikoanalyse}
 
 \subsection{Risikoanalyse}
