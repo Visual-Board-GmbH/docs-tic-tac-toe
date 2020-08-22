@@ -1,0 +1,13 @@
+server:
+  port: 8080
+api:
+  project:
+    version: ^project.version^
+  serialport:
+    comPort: /dev/ttyS0
+    comPortNewBaudRate: 921600
+    comPortNewDataBits: 8
+    comPortNewStopBits: 1
+    comPortNewParity: 0
+    comPortNewReadTimeout: 0
+    comPortNewWriteTimeout: 0
