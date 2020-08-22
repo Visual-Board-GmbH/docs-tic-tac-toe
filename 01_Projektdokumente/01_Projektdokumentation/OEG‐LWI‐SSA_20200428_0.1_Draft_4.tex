@@ -232,7 +232,7 @@
 
 	\newpage
 	
-	\subsection{Projektstructurplan}{}
+	\subsection{Projektstructurplan}
 	Der komplette Projektstrukturplan ist im Anhang des Dokuments zu finden.
 	
 	TODO in anhang einfügen
@@ -275,16 +275,66 @@
 	
 	\subsection{Qualitätsmanagement}
 	\subsubsection{Anforderungs- und Risikobasierte Qualitätsziele}
-	
-	TODO
-	
+	TODO mit oli anschauen
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{gray!30}{gray!10}
+		\begin{tabular}{p{0.25\textwidth}|p{0.2\textwidth}|p{0.3\textwidth}|p{0.15\textwidth}}
+			\textbf{Erfolgsfaktor} & \textbf{Projektanforderung} & \textbf{Risikobeurteilung} &\textbf{Qualtitätsschwerpunkt} \\ \hline
+			Erfüllung, Leistung und Funktionalität & Sehr wichtig & Beachtliches Risiko & Ja \\ \hline
+			Akzeptanz & Sehr Wichtig & Beachtliches Risiko & Nein \\ \hline
+			Wirtschaftlichkeit & Wichtig & Beachtliches Risiko & Ja \\ \hline
+			Kosteneinhaltung & Sehr wichtig & Beachtliches Risiko & Ja \\ \hline
+			Termintreue & Sehr wichtig & Beachtliches Risiko & Ja \\ \hline
+		\end{tabular}
+		\caption{Anforderungs- und Risikobasierte Qualitätsziele}
+		\label{fig:qualitaetsziele}
+	\end{table}
+
 	\subsubsection{Massnahmen}
+	TODO mit oli anschauen
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{gray!30}{gray!10}
+		\begin{tabular}{p{0.18\textwidth}|p{0.3\textwidth}|p{0.23\textwidth}|p{0.09\textwidth}|p{0.18\textwidth}}
+			\textbf{Schwerpunkt} & \textbf{Was} & \textbf{Wer mit Wem} &\textbf{Wieviele} & \textbf{Termin} \\ \hline
+			Erfüllung, Leistung und Funktionalität & Regelmässige Prüfung der Arbeitspakete und Anforderungserfüllung & Oliver Egloff, Leonardo Wiedemeier & & Jede zweite Woche am Freitag \\ \hline
+			Kosteneinhaltung & Prüfen der Aufwände für die geleisteten Arbeiten und somit der Kosten & Oliver Egloff & & Jede zweite Woche am Freitag \\ \hline
+			Termintreue & Durchführen von Status Meetings, damit der Arbeitsfortschritt geprüft werden kann
+			- Definieren von genauen Fristen für die Arbeitspakete
+			 & Oliver Egloff, Leonardo Wiedemeier & & \\ \hline
+		\end{tabular}
+		\caption{Massnahmen}
+		\label{fig:qualitaets_massnahmen}
+	\end{table}
 	
-	TODO
+	\newpage
 	
 	\subsection{Projektcontrolling}
+	TODO mit oli anschauen
 	
-	TODO
+	Die Überprüfung der Kennzahlen des Projekts wurden bei den Meilensteinen M02, M03 sowie den Lieferobjekten L6 und L7 durchgeführt. Es wurden jeweils die folgenden Kennzahlen geprüft:
+	\begin{itemize}
+		\item Kosten
+		\item Ressourcen / Aufwand
+		\item Termin / Tage
+		\item Qualität
+		\item Leistung
+	\end{itemize}
+	
+	Nachfolgend werden die Ergebnisse des Projektcontrollings pro Meilenstein festgehalten. Die detaillierten Analysen sind im Anhang ersichtlich.
+	
+	\begin{table}[h]
+		\centering
+		\rowcolors{1}{gray!30}{gray!10}
+		\begin{tabular}{p{0.2\textwidth}|p{0.4\textwidth}|p{0.39\textwidth}}
+			\textbf{Meilenstein} & \textbf{Ergebnis} & \textbf{Massnahme} \\ \hline
+			M02 Kick off & Die Projektplanung ist abgeschlossen und die Anforderungen sind erfasst. In einem nächsten Schritt müssen die Anforderungen geplant werden. Es ist bereits mit einem Mehraufwand bei den Lieferobjekten zu rechnen. & Die Aufwände für die Lieferobjekte müssen genau definiert und in regelmässigen Abständen kontrolliert werden. \\ \hline
+			M03 Abnahme Pflichtenheft & Durch die Detailplanung der Realisierung konnte festgestellt werden, dass aufgrund von fehlendem Know-How die Arbeitspakete der Realisierungsphase falsch geplant wurden. Die Ressourcen sowie die Kosten müssen aufgrund dieser Kenntnisse verändert werden. Es ist mit einem Anstieg der Projektkosten und Aufwände zu rechnen. & \\ \hline
+		\end{tabular}
+		\caption{Projektcontrolling}
+		\label{fig:projektcontrolling}
+	\end{table}
 	
 	\subsection{Meetings- und Informationsplan}
 	
@@ -317,7 +367,7 @@
 	Es soll die Möglichkeit bestehen das mehrere Spieler, auf verschiedenen Endgeräten, gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgibt. Hier für werden wir das komplette Vorgänger Projekt verwenden, da die Matrix bereits einsatzbereit ist. Es werden allenfalls Schnittstellen angepasst oder neue erstellt.
 	Zusätzlich zur Implementierung der Spiellogik, soll diese auch auf einen Webserver laufen und so erreichbar gemacht werden.
    
-    Die Visual Board GmbH wird daher im Rahmen des Projektes die Spiellogic mit Benutzeroberfläche implementieren und den nötigen Webserver einrichten. Für diese Arbeiten stehen 300 Arbeitsstunden der kompletten Projektabwicklung zur Verfügung.
+    Die Visual Board GmbH wird daher im Rahmen des Projektes die Spiellogik mit Benutzeroberfläche implementieren und den nötigen Webserver einrichten. Für diese Arbeiten stehen 300 Arbeitsstunden der kompletten Projektabwicklung zur Verfügung.
 
 
 \section{Zielsetzung}
@@ -621,10 +671,10 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	
 	\subsubsection{Produktkonzept}
 
-	Dieses Projekt baut auf das Vorprojekt der LED-RGB-Matrix auf. (Grün markierter Bereich)
-	Die Idee ist nun über diese LED-RGB-Matrix TicTacToe Spiele abwickeln zu können. Es wird ein Frontend entwickelt welches es den Usern ermöglicht übers Web 
-	
-	 Hierfür wird (Blau markierter Bereich) ein GameServer implementiert werden, welcher die Businesslogik übernimmt und direkt mit der API der Matrix kommuniziert.
+	Im Vorläuferprojekt wurde bereits ein Programm entwickelt mit welchem es möglich ist eine LED-RGB-Matrix mit einer API zu auszustatten und über diese Bilder auf der Matrix anzeigen zu lassen.
+	Das ausgearbeitete Konzept beinhaltet nun die Grundidee, Matrizen über ein Frontend ansteuerbar zu machen und auf diesen ein laufendes Tic Tac Toe Spiel anzeigen zu lassen.
+	\\
+	Das Frontend wird dem User die Möglichkeiten geben sich einzuloggen und Spiele zu erstellen, beizutreten und zu spielen. Die Kommunikation mit dem Server, welcher die komplette Businesslogik beinhalten wird, geschieht hauptsächlich über MQTT. Teile, wie z.b. das Login werden über REST gelöst, aufgrund der Sicherheit.
 
 	\begin{figure}[!hbt]
 		\centering
