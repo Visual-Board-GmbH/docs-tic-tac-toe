@@ -667,6 +667,89 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	
 	\section{Detailkonzept}
 	
+	\subsection{Mengengerüst}
+	
+	Halle hier beschriebenen Komponenten sind Teil des LED-Boards oder laufe auf dem Respberry PI. Werden hier aber trotzdem in Matrix und TicTacToe aufgeteilt.
+	
+	\subsubsection{LED-RGB-Matrix Hardware}
+	
+	\paragraph{Respberry PI 3B+ mit Extensionboard}
+	\begin{itemize}
+		\item Full size HDMI
+		\item 4x USB 2.0 Ports
+		\item Extended 40 pin GPIO header
+		\item Micro SD port
+		\item 5V/2.5A DC power input
+		\item 16GB SD Card
+		\item 1GB RAM
+		\item Cortex A53 (ARMv8) 64 bit SoC @ 1.4 GHz
+	\end{itemize}
+
+	\href{https://www.arrow.com/en/products/max1000/arrow-development-tools }{Offizielle Angaben}
+
+	\paragraph{MAXA1000 IoT Maker Board mit FPGA IO Modul}
+	\begin{itemize}
+		\item 1x Micro USB port
+	\end{itemize}
+
+	\href{https://www.arrow.com/en/products/max1000/arrow-development-tools }{Offizielle Angaben}
+	
+	\paragraph{Netzteil LVP-100-5}
+	\begin{itemize}
+		\item Input: 100-240V
+		\item Output: +5V
+	\end{itemize}
+	
+	\paragraph{LED-Matrix}
+	\begin{itemize}
+		\item 16x16 Digital LED's
+	\end{itemize}
+	
+	\href{https://www.led-genial.de/DIGI-DOT-Panel-16x16-HD-mit-256-x-Digital-LEDs }{Offizielle Angaben}
+	
+	\subsubsection{LED-RGB-Matrix API}
+	\paragraph{Schnittstellen}
+	\begin{itemize}
+		\item Bild als Datei hochladen
+		\item Bild über eine URL hochladen
+	\end{itemize}
+
+	Zusätzlich haben die Schnittstellen weitere Parameter welche gesetzt werden können um die Bilder zu transformieren.
+	
+	\paragraph{Komponenten (Objekte, Services...)}
+	\begin{itemize}
+		\item LedMatrixController
+		\item LedMatrixService
+		\item ImageService
+		\item FileService
+		\item Gateway
+	\end{itemize}
+	
+	\subsubsection{TicTacToe GameServer}
+	\paragraph{GameServer}
+	\begin{itemize}
+		\item LoginService
+		\item GameService
+		\item REST Schnittstellen
+		\item MQTT Topics
+	\end{itemize}
+	
+	\paragraph{Zusätzliche Services}
+	\begin{itemize}
+		\item MYSQL	
+		\item Mosquitto (MQTT Server)
+		\item Docker
+	\end{itemize}
+	
+	\newpage
+	
+	\begin{landscape}
+		\input{02_Dokumente/05_SWOT-Analyse/SWOT-Analyse}
+	\end{landscape}
+
+
+	\newpage
+	
 	\subsection{Logikschicht}
 	
 	\subsubsection{Produktkonzept}
