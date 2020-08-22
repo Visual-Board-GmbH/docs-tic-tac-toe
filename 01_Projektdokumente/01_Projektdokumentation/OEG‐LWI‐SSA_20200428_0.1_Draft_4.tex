@@ -17,6 +17,7 @@
 \usepackage{multirow}
 \usepackage{makecell}
 \usepackage{pdflscape}
+\usepackage{listings}
 \usepackage{longtable}
 % \usepackage{showframe} %For debugging
 
@@ -26,6 +27,43 @@
     filecolor=magenta,
     urlcolor=cyan,
 }
+
+
+%json color setup
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+	basicstyle=\normalfont\ttfamily,
+	numbers=left,
+	numberstyle=\scriptsize,
+	stepnumber=1,
+	numbersep=8pt,
+	showstringspaces=false,
+	breaklines=true,
+	frame=lines,
+	backgroundcolor=\color{background},
+	literate=
+	*{0}{{{\color{numb}0}}}{1}
+	{1}{{{\color{numb}1}}}{1}
+	{2}{{{\color{numb}2}}}{1}
+	{3}{{{\color{numb}3}}}{1}
+	{4}{{{\color{numb}4}}}{1}
+	{5}{{{\color{numb}5}}}{1}
+	{6}{{{\color{numb}6}}}{1}
+	{7}{{{\color{numb}7}}}{1}
+	{8}{{{\color{numb}8}}}{1}
+	{9}{{{\color{numb}9}}}{1}
+	{:}{{{\color{punct}{:}}}}{1}
+	{,}{{{\color{punct}{,}}}}{1}
+	{\{}{{{\color{delim}{\{}}}}{1}
+	{\}}{{{\color{delim}{\}}}}}{1}
+	{[}{{{\color{delim}{[}}}}{1}
+	{]}{{{\color{delim}{]}}}}{1},
+}
+
 
 \geometry{top=0.75cm, bottom=0.8cm, right=2.5cm, left=2.5cm, headheight=35pt, includeheadfoot, portrait}
 \setmainfont{Calibri}
@@ -85,7 +123,8 @@
 		0.16 & 17.08.2020 & LWI & 9 Funktionale Tests eingetragen \\
 		0.17 & 19.08.2020 & LWI & Schnittstellen erfasst \\
 		0.18 & 20.08.2020 & LWI & Klassendiagramm Sektion bearbeitet \\
-		0.19 & 21.08.2020 & LWI & Ablaufdiagramm eingefügt + Verwendete Tools erstellt + Produktkonzept + Entwichkungsumgebung und Tool-Chain
+		0.19 & 21.08.2020 & LWI & Ablaufdiagramm eingefügt + Verwendete Tools erstellt + Produktkonzept + Entwichkungsumgebung und Tool-Chain + Dokumentationstruktur ergänzt \\
+		0.20 & 22.08.2020 & LWI & SWOT-Analyse + Mengengerüst + Produktkonzept + Datenstruktur
 	\end{tabularx}
 	
 	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -828,6 +867,104 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\caption{Schnittstellen}
 		\label{fig:schnittstellen}
 	\end{table}
+
+	\newpage
+
+	\subsubsection{Datenstrukturen}
+	Die folgende figur
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{01_Grafiken/datenfluss.png}
+		\caption{Datenflussdiagramm}
+		\label{fig:datenflussdiagramm}
+	\end{figure}
+
+\begin{figure}[!hbt]
+\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "gameId": 2,
+    "name": "Pending Game",
+    "state": "PENDING",
+    "lastModified": "<Date lastModified>",
+    "matrixId": [],
+    "gameData": {
+        "host": 5",
+        "guest": 20,
+        "moves": [],
+        "winner": "<HOST oder GUEST. NONE fals unentschieden und null wenn es noch läuft>"
+    },
+    "playerData": [{
+        "player": "HOST",
+        "displayName": "Spieler Host"
+        },
+        {
+        "player": "GUEST",
+        "displayName": "Spieler Guest"
+        }
+    ]
+}
+\end{lstlisting}
+\caption{Datenfluss 1: Aktives Spiel vom Server zum Client}
+\label{fig:datenfluss-offen-spiel-server-client}
+\end{figure}
+
+\begin{figure}[!hbt]
+	\begin{lstlisting}[language=json,firstnumber=1]
+{   
+    "gameId": 1,
+    "name": "Example Game",
+    "state": "ACTIVE",
+    "lastModified": "<Date lastModified>",
+    "matrixId": [1,5],
+    "gameData": {
+        "host": 5",
+        "guest": 20,
+        "moves": [{
+            "count": 1
+            "player": "HOST",
+            "gridPosition": "MID_LEFT"
+        }],
+        "winner": "<HOST oder GUEST. NONE fals unentschieden und null wenn es noch läuft>"
+    },
+    "playerData": [
+        {
+        "player": "HOST",
+        "displayName": "Spieler Host"
+        },
+        {
+        "player": "GUEST",
+        "displayName": "Spieler Guest"
+        }
+    ]
+}
+\end{lstlisting}
+\caption{Datenfluss 2: Aktives Spiel vom Server zum Client}
+\label{fig:datenfluss-aktives-spiel-server-client}
+\end{figure}
+
+\begin{figure}[!hbt]
+	\begin{lstlisting}[language=json,firstnumber=1]
+{
+    "gameId": 1,
+    "state": ACTIVE,
+    "matrixId": [1,5],
+    "gameData": {
+        "host": 5",
+        "guest": 20",
+        "moves": [{
+            "count": 1,
+            "player": "HOST",
+            "gridPosition": "MID_LEFT"
+        }]
+    }
+}
+\end{lstlisting}
+\caption{Datenfluss 3: Aktives Spiel vom Client zum Server}
+\label{fig:datenfluss-aktives-spiel-client-server}
+\end{figure}
+
+
+	\newpage	
 
 	\subsection{Pflichtenheft}
 	Das Pflichtenheft ist im Anhang unter dem Abschnitt «Pflichtenheft» ersichtlich.
