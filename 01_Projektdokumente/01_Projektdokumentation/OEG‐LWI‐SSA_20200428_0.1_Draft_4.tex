@@ -140,15 +140,19 @@
 Die Visual Board GmbH ist ein Unternehmen, welches sich auf die Herstellung und Ansteuerung von visuellen Panels für Anzeigen aller Art spezialisiert. Durch die Aktuelle Lage mit COVID-19 fängt sie die Firma an auch auf Webaplikationen zu spezialisieren, welche es möglich machen die Panels auf beliebige Arten anzusteuern.
 Im Vorgänger Projekt wurde bereits eine Machbarkeitsstudie durchgeführt, ob man in Zukunft auf die Technologie von LED-RGB-Matrizen setzen kann. Nun soll ein Tic-Tac-Toe Spiel umgesetzt werden, welches auf den Matrizen wiedergeben werden kann.
 
-\paragraph{Problem}
+\paragraph{Situation}
 Die Aufgabe ist es ein multiplayer Tic-Tac-Toe Spiel zu entwickeln, bei welchem es die Möglichkeit gibt laufende Spiele auf beliebigen LED-RGB-Matrizen anzeigen zu lassen.\\
-Es soll ein Frontend erstellt werden, welches dem User alle nötigen Funktionalitäten zur Verfügung stellt um ein Tic-Tac-Toe Spiel gegen eine andere Person abzuwickeln. Dieses soll dann via dem MQTT Protokoll mit dem eigentlichen GameServer kommunizieren welcher die komplette Business Logik beinhaltet. Und zusätzlich die nötigen Infos an alle beteiligten Matrizen sendet damit die laufenden Spiele dort dargestellt werden. \\ \\
+Es soll ein Frontend erstellt werden, welches dem User alle nötigen Funktionalitäten zur Verfügung stellt um ein Tic-Tac-Toe Spiel gegen eine andere Person abzuwickeln. Dieses soll dann via dem MQTT Protokoll mit dem eigentlichen GameServer kommunizieren welcher die komplette Business Logik beinhaltet. Und zusätzlich die nötigen Infos an alle beteiligten Matrizen sendet damit die laufenden Spiele dort dargestellt werden.
+
+\paragraph{Herausforderungen}
 Das Projekt wird einige Herausforderungen an das gesamte Projektteam stellen.\\
-Das orchestrieren der Kommunikation zwischen dem Frontend, GameServer und der LED-RGB-Matrix, das designen des Frontendes und des GamerServers so das alle Anforderungen erfüllt werden können, wie auch die Implementierung von Schnittstellen mit MQTT werden die grössten Herausforderungen darstellen. \\ \\
+Das orchestrieren der Kommunikation zwischen dem Frontend, GameServer und der LED-RGB-Matrix, das designen des Frontendes und des GamerServers so das alle Anforderungen erfüllt werden können, wie auch die Implementierung von Schnittstellen mit MQTT werden die grössten Herausforderungen darstellen.
+
+\paragraph{Ziele}
 Die Ziele waren es einen GamerServer mit separatem Frontend zu entwickeln welches die Anforderungen für das multiplayer Tic-Tac-Toe Spiel erfüllt. Zudem soll es möglich sein das laufende Spiel auf einer bis mehreren Matrizen darstellen zu lassen, es ist aber kein muss und kann auch rein im Web ablaufen.
 
 \paragraph{Lösung/Optionen}
-Unsere Lösung baut im Backend auf die Programmiersprache Java in Kombination mit einer RestAPI und MQTT Topics auf. \\
+Unsere Lösung baut im Backend auf die Programmiersprache Java in Kombination mit einer RestAPI und MQTT Topics auf. Hierzu wird eine MYSQL Datenbank für das Backend und ein Mosquitto MQTT Server für die Kommunikation mit dem Frontend aufgesetzt.
 Das Frontend wurde mit JavScript und dem Vue.js Framework umgesetzt. \\
 Die API und das Datenbankhandling wurden mit Spring Boot umgesetzt und das MQTT Protokol mit einer Hilfe einer Bibliothek implementiert. Durch das Vorgänger Projekt musste an der LED-RGB-Matrix nichts verändert werden und kann von unserem GameServer normal angesprochen werden.
 
@@ -159,7 +163,7 @@ Durch den Einsatz von MQTT waren einige Punkte erschwert umzusetzen da das Proto
 
 Das Produkt funktioniert und erfüllt alle Anforderungen wird aber keine grosse Chance auf dem Markt haben. Es ist eine gute Demo zum zeigen was möglich ist mit den LED-RGB-Matrizen und wie man weitere Applikationen entwickeln könnte um diese vielseitig anzusteuern. Auch zeigt es auf wie einfach eine LED-RGB-Matrix an ein bestehendes Projekt angebunden werden kann.
 
-//TODO Risiko
+Ein weiteres hohes Risiko war COVID-19. Der daraus resultierende Mitarbeiter Ausfall hätte die Einhaltung des Abgabetermins schwierig gemacht
 
 	\section{Aufgabenstellung}
 	\section{Projektmanagement}
