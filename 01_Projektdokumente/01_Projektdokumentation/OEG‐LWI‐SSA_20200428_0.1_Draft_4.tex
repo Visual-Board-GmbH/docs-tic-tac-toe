@@ -124,7 +124,8 @@
 		0.17 & 19.08.2020 & LWI & Schnittstellen erfasst \\
 		0.18 & 20.08.2020 & LWI & Klassendiagramm Sektion bearbeitet \\
 		0.19 & 21.08.2020 & LWI & Ablaufdiagramm eingefügt + Verwendete Tools erstellt + Produktkonzept + Entwichkungsumgebung und Tool-Chain + Dokumentationstruktur ergänzt \\
-		0.20 & 22.08.2020 & LWI & SWOT-Analyse + Mengengerüst + Produktkonzept + Datenstruktur
+		0.20 & 22.08.2020 & LWI & SWOT-Analyse + Mengengerüst + Produktkonzept + Datenstruktur \\
+		0.21 & 23.08.2020 & LWI & Management Summary
 	\end{tabularx}
 	
 	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -153,20 +154,31 @@ Die Ziele waren es einen GamerServer mit separatem Frontend zu entwickeln welche
 
 \paragraph{Lösung/Optionen}
 Unsere Lösung baut im Backend auf die Programmiersprache Java in Kombination mit einer RestAPI und MQTT Topics auf. Hierzu wird eine MYSQL Datenbank für das Backend und ein Mosquitto MQTT Server für die Kommunikation mit dem Frontend aufgesetzt.
-Das Frontend wurde mit JavScript und dem Vue.js Framework umgesetzt. \\
-Die API und das Datenbankhandling wurden mit Spring Boot umgesetzt und das MQTT Protokol mit einer Hilfe einer Bibliothek implementiert. Durch das Vorgänger Projekt musste an der LED-RGB-Matrix nichts verändert werden und kann von unserem GameServer normal angesprochen werden.
+Das Frontend wurde seinerseits mit Bootstrapp, JavScript und dem Vue.js Framework umgesetzt. \\
+Die API und das Datenbankhandling wurden mit Spring Boot umgesetzt und das MQTT Protokoll mit Hilfe einer Bibliothek implementiert. Durch das Vorgänger Projekt musste an der LED-RGB-Matrix nichts verändert werden und kann von unserem GameServer normal angesprochen werden.\\
+
+Zur Wahl stand noch die Möglichkeit das Projekt mit PHP im Backend und im Frontend mit dem React Framework umzusetzen. Es wurde sich aber gegen diese Varianten entschieden da in den Nutzwertanalysen hervorging das dass Umsetzungsteam in Java mehr Kompetenzen besitzt als in PHP. In Vue.js, da hier der Entwicklungsaufwand kleiner ausfällt und die Dokumentation sich von React abhebt.
+
+\newpage
 
 \paragraph{Nutzen \& Konsequenzen}
-Durch den getrennten und unabhängigen Aufbau der einzelnen Applikationen ist die Lösung sehr modular. Das Tic-Tac-Toe Spiel kann mit und ohne Matrix durchgeführt werden. Auch kann das Frontend wie der GameServer unabhängig der anderen 2 Services einfach ausgetauscht werden.
+Durch den getrennten und unabhängigen Aufbau der einzelnen Applikationen ist die Lösung sehr modular. Das Tic-Tac-Toe Spiel kann mit und ohne Matrix durchgeführt werden. Auch kann das Frontend wie der GameServer unabhängig der anderen 2 Services einfach ausgetauscht werden.\\
+\begin{figure}[!hbt]
+	\centering
+	\includegraphics[width=\columnwidth]{01_Grafiken/architektur_konzept.png}
+	\caption{Architektur}
+	\label{fig:architektur_konzept_management_summary}
+\end{figure}
+Durch den Einsatz von MQTT waren einige Punkte erschwert umzusetzen da das Protokoll für diese Use-Cases nicht wirklich geeignet ist. Zum Beispiel wurde entschieden das registrieren und der Login von User über HTTP Requests zu lösen. Wie auch das abholen User spezifischer Informationen.\\
+Ein hohes Risiko war COVID-19. Der daraus resultierende Mitarbeiter Ausfall hätte die Einhaltung des Abgabetermins schwierig gemacht. \\ \\
+Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse Chance auf dem Markt haben. Es ist eine gute Demo zum zeigen was möglich ist mit den LED-RGB-Matrizen und wie man weitere Applikationen entwickeln könnte um diese vielseitig anzusteuern. Auch zeigt es auf wie einfach eine LED-RGB-Matrix an ein bestehendes Projekt angebunden werden kann.\\
 
-Durch den Einsatz von MQTT waren einige Punkte erschwert umzusetzen da das Protokoll für diese Use-Cases nicht wirklich geeignet ist. Zum Beispiel wurde entschieden das registrieren und der Login von User über HTTP Requests zu lösen. Wie auch das abholen User spezifischer Informationen.
+\newpage
 
-Das Produkt funktioniert und erfüllt alle Anforderungen wird aber keine grosse Chance auf dem Markt haben. Es ist eine gute Demo zum zeigen was möglich ist mit den LED-RGB-Matrizen und wie man weitere Applikationen entwickeln könnte um diese vielseitig anzusteuern. Auch zeigt es auf wie einfach eine LED-RGB-Matrix an ein bestehendes Projekt angebunden werden kann.
+\section{Aufgabenstellung}
+\includepdf[pages=-, landscape=false, pagecommand={}, scale=0.88]{../02_Dokumente/DO_2020_SS19-20_if_Semesterarbeit_WEG_DBN_V1_0.pdf}
 
-Ein weiteres hohes Risiko war COVID-19. Der daraus resultierende Mitarbeiter Ausfall hätte die Einhaltung des Abgabetermins schwierig gemacht
-
-	\section{Aufgabenstellung}
-    \includepdf[pages=-, landscape=false, pagecommand={}, scale=0.88]{../02_Dokumente/DO_2020_SS19-20_if_Semesterarbeit_WEG_DBN_V1_0.pdf}
+\newpage
 
 \section{Projektmanagement}
     \subsection{Projektorganisation}
@@ -886,7 +898,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	Vue.js ist ein "relativ" junges Framework, hat aber trotzdem eine wachsende Community und wird immer mehr verwendet. Wie zum Beispiel von GitLab.
 	
 	\paragraph{Entwicklungsumgebung Webstorm}
-	Webstorm IDE ist ein "integrated development enivronment" (IDE), welches für JavaScript Entwicklung von JetBrains geschrieben wurde. Ist nur als kommerzielle Edition erhätlich.
+	Webstorm IDE ist ein "integrated development environment" (IDE), welches für JavaScript Entwicklung von JetBrains geschrieben wurde. Ist nur als kommerzielle Edition erhätlich.
 	
 	\paragraph{Versionierung mit Git (Gitlab)}
 	Der Source Coder der Applikation wird in Git abgelegt und versioniert. Es wird nach dem Feature Branch Workflow gearbeitet (\href{https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow}{Feature Branch Workflow}). Der Code in einem Feature Branch wird neben dem Entwickler mindestens von einer weiteren Person angeschaut und kontrolliert (Code Review), bevor er in den Master Branch zusammengeführt wird.
@@ -894,26 +906,26 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	\paragraph{Docker}
 	Docker ist eine Virtualisierungssoftware um sogenannte Container bereitzustellen. Container sind voneinander isoliert und bündeln ihre eigene Software, Bibliotheken und Konfigurationsdateien. Zum Beispiel für die Virtualisierung und Verwendung einer MYSQL Datenbank oder eines MQTT Servers.
 	
-	\subsubsection{Schnittstellen}
+\subsubsection{Schnittstellen}
 	
-	\begin{table}[h]
-		\centering
-		\rowcolors{1}{gray!30}{gray!10}
-		\begin{tabular}{p{0.20\textwidth}|p{0.15\textwidth}|p{0.63\textwidth}}
-			\textbf{Syteme} & \textbf{Protokoll} & \textbf{Beschreibung} \\ \hline
-			Clients u. Game Server & MQTT via Port 3888 & Das erstellen und abhandeln von laufenden Spielen läuft zwischen Client und Server über MQTT ab. Die Daten werden jeweils in der Topic broadcasted. Server verarbeitet alle Anfragen die er bekommt. Der Client kann durch eine "requestId" identifizieren welche ihm gehören. \\ \hline
-			Clients u. Game Server & REST via Port 8080 & Via REST werden zusätzliche für das Frontend relevante Daten übertragen. Z.B. Login, Spielerinformationen  \\ \hline
-			Game Server u. API & REST via Port 8080 & Der Server kann über die REST-Schnittstelle mit der LED-REG-Matrix kommunizieren und so laufend neue Spielfelder mitteilen. Die Spielfelder werden vom Server zusammengestellt und dann mit den gewünschten Transformationsparametern an die API verschickt. So kann die API das Bild nach den Angaben verarbeiten und anschliessend auf der Matrix darstellen.  \\ \hline
-			API -> LED-RGB-Panel & Binary Code via Serial Port & Die aufbereiteten Daten werden von der API an das LED-RGB-Panel gesendet.
-		\end{tabular}
-		\caption{Schnittstellen}
-		\label{fig:schnittstellen}
-	\end{table}
+\begin{table}[h]
+	\centering
+    \rowcolors{1}{gray!30}{gray!10}
+	\begin{tabular}{p{0.20\textwidth}|p{0.15\textwidth}|p{0.63\textwidth}}
+		\textbf{Systeme} & \textbf{Protokoll} & \textbf{Beschreibung} \\ \hline
+		Clients u. Game Server & MQTT via Port 3888 & Das erstellen und abhandeln von laufenden Spielen läuft zwischen Client und Server über MQTT ab. Die Daten werden jeweils in der Topic broadcasted. Server verarbeitet alle Anfragen die er bekommt. Der Client kann durch eine "requestId" identifizieren welche ihm gehören. \\ \hline
+		Clients u. Game Server & REST via Port 8080 & Via REST werden zusätzliche für das Frontend relevante Daten übertragen. Z.B. Login, Spielerinformationen  \\ \hline
+		Game Server u. API & REST via Port 8080 & Der Server kann über die REST-Schnittstelle mit der LED-REG-Matrix kommunizieren und so laufend neue Spielfelder mitteilen. Die Spielfelder werden vom Server zusammengestellt und dann mit den gewünschten Transformationsparametern an die API verschickt. So kann die API das Bild nach den Angaben verarbeiten und anschliessend auf der Matrix darstellen.  \\ \hline
+		API -> LED-RGB-Panel & Binary Code via Serial Port & Die aufbereiteten Daten werden von der API an das LED-RGB-Panel gesendet.
+	\end{tabular}
+	\caption{Schnittstellen}
+	\label{fig:schnittstellen}
+\end{table}
 
 	\newpage
 
 	\subsubsection{Datenstrukturen}
-	Die folgende figur
+	Die folgende Figur zeigt die einzelnen Varianten an wie der Server und das Frontend, über MQTT, miteinander kommunizieren.
 	\begin{figure}[!hbt]
 		\centering
 		\includegraphics[width=\columnwidth]{01_Grafiken/datenfluss.png}
