@@ -130,47 +130,60 @@
 	\end{tabularx}
 	
 	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-	
+
+    \newpage
+
 	\tableofcontents
 
-
-\clearpage
-
+\newpage
 
 \section{Managment Summary}
 \paragraph{Ausgangslage}
-Die Visual Board GmbH ist ein Unternehmen, welches sich auf die Herstellung und Ansteuerung von visuellen Panels für Anzeigen aller Art spezialisiert. Durch die Aktuelle Lage mit COVID-19 fängt sie die Firma an auch auf Webaplikationen zu spezialisieren, welche es möglich machen die Panels auf beliebige Arten anzusteuern.
-Im Vorgänger Projekt wurde bereits eine Machbarkeitsstudie durchgeführt, ob man in Zukunft auf die Technologie von LED-RGB-Matrizen setzen kann. Nun soll ein Tic-Tac-Toe Spiel umgesetzt werden, welches auf den Matrizen wiedergeben werden kann.
+Die Visual Board GmbH ist ein Unternehmen, welches sich auf die Herstellung und Ansteuerung von visuellen Panels für Anzeigen aller Art spezialisiert.
+Durch die aktuelle Lage mit der COVID-19 Pandemie fängt die Firma sich auch auf Webaplikationen zu spezialisieren, welche es möglich machen die Panels auf beliebige Arten anzusteuern.
+Im Vorgänger Projekt wurde bereits eine Machbarkeitsstudie durchgeführt, ob man in Zukunft auf die Technologie von LED-RGB-Matrizen setzen kann.
+Nun soll ein Tic-Tac-Toe Spiel umgesetzt werden, welches auf den Matrizen wiedergeben werden kann.
 
 \paragraph{Situation}
-Die Aufgabe ist es ein multiplayer Tic-Tac-Toe Spiel zu entwickeln, bei welchem es die Möglichkeit gibt laufende Spiele auf beliebigen LED-RGB-Matrizen anzeigen zu lassen.\\
-Es soll ein Frontend erstellt werden, welches dem User alle nötigen Funktionalitäten zur Verfügung stellt um ein Tic-Tac-Toe Spiel gegen eine andere Person abzuwickeln. Dieses soll dann via dem MQTT Protokoll mit dem eigentlichen GameServer kommunizieren welcher die komplette Business Logik beinhaltet. Und zusätzlich die nötigen Infos an alle beteiligten Matrizen sendet damit die laufenden Spiele dort dargestellt werden.
+Die Aufgabe ist es ein Multiplayer Tic-Tac-Toe Spiel zu entwickeln, bei welchem es die Möglichkeit gibt, laufende Spiele auf beliebigen LED-RGB-Matrizen anzeigen zu lassen.\\
+Es soll ein Frontend erstellt werden, welches dem User alle nötigen Funktionalitäten zur Verfügung stellt um ein Tic-Tac-Toe Spiel gegen eine andere Person abzuwickeln.
+Dieses soll dann via dem MQTT-Protokoll mit einem GameServer kommunizieren, welcher die komplette Business Logik beinhaltet.
+Der GameServer sollte zudem die nötigen Infos an alle beteiligten Matrizen senden, damit die laufenden Spiele dort dargestellt werden können.
 
 \paragraph{Herausforderungen}
 Das Projekt wird einige Herausforderungen an das gesamte Projektteam stellen.\\
-Das orchestrieren der Kommunikation zwischen dem Frontend, GameServer und der LED-RGB-Matrix, das designen des Frontendes und des GamerServers so das alle Anforderungen erfüllt werden können, wie auch die Implementierung von Schnittstellen mit MQTT werden die grössten Herausforderungen darstellen.
+Das orchestrieren der Kommunikation zwischen dem Frontend, GameServer und der LED-RGB-Matrix,
+das designen des Frontendes und des GamerServers so das alle Anforderungen erfüllt werden können,
+wie auch die Implementierung von Schnittstellen mit MQTT werden die grössten Herausforderungen darstellen.
 
 \paragraph{Ziele}
-Die Ziele waren es einen GamerServer mit separatem Frontend zu entwickeln welches die Anforderungen für das multiplayer Tic-Tac-Toe Spiel erfüllt. Zudem soll es möglich sein das laufende Spiel auf einer bis mehreren Matrizen darstellen zu lassen, es ist aber kein muss und kann auch rein im Web ablaufen.
+Die Ziele waren es einen GamerServer mit separatem Frontend zu entwickeln welches die Anforderungen für das multiplayer Tic-Tac-Toe Spiel erfüllt.
+Zudem soll es möglich sein das laufende Spiel auf einer bis mehreren Matrizen darstellen zu lassen, es ist aber kein muss und kann auch rein im Web ablaufen.
 
 \paragraph{Lösung/Optionen}
-Unsere Lösung baut im Backend auf die Programmiersprache Java in Kombination mit einer RestAPI und MQTT Topics auf. Hierzu wird eine MYSQL Datenbank für das Backend und ein Mosquitto MQTT Server für die Kommunikation mit dem Frontend aufgesetzt.
+Unsere Lösung baut im Backend auf die Programmiersprache Java in Kombination mit einer RestAPI und MQTT Topics auf.
+Hierzu wird eine MYSQL Datenbank für das Backend und ein Mosquitto MQTT Server für die Kommunikation mit dem Frontend aufgesetzt.
 Das Frontend wurde seinerseits mit Bootstrapp, JavScript und dem Vue.js Framework umgesetzt. \\
-Die API und das Datenbankhandling wurden mit Spring Boot umgesetzt und das MQTT Protokoll mit Hilfe einer Bibliothek implementiert. Durch das Vorgänger Projekt musste an der LED-RGB-Matrix nichts verändert werden und kann von unserem GameServer normal angesprochen werden.\\
+Die API und das Datenbankhandling wurden mit Spring Boot umgesetzt und das MQTT Protokoll mit Hilfe einer Bibliothek implementiert.
+Durch das Vorgänger Projekt musste an der LED-RGB-Matrix nichts verändert werden und kann von unserem GameServer normal angesprochen werden.\\
 
-Zur Wahl stand noch die Möglichkeit das Projekt mit PHP im Backend und im Frontend mit dem React Framework umzusetzen. Es wurde sich aber gegen diese Varianten entschieden da in den Nutzwertanalysen hervorging das dass Umsetzungsteam in Java mehr Kompetenzen besitzt als in PHP. In Vue.js, da hier der Entwicklungsaufwand kleiner ausfällt und die Dokumentation sich von React abhebt.
+Zur Wahl stand noch die Möglichkeit das Projekt mit PHP im Backend und im Frontend mit dem React Framework umzusetzen.
+Es wurde sich aber gegen diese Varianten entschieden da in den Nutzwertanalysen hervorging das dass Umsetzungsteam in Java mehr Kompetenzen besitzt als in PHP. In Vue.js, da hier der Entwicklungsaufwand kleiner ausfällt und die Dokumentation sich von React abhebt.
 
 \newpage
 
 \paragraph{Nutzen \& Konsequenzen}
-Durch den getrennten und unabhängigen Aufbau der einzelnen Applikationen ist die Lösung sehr modular. Das Tic-Tac-Toe Spiel kann mit und ohne Matrix durchgeführt werden. Auch kann das Frontend wie der GameServer unabhängig der anderen 2 Services einfach ausgetauscht werden.\\
+Durch den getrennten und unabhängigen Aufbau der einzelnen Applikationen ist die Lösung sehr modular.
+Das Tic-Tac-Toe Spiel kann mit und ohne Matrix durchgeführt werden.
+Auch kann das Frontend wie der GameServer unabhängig der anderen 2 Services einfach ausgetauscht werden.\\
 \begin{figure}[!hbt]
 	\centering
 	\includegraphics[width=\columnwidth]{01_Grafiken/architektur_konzept.png}
 	\caption{Architektur}
 	\label{fig:architektur_konzept_management_summary}
 \end{figure}
-Durch den Einsatz von MQTT waren einige Punkte erschwert umzusetzen da das Protokoll für diese Use-Cases nicht wirklich geeignet ist. Zum Beispiel wurde entschieden das registrieren und der Login von User über HTTP Requests zu lösen. Wie auch das abholen User spezifischer Informationen.\\
+Durch den Einsatz von MQTT waren einige Punkte erschwert umzusetzen da das Protokoll für diese Use-Cases nicht wirklich geeignet ist.
+Zum Beispiel wurde entschieden das registrieren und der Login von User über HTTP Requests zu lösen. Wie auch das abholen User spezifischer Informationen.\\
 Ein hohes Risiko war COVID-19. Der daraus resultierende Mitarbeiter Ausfall hätte die Einhaltung des Abgabetermins schwierig gemacht. \\ \\
 Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse Chance auf dem Markt haben. Es ist eine gute Demo zum zeigen was möglich ist mit den LED-RGB-Matrizen und wie man weitere Applikationen entwickeln könnte um diese vielseitig anzusteuern. Auch zeigt es auf wie einfach eine LED-RGB-Matrix an ein bestehendes Projekt angebunden werden kann.\\
 
@@ -315,7 +328,7 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse
 
 	\newpage
 	
-	\subsection{Projektstructurplan}
+	\subsection{Projektstrukturplan}
 	Der komplette Projektstrukturplan ist im Anhang des Dokuments zu finden.
 	
 	TODO in anhang einfügen
@@ -337,9 +350,9 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse
 
             Oliver Egloff & Person / Gruppe & OEG & Projektmanagement & CHF 100.00/h & CHF 0.00 \\\hline
 
-            Leonardo Wiedemeier & Person / Gruppe & LWI & Projectworker & CHF 100.00/h & CHF 0.00 \\\hline
+            Leonardo Wiedemeier & Person / Gruppe & LWI & Projektmitarbeiter & CHF 100.00/h & CHF 0.00 \\\hline
 
-            Samuel Salomon & Person / Gruppe & SSA & Projektworker & CHF 100.00/h & CHF 0.00 \\\hline
+            Samuel Salomon & Person / Gruppe & SSA & Projektmitarbeiter & CHF 100.00/h & CHF 0.00 \\\hline
 
             Stakeholder & Person / Gruppe & S & Gremium & CHF 0.00 & CHF 0.00 \\
 		\end{tabular}
@@ -352,7 +365,6 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse
  	 \newpage
  	 
  	 \subsection{Kostenplanung}
- 	 TODO einfügen aller Lieferobjeckte und arbeitspakete mit zeiten
 
 	\newpage
 	
@@ -377,13 +389,13 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse
 	\begin{table}[h]
 		\centering
 		\rowcolors{1}{gray!30}{gray!10}
-		\begin{tabular}{p{0.18\textwidth}|p{0.25\textwidth}|p{0.2\textwidth}|p{0.1\textwidth}|p{0.15\textwidth}}
-			\textbf{Schwerpunkt} & \textbf{Was} & \textbf{Wer mit Wem} &\textbf{Wieviele} & \textbf{Termin} \\ \hline
-			Erfüllung, Leistung und Funktionalität & Regelmässige Prüfung der Arbeitspakete und Anforderungserfüllung & Oliver Egloff, Leonardo Wiedemeier & & Jede zweite Woche am Freitag \\ \hline
-			Kosteneinhaltung & Prüfen der Aufwände für die geleisteten Arbeiten und somit der Kosten & Oliver Egloff & & Jede zweite Woche am Freitag \\ \hline
+		\begin{tabular}{p{0.18\textwidth}|p{0.25\textwidth}|p{0.2\textwidth}|p{0.15\textwidth}}
+			\textbf{Schwerpunkt} & \textbf{Was} & \textbf{Wer mit Wem} & \textbf{Termin} \\ \hline
+			Erfüllung, Leistung und Funktionalität & Regelmässige Prüfung der Arbeitspakete und Anforderungserfüllung & Oliver Egloff, Leonardo Wiedemeier &  Jede zweite Woche am Freitag \\ \hline
+			Kosteneinhaltung & Prüfen der Aufwände für die geleisteten Arbeiten und somit der Kosten & Oliver Egloff &  Jede zweite Woche am Freitag \\ \hline
 			Termintreue & Durchführen von Status Meetings, damit der Arbeitsfortschritt geprüft werden kann
 			- Definieren von genauen Fristen für die Arbeitspakete
-			 & Oliver Egloff, Samuel Salomon, Leonardo Wiedemeier & & Jede Woche Montags \\ \hline
+			 & Oliver Egloff, Samuel Salomon, Leonardo Wiedemeier & Jede Woche Montags \\ \hline
 		\end{tabular}
 		\caption{Massnahmen}
 		\label{fig:qualitaets_massnahmen}
