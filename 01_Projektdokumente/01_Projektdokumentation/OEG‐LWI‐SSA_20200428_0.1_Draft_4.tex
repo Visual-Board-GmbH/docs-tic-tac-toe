@@ -108,19 +108,19 @@
 		0.1 & 28.04.2020 & SSA & Dokumentation und Gliederung erstellt \\
 		0.2 & 04.05.2020 & LWI & Einfügen der Risikoanalyse \\
 		0.3 & 06.05.2020 & LWI & Einfügen der Situationsanalyse \\
-		0.4 & 07.05.2020 & LWI & Einfügen der Rollenbeschreibung + kleine Design Änderungen \\
+		0.4 & 07.05.2020 & LWI & Einfügen der Rollenbeschreibung + kleine Design-Änderungen \\
 		0.5 & 08.05.2020 & LWI & Einfügen der Ressourcenplanung \\
 		0.6 & 11.05.2020 & LWI & Änderung R3/M3 in der Risikoanalyse \\
 		0.7 & 12.05.2020 & LWI & Änderung in der Risikoanalyse + Grafik \\
 		0.8 & 13.05.2020 & OEG & Einfügen des Kommunikationsplans \\
-		0.9 & 15.05.2020 & OEG & Einfügen Anhang Kick-Off Meeting \\
+		0.9 & 15.05.2020 & OEG & Einfügen Anhang Kick-Off-Meeting \\
 		0.10 & 19.05.2020 & LWI & Risikomatrix mit Texten erweitern \\
 		0.11 & 06.06.2020 & LWI & Lösungssuche und Lösungswahl vorbereitet \\
 		0.12 & 08.06.2020 & SSA, OEG, LWI & Mind Map für die Lösungssuche erstellt\\
 		0.13 & 16.06.2020 & LWI & fertigstellen der Lösungssuche und Lösungswahl \\
 		0.14 & 17.06.2020 & SSA & Zieldefinition \\
 		0.15 & 23.06.2020 & LWI & Funktionendiagramm \\
-		0.16 & 17.08.2020 & LWI & 9 Funktionale Tests eingetragen \\
+		0.16 & 17.08.2020 & LWI & 9 funktionale Tests eingetragen \\
 		0.17 & 19.08.2020 & LWI & Schnittstellen erfasst \\
 		0.18 & 20.08.2020 & LWI & Klassendiagramm Sektion bearbeitet \\
 		0.19 & 21.08.2020 & LWI & Ablaufdiagramm eingefügt + Verwendete Tools erstellt + Produktkonzept + Entwichkungsumgebung und Tool-Chain + Dokumentationstruktur ergänzt \\
@@ -140,52 +140,52 @@
 \section{Managment Summary}
 \paragraph{Ausgangslage}
 Die Visual Board GmbH ist ein Unternehmen, welches sich auf die Herstellung und Ansteuerung von visuellen Panels für Anzeigen aller Art spezialisiert.
-Durch die aktuelle Lage mit der COVID-19 Pandemie fängt die Firma sich auch auf Webaplikationen zu spezialisieren, welche es möglich machen die Panels auf beliebige Arten anzusteuern.
-Im Vorgänger Projekt wurde bereits eine Machbarkeitsstudie durchgeführt, ob man in Zukunft auf die Technologie von LED-RGB-Matrizen setzen kann.
-Nun soll ein Tic-Tac-Toe Spiel umgesetzt werden, welches auf den Matrizen wiedergeben werden kann.
+Durch die aktuelle Lage mit der COVID-19-Pandemie fängt die Firma an sich auch auf Webaplikationen zu spezialisieren, welche es möglich machen, die Panels auf beliebige Arten anzusteuern.
+Im vorgängigen Projekt wurde bereits eine Machbarkeitsstudie durchgeführt, ob man in Zukunft auf die Technologie von LED-RGB-Matrizen setzen kann.
+Darauf aufbauend soll ein Tic-Tac-Toe Spiel umgesetzt werden, welches auf den Matrizen wiedergeben werden kann.
 
 \paragraph{Situation}
-Die Aufgabe ist es ein Multiplayer Tic-Tac-Toe Spiel zu entwickeln, bei welchem es die Möglichkeit gibt, laufende Spiele auf beliebigen LED-RGB-Matrizen anzeigen zu lassen.\\
-Es soll ein Frontend erstellt werden, welches dem User alle nötigen Funktionalitäten zur Verfügung stellt um ein Tic-Tac-Toe Spiel gegen eine andere Person abzuwickeln.
-Dieses soll dann via dem MQTT-Protokoll mit einem GameServer kommunizieren, welcher die komplette Business Logik beinhaltet.
-Der GameServer sollte zudem die nötigen Infos an alle beteiligten Matrizen senden, damit die laufenden Spiele dort dargestellt werden können.
+Die Aufgabe ist es ein Multiplayer Tic-Tac-Toe Spiel zu entwickeln, bei dem es die Möglichkeit gibt, laufende Spiele auf beliebigen LED-RGB-Matrizen anzeigen zu lassen.\\
+Es soll ein Frontend erstellt werden, welches dem User alle nötigen Funktionalitäten zur Verfügung stellt, um ein Tic-Tac-Toe Spiel gegen eine andere Person abzuwickeln.
+Dieses soll dann via MQTT-Protokoll mit einem GameServer kommunizieren, welcher die komplette Business Logik beinhaltet.
+Der GameServer sollte zudem die nötigen Infos an alle beteiligten Matrizen senden, damit die laufenden Spiele dort visuell dargestellt werden können.
 
 \paragraph{Herausforderungen}
 Das Projekt wird einige Herausforderungen an das gesamte Projektteam stellen.\\
 Das orchestrieren der Kommunikation zwischen dem Frontend, GameServer und der LED-RGB-Matrix,
-das designen des Frontendes und des GamerServers so das alle Anforderungen erfüllt werden können,
+das designen des Frontendes und des GamerServers, so dass alle Anforderungen erfüllt werden können,
 wie auch die Implementierung von Schnittstellen mit MQTT werden die grössten Herausforderungen darstellen.
 
 \paragraph{Ziele}
-Die Ziele waren es einen GamerServer mit separatem Frontend zu entwickeln welches die Anforderungen für das multiplayer Tic-Tac-Toe Spiel erfüllt.
-Zudem soll es möglich sein das laufende Spiel auf einer bis mehreren Matrizen darstellen zu lassen, es ist aber kein muss und kann auch rein im Web ablaufen.
+Die Visual Board GmbH entwickelt einen GamerServer mit separatem Frontend, welches den Anforderungen für das Multiplayer Tic-Tac-Toe-Spiel entspricht.
+Zudem soll es möglich sein, das laufende Spiel auf einer bis mehreren Matrizen darstellen zu lassen. Dies ist aber kein Muss und kann auch lediglich im Web stattfinden.
 
 \paragraph{Lösung/Optionen}
 Unsere Lösung baut im Backend auf die Programmiersprache Java in Kombination mit einer RestAPI und MQTT Topics auf.
-Hierzu wird eine MYSQL Datenbank für das Backend und ein Mosquitto MQTT Server für die Kommunikation mit dem Frontend aufgesetzt.
+Hierzu wird eine MYSQL-Datenbank für das Backend und ein Mosquitto-MQTT-Server für die Kommunikation mit dem Frontend aufgesetzt.
 Das Frontend wurde seinerseits mit Bootstrapp, JavScript und dem Vue.js Framework umgesetzt. \\
-Die API und das Datenbankhandling wurden mit Spring Boot umgesetzt und das MQTT Protokoll mit Hilfe einer Bibliothek implementiert.
+Die API und das Datenbankhandling wurden mit Spring Boot umgesetzt und das MQTT-Protokoll mithilfe der MQTT v3 Client API Java Bibliothek implementiert.
 Durch das Vorgänger Projekt musste an der LED-RGB-Matrix nichts verändert werden und kann von unserem GameServer normal angesprochen werden.\\
 
-Zur Wahl stand noch die Möglichkeit das Projekt mit PHP im Backend und im Frontend mit dem React Framework umzusetzen.
-Es wurde sich aber gegen diese Varianten entschieden da in den Nutzwertanalysen hervorging das dass Umsetzungsteam in Java mehr Kompetenzen besitzt als in PHP. In Vue.js, da hier der Entwicklungsaufwand kleiner ausfällt und die Dokumentation sich von React abhebt.
+Es bestand noch die Möglichkeit das Projekt mit PHP im Backend und im Frontend mit dem React Framework umzusetzen.
+Es wurde sich aber gegen diese Variante entschieden, da in den Nutzwertanalysen hervorging, dass das Umsetzungsteam in Java mehr Kompetenzen besitzt als in PHP. Für Vue.js wurde sich entschieden, da hier der Entwicklungsaufwand kleiner ausfällt und die Dokumentation sich von React abhebt.
 
 \newpage
 
 \paragraph{Nutzen \& Konsequenzen}
 Durch den getrennten und unabhängigen Aufbau der einzelnen Applikationen ist die Lösung sehr modular.
-Das Tic-Tac-Toe Spiel kann mit und ohne Matrix durchgeführt werden.
-Auch kann das Frontend wie der GameServer unabhängig der anderen 2 Services einfach ausgetauscht werden.\\
+Das Tic-Tac-Toe-Spiel kann mit und ohne Matrix durchgeführt werden.
+Auch kann das Frontend sowie der GameServer unabhängig von dem anderen zwei Services einfach ausgetauscht werden.\\
 \begin{figure}[!hbt]
 	\centering
 	\includegraphics[width=\columnwidth]{01_Grafiken/architektur_konzept.png}
 	\caption{Architektur}
 	\label{fig:architektur_konzept_management_summary}
 \end{figure}
-Durch den Einsatz von MQTT waren einige Punkte erschwert umzusetzen da das Protokoll für diese Use-Cases nicht wirklich geeignet ist.
-Zum Beispiel wurde entschieden das registrieren und der Login von User über HTTP Requests zu lösen. Wie auch das abholen User spezifischer Informationen.\\
-Ein hohes Risiko war COVID-19. Der daraus resultierende Mitarbeiter Ausfall hätte die Einhaltung des Abgabetermins schwierig gemacht. \\ \\
-Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse Chance auf dem Markt haben. Es ist eine gute Demo zum zeigen was möglich ist mit den LED-RGB-Matrizen und wie man weitere Applikationen entwickeln könnte um diese vielseitig anzusteuern. Auch zeigt es auf wie einfach eine LED-RGB-Matrix an ein bestehendes Projekt angebunden werden kann.\\
+Durch den Einsatz von MQTT waren einige Punkte erschwert umzusetzen, da das Protokoll für diese Use-Cases nicht wirklich geeignet ist.
+Zum Beispiel wurde entschieden, das Registrieren und den Login von User über HTTP Requests zu lösen. Wie auch das Abholen user-spezifischer Informationen.\\
+Ein hohes Risiko war COVID-19: der daraus resultierende Mitarbeiterausfall hätte die Einhaltung des Abgabetermins erschwert. \\ \\
+Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse Chance auf dem Markt haben. Es ist eine gute Demo, zum Zeigen, was mit den LED-RGB-Matrizen möglich ist und wie man weitere Applikationen entwickeln könnte, um diese vielseitig anzusteuern. Auch zeigt es auf, wie einfach eine LED-RGB-Matrix an ein bestehendes Projekt angebunden werden kann.\\
 
 \newpage
 
@@ -242,13 +242,13 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse
 
             Software \& System Architekt & Übersicht der eingesetzten Tools und des Systemaufbaus. \\ \hline
 
-            Datenbank Manager \& Architekt & Hauptverantwortlicher der Datenbank. \\ \hline
+            Datenbank-Manager \& Architekt & Hauptverantwortlicher der Datenbank. \\ \hline
 
-            Dokumentenverantwortlicher & Ist verantwortlich für den Aufbau und die Struktur der Dokumente. \\ \hline
+            Dokumentent-Verantwortlicher & Ist verantwortlich für den Aufbau und die Struktur der Dokumente. \\ \hline
 
-            Requirements \& Business Engineering & Hat die Übersicht über alle Anforderungen und ihrer Einhaltung \\ \hline
+            Requirements \& Business Engineering & Hat die Übersicht über alle Anforderungen und ihrer Einhaltung. \\ \hline
 
-            Quality \& Testing & Verantwortlich für die Qualität des Codes und das er getestet ist. \\
+            Quality \& Testing & Verantwortlich für die Qualität des Codes und dass er getestet ist. \\
         \end{tabular}
         \caption{Rollenbeschreibung}
         \label{fig:rollenbeschreibung}
@@ -345,7 +345,7 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse
 	\begin{table}[h]
 		\centering
 		\rowcolors{1}{gray!30}{gray!10}
-		\begin{tabular}{p{0.15\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}|p{0.15\textwidth}}
+		\begin{tabular}{p{0.17\textwidth}|p{0.1\textwidth}|p{0.1\textwidth}|p{0.17\textwidth}|p{0.15\textwidth}|p{0.1\textwidth}}
 			\textbf{Ressourcenname} & \textbf{Typ} & \textbf{Initials} &\textbf{Rolle}&\textbf{Stundensatz}&\textbf{Kosten pro Stunde} \\ \hline
 
             Oliver Egloff & Person / Gruppe & OEG & Projektmanagement & CHF 100.00/h & CHF 0.00 \\\hline
@@ -369,7 +369,7 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse
 	\newpage
 	
 	\subsection{Qualitätsmanagement}
-\subsubsection{Anforderungs- und Risikobasierte Qualitätsziele}
+\subsubsection{Anforderungs- und risikobasierte Qualitätsziele}
 \begin{table}[h]
 	\centering
 	\rowcolors{1}{gray!30}{gray!10}
@@ -435,8 +435,8 @@ Die Arbeitsjournale des Projektteams befinden sich im Anhang an dieses Dokument.
 
 \newpage
 
-	\section{Situationsanalyse}
-	\subsection{Vorgänger Projekt}
+\section{Situationsanalyse}
+\subsection{Vorgänger Projekt}
  Die Visual Board GmbH hat bereits mit der ABBTS (Rolf Hirschi) zusammengearbeitet und
 einen Prototypen erstellt, um Bilder auf einer RGB-LED-Matrix anzuzeigen.
 Das vorliegende Projekt baut auf dieses Vorgängerprojekt (aus der Semesterarbeit des 3. Semesters) auf.
