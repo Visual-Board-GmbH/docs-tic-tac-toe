@@ -404,8 +404,6 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse
 	\newpage
 	
 	\subsection{Projektcontrolling}
-	TODO mit oli anschauen
-	
 	Die Überprüfung der Kennzahlen des Projekts wurden bei den Meilensteinen M02, M03 sowie den Lieferobjekten L6 und L7 durchgeführt. Es wurden jeweils die folgenden Kennzahlen geprüft:
 	\begin{itemize}
 		\item Kosten
@@ -429,14 +427,14 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse
 		\label{fig:projektcontrolling}
 	\end{table}
 	
-	\subsection{Meetings- und Informationsplan}
-	
-	TODO
-	
+	\subsection{Meetingsprotokolle}
+Die Meetingsprotokolle befinden sich im Anhang an dieses Dokument.
+
 	\subsection{Arbeitsjournal}
-	
-	TODO
-	
+Die Arbeitsjournale des Projektteams befinden sich im Anhang an dieses Dokument.
+
+\newpage
+
 	\section{Situationsanalyse}
 	\subsection{Vorgänger Projekt}
  Die Visual Board GmbH hat bereits mit der ABBTS (Rolf Hirschi) zusammengearbeitet und
@@ -472,6 +470,7 @@ Das Produkt wird um ein Tic-Tac-Toe Spiel ausgebaut.
    
     Die Visual Board GmbH wird daher im Rahmen des Projektes die Spiellogik mit Benutzeroberfläche implementieren und den nötigen Webserver einrichten. Für diese Arbeiten stehen 300 Arbeitsstunden der kompletten Projektabwicklung zur Verfügung.
 
+\newpage
 
 \section{Zielsetzung}
 Das Ziel dieses Projektes ist ein webbasiertes Tic-Tac-Toe Spiel zu realisieren. Bereits bestehende Erfahrungen sowie Ergebnisse des RGB-LED-Matrix Prototypen werden wiederverwendet, um z.B. den Spielstand auf der RGB-LED-Matrix darzustellen. Ausgehend vom Projektziel werden Ziele untenstehend strukturiert nach
@@ -623,7 +622,8 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	
 	Bei der Datenbank wird es sich um MYSQL handel, was vom Kunden so gewünscht wurde.
 	\\
-	Das Frontend wird über MQTT mit dem Backend kommunizieren und die interaktive Spieloberfläche sein über welche dann Tic-Tac-Toe gespielt werden kann. Sie reagiert dynamisch auf die Eingaben des Benutzers und passt die View an.
+	Das Frontend wird über MQTT mit dem Backend kommunizieren und die interaktive Spieloberfläche sein über welche dann Tic-Tac-Toe gespielt werden kann.
+    Sie reagiert dynamisch auf die Eingaben des Benutzers und passt die View an.
 	\\
 	\subsubsection{Varianten}
 	Es wurde eine Lösung erarbeitet welche mit Verschiedenen Programmiersprachen umgesetzt werden kann.
@@ -765,7 +765,8 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 
 	\subsection{Empfehlung}
 	Das Projektteam hat bereits Know-How in JavaScrit wie auch teils in PHP und Java.
-	Da in den Nutzwertanalysen klar heraus geht das für dass Frontend \textbf{Vue.js} und im Backend \textbf{Java} verwendet werden sollte, wird dies auch von uns Empfohlen.
+	Da in den Nutzwertanalysen klar heraus geht das für dass Frontend \textbf{Vue.js} und im Backend \textbf{Java} verwendet werden sollte,
+    wird dies auch von uns Empfohlen.
 	
 	\newpage
 	
@@ -1192,19 +1193,19 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	
 	\newpage
 	
-	\begin{table}[h]
-		\centering
-		\rowcolors{1}{orange!30}{orange!10}
-		\begin{tabular}{p{0.25\textwidth}|p{0.74\textwidth}}
-			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{010} \\ \hline
-			\cellcolor{orange!80} \textbf{Testaufgabe:} & Die eigene Gamehistory einsehen \\ \hline
-			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Seine eigene Gamehistory einsehen und einzelne vergangene Spiele anschauen \\ \hline
-			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Als eingeloggter User ist es möglich beendete Spiele in der Gamehistory anzuschauen und diese Schritt für Schritt anzuschauen. \\ \hline
-			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
-		\end{tabular}
-		\caption{Testfall Nr 010}
-		\label{fig:testfall_br_010}
-	\end{table}
+\begin{table}[h]
+    \centering
+    \rowcolors{1}{orange!30}{orange!10}
+    \begin{tabular}{p{0.25\textwidth}|p{0.74\textwidth}}
+        \cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{010} \\ \hline
+        \cellcolor{orange!80} \textbf{Testaufgabe:} & Das Spiel auf der LED Matrix anzeigen \\ \hline
+        \cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Während einem laufenden Spiel kann der Spielfortschritt auf einer LED RGB Matrix angezeigt werden indem der HOST eine verfügbare Matrix auswählt. \\ \hline
+        \cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Spielstand wird auf der LED RGB Matrix angezeigt. \\ \hline
+        \cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
+    \end{tabular}
+    \caption{Testfall Nr 010}
+    \label{fig:testfall_br_010}
+\end{table}
 	
 	\newpage
 	
@@ -1265,13 +1266,15 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 
 			M6 & Regelmässige Backups der Lösung und klare Definierungen wie gearbeitet wird. & Samuel Salomon, Leonardo Wiedemeier & 1x pro Woche & Ab Beginn Projekt \\ \hline
 
-			M7 & Über die Situation mit COVID-19 auf dem Laufenden bleiben und persönliche wie auch geschäftliche Entscheidungen frühzeitig angehen. & Alle am Projekt beteiligten Personen & Täglich & Täglich \\
+			M7 & Über die Situation mit COVID-19 auf dem Laufenden bleiben und persönliche wie auch geschäftliche Entscheidungen frühzeitig angehen. & Alle am Projekt beteiligten Personen & Täglich & Täglich
 		\end{tabular}
 		\caption{Massnahmen}
 		\label{fig:massnahmen}
 	\end{table}
-
-	Die meisten Massnahmen haben mit genauer Planung, Kommunikation und mit konzentrierten und genauen Arbeiten zu tun. Naturkatastrophen, Coronavirus und auch Teils Hardwareausfall können uns treffen, dürfen aber nicht überraschen. Mit den hier aufgelisteten Massnahmen gehen wir gegen alle möglichen Risiken gegen an und definieren wie im Falle eins Auftretens reagiert und sich darauf vorbereitet wird.
+    \noindent
+    Die meisten Massnahmen haben mit genauer Planung, Kommunikation und mit konzentrierten und genauen Arbeiten zu tun.
+    Naturkatastrophen, Coronavirus und auch Teils Hardwareausfall können uns treffen, dürfen aber nicht überraschen.
+    Mit den hier aufgelisteten Massnahmen gehen wir gegen alle möglichen Risiken gegen an und definieren wie im Falle eins Auftretens reagiert und sich darauf vorbereitet wird.
 
 	\newpage
 
@@ -1282,7 +1285,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\caption{Risikomatrix}
 		\label{fig:risiko_matrix}
 	\end{figure}
-
+\noindent
 	Die Risikomatrix zeigt auf wie, die von uns definierten und eingeschätzten, die Risiken (gelbe Kugeln) nach Anwendung der Massnahmen (Schwarze Pfeile) entschärft und neu eingestuft werden (blaue Kugeln).
 
 	\newpage
@@ -1322,41 +1325,41 @@ Sämtliche verwendeten Textausschnitte, Zitate oder Inhalte anderer Verfasser wu
 \newpage
 
 \subsection{Dokumente}
-
-\subsubsection{Pflichtenheft}
-% commented out because of compiling speed
-\includepdf[pages=-, landscape=false, pagecommand={}, scale=0.91]{../../02_Pflichtenheft/Pflichtenheft_OEG‐LWI‐SSA_20200626_1.0_Closed_43.pdf} % 05_Anhänge/Dokumente/01_Pflichtenheft/OEG‐LWI‐SSA_Pflichtenheft_0.1_Draft_4.pdf
-
-\newpage
-
-\subsubsection{Java Coding Guidelines}
-% commented out because of compiling speed
-\includepdf[pages=-, landscape=false, pagecommand={}, scale=0.91]{../../05_Guidelines/01_Backend Coding Guidelines/OEG‐LWI‐SSA_Backend_Coding_Guidelines_0.1_Draft_4.pdf}
-
-\newpage
-
-\subsubsection{Frontend Coding Guidelines}
-% commented out because of compiling speed
-\includepdf[pages=-, landscape=false, pagecommand={}, scale=0.91]{../../05_Guidelines/02_Frontend Coding Guidelines/OEG‐LWI‐SSA_Frontend_Coding_Guidelines_0.1_Draft_4.pdf}
-
-\newpage
-
-\subsubsection{Handbuch für Installation und Inbetriebnahme}
-% commented out because of compiling speed
-\includepdf[pages=-, landscape=false, pagecommand={}, scale=0.91]{../../07_Handbuecher/Installation und Inbetriebnahme.pdf}
-
-\newpage
-
-\subsubsection{Sitzungsprotokolle}
-% commented out because of compiling speed
-\includepdf[pages=-, landscape=true, pagecommand={}, scale=0.91]{../../03_Protokolle/Sitzungs_Protokolle.pdf}
-
-\newpage
-
-\subsection{Präsentationen}
-\subsubsection{Kick-Off Meeting vom 13.05.2020}
-    % commented out because of compiling speed
-     \includepdf[pages=-, landscape=true, pagecommand={}, scale=0.91]{../../06_Präsentationen/01_KickOff_Meeting/Gruppe_1_SA_KickOff_Meeting_VisualBoardGmbH.pdf}
+%
+%\subsubsection{Pflichtenheft}
+%% commented out because of compiling speed
+%\includepdf[pages=-, landscape=false, pagecommand={}, scale=0.91]{../../02_Pflichtenheft/Pflichtenheft_OEG‐LWI‐SSA_20200626_1.0_Closed_43.pdf} % 05_Anhänge/Dokumente/01_Pflichtenheft/OEG‐LWI‐SSA_Pflichtenheft_0.1_Draft_4.pdf
+%
+%\newpage
+%
+%\subsubsection{Java Coding Guidelines}
+%% commented out because of compiling speed
+%\includepdf[pages=-, landscape=false, pagecommand={}, scale=0.91]{../../05_Guidelines/01_Backend Coding Guidelines/OEG‐LWI‐SSA_Backend_Coding_Guidelines_0.1_Draft_4.pdf}
+%
+%\newpage
+%
+%\subsubsection{Frontend Coding Guidelines}
+%% commented out because of compiling speed
+%\includepdf[pages=-, landscape=false, pagecommand={}, scale=0.91]{../../05_Guidelines/02_Frontend Coding Guidelines/OEG‐LWI‐SSA_Frontend_Coding_Guidelines_0.1_Draft_4.pdf}
+%
+%\newpage
+%
+%\subsubsection{Handbuch für Installation und Inbetriebnahme}
+%% commented out because of compiling speed
+%\includepdf[pages=-, landscape=false, pagecommand={}, scale=0.91]{../../07_Handbuecher/Installation und Inbetriebnahme.pdf}
+%
+%\newpage
+%
+%\subsubsection{Sitzungsprotokolle}
+%% commented out because of compiling speed
+%\includepdf[pages=-, landscape=true, pagecommand={}, scale=0.91]{../../03_Protokolle/Sitzungs_Protokolle.pdf}
+%
+%\newpage
+%
+%\subsection{Präsentationen}
+%\subsubsection{Kick-Off Meeting vom 13.05.2020}
+%    % commented out because of compiling speed
+%     \includepdf[pages=-, landscape=true, pagecommand={}, scale=0.91]{../../06_Präsentationen/01_KickOff_Meeting/Gruppe_1_SA_KickOff_Meeting_VisualBoardGmbH.pdf}
 
 \end{document}
 
