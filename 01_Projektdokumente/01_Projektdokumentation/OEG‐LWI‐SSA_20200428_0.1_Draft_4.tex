@@ -92,6 +92,39 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \pagestyle{fancy}
 
+\begin{large}
+	\begin{tabular}{p{5cm}l l }
+		\textbf{Bildungsgang:} & Klasse B20-if4.1 Informatik \\
+		\textbf{Fach:} & Datenbank \& Web Engineering \\
+		\textbf{Semester:} & Semester 4 – 2019/2020 \\
+		\textbf{Autoren:} & Oliver Egloff, Leonardo Wiedemeier, Samuel Salomon
+	\end{tabular}
+\end{large}
+
+
+\vspace{1cm}
+\hrule
+\vspace{1cm}
+\begin{center}
+	\centering
+	\LARGE{\textbf{Semesterarbeit – Visual Board GmbH}}
+\end{center}
+
+
+\vspace{20pt}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics{title.png}
+\end{figure}
+\begin{center}
+	\centering
+	\section*{Projektdokumentation}
+\end{center}
+
+\newpage
+
 
 	\section{Dokumentenmanagement}
 
@@ -1038,6 +1071,119 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	\newpage
 	
 	\section{Realisierung}
+	
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{OEG_20200408_Big_Picture_Draft.png}
+		\caption{Big Picture - Lösungsübersicht}
+		\label{fig:bigPicture}
+	\end{figure}
+	
+	\subsection{Frontend}
+	Wie bereits erwähnt wurde das Frontend nach den zuvor erstellen Mockups in Vue.js erstellt. Innerhalb von Vue.js wurden die folgenden Libraries verwendet:
+	\begin{itemize}
+		\item \textbf{Bootstrap \& Bootstrap-Vue} für das Layout und Responsive Design der Webapplikation. Durch Bootstrap ist die Applikation Mobile Ready.
+		\item \textbf{MQTT} für die Spielkommunikation mit dem Backend
+		\item \textbf{AXIOS} für Rest Abfragen
+		\item \textbf{VueX} als zentralen Store um Benutzer und Game Daten zu temporär im Frontend zu speichern
+		\item \textbf{VueRouter} um erfolgreich zu Navigieren
+	\end{itemize}
+
+	\subsubsection{Aufbau}
+	Dem Benutzer wird zentral eine Navigation angezeigt über welche er die Unterseiten
+	\begin{itemize}
+		\item Spielübersicht
+		\item Spielverlauf
+		\item Benutzerprofil
+		\item Logout
+	\end{itemize}
+
+	Startpunkt nach dem Login ist immer die Spielübersicht auf welcher "Meine Spiele" und "Offene Spiele" angezeigt werden.
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{Spieluebersicht.png}
+		\caption{Spielübersicht}
+		\label{fig:playView}
+	\end{figure}
+	
+	\paragraph{Spielverlauf}
+	Das zweite Icon in der Navigation leitet den Benutzer auf den Spielverlauf. Dort kann der Benutzer seinen vergangen Spiele sehen und erkennt auf einen Blick ob er ein Spiel Gewonnen, Verloren oder ob das Spiel unentschieden geendet hat.
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{Game-History.png}
+		\caption{Spielverlauf}
+			\label{fig:gameHistory}
+	\end{figure}
+
+	\paragraph{Benutzerprofil}
+	Um persönliche Informationen wie Name, Spielername, Passwort, etc. anzupassen oder etwa die Kreuze oder Kreise durch ein persönliches Bild auszutauschen, kann der Benutzer unterm seinem Benutzerprofil die entsprechenden Anpassungen durchführen. Die Benutzerdaten werden nicht wie die Gamedaten über MQTT übertragen sondern aufgrund der Datensicherheit über einen Rest Enpoint.
+
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{Benutzerprofil-1.png}
+		\caption{Benutzerinformationen anpassen}
+		\label{fig:userProfile}
+	\end{figure}
+
+\begin{figure}[!hbt]
+	\centering
+	\includegraphics[width=\columnwidth]{Benutzerprofil-1.png}
+	\caption{Spielerzeichen anpassen}
+	\label{fig:userProfileTileImage}
+\end{figure}
+
+	\paragraph{Registrieren, Login \& Logout}
+	Zu beginn muss sich ein Benutzer über eine Rest Schnittstelle beim Server Registrieren. Nach der Registration kann er sich anmelden wobei ein HttpOnly Session Cookie im Browser gespeichert wird. So wird eine bestmöglichste UserExpirience gewährleistet, da der Benutzer innerhalb der Session so viele Fenster mit dem Tic-Tac-Toe Spiel öffnen kann wie er möchte. Um sich auszuloggen kann der Benutzer das Icon ganz rechts in der Navigation anwählen.
+	
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{register.png}
+		\caption{Registration}
+		\label{fig:register}
+	\end{figure}
+
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{login.png}
+		\caption{Login}
+		\label{fig:login}
+	\end{figure}
+	
+	\paragraph{Spiel}
+	Wird von einer Liste (Meine Spiele, Offene Spiele oder Spielverlauf) ein Spiel geöffnet so wird das Spiel aus dem Speicher geladen und in einer View dargstellt. Die View enthält sämtliche Business Logik um mit dem Server über Mqtt zu kommunizieren um die entsprechenden Spielständ eabzugleichen und anzuzeigen. Folgende Elemente sind innerhalb dieser View verfügbar:
+	\begin{itemize}
+		\item Name des Spiels
+		\item Spieleranzeige
+		\item Historie aller Züge in diesem Spiel. Der Spieler kann so das gesamte Spiel nochmals erleben
+		\item Spielbrett auf welchem der Spieler seine Züge ausführen kann
+	\end{itemize}
+
+	Sollte der Benutzer ein personalisiertes Zeichen besitzen, so wird dieses anstelle des X oder O angezeigt.
+	
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{Gameboard-Kein-Gewinner.png}
+		\caption{Spielanzeig mit keinem Gewinner}
+		\label{fig:noWinner}
+	\end{figure}
+
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{Gameboard-Mit-Gewinner.png}
+		\caption{Spielanzeig bei dem ein Gewinner  festgestellt wurde}
+		\label{fig:withWinner}
+	\end{figure}
+	
+	\begin{figure}[!hbt]
+		\centering
+		\includegraphics[width=\columnwidth]{Gameboard-mit-bildern.png}
+		\caption{Spielanzeig bei dem personalisierte Zeichen dargestellt werden}
+		\label{fig:withPicture}
+	\end{figure}
+
+
+	
+	
 		
 	\subsection{Klassendiagramm}
 	Im folgenden Klassendiagramm wurden die von uns erstellen und für die eigentlich Tic-Tac-Toe Logik des Backends wichtigen Klassen beschrieben. Klassen, Interfaces etc. des Springframeworks oder von JPA wurden nicht beschrieben.
