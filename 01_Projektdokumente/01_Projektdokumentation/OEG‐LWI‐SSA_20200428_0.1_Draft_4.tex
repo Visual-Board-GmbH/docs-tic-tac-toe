@@ -368,7 +368,7 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse
 
 	\newpage
 	
-	\subsection{Qualitätsmanagement}
+\subsection{Qualitätsmanagement}
 \subsubsection{Anforderungs- und risikobasierte Qualitätsziele}
 \begin{table}[h]
 	\centering
@@ -381,7 +381,7 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse
 		Kosteneinhaltung & Sehr Wichtig & Beachtliches Risiko & Ja \\ \hline
 		Termintreue & Sehr wichtig & Akzeptables Risiko & Ja \\ \hline
 	\end{tabular}
-	\caption{Anforderungs- und Risikobasierte Qualitätsziele}
+	\caption{Anforderungs- und risikobasierte Qualitätsziele}
 	\label{fig:qualitaetsziele}
 \end{table}
 
@@ -393,7 +393,7 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse
 		\textbf{Schwerpunkt} & \textbf{Was} & \textbf{Wer mit Wem} &\textbf{Wieviele} & \textbf{Termin} \\ \hline
 		Erfüllung, Leistung und Funktionalität & Regelmässige Prüfung der Arbeitspakete und Anforderungserfüllung & Oliver Egloff, Leonardo Wiedemeier & & Jede zweite Woche am Freitag \\ \hline
 		Kosteneinhaltung & Prüfen der Aufwände für die geleisteten Arbeiten und somit der Kosten & Oliver Egloff & & Jede zweite Woche am Freitag \\ \hline
-		Termintreue & Durchführen von Status Meetings, damit der Arbeitsfortschritt geprüft werden kann
+		Termintreue & Durchführen von Status-Meetings, damit der Arbeitsfortschritt geprüft werden kann
 		- Definieren von genauen Fristen für die Arbeitspakete
 		& Oliver Egloff, Samuel Salomon, Leonardo Wiedemeier & & Jede Woche Montags \\ \hline
 	\end{tabular}
@@ -403,6 +403,7 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse
 	
 	\newpage
 	
+	//TODO oli/liw/samuel
 	\subsection{Projektcontrolling}
 	Die Überprüfung der Kennzahlen des Projekts wurden bei den Meilensteinen M02, M03 sowie den Lieferobjekten L6 und L7 durchgeführt. Es wurden jeweils die folgenden Kennzahlen geprüft:
 	\begin{itemize}
@@ -436,17 +437,17 @@ Die Arbeitsjournale des Projektteams befinden sich im Anhang an dieses Dokument.
 \newpage
 
 \section{Situationsanalyse}
-\subsection{Vorgänger Projekt}
+\subsection{Vorgänger-Projekt}
  Die Visual Board GmbH hat bereits mit der ABBTS (Rolf Hirschi) zusammengearbeitet und
 einen Prototypen erstellt, um Bilder auf einer RGB-LED-Matrix anzuzeigen.
-Das vorliegende Projekt baut auf dieses Vorgängerprojekt (aus der Semesterarbeit des 3. Semesters) auf.
+Das vorliegende Projekt baut auf dieses Vorgänger-Projekt (aus der Semesterarbeit des 3. Semesters) auf.
 Die RGB-LED-Matrix wurde funktionsfähig gestellt und es sollte ein Programm geschrieben werden, um Bilder
-wie gewünscht auf der Matrix anzuzeigen. Darunter ist das korrekte transformieren, aufbereiten
-und weitergeben an die Matrix zu verstehen.
+wie gewünscht auf der Matrix anzuzeigen. Darunter ist das korrekte Transformieren, Aufbereiten
+und Weitergeben an die Matrix zu verstehen.
 Der Prototyp wurde von der Visual Board GmbH mit einer REST-Api in Java umgesetzt,
 welche auf dem Raspberry Pi der Hardware oder einem externen Windows Computer läuft.
 So wurde die RGB-LED-Matrix dem Netzwerk, in welchem sie sich befindet, zur Verfügung gestellt.
-Es ist möglich mit den korrekten "Requests" Bilder direkt oder mit dem Webinterface
+Es ist möglich mit den korrekten Requests, Bilder direkt oder via Webinterface
 an die Matrix zu schicken.
 Der Visual Board GmbH wurde die komplette Hardware durch die ABBTS zu Verfügung gestellt.
 \newline
@@ -463,24 +464,24 @@ Teil der Projektorganisiton waren:
 Das Endprodukt aus der Semesterarbeit des dritten Semesters, die RGB-LED-Matrix, gilt als Grundbaustein für dieses Projekt.
 Das Produkt wird um ein Tic-Tac-Toe Spiel ausgebaut.
 
-	\subsection{Weiteres Vorgehen}
-	Die ABBTS hat sich entschieden auf den Prototypen der Visual Board GmbH aufzubauen und die Spiellogik für ein Tic-Tac-Toe Spiel umzusetzen.
-	Es soll die Möglichkeit bestehen das mehrere Spieler, auf verschiedenen Endgeräten, gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgibt. Hier für werden wir das komplette Vorgänger Projekt verwenden, da die Matrix bereits einsatzbereit ist. Es werden allenfalls Schnittstellen angepasst oder neue erstellt.
-	Zusätzlich zur Implementierung der Spiellogik, soll diese auch auf einen Webserver laufen und so erreichbar gemacht werden.
-   
-    Die Visual Board GmbH wird daher im Rahmen des Projektes die Spiellogik mit Benutzeroberfläche implementieren und den nötigen Webserver einrichten. Für diese Arbeiten stehen 300 Arbeitsstunden der kompletten Projektabwicklung zur Verfügung.
+\subsection{Weiteres Vorgehen}
+Die ABBTS hat sich entschieden auf den Prototypen der Visual Board GmbH aufzubauen und die Spiellogik für ein Tic-Tac-Toe Spiel umzusetzen.
+Es soll die Möglichkeit bestehen, dass mehrere Spieler auf verschiedenen Endgeräten gegeneinander spielen, während die RGB-LED-Matrix das aktuelle Spielfeld ausgibt. Hierfür werden wir das komplette Vorgänger-Projekt verwenden, da die Matrix bereits einsatzbereit ist. Es werden allenfalls Schnittstellen angepasst oder neue erstellt.
+Zusätzlich zur Implementierung der Spiellogik soll diese auch auf einen Webserver laufen und so erreichbar gemacht werden.
+
+Die Visual Board GmbH wird daher im Rahmen des Projektes die Spiellogik mit Benutzeroberfläche implementieren und den nötigen Webserver einrichten. Für diese Arbeiten stehen 300 Arbeitsstunden zur kompletten Projektabwicklung zur Verfügung.
 
 \newpage
 
 \section{Zielsetzung}
-Das Ziel dieses Projektes ist ein webbasiertes Tic-Tac-Toe Spiel zu realisieren. Bereits bestehende Erfahrungen sowie Ergebnisse des RGB-LED-Matrix Prototypen werden wiederverwendet, um z.B. den Spielstand auf der RGB-LED-Matrix darzustellen. Ausgehend vom Projektziel werden Ziele untenstehend strukturiert nach
+Das Ziel dieses Projektes ist, ein webbasiertes Tic-Tac-Toe-Spiel zu realisieren. Bereits bestehende Erfahrungen sowie Ergebnisse des RGB-LED-Matrix-Prototypen werden wiederverwendet, um z.B. den Spielstand auf der RGB-LED-Matrix darzustellen. Ausgehend vom Projektziel werden Ziele untenstehend strukturiert nach
 \begin{itemize}
 	\item Systemzielen
 	\item Prozesszielen
-	\item Mehrwert Zielen
+	\item Mehrwert-Zielen
 \end{itemize}
 
-aufgelistet. Sämtliche Ziele sind nach den SMART Kriterien definiert:
+aufgelistet. Sämtliche Ziele sind nach den SMART-Kriterien definiert:
 \begin{itemize}
 	
 	\item Spezifisch
@@ -496,14 +497,14 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	\centering
 	\begin{tabularx}{\columnwidth}{l X r}
 		\textbf{\thead{Nr}} & \textbf{\thead{Zielbeschreibung}} & \textbf{\thead{Priorität \\ (M, S, K)}}\\ \Xhline{2pt}
-		1 & Das Tic-Tac-Toe spiel muss multiplayerfähig sein. & M \\ \Xhline{1pt}
+		1 & Das Tic-Tac-Toe-Spiel muss multiplayerfähig sein. & M \\ \Xhline{1pt}
 		2 & Spielhistorien müssen vom Benutzer abgerufen werden können. & M \\ \Xhline{1pt}
 		3 & Aktuelle Spielzüge müssen auf der RGB-LED-Matrix dargestellt werden. & M \\ \Xhline{1pt}
-		4 & Objekte sollen in universellen Formaten gespeichert werden, um sie für spätere Projekte wieder zu verwenden. & S \\ \Xhline{1pt}
+		4 & Objekte sollen in universellen Formaten gespeichert werden, um sie für spätere Projekte wiederzuverwenden. & S \\ \Xhline{1pt}
 		5 & Dem Benutzer muss ein Web-GUI zur Verfügung gestellt werden. & M \\ \Xhline{1pt}
-		6 & Vom Benutzer erzeugte Daten müssen in einer zentralen MySQL Datenbank abgelegt werden. & M \\ \Xhline{1pt}
-		7 & Der Benutzer muss sich am System anmelden können. & M \\ \Xhline{1pt}
-		8 & Die allgemeinen Spielregeln des offiziellen Tic-Tac-Toe Spiels müssen abgebildet werden. & M \\ \Xhline{1pt}
+		6 & Vom Benutzer erzeugte Daten müssen in einer zentralen MySQL-Datenbank abgelegt werden. & M \\ \Xhline{1pt}
+		7 & Der Benutzer muss sich im System anmelden können. & M \\ \Xhline{1pt}
+		8 & Die allgemeinen Spielregeln des offiziellen Tic-Tac-Toe-Spiels müssen abgebildet werden. & M \\ \Xhline{1pt}
 	\end{tabularx}
 	\caption{Systemziele}
 \end{table}
@@ -516,9 +517,9 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\textbf{\thead{Nr}} & \textbf{\thead{Zielbeschreibung}} & \textbf{\thead{Priorität \\ (M, S, K)}}\\ \Xhline{2pt}
 		1 & Das System muss bis zum 26.08.2020 fertiggestellt werden. & M \\ \Xhline{1pt}
 		2 & Der Prototyp soll am 26.08.2020 den Stakeholdern präsentiert werden. & M \\ \Xhline{1pt}
-		3 & Das Projekt wird nach dem Wasserfallmodell unter Berücksichtigung Agiler Projektmethoden für die Entwicklung umgesetzt. & M \\ \Xhline{1pt}
+		3 & Das Projekt wird nach dem Wasserfallmodell unter Berücksichtigung agiler Projektmethoden für die Entwicklung umgesetzt. & M \\ \Xhline{1pt}
 		4 & Am 13.05.2020 findet das Kick-off-Meeting statt, in welchem die Initialisierungsphase besprochen wird und der Übergang in die Konzeptphase stattfindet. Mit der Freigabe der Stakeholder können erste Ideen geplant und Lösungen evaluiert werden. & M \\ \Xhline{1pt}
-		5 &Bis zum 26.06.2020 muss die Konzeptionelle Planung abgeschlossen sein, um anschliessend mit der Realisierung zu beginnen. & M \\ \Xhline{1pt}
+		5 &Bis zum 26.06.2020 muss die konzeptionelle Planung abgeschlossen sein, um anschliessend mit der Realisierung zu beginnen. & M \\ \Xhline{1pt}
 		6 & Folgende Personen sind zu 100\% in das Projekt involviert: Oliver Egloff, Leonardo Wiedemeier, Samuel Salomon & M \\ \Xhline{1pt}
 		7 &	Die angefallenen Kosten sind zu jedem Zeitpunkt aktuell zu halten und mit dem Soll-Zustand zu vergleichen. Dies erfordert ein ständiges Nachführen der geleisteten Stunden aller Projektmitarbeiter. & M
 		
@@ -528,7 +529,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 
 \newpage
 
-\subsubsection{Mehrwert Ziele}
+\subsubsection{Mehrwert-Ziele}
 \begin{table}[h]
 	\centering
 	
@@ -542,7 +543,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		6 & Erlernen aktueller Web-Technologien & S \\ \Xhline{1pt}
 		7 &	Erfahrungen mit Projektmethoden (Wasserfall und Agile) sammeln & M
 	\end{tabularx}
-	\caption{Mehrwert Ziele}
+	\caption{Mehrwert-Ziele}
 \end{table}
 
 \newpage
@@ -551,27 +552,27 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	\begin{figure}[!hbt]
 		\centering
 		\includegraphics[width=\columnwidth]{01_Grafiken/loesungs_mind_map.png}
-		\caption{Lösungs Mind Map}
+		\caption{Lösungs-Mind-Map}
 		\label{fig:mind_map}
 	\end{figure}
 	
 	\subsection{Vorstudie zur Erhebung der Programmiersprachen}
 	\subsubsection{Backend}
 	\paragraph{PHP}
-	Eine weit verbreitet Open source Skriptsprache welche zur Laufzeit kompiliert wird. Sie zeichnet sich durch ihre Einfachheit, Geschwindigkeit und Stabilität aus. Es gibt eine umfangreiche Anzahl von Frameworks wie auch eine grosse Community, welche durch Open source ein gewisses Mitspracherecht an der Zukunft der Sprache hat. So können simple Kommandozeilen Scripts wie auch umfangreiche Webapplikationen erstellt werden.  
+	Eine weit verbreitet open-source-Skriptsprache, welche zur Laufzeit kompiliert wird. Sie zeichnet sich durch ihre Einfachheit, Geschwindigkeit und Stabilität aus. Es gibt eine umfangreiche Anzahl von Frameworks wie auch eine grosse Community, welche durch Open-source ein gewisses Mitspracherecht an der Zukunft der Sprache hat. So können simple Kommandozeilen-Scripts wie auch umfangreiche Webapplikationen erstellt werden.  
 	\paragraph{Java}
 	Java ist eine objektorientierte Programmiersprache, mit welcher sich plattformunabhängige Anwendungen entwickeln lassen können. Die Sprache hat sich gut durchgesetzt und ist weit verbreitet. Die Haupteigenschaften der Programmiersprache sind Sicherheit, Robustheit und Einfachheit. Java hat eine Vielzahl an Frameworks und eine grosse Community.
 	\\ \\
-	Beide Sprache bieten eine grosse Community und ein umfangreiches Toolset mit dem die Anforderungen an das System erfüllt werden können. Mit Hilfe einer Nutzwertanalyse wird nun entschieden mit welchen Varianten die Sprachen in der Lösungswahl berücksichtigt werden.
+	Beide Sprache bieten eine grosse Community und ein umfangreiches Toolset, mit dem die Anforderungen an das System erfüllt werden können. Mithilfe einer Nutzwertanalyse wird nun entschieden, mit welchen Varianten die Sprachen in der Lösungswahl berücksichtigt werden.
 	
 	\subsubsection{Frontend}
 	\paragraph{Vue.js}
-	Ist ein clientseitiges JavaScript-Webframework zum Erstellen von Single-Page-Webanwendungen nach dem MVVM-Muster, es kann allerdings auch in Multipage Webseiten für einzelne Abschnitte verwendet werden. Serverseitiges Rendern ist auch unterstützt. \\
-	Vue.js ist ein "relativ" junges Framework, hat aber trotzdem eine wachsende Community und wird immer mehr verwendet. Wie zum Beispiel von GitLab.
+	Ist ein clientseitiges JavaScript-Webframework zum Erstellen von Single-Page-Webanwendungen nach dem MVVM-Muster. Es kann allerdings auch in Multipage Webseiten für einzelne Abschnitte verwendet werden. Serverseitiges Rendern ist auch unterstützt. \\
+	Vue.js ist ein "relativ" junges Framework, hat aber trotzdem eine wachsende Community und wird immer mehr verwendet. (zum Beispiel von GitLab).
 	\paragraph{React}
-	Gibt es bereits etwas länger als Vue.js und bietet ähnliche Funktionalitäten als Frontend Framework. Es wurde damals von Facebook ins leben gerufen und auch noch heute verwendet. Daher geniesst React eine grosse Community und ist weit verbreitet.
+	Gibt es bereits etwas länger als Vue.js und bietet ähnliche Funktionalitäten als Frontend Framework. Es wurde damals von Facebook ins Leben gerufen und wird auch noch heute verwendet. Daher geniesst React eine grosse Community und ist weit verbreitet.
 	\\ \\
-	Beide Sprachen bieten ähnliche Funktionalitäten und Syntax. Vue.js gilt als flexiblere Sprache und daher für Neulinge besser zum einsteigen. React.js geniesst eine grosse Community und Facebook als Mitentwickler hinter der Sprache (ist aber wie Vue.js OpenSource). Auch hier soll durch eine Nutzwertanalyse 
+	Beide Sprachen bieten ähnliche Funktionalitäten und Syntax. Vue.js gilt als flexiblere Sprache und daher für Neulinge besser zum Einsteigen. React.js geniesst eine grosse Community mit Facebook als Mitentwickler hinter der Sprache (ist aber wie Vue.js OpenSource). Auch hier soll durch eine Nutzwertanalyse entschieden welche Variante besser zum Projekt passt.
 	
 	\subsection{Black Box}
 	
@@ -604,11 +605,11 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\label{fig:architektur}
 	\end{figure}
 
-	Es wurde eine Variante erstellt welche durch das Vorgängerprojekt, der LED-RGB-Matrix, den Rahmenbedingungen und dem Architekturvorschlag (Abbildung: \ref{fig:architektur}) definiert wurde.
+	Es wurde eine Variante erstellt, welche durch das Vorgängerprojekt, der LED-RGB-Matrix, den Rahmenbedingungen und dem Architekturvorschlag (Abbildung: \ref{fig:architektur}) definiert wurde.
 	\\ \\
 	Die LED-RGB-Matrix wurde als unabhängiger Service programmiert und kann daher ohne Anpassung in das laufende Projekt integriert werden. Es handelt sich um eine Rest-API, an welche Bilder mit gewünschten Transformationsparamtern gesendet und dargestellt werden können.
 	\\ \\
-	Das Tic-Tac-Toe Game (Spiellogik + Datenbank) wird das Backend bilden. Dies beinhaltet folgende Aufgaben:
+	Das Tic-Tac-Toe-Game (Spiellogik + Datenbank) wird das Backend bilden. Dies beinhaltet folgende Aufgaben:
 	\begin{itemize}
 		\item Ist für die gesamte Spiellogik zuständig
 		\begin{itemize}
@@ -620,18 +621,16 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\item Aufbereiten und senden des Spielfeldes an die LED-RGB-Matrix (REST)
 	\end{itemize}
 	
-	Bei der Datenbank wird es sich um MYSQL handel, was vom Kunden so gewünscht wurde.
-	\\
-	Das Frontend wird über MQTT mit dem Backend kommunizieren und die interaktive Spieloberfläche sein über welche dann Tic-Tac-Toe gespielt werden kann.
-    Sie reagiert dynamisch auf die Eingaben des Benutzers und passt die View an.
-	\\
+	Bei der Datenbank handelt es sich um MYSQL, was vom Kunden so gewünscht wurde.\\
+	Das Frontend wird über MQTT mit dem Backend kommunizieren und die interaktive Spieloberfläche sein, über welche dann Tic-Tac-Toe gespielt werden kann.
+    Diese reagiert dynamisch auf die Eingaben des Benutzers und passt die View an.\\
 	\subsubsection{Varianten}
-	Es wurde eine Lösung erarbeitet welche mit Verschiedenen Programmiersprachen umgesetzt werden kann.
+	Es wurde eine Lösung erarbeitet, welche mit verschiedenen Programmiersprachen umgesetzt werden kann.
 	\paragraph{Frontend}
-	Im Frontend kann jeweils mit Vue.js oder React.js umgesetzt werden.
+	Das Frontend kann jeweils mit Vue.js oder React.js umgesetzt werden.
 	
 	\paragraph{Backend}
-	Im Backend besteht die Möglichkeit es mit Java oder PHP zum implementieren.
+	Im Backend besteht die Möglichkeit dieses mit Java oder PHP zum implementieren.
 
 	\newpage
 		
@@ -640,7 +639,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	\subsection{Zielerreichung}
 	In der Zielerreichung wird analysiert, ob die Lösungsvarianten die geforderten Systemziele erfüllen können. So werden ungeeignete Lösungen bereits in einer frühen Phase aus der Studie herausgefiltert.
 	\\
-	Es wurden jeweils nur die Umgebungsrelevanten Systemziele berücksichtigt.
+	Es wurden jeweils nur die umgebungsrelevanten Systemziele berücksichtigt.
 	
 	\subsubsection{Frontend}
 	
@@ -764,9 +763,8 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	\end{table}
 
 	\subsection{Empfehlung}
-	Das Projektteam hat bereits Know-How in JavaScrit wie auch teils in PHP und Java.
-	Da in den Nutzwertanalysen klar heraus geht das für dass Frontend \textbf{Vue.js} und im Backend \textbf{Java} verwendet werden sollte,
-    wird dies auch von uns Empfohlen.
+	Das Projektteam hat bereits Know-How in JavaScrit wie auch teilweise in PHP und Java.
+	Da in den Nutzwertanalysen klar herausgeht, dass für dass Frontend \textbf{Vue.js} und im Backend \textbf{Java} verwendet werden sollte, wird dies auch von uns empfohlen.
 	
 	\newpage
 	
@@ -819,7 +817,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\item Bild über eine URL hochladen
 	\end{itemize}
 
-	Zusätzlich haben die Schnittstellen weitere Parameter welche gesetzt werden können um die Bilder zu transformieren.
+	Zusätzlich haben die Schnittstellen weitere Parameter, welche gesetzt werden können, um die Bilder zu transformieren.
 	
 	\paragraph{Komponenten (Objekte, Services...)}
 	\begin{itemize}
@@ -859,10 +857,10 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	
 	\subsubsection{Produktkonzept}
 
-	Im Vorläuferprojekt wurde bereits ein Programm entwickelt mit welchem es möglich ist eine LED-RGB-Matrix mit einer API zu auszustatten und über diese Bilder auf der Matrix anzeigen zu lassen.
-	Das ausgearbeitete Konzept beinhaltet nun die Grundidee, Matrizen über ein Frontend ansteuerbar zu machen und auf diesen ein laufendes Tic Tac Toe Spiel anzeigen zu lassen.
+	Im Vorläuferprojekt wurde bereits ein Programm entwickelt, mit welchem es möglich ist, eine LED-RGB-Matrix mit einer API zu auszustatten und über diese Bilder auf der Matrix anzeigen zu lassen.
+	Das ausgearbeitete Konzept beinhaltet nun die Grundidee, Matrizen über ein Frontend ansteuerbar zu machen und auf diesen ein laufendes Tic-Tac-Toe-Spiel anzeigen zu lassen.
 	\\
-	Das Frontend wird dem User die Möglichkeiten geben sich einzuloggen und Spiele zu erstellen, beizutreten und zu spielen. Die Kommunikation mit dem Server, welcher die komplette Businesslogik beinhalten wird, geschieht hauptsächlich über MQTT. Teile, wie z.b. das Login werden über REST gelöst, aufgrund der Sicherheit.
+	Das Frontend wird dem User die Möglichkeiten geben, sich einzuloggen und Spiele zu erstellen, beizutreten und zu spielen. Die Kommunikation mit dem Server, welcher die komplette Businesslogik beinhalten wird, geschieht hauptsächlich über MQTT. Teile, wie z.B. das Login werden aufgrund der Sicherheit über REST gelöst.
 
 	\begin{figure}[!hbt]
 		\centering
@@ -890,7 +888,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	Folgende Bibliotheken werden im Projekt verwendet:
 	
 	\paragraph{Spring Framework}
-	Die Kernfunktionen des Frameworks können von jeder Java-Anwendung genutzt werden; es gibt jedoch Erweiterungen wie beispielsweise für die Erstellung von Webanwendungen. Obwohl das Framework kein spezielles Programmiermodell vorschreibt, ist es in der Java-Community als Ergänzung oder sogar als Ersatz für das Enterprise JavaBeans (EJB)-Modell populär geworden. Das Spring-Framework ist quelloffen.
+	Die Kernfunktionen des Frameworks können von jeder Java-Anwendung genutzt werden; es gibt jedoch Erweiterungen beispielsweise für die Erstellung von Webanwendungen. Obwohl das Framework kein spezielles Programmiermodell vorschreibt, ist es in der Java-Community als Ergänzung oder sogar als Ersatz für das Enterprise JavaBeans (EJB)-Modell populär geworden. Das Spring-Framework ist quelloffen.
 	Die Applikation wird mit dem Spring Framework in der Version 5.2 entwickelt und enthält die folgenden Erweiterungen:
 	\begin{itemize}
 		\item spring-boot-starter
@@ -902,21 +900,21 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	jUnit 5, Mockito und Rest-Assured sind Bibliotheken, welche von Entwicklern verwendet werden, um Unit-Tests in Java zu implementieren, die Programmiergeschwindigkeit zu beschleunigen und die Qualität des Codes zu erhöhen.
 	
 	\paragraph{Entwicklungsumgebung Intellij}
-	IntelliJ IDEA ist ein «integrated development environment» (IDE), welches in Java geschrieben ist, um Software zu entwickeln. Sie wird von JetBrains (früher bekannt als IntelliJ) entwickelt und ist als Community-Edition sowie als proprietäre kommerzielle Edition erhältlich. Beide können von kommerziellen Entwicklern verwendet werden.
+	IntelliJ IDEA ist ein integrated development environment (IDE), welches in Java geschrieben ist, um Software zu entwickeln. Sie wird von JetBrains (früher bekannt als IntelliJ) entwickelt und ist als Community-Edition sowie als proprietäre kommerzielle Edition erhältlich. Beide können von kommerziellen Entwicklern verwendet werden.
 	Oliver Egloff und Leonardo Wiedemeier haben bereits gute Kenntnisse in der Anwendung dieser Software.
 	
 	\paragraph{Vue.js Framework}
 	Ist ein clientseitiges JavaScript-Webframework zum Erstellen von Single-Page-Webanwendungen nach dem MVVM-Muster, es kann allerdings auch in Multipage Webseiten für einzelne Abschnitte verwendet werden. Serverseitiges Rendern ist auch unterstützt. \\
-	Vue.js ist ein "relativ" junges Framework, hat aber trotzdem eine wachsende Community und wird immer mehr verwendet. Wie zum Beispiel von GitLab.
+	Vue.js ist ein relativ junges Framework, hat aber trotzdem eine wachsende Community und wird immer mehr verwendet. (zum Beispiel von GitLab).
 	
 	\paragraph{Entwicklungsumgebung Webstorm}
-	Webstorm IDE ist ein "integrated development environment" (IDE), welches für JavaScript Entwicklung von JetBrains geschrieben wurde. Ist nur als kommerzielle Edition erhätlich.
+	Webstorm IDE ist ein integrated development environment (IDE), welches für JavaScript Entwicklung von JetBrains geschrieben wurde. Ist nur als kommerzielle Edition erhätlich.
 	
 	\paragraph{Versionierung mit Git (Gitlab)}
 	Der Source Coder der Applikation wird in Git abgelegt und versioniert. Es wird nach dem Feature Branch Workflow gearbeitet (\href{https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow}{Feature Branch Workflow}). Der Code in einem Feature Branch wird neben dem Entwickler mindestens von einer weiteren Person angeschaut und kontrolliert (Code Review), bevor er in den Master Branch zusammengeführt wird.
 	
 	\paragraph{Docker}
-	Docker ist eine Virtualisierungssoftware um sogenannte Container bereitzustellen. Container sind voneinander isoliert und bündeln ihre eigene Software, Bibliotheken und Konfigurationsdateien. Zum Beispiel für die Virtualisierung und Verwendung einer MYSQL Datenbank oder eines MQTT Servers.
+	Docker ist eine Virtualisierungssoftware um sogenannte Container bereitzustellen. Container sind voneinander isoliert und bündeln ihre eigene Software, Bibliotheken und Konfigurationsdateien, zum Beispiel für die Virtualisierung und Verwendung einer MYSQL Datenbank oder eines MQTT Servers.
 	
 \subsubsection{Schnittstellen}
 	
@@ -925,8 +923,8 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
     \rowcolors{1}{gray!30}{gray!10}
 	\begin{tabular}{p{0.20\textwidth}|p{0.15\textwidth}|p{0.63\textwidth}}
 		\textbf{Systeme} & \textbf{Protokoll} & \textbf{Beschreibung} \\ \hline
-		Clients u. Game Server & MQTT via Port 3888 & Das erstellen und abhandeln von laufenden Spielen läuft zwischen Client und Server über MQTT ab. Die Daten werden jeweils in der Topic broadcasted. Server verarbeitet alle Anfragen die er bekommt. Der Client kann durch eine "requestId" identifizieren welche ihm gehören. \\ \hline
-		Clients u. Game Server & REST via Port 8080 & Via REST werden zusätzliche für das Frontend relevante Daten übertragen. Z.B. Login, Spielerinformationen  \\ \hline
+		Clients u. Game Server & MQTT via Port 3888 & Das Erstellen und Abhandeln von laufenden Spielen läuft zwischen Client und Server über MQTT ab. Die Daten werden jeweils in der Topic broadcasted. Server verarbeitet alle Anfragen die er bekommt. Der Client kann durch eine requestId identifizieren welche ihm gehören. \\ \hline
+		Clients u. Game Server & REST via Port 8080 & Via REST werden zusätzliche für das Frontend relevante Daten übertragen (z.B. Login, Spielerinformationen).  \\ \hline
 		Game Server u. API & REST via Port 8080 & Der Server kann über die REST-Schnittstelle mit der LED-REG-Matrix kommunizieren und so laufend neue Spielfelder mitteilen. Die Spielfelder werden vom Server zusammengestellt und dann mit den gewünschten Transformationsparametern an die API verschickt. So kann die API das Bild nach den Angaben verarbeiten und anschliessend auf der Matrix darstellen.  \\ \hline
 		API -> LED-RGB-Panel & Binary Code via Serial Port & Die aufbereiteten Daten werden von der API an das LED-RGB-Panel gesendet.
 	\end{tabular}
@@ -937,7 +935,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	\newpage
 
 	\subsubsection{Datenstrukturen}
-	Die folgende Figur zeigt die einzelnen Varianten an wie der Server und das Frontend, über MQTT, miteinander kommunizieren.
+	Die folgende Figur zeigt die einzelnen Varianten an, wie der Server und das Frontend, über MQTT, miteinander kommunizieren.
 	\begin{figure}[!hbt]
 		\centering
 		\includegraphics[width=\columnwidth]{01_Grafiken/datenfluss.png}
@@ -1040,7 +1038,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	\section{Realisierung}
 		
 	\subsection{Klassendiagramm}
-	Im folgenden Klassendiagramm wurden die von uns erstellen und für die eigentlich Tic-Tac-Toe Logik des Backends wichtigen Klassen beschrieben. Klassen, Interfaces etc. des Springframeworks oder von JPA wurden nicht beschrieben.
+	Im folgenden Klassendiagramm wurden die von uns erstellten und für die eigentliche Tic-Tac-Toe-Logik des Backends wichtigen Klassen beschrieben. Klassen, Interfaces etc. des Springframeworks oder von JPA wurden nicht beschrieben.
 	
 	Das Klassendiagramm ist dem Anhang beigelegt.
 	
@@ -1082,7 +1080,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{002} \\ \hline
 			\cellcolor{orange!80} \textbf{Testaufgabe:} & Registration eines neuen Users \\ \hline
 			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Es kann ein neuer Account erstellt und sich mit diesem eingeloggt werden \\ \hline
-			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Durch befolgen des Registrierungsformulars und anschliessender Eingabe des Namens und Passwortes kann man sich erfolgreich einloggen \\ \hline
+			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Durch Befolgen des Registrierungsformulars und anschliessender Eingabe des Namens und Passwortes kann man sich erfolgreich einloggen \\ \hline
 			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
 		\end{tabular}
 		\caption{Testfall Nr 002}
@@ -1095,7 +1093,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\begin{tabular}{p{0.25\textwidth}|p{0.74\textwidth}}
 			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{003} \\ \hline
 			\cellcolor{orange!80} \textbf{Testaufgabe:} & Korrekte Authentifizierung \\ \hline
-			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Als nicht eingeloggter User hat meine keine Rechte auf gesicherten Routen. \\ \hline
+			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Als nicht eingeloggter User hat man keine Rechte auf gesicherten Routen. \\ \hline
 			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Als anonymer User der Webseite wird man immer auf die Loginseite umgeleitet. \\ \hline
 			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
 		\end{tabular}
@@ -1112,7 +1110,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{004} \\ \hline
 			\cellcolor{orange!80} \textbf{Testaufgabe:} & Ein- und Ausloggen \\ \hline
 			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Es kann sich mit einem bestehenden Account ein- und ausgeloggt werden \\ \hline
-			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Durch die Eingabe der korrekten Daten loggt man sich ein und wird auf die Übersichtsseite weitergeleitet. Beim klicken auf den ``Ausloggen`` Button wird man ausgeloggt und automatisch auf die Loginseite weitergeleitet. \\ \hline
+			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Durch die Eingabe der korrekten Daten loggt man sich ein und wird auf die Übersichtsseite weitergeleitet. Beim Klicken auf den ``Ausloggen`` Button wird man ausgeloggt und automatisch auf die Loginseite weitergeleitet. \\ \hline
 			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
 		\end{tabular}
 		\caption{Testfall Nr 004}
@@ -1126,7 +1124,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{005} \\ \hline
 			\cellcolor{orange!80} \textbf{Testaufgabe:} & Darstellung fremder laufender Spiele auf der Übersichtsseite \\ \hline
 			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Auf der Übersichtsseite werden laufende Spiele aktualisiert und dargestellt \\ \hline
-			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Als eingeloggter User werden auf der Übersichtsseite periodisch neue laufende Spiele angezeigt und wieder entfernt sobald diese voll sind. \\ \hline
+			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Als eingeloggter User werden auf der Übersichtsseite periodisch neue laufende Spiele angezeigt und wieder entfernt, sobald diese voll sind. \\ \hline
 			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
 		\end{tabular}
 		\caption{Testfall Nr 005}
@@ -1140,7 +1138,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{006} \\ \hline
 			\cellcolor{orange!80} \textbf{Testaufgabe:} & Erstellung eines Spiels \\ \hline
 			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Von der Übersichtsseite aus kann ein neues Spiel erstellt werden. \\ \hline
-			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Als eingeloggter User kann von der Übersichtsseite aus über den Button das erstellt Formular gestartet werden. Nach erfolgreichem Ausfüllen wird der User in die Lobby des neuen Spiel weitergeleitet. \\ \hline
+			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Als eingeloggter User kann von der Übersichtsseite aus über den Button das Formular gestartet werden. Nach erfolgreichem Ausfüllen wird der User in die Lobby des neuen Spiel weitergeleitet. \\ \hline
 			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
 		\end{tabular}
 		\caption{Testfall Nr 006}
@@ -1155,8 +1153,8 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\begin{tabular}{p{0.25\textwidth}|p{0.74\textwidth}}
 			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{007} \\ \hline
 			\cellcolor{orange!80} \textbf{Testaufgabe:} & Tic-Tac-Toe spielen \\ \hline
-			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Zwei Personen können ein Tic-Tac-Toe Spiel durchspielen \\ \hline
-			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Zwei Personen im gleichen Spiel können abwechselnd ein komplettes Tic-Tac-Toe spiel beenden. Es kann der HOST, GUEST oder niemand gewinnen. (Unentschieden) \\ \hline
+			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Zwei Personen können ein Tic-Tac-Toe-Spiel durchspielen \\ \hline
+			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Zwei Personen im gleichen Spiel können abwechselnd ein komplettes Tic-Tac-Toe spiel beenden. Es kann der HOST, GUEST oder niemand gewinnen (Unentschieden). \\ \hline
 			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
 		\end{tabular}
 		\caption{Testfall Nr 007}
@@ -1169,8 +1167,8 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\begin{tabular}{p{0.25\textwidth}|p{0.74\textwidth}}
 			\cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{008} \\ \hline
 			\cellcolor{orange!80} \textbf{Testaufgabe:} & Laufendes Spiel verlassen \\ \hline
-			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Während einem laufenden Spiel kann man als GUEST oder HOST verlassen und wieder beitreten. \\ \hline
-			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Ein Spielteilnehmer kann das laufende Spiel verlassen und landet auf der Übersichtsseite. Dort werden alle seine laufende Spiele angezeigt. Durch klicken kann diesem wieder beigetreten werden. \\ \hline
+			\cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Während einem laufenden Spiel kann man als GUEST oder HOST dieses verlassen und wieder beitreten. \\ \hline
+			\cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Ein Spielteilnehmer kann das laufende Spiel verlassen und landet auf der Übersichtsseite. Dort werden alle seine laufende Spiele angezeigt. Durch Klicken kann diesem wieder beigetreten werden. \\ \hline
 			\cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
 		\end{tabular}
 		\caption{Testfall Nr 008}
@@ -1199,8 +1197,8 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
     \begin{tabular}{p{0.25\textwidth}|p{0.74\textwidth}}
         \cellcolor{orange!80} \textbf{Testfall Nr:} & \cellcolor{orange!80} \textbf{010} \\ \hline
         \cellcolor{orange!80} \textbf{Testaufgabe:} & Das Spiel auf der LED Matrix anzeigen \\ \hline
-        \cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Während einem laufenden Spiel kann der Spielfortschritt auf einer LED RGB Matrix angezeigt werden indem der HOST eine verfügbare Matrix auswählt. \\ \hline
-        \cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Spielstand wird auf der LED RGB Matrix angezeigt. \\ \hline
+        \cellcolor{orange!80} \textbf{Erwartetes Ergebnis:} & Während einem laufenden Spiel kann der Spielfortschritt auf einer LED-RGB-Matrix angezeigt werden, indem der HOST eine verfügbare Matrix auswählt. \\ \hline
+        \cellcolor{orange!80} \textbf{Effektives Ergebnis:} & Spielstand wird auf der LED-RGB-Matrix angezeigt. \\ \hline
         \cellcolor{orange!80} \textbf{Resultat:} & \textcolor{olive}{Erfüllt} \\ \hline
     \end{tabular}
     \caption{Testfall Nr 010}
@@ -1222,17 +1220,17 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\centering
 		\rowcolors{1}{gray!30}{gray!10}
 		\begin{tabular}{p{0.02\textwidth}|p{0.45\textwidth}|p{0.45\textwidth}}
-			\textbf{Id} & \textbf{Risiko Beschreibung} & \textbf{Möglicher Schade} \\ \hline
+			\textbf{Id} & \textbf{Risiko Beschreibung} & \textbf{Möglicher Schaden} \\ \hline
 
-            R1 & Kosteneinschätzungen werden überschritten & Projekt wird teurer als ursprünglich geplant. Projektbudget kann nicht eingehalten werden. \\ \hline
+            R1 & Kosteneinschätzungen werden überschritten & Projekt ist teurer als ursprünglich geplant. Projektbudget kann nicht eingehalten werden. \\ \hline
 
             R2 & Mitarbeiterausfall & Projektziele können nicht eingehalten werden. Die anderen Mitarbeiter müssen vermehrt Überzeit machen. \\ \hline
 
-            R3 & Hardwareausfall & Nach Ausfall muss ausgetauscht / repariert werden was zu Verschiebungen im Zeitplan führen kann \\ \hline
+            R3 & Hardwareausfall & Nach Ausfall muss ausgetauscht / repariert werden, was zu Verschiebungen im Zeitplan führen kann. \\ \hline
 
             R4 & Projektplan wurde zu sportlich geschätzt. & Meilensteine/Projektziele können nicht eingehalten werden, was zu Verschiebungen im Zeitplan führen kann. \\ \hline
 
-            R5 & Naturkatastrophe & Verlust von Hardware, Code, Räumlichkeiten. Ausfall von Mitarbeitern. Es kann vorkommen das der Projektplan nicht eingehalten werden kann oder es zur nicht Durchführung des Projektes kommen. \\ \hline
+            R5 & Naturkatastrophe & Verlust von Hardware, Code, Räumlichkeiten. Ausfall von Mitarbeitern. Es kann vorkommen, dass der Projektplan nicht eingehalten werden oder es nicht zur Durchführung des Projektes kommen kann. \\ \hline
 
             R6 & Fortschrittsverlust durch falsche Anwendung von Hilfsmitteln (z.B. falsche Versionierung von Dokumenten und Code) & Es geht sehr viel Zeit verloren, um die verlorene Arbeit wieder aufzuholen. Projektziele und Projektplan könnten damit gefährdet sein. \\ \hline
 
@@ -1243,9 +1241,9 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
         \label{fig:risiken}
     \end{table}
 
-	Naturkatastrophen sind in der Schweiz ein kleines Risiko. Können sich aber trotzdem, z.B. Überschwemmungen oder Stürme, stark auf den Projektverlauf auswirken.
+	Naturkatastrophen sind in der Schweiz ein kleines Risiko. Sie können sich aber trotzdem, z.B. durch Überschwemmungen oder Stürme, stark auf den Projektverlauf auswirken.
 
-	Den Coronavirus (COVID-19) haben wir mit als Risiko aufgenommen da es die Aktuelle Lage stark beeinflusst. Wir können nicht vorhersagen welche Folgen der Coronavirus noch mit sich ziehen wird. Zum Beispiel wie stark die Wirtschaft einbrechen und den Fortschritt des Projekts in jeder Hinsicht beeinflussen wird. Oder jeder Beteiligte am Projekt Privat beeinflusst wird.
+	Den Coronavirus (COVID-19) haben wir mit als Risiko aufgenommen, da es die aktuelle Lage stark beeinflusst. Wir können nicht vorhersagen, welche Folgen der Coronavirus noch mit sich ziehen wird. Zum Beispiel, wie stark die Wirtschaft einbrechen und den Fortschritt des Projekts in jeder Hinsicht beeinflussen, oder jeder Beteiligte am Projekt Privat beeinflusst wird.
 
 	\newpage
 
@@ -1258,13 +1256,13 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 
             M1 & Regelmässige Kontrolle der Kostenfortschritte sowie die Einplanung von Reserven & Oliver Egloff, Leonardo Wiedemeier & & Immer zu Beginn einer neuen Phase \\ \hline
 
-			M2 & Einfordern eines Ferienabwesenheitsantrages sowie die Planung aller Ressourcen. Zudem sollte ein regelmässiger Know-How Transfer stattfinden. & Oliver Egloff, Leonardo Wiedemeier & & Bei Ferienabwesenheit \\ \hline
+			M2 & Einfordern eines Ferienabwesenheitsantrages sowie die Planung aller Ressourcen. Zudem sollte ein regelmässiger Know-How-Transfer stattfinden. & Oliver Egloff, Leonardo Wiedemeier & & Bei Ferienabwesenheit \\ \hline
 
-			M3 & Hardware angemessen behandel und mit dem Kunden (ABBTS) im Falle eines Ausfalls sofort reagieren & Ganzes Team & & Während des ganzes Projektes \\ \hline
+			M3 & Hardware angemessen behandeln und mit dem Kunden (ABBTS) im Falle eines Ausfalls sofort reagieren. & Ganzes Team & & Während des ganzen Projektes \\ \hline
 
 			M4 & Einplanen von zeitlichen Reserven & Ganzes Team & 1x pro Woche & Zu Beginn der Planung und am Anfang einer neuen Phase \\ \hline
 
-			M6 & Regelmässige Backups der Lösung und klare Definierungen wie gearbeitet wird. & Samuel Salomon, Leonardo Wiedemeier & 1x pro Woche & Ab Beginn Projekt \\ \hline
+			M6 & Regelmässige Backups der Lösung und klare Definierungen, wie gearbeitet wird. & Samuel Salomon, Leonardo Wiedemeier & 1x pro Woche & Ab Beginn Projekt \\ \hline
 
 			M7 & Über die Situation mit COVID-19 auf dem Laufenden bleiben und persönliche wie auch geschäftliche Entscheidungen frühzeitig angehen. & Alle am Projekt beteiligten Personen & Täglich & Täglich
 		\end{tabular}
@@ -1272,9 +1270,9 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\label{fig:massnahmen}
 	\end{table}
     \noindent
-    Die meisten Massnahmen haben mit genauer Planung, Kommunikation und mit konzentrierten und genauen Arbeiten zu tun.
-    Naturkatastrophen, Coronavirus und auch Teils Hardwareausfall können uns treffen, dürfen aber nicht überraschen.
-    Mit den hier aufgelisteten Massnahmen gehen wir gegen alle möglichen Risiken gegen an und definieren wie im Falle eins Auftretens reagiert und sich darauf vorbereitet wird.
+    Die meisten Massnahmen haben mit genauer Planung, Kommunikation und mit konzentriertem und genauem Arbeiten zu tun.
+    Naturkatastrophen, Coronavirus und auch teils Hardwareausfall können uns treffen, dürfen aber nicht überraschen.
+    Mit den hier aufgelisteten Massnahmen gehen wir gegen alle möglichen Risiken an und definieren, wie im Falle eins Auftretens reagiert und sich darauf vorbereitet wird.
 
 	\newpage
 
@@ -1286,7 +1284,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\label{fig:risiko_matrix}
 	\end{figure}
 \noindent
-	Die Risikomatrix zeigt auf wie, die von uns definierten und eingeschätzten, die Risiken (gelbe Kugeln) nach Anwendung der Massnahmen (Schwarze Pfeile) entschärft und neu eingestuft werden (blaue Kugeln).
+	Die Risikomatrix zeigt auf, wie die von uns definierten und eingeschätzten Risiken (gelbe Kugeln) nach Anwendung der Massnahmen (Schwarze Pfeile) entschärft und neu eingestuft werden (blaue Kugeln).
 
 	\newpage
 
