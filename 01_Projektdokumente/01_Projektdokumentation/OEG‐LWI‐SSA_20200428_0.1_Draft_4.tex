@@ -183,31 +183,32 @@ Darauf aufbauend soll ein Tic-Tac-Toe Spiel umgesetzt werden, welches auf den Ma
 
 \paragraph{Situation}
 Die Aufgabe ist es ein Multiplayer Tic-Tac-Toe Spiel zu entwickeln, bei dem es die Möglichkeit gibt, laufende Spiele auf beliebigen LED-RGB-Matrizen anzeigen zu lassen.\\
-Es soll ein Frontend erstellt werden, welches dem User alle nötigen Funktionalitäten zur Verfügung stellt, um ein Tic-Tac-Toe Spiel gegen eine andere Person abzuwickeln.
-Dieses soll dann via MQTT-Protokoll mit einem GameServer kommunizieren, welcher die komplette Business Logik beinhaltet.
+Es soll ein Frontend erstellt werden, welches dem User alle nötigen Funktionalitäten zur Verfügung stellt, um ein Tic-Tac-Toe Spiel gegen eine andere Person durchzuführen.
+Dieses soll dann via MQTT-Protokoll mit einem GameServer kommunizieren, welcher die komplette Spielelogik beinhaltet.
 Der GameServer sollte zudem die nötigen Infos an alle beteiligten Matrizen senden, damit die laufenden Spiele dort visuell dargestellt werden können.
 
 \paragraph{Herausforderungen}
-Das Projekt wird einige Herausforderungen an das gesamte Projektteam stellen.\\
-Das orchestrieren der Kommunikation zwischen dem Frontend, GameServer und der LED-RGB-Matrix,
-das designen des Frontendes und des GamerServers, so dass alle Anforderungen erfüllt werden können,
-wie auch die Implementierung von Schnittstellen mit MQTT werden die grössten Herausforderungen darstellen.
+Das Projekt wird einige Herausforderungen an das gesamte Projektteam stellen:\\
+\begin{itemize}
+	\item Das orchestrieren der Kommunikation zwischen dem Frontend, GameServer und der LED-RGB-Matrix.
+	\item Das designen des Frontendes und des GamerServers, so dass alle Anforderungen erfüllt sind.
+	\item Die Implementierung von Schnittstellen mit MQTT
+\end{itemize}
+
 
 \paragraph{Ziele}
 Die Visual Board GmbH entwickelt einen GamerServer mit separatem Frontend, welches den Anforderungen für das Multiplayer Tic-Tac-Toe-Spiel entspricht.
-Zudem soll es möglich sein, das laufende Spiel auf einer bis mehreren Matrizen darstellen zu lassen. Dies ist aber kein Muss und kann auch lediglich im Web stattfinden.
+Zudem soll es möglich sein, das laufende Spiel auf einer bis mehreren Matrizen darstellen zu lassen. Für den Benutzer ist das in der aktuellen Lösung kein Muss und das Spiel ist auch nur im Web Spielbar.
 
 \paragraph{Lösung/Optionen}
 Unsere Lösung baut im Backend auf die Programmiersprache Java in Kombination mit einer RestAPI und MQTT Topics auf.
-Hierzu wird eine MYSQL-Datenbank für das Backend und ein Mosquitto-MQTT-Server für die Kommunikation mit dem Frontend aufgesetzt.
-Das Frontend wurde seinerseits mit Bootstrapp, JavScript und dem Vue.js Framework umgesetzt. \\
-Die API und das Datenbankhandling wurden mit Spring Boot umgesetzt und das MQTT-Protokoll mithilfe der MQTT v3 Client API Java Bibliothek implementiert.
+Hierzu wird eine MYSQL-Datenbank für das Backend und ein Mosquitto-MQTT-Broker für die Kommunikation mit dem Frontend aufgesetzt.
+Das Frontend wurde seinerseits mit Bootstrapp, JavScript und dem Vue.js (inkl. Ecosystem) Framework umgesetzt. \\
+Die API und das Datenbankhandling wurden mit Spring Boot Framework umgesetzt und das MQTT-Protokoll mithilfe der MQTT v3 Client API Java Bibliothek implementiert.
 Durch das Vorgänger Projekt musste an der LED-RGB-Matrix nichts verändert werden und kann von unserem GameServer normal angesprochen werden.\\
 
 Es bestand noch die Möglichkeit das Projekt mit PHP im Backend und im Frontend mit dem React Framework umzusetzen.
 Es wurde sich aber gegen diese Variante entschieden, da in den Nutzwertanalysen hervorging, dass das Umsetzungsteam in Java mehr Kompetenzen besitzt als in PHP. Für Vue.js wurde sich entschieden, da hier der Entwicklungsaufwand kleiner ausfällt und die Dokumentation sich von React abhebt.
-
-\newpage
 
 \paragraph{Nutzen \& Konsequenzen}
 Durch den getrennten und unabhängigen Aufbau der einzelnen Applikationen ist die Lösung sehr modular.
@@ -219,10 +220,20 @@ Auch kann das Frontend sowie der GameServer unabhängig von dem anderen zwei Ser
 	\caption{Architektur}
 	\label{fig:architektur_konzept_management_summary}
 \end{figure}
-Durch den Einsatz von MQTT waren einige Punkte erschwert umzusetzen, da das Protokoll für diese Use-Cases nicht wirklich geeignet ist.
-Zum Beispiel wurde entschieden, das Registrieren und den Login von User über HTTP Requests zu lösen. Wie auch das Abholen user-spezifischer Informationen.\\
+Durch den Einsatz von MQTT waren einige Punkte erschwert umzusetzen. MQTT bietet keine Möglichkeit auf Events zu reagieren. Da ein Tic-tac-toe Spiel eventbassiertist musste auf das Broadcasten (Fluten) von wichtigen Informationen ausgewichen werden. Dies verursacht eine erhöhte Belastung aller Komponenten.\\
+Aus diesem Grund wurden gewisse Komponenten wie z.B. Login mit Rest umgesetzt.\\
+Eine weitere Problematik von MQTT ist, dass keine grossen Datenmengen gesendet werden können. Somit müssen auch Bilder über Rest asugetauscht werden.
 Ein hohes Risiko war COVID-19: der daraus resultierende Mitarbeiterausfall hätte die Einhaltung des Abgabetermins erschwert. \\ \\
-Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse Chance auf dem Markt haben. Es ist eine gute Demo, zum Zeigen, was mit den LED-RGB-Matrizen möglich ist und wie man weitere Applikationen entwickeln könnte, um diese vielseitig anzusteuern. Auch zeigt es auf, wie einfach eine LED-RGB-Matrix an ein bestehendes Projekt angebunden werden kann.\\
+Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber erschwerte Chance auf dem Markt haben (hohe Konkurenz). Es ist eine gute Demo, zum Zeigen, was mit den LED-RGB-Matrizen möglich ist und wie man weitere Applikationen entwickeln könnte, um diese vielseitig anzusteuern. Auch zeigt es auf, wie verschiedene Komponenten (z.B Beispiel LED-RGB-Matrix) an bestehende Projekte angebunden werden können.
+
+\paragraph{Empfehlung \& Ausblick}
+Wir als Visual Board GmbH empfehlen eine Umsetzung einer solchen eventbasierten Lösung mittels Websockets in Kombination mit Rest API. \\
+Für die Zukunft ist es das Ziel die Webapplikationenzu optiomieren und weiter auszubauen. Folgende Funktionen sollen in einer nächsten Version hinzugefügt werden:
+\begin{itemize}
+	\item Freundschaftslisten: Bekannte Spieler sollen einer Liste mit Freunden hinzugefügt werden
+	\item Leader Board: Es soll ein persöniches Ranking unter Freunden und ein Globales Ranking erstellt werden
+	\item MQTT soll durch das Websockets protokoll ausgetauscht werden
+\end{itemize}
 
 \newpage
 
