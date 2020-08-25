@@ -75,9 +75,10 @@
 
 %Define variables for document
 \newcommand{\shortAuthor}{OEG-LWI-SSA}
-\newcommand{\dstate}{Draft} %Draft, Progress, Closed
-\newcommand{\dversion}{0.1}
-\newcommand{\dname}{\shortAuthor\_20200428\_\dversion\_\dstate\_\pageref{LastPage}}
+\newcommand{\dstate}{Closed} %Draft, Progress, Closed
+\newcommand{\dversion}{1.0}
+\newcommand{\dname}{Projektdokumentation}
+\newcommand{\dname}{\shortAuthor\_20200825\_\dversion\_\dstate\_\pageref{LastPage}}
 %\renewcommand\font{\normalsize}
 \begin{document}
 
@@ -182,45 +183,46 @@ Im vorgängigen Projekt wurde bereits eine Machbarkeitsstudie durchgeführt, ob 
 Darauf aufbauend soll ein Tic-Tac-Toe Spiel umgesetzt werden, welches auf den Matrizen wiedergeben werden kann.
 
 \paragraph{Situation}
-Die Aufgabe ist es ein Multiplayer Tic-Tac-Toe Spiel zu entwickeln, bei dem es die Möglichkeit gibt, laufende Spiele auf beliebigen LED-RGB-Matrizen anzeigen zu lassen.\\
+Die Aufgabe ist es ein multiplayer Tic-Tac-Toe-Spiel zu entwickeln, bei dem es die Möglichkeit gibt, laufende Spiele auf beliebigen LED-RGB-Matrizen anzeigen zu lassen.\\
 Es soll ein Frontend erstellt werden, welches dem User alle nötigen Funktionalitäten zur Verfügung stellt, um ein Tic-Tac-Toe Spiel gegen eine andere Person durchzuführen.
 Dieses soll dann via MQTT-Protokoll mit einem GameServer kommunizieren, welcher die komplette Spielelogik beinhaltet.
 Der GameServer sollte zudem die nötigen Infos an alle beteiligten Matrizen senden, damit die laufenden Spiele dort visuell dargestellt werden können.
 
 \paragraph{Herausforderungen}
-Das Projekt wird einige Herausforderungen an das gesamte Projektteam stellen:\\
+\\Das Projekt wird einige Herausforderungen an das gesamte Projektteam stellen:
 \begin{itemize}
 	\item Das orchestrieren der Kommunikation zwischen dem Frontend, GameServer und der LED-RGB-Matrix.
 	\item Das designen des Frontendes und des GamerServers, so dass alle Anforderungen erfüllt sind.
-	\item Die Implementierung von Schnittstellen mit MQTT
+	\item Die Implementierung von Schnittstellen mit MQTT.
 \end{itemize}
 
 
 \paragraph{Ziele}
 Die Visual Board GmbH entwickelt einen GamerServer mit separatem Frontend, welches den Anforderungen für das Multiplayer Tic-Tac-Toe-Spiel entspricht.
-Zudem soll es möglich sein, das laufende Spiel auf einer bis mehreren Matrizen darstellen zu lassen. Für den Benutzer ist das in der aktuellen Lösung kein Muss und das Spiel ist auch nur im Web Spielbar.
+Zudem soll es möglich sein, das laufende Spiel auf einer bis mehreren Matrizen darstellen zu lassen. Für den Benutzer ist das in der aktuellen Lösung kein Muss und das Spiel ist auch nur im Web spielbar.
 
 \paragraph{Lösung/Optionen}
 Unsere Lösung baut im Backend auf die Programmiersprache Java in Kombination mit einer RestAPI und MQTT Topics auf.
 Hierzu wird eine MYSQL-Datenbank für das Backend und ein Mosquitto-MQTT-Broker für die Kommunikation mit dem Frontend aufgesetzt.
 Das Frontend wurde seinerseits mit Bootstrapp, JavScript und dem Vue.js (inkl. Ecosystem) Framework umgesetzt. \\
 Die API und das Datenbankhandling wurden mit Spring Boot Framework umgesetzt und das MQTT-Protokoll mithilfe der MQTT v3 Client API Java Bibliothek implementiert.
-Durch das Vorgänger Projekt musste an der LED-RGB-Matrix nichts verändert werden und kann von unserem GameServer normal angesprochen werden.\\
-
+Durch das Vorgängerprojekt musste an der LED-RGB-Matrix nichts verändert werden und kann von unserem GameServer normal angesprochen werden.\\
+\noindent
 Es bestand noch die Möglichkeit das Projekt mit PHP im Backend und im Frontend mit dem React Framework umzusetzen.
 Es wurde sich aber gegen diese Variante entschieden, da in den Nutzwertanalysen hervorging, dass das Umsetzungsteam in Java mehr Kompetenzen besitzt als in PHP. Für Vue.js wurde sich entschieden, da hier der Entwicklungsaufwand kleiner ausfällt und die Dokumentation sich von React abhebt.
 
 \paragraph{Nutzen \& Konsequenzen}
 Durch den getrennten und unabhängigen Aufbau der einzelnen Applikationen ist die Lösung sehr modular.
 Das Tic-Tac-Toe-Spiel kann mit und ohne Matrix durchgeführt werden.
-Auch kann das Frontend sowie der GameServer unabhängig von dem anderen zwei Services einfach ausgetauscht werden.\\
+Auch kann das Frontend sowie der GameServer unabhängig von den anderen zwei Services einfach ausgetauscht werden.\\
 \begin{figure}[!hbt]
 	\centering
 	\includegraphics[width=\columnwidth]{01_Grafiken/architektur_konzept.png}
 	\caption{Architektur}
 	\label{fig:architektur_konzept_management_summary}
 \end{figure}
-Durch den Einsatz von MQTT waren einige Punkte erschwert umzusetzen. MQTT bietet keine Möglichkeit auf Events zu reagieren. Da ein Tic-tac-toe Spiel eventbassiertist musste auf das Broadcasten (Fluten) von wichtigen Informationen ausgewichen werden. Dies verursacht eine erhöhte Belastung aller Komponenten.\\
+\noindent
+Durch den Einsatz von MQTT waren einige Punkte erschwert umzusetzen. MQTT bietet keine Möglichkeit auf Events zu reagieren. Da ein Tic-Tac-Toe-Spiel eventbassiert ist, musste auf das Broadcasten (Fluten) von wichtigen Informationen ausgewichen werden. Dies verursacht eine erhöhte Belastung aller Komponenten.\\
 Aus diesem Grund wurden gewisse Komponenten wie z.B. Login mit Rest umgesetzt.\\
 Eine weitere Problematik von MQTT ist, dass keine grossen Datenmengen gesendet werden können. Somit müssen auch Bilder über Rest asugetauscht werden.
 Ein hohes Risiko war COVID-19: der daraus resultierende Mitarbeiterausfall hätte die Einhaltung des Abgabetermins erschwert. \\ \\
@@ -230,9 +232,9 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber erschwerte C
 Wir als Visual Board GmbH empfehlen eine Umsetzung einer solchen eventbasierten Lösung mittels Websockets in Kombination mit Rest API. \\
 Für die Zukunft ist es das Ziel die Webapplikationenzu optiomieren und weiter auszubauen. Folgende Funktionen sollen in einer nächsten Version hinzugefügt werden:
 \begin{itemize}
-	\item Freundschaftslisten: Bekannte Spieler sollen einer Liste mit Freunden hinzugefügt werden
-	\item Leader Board: Es soll ein persöniches Ranking unter Freunden und ein Globales Ranking erstellt werden
-	\item MQTT soll durch das Websockets protokoll ausgetauscht werden
+	\item Freundschaftslisten: Bekannte Spieler sollen einer Liste mit Freunden hinzugefügt werden.
+	\item Leader Board: Es soll ein persöniches Ranking unter Freunden und ein globales Ranking erstellt werden.
+	\item MQTT soll durch das Websockets protokoll ausgetauscht werden.
 \end{itemize}
 
 \newpage
