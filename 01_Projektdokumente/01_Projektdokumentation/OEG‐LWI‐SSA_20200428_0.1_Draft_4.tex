@@ -1087,12 +1087,12 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\item \textbf{Bootstrap \& Bootstrap-Vue} für das Layout und Responsive Design der Webapplikation. Durch Bootstrap ist die Applikation Mobile Ready.
 		\item \textbf{MQTT} für die Spielkommunikation mit dem Backend
 		\item \textbf{AXIOS} für Rest Abfragen
-		\item \textbf{VueX} als zentralen Store um Benutzer und Game Daten zu temporär im Frontend zu speichern
-		\item \textbf{VueRouter} um erfolgreich zu Navigieren
+		\item \textbf{VueX} als zentraler Store, um Benutzer und Game Daten zu temporär im Frontend zu speichern
+		\item \textbf{VueRouter} um erfolgreich zu navigieren
 	\end{itemize}
 
 	\subsubsection{Aufbau}
-	Dem Benutzer wird zentral eine Navigation angezeigt über welche er die Unterseiten
+	Dem Benutzer wird zentral eine Navigation angezeigt, über welche er die Unterseiten
 	\begin{itemize}
 		\item Spielübersicht
 		\item Spielverlauf
@@ -1100,7 +1100,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\item Logout
 	\end{itemize}
 
-	Startpunkt nach dem Login ist immer die Spielübersicht auf welcher "Meine Spiele" und "Offene Spiele" angezeigt werden.
+	Startpunkt nach dem Login ist immer die Spielübersicht auf welcher Meine Spiele und Offene Spiele angezeigt werden.
 	\begin{figure}[!hbt]
 		\centering
 		\includegraphics[width=\columnwidth]{Spieluebersicht.png}
@@ -1109,7 +1109,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	\end{figure}
 	
 	\paragraph{Spielverlauf}
-	Das zweite Icon in der Navigation leitet den Benutzer auf den Spielverlauf. Dort kann der Benutzer seinen vergangen Spiele sehen und erkennt auf einen Blick ob er ein Spiel Gewonnen, Verloren oder ob das Spiel unentschieden geendet hat.
+	Das zweite Icon in der Navigation leitet den Benutzer zum Spielverlauf. Dort kann der Benutzer seinen vergangen Spiele sehen und erkennt auf einen Blick, ob er ein Spiel gewonnen, verloren oder ob das Spiel unentschieden geendet hat.
 	\begin{figure}[!hbt]
 		\centering
 		\includegraphics[width=\columnwidth]{Game-History.png}
@@ -1118,7 +1118,9 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	\end{figure}
 
 	\paragraph{Benutzerprofil}
-	Um persönliche Informationen wie Name, Spielername, Passwort, etc. anzupassen oder etwa die Kreuze oder Kreise durch ein persönliches Bild auszutauschen, kann der Benutzer unterm seinem Benutzerprofil die entsprechenden Anpassungen durchführen. Die Benutzerdaten werden nicht wie die Gamedaten über MQTT übertragen sondern aufgrund der Datensicherheit über einen Rest Enpoint.
+	Um persönliche Informationen wie Name, Spielername, Passwort, etc. anzupassen oder etwa die Kreuze oder Kreise durch ein persönliches Bild auszutauschen, kann der Benutzer unter seinem Benutzerprofil die entsprechenden Anpassungen durchführen. Die Benutzerdaten werden nicht wie die Gamedaten über MQTT, sondern aufgrund der Datensicherheit über einen Rest Enpoint übertragen.
+
+	\newpage
 
 	\begin{figure}[!hbt]
 		\centering
@@ -1135,7 +1137,9 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 \end{figure}
 
 	\paragraph{Registrieren, Login \& Logout}
-	Zu beginn muss sich ein Benutzer über eine Rest Schnittstelle beim Server Registrieren. Nach der Registration kann er sich anmelden wobei ein HttpOnly Session Cookie im Browser gespeichert wird. So wird eine bestmöglichste UserExpirience gewährleistet, da der Benutzer innerhalb der Session so viele Fenster mit dem Tic-Tac-Toe Spiel öffnen kann wie er möchte. Um sich auszuloggen kann der Benutzer das Icon ganz rechts in der Navigation anwählen.
+	Zu Beginn muss sich ein Benutzer über eine Rest Schnittstelle beim Server registrieren. Nach der Registration kann er sich anmelden, wobei ein HttpOnly Session Cookie im Browser gespeichert wird. So wird eine bestmöglichste UserExpirience gewährleistet, da der Benutzer innerhalb der Session so viele Fenster mit dem Tic-Tac-Toe Spiel öffnen kann, wie er möchte. Um sich auszuloggen kann der Benutzer das Icon ganz rechts in der Navigation anwählen.
+	
+	\newpage
 	
 	\begin{figure}[!hbt]
 		\centering
@@ -1152,12 +1156,12 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	\end{figure}
 	
 	\paragraph{Spiel}
-	Wird von einer Liste (Meine Spiele, Offene Spiele oder Spielverlauf) ein Spiel geöffnet so wird das Spiel aus dem Speicher geladen und in einer View dargstellt. Die View enthält sämtliche Business Logik um mit dem Server über Mqtt zu kommunizieren um die entsprechenden Spielständ eabzugleichen und anzuzeigen. Folgende Elemente sind innerhalb dieser View verfügbar:
+	Wird von einer Liste (Meine Spiele, Offene Spiele oder Spielverlauf) ein Spiel geöffnet, so wird das Spiel aus dem Speicher geladen und in einer View dargstellt. Die View enthält sämtliche Business Logik um mit dem Server über Mqtt zu kommunizieren, um die entsprechenden Spielständ abzugleichen und anzuzeigen. Folgende Elemente sind innerhalb dieser View verfügbar:
 	\begin{itemize}
 		\item Name des Spiels
 		\item Spieleranzeige
 		\item Historie aller Züge in diesem Spiel. Der Spieler kann so das gesamte Spiel nochmals erleben
-		\item Spielbrett auf welchem der Spieler seine Züge ausführen kann
+		\item Spielbrett, auf welchem der Spieler seine Züge ausführen kann
 	\end{itemize}
 
 	Sollte der Benutzer ein personalisiertes Zeichen besitzen, so wird dieses anstelle des X oder O angezeigt.
@@ -1183,9 +1187,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\label{fig:withPicture}
 	\end{figure}
 
-
-	
-	
+	\newpage
 		
 	\subsection{Klassendiagramm}
 	Im folgenden Klassendiagramm wurden die von uns erstellten und für die eigentliche Tic-Tac-Toe-Logik des Backends wichtigen Klassen beschrieben. Klassen, Interfaces etc. des Springframeworks oder von JPA wurden nicht beschrieben.
