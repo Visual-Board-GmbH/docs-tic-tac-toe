@@ -1,0 +1,29 @@
+server:
+  port: 8081
+
+spring:
+  jpa:
+    open-in-view: false
+  servlet:
+    multipart:
+      max-file-size: 128KB
+      max-request-size: 128KB
+  resources:
+    static-locations: classpath:/static/
+
+api:
+  database:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hibernate-dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate-ddl-auto: validate
+    url: jdbc:mysql://149.126.4.24:3306/olivereg_tictactoe?useLegacyDatetimeCode=false&serverTimezone=Europe/Zurich
+    username: olivereg_ttt-db
+    password: mAu+7ce!8Zi*4j
+
+  project:
+    version: ^project.version^
+
+  mqtt:
+    serverUrl: tcp://localhost:8883
+    clientId: api-tic-tac-toe
+    topics: ttt/new_game,ttt/game
