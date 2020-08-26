@@ -75,9 +75,9 @@
 
 %Define variables for document
 \newcommand{\shortAuthor}{OEG-LWI-SSA}
-\newcommand{\dstate}{Draft} %Draft, Progress, Closed
-\newcommand{\dversion}{0.1}
-\newcommand{\dname}{\shortAuthor\_20200428\_\dversion\_\dstate\_\pageref{LastPage}}
+\newcommand{\dstate}{Closed} %Draft, Progress, Closed
+\newcommand{\dversion}{1.0}
+\newcommand{\dname}{\shortAuthor\_20200825\_Projektdokumentation\_\dversion\_\dstate\_\pageref{LastPage}}
 %\renewcommand\font{\normalsize}
 \begin{document}
 
@@ -130,7 +130,7 @@
 
 	\begin{tabularx}{\columnwidth}{l X}
 		\textbf{Erstellungsdatum:} & 28.04.2020 \\
-		\textbf{Autotren:} & Samuel Salomon (SSA), Oliver Egloff (OEG), Leonardo Wiedemeier (LWI) \\
+		\textbf{Autoren:} & Samuel Salomon (SSA), Oliver Egloff (OEG), Leonardo Wiedemeier (LWI) \\
 		\textbf{Dateiname:} &\dname
 	\end{tabularx}
 
@@ -159,8 +159,12 @@
 		0.19 & 21.08.2020 & LWI & Ablaufdiagramm eingefügt + Verwendete Tools erstellt + Produktkonzept + Entwichkungsumgebung und Tool-Chain + Dokumentationstruktur ergänzt \\
 		0.20 & 22.08.2020 & LWI & SWOT-Analyse + Mengengerüst + Produktkonzept + Datenstruktur \\
 		0.21 & 23.08.2020 & LWI & Management Summary \\
-		0.22 & 24.08.2020 & LWI & ERM hinzugefügt + Management Summary 
-	\end{tabularx}
+		0.22 & 24.08.2020 & LWI & ERM hinzugefügt + Management Summary \\
+        0.23 & 24.08.2020 & OEG & Anhänge angefügt \\
+        0.24 & 25.08.2020 & OEG & Abschliessen der Projekdokumentation \\
+        0.25 & 25.08.2020 & OEG & Letzte Korrekturen \\
+        1.0 & 25.08.2020 & OEG, SSA, LWI & Abschluss und Druck des Dokumentes \\
+    \end{tabularx}
 	
 	\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
@@ -178,47 +182,59 @@ Im vorgängigen Projekt wurde bereits eine Machbarkeitsstudie durchgeführt, ob 
 Darauf aufbauend soll ein Tic-Tac-Toe Spiel umgesetzt werden, welches auf den Matrizen wiedergeben werden kann.
 
 \paragraph{Situation}
-Die Aufgabe ist es ein Multiplayer Tic-Tac-Toe Spiel zu entwickeln, bei dem es die Möglichkeit gibt, laufende Spiele auf beliebigen LED-RGB-Matrizen anzeigen zu lassen.\\
-Es soll ein Frontend erstellt werden, welches dem User alle nötigen Funktionalitäten zur Verfügung stellt, um ein Tic-Tac-Toe Spiel gegen eine andere Person abzuwickeln.
-Dieses soll dann via MQTT-Protokoll mit einem GameServer kommunizieren, welcher die komplette Business Logik beinhaltet.
+Die Aufgabe ist es ein multiplayer Tic-Tac-Toe-Spiel zu entwickeln, bei dem es die Möglichkeit gibt, laufende Spiele auf beliebigen LED-RGB-Matrizen anzeigen zu lassen.\\
+Es soll ein Frontend erstellt werden, welches dem User alle nötigen Funktionalitäten zur Verfügung stellt, um ein Tic-Tac-Toe Spiel gegen eine andere Person durchzuführen.
+Dieses soll dann via MQTT-Protokoll mit einem GameServer kommunizieren, welcher die komplette Spielelogik beinhaltet.
 Der GameServer sollte zudem die nötigen Infos an alle beteiligten Matrizen senden, damit die laufenden Spiele dort visuell dargestellt werden können.
 
 \paragraph{Herausforderungen}
-Das Projekt wird einige Herausforderungen an das gesamte Projektteam stellen.\\
-Das orchestrieren der Kommunikation zwischen dem Frontend, GameServer und der LED-RGB-Matrix,
-das designen des Frontendes und des GamerServers, so dass alle Anforderungen erfüllt werden können,
-wie auch die Implementierung von Schnittstellen mit MQTT werden die grössten Herausforderungen darstellen.
+\\Das Projekt wird einige Herausforderungen an das gesamte Projektteam stellen:
+\begin{itemize}
+	\item Das orchestrieren der Kommunikation zwischen dem Frontend, GameServer und der LED-RGB-Matrix.
+	\item Das designen des Frontendes und des GamerServers, so dass alle Anforderungen erfüllt sind.
+	\item Die Implementierung von Schnittstellen mit MQTT.
+\end{itemize}
+
 
 \paragraph{Ziele}
 Die Visual Board GmbH entwickelt einen GamerServer mit separatem Frontend, welches den Anforderungen für das Multiplayer Tic-Tac-Toe-Spiel entspricht.
-Zudem soll es möglich sein, das laufende Spiel auf einer bis mehreren Matrizen darstellen zu lassen. Dies ist aber kein Muss und kann auch lediglich im Web stattfinden.
+Zudem soll es möglich sein, das laufende Spiel auf einer bis mehreren Matrizen darstellen zu lassen. Für den Benutzer ist das in der aktuellen Lösung kein Muss und das Spiel ist auch nur im Web spielbar.
 
 \paragraph{Lösung/Optionen}
 Unsere Lösung baut im Backend auf die Programmiersprache Java in Kombination mit einer RestAPI und MQTT Topics auf.
-Hierzu wird eine MYSQL-Datenbank für das Backend und ein Mosquitto-MQTT-Server für die Kommunikation mit dem Frontend aufgesetzt.
-Das Frontend wurde seinerseits mit Bootstrapp, JavScript und dem Vue.js Framework umgesetzt. \\
-Die API und das Datenbankhandling wurden mit Spring Boot umgesetzt und das MQTT-Protokoll mithilfe der MQTT v3 Client API Java Bibliothek implementiert.
-Durch das Vorgänger Projekt musste an der LED-RGB-Matrix nichts verändert werden und kann von unserem GameServer normal angesprochen werden.\\
-
+Hierzu wird eine MYSQL-Datenbank für das Backend und ein Mosquitto-MQTT-Broker für die Kommunikation mit dem Frontend aufgesetzt.
+Das Frontend wurde seinerseits mit Bootstrapp, JavScript und dem Vue.js (inkl. Ecosystem) Framework umgesetzt. \\
+Die API und das Datenbankhandling wurden mit Spring Boot Framework umgesetzt und das MQTT-Protokoll mithilfe der MQTT v3 Client API Java Bibliothek implementiert.
+Durch das Vorgängerprojekt musste an der LED-RGB-Matrix nichts verändert werden und kann von unserem GameServer normal angesprochen werden.\\
+\noindent
 Es bestand noch die Möglichkeit das Projekt mit PHP im Backend und im Frontend mit dem React Framework umzusetzen.
 Es wurde sich aber gegen diese Variante entschieden, da in den Nutzwertanalysen hervorging, dass das Umsetzungsteam in Java mehr Kompetenzen besitzt als in PHP. Für Vue.js wurde sich entschieden, da hier der Entwicklungsaufwand kleiner ausfällt und die Dokumentation sich von React abhebt.
-
-\newpage
 
 \paragraph{Nutzen \& Konsequenzen}
 Durch den getrennten und unabhängigen Aufbau der einzelnen Applikationen ist die Lösung sehr modular.
 Das Tic-Tac-Toe-Spiel kann mit und ohne Matrix durchgeführt werden.
-Auch kann das Frontend sowie der GameServer unabhängig von dem anderen zwei Services einfach ausgetauscht werden.\\
+Auch kann das Frontend sowie der GameServer unabhängig von den anderen zwei Services einfach ausgetauscht werden.\\
 \begin{figure}[!hbt]
 	\centering
 	\includegraphics[width=\columnwidth]{01_Grafiken/architektur_konzept.png}
 	\caption{Architektur}
 	\label{fig:architektur_konzept_management_summary}
 \end{figure}
-Durch den Einsatz von MQTT waren einige Punkte erschwert umzusetzen, da das Protokoll für diese Use-Cases nicht wirklich geeignet ist.
-Zum Beispiel wurde entschieden, das Registrieren und den Login von User über HTTP Requests zu lösen. Wie auch das Abholen user-spezifischer Informationen.\\
+\noindent
+Durch den Einsatz von MQTT waren einige Punkte erschwert umzusetzen. MQTT bietet keine Möglichkeit auf Events zu reagieren. Da ein Tic-Tac-Toe-Spiel eventbassiert ist, musste auf das Broadcasten (Fluten) von wichtigen Informationen ausgewichen werden. Dies verursacht eine erhöhte Belastung aller Komponenten.\\
+Aus diesem Grund wurden gewisse Komponenten wie z.B. Login mit Rest umgesetzt.\\
+Eine weitere Problematik von MQTT ist, dass keine grossen Datenmengen gesendet werden können. Somit müssen auch Bilder über Rest asugetauscht werden.
 Ein hohes Risiko war COVID-19: der daraus resultierende Mitarbeiterausfall hätte die Einhaltung des Abgabetermins erschwert. \\ \\
-Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse Chance auf dem Markt haben. Es ist eine gute Demo, zum Zeigen, was mit den LED-RGB-Matrizen möglich ist und wie man weitere Applikationen entwickeln könnte, um diese vielseitig anzusteuern. Auch zeigt es auf, wie einfach eine LED-RGB-Matrix an ein bestehendes Projekt angebunden werden kann.\\
+Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber erschwerte Chance auf dem Markt haben (hohe Konkurenz). Es ist eine gute Demo, zum Zeigen, was mit den LED-RGB-Matrizen möglich ist und wie man weitere Applikationen entwickeln könnte, um diese vielseitig anzusteuern. Auch zeigt es auf, wie verschiedene Komponenten (z.B Beispiel LED-RGB-Matrix) an bestehende Projekte angebunden werden können.
+
+\paragraph{Empfehlung \& Ausblick}
+Wir als Visual Board GmbH empfehlen eine Umsetzung einer solchen eventbasierten Lösung mittels Websockets in Kombination mit Rest API. \\
+Für die Zukunft ist es das Ziel die Webapplikationenzu optiomieren und weiter auszubauen. Folgende Funktionen sollen in einer nächsten Version hinzugefügt werden:
+\begin{itemize}
+	\item Freundschaftslisten: Bekannte Spieler sollen einer Liste mit Freunden hinzugefügt werden.
+	\item Leader Board: Es soll ein persöniches Ranking unter Freunden und ein globales Ranking erstellt werden.
+	\item MQTT soll durch das Websockets protokoll ausgetauscht werden.
+\end{itemize}
 
 \newpage
 
@@ -362,18 +378,11 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse
 	\newpage
 	
 	\subsection{Projektstrukturplan}
-	Der komplette Projektstrukturplan ist im Anhang des Dokuments zu finden.
-	
-	TODO in anhang einfügen
-
+	Der komplette Projektstrukturplan ist im Anhang (Pflichtenheft) zu finden.
 
 	\subsection{Projektplan}
 	Der komplette Projektplan ist im Anhang des Dokuments zu finden.
 	
-	TODO projektplan im anhang
-
-	\newpage
-
 	\subsection{Ressourcenplanung}
 	\begin{table}[h]
 		\centering
@@ -393,11 +402,16 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse
 		\label{fig:stundensatz}
 	\end{table}
 
- 	 TODO aktueller aufwand aller beteiligten als tabelle
- 	 
- 	 \newpage
- 	 
+\begin{figure}[!hbt]
+    \centering
+    \includegraphics[width=\columnwidth]{Zeit.png}
+    \caption{Timesheet}
+    \label{fig:zeit}
+\end{figure}
+
+
  	 \subsection{Kostenplanung}
+Der Kostenplan befinden sich im Anhang an dieses Dokument.
 
 	\newpage
 	
@@ -436,31 +450,6 @@ Das Produkt funktioniert und erfüllt alle Anforderungen, wird aber keine grosse
 	
 	\newpage
 	
-	//TODO oli/liw/samuel
-	\subsection{Projektcontrolling}
-	Die Überprüfung der Kennzahlen des Projekts wurden bei den Meilensteinen M02, M03 sowie den Lieferobjekten L6 und L7 durchgeführt. Es wurden jeweils die folgenden Kennzahlen geprüft:
-	\begin{itemize}
-		\item Kosten
-		\item Ressourcen / Aufwand
-		\item Termin / Tage
-		\item Qualität
-		\item Leistung
-	\end{itemize}
-	
-	Nachfolgend werden die Ergebnisse des Projektcontrollings pro Meilenstein festgehalten. Die detaillierten Analysen sind im Anhang ersichtlich.
-	
-	\begin{table}[h]
-		\centering
-		\rowcolors{1}{gray!30}{gray!10}
-		\begin{tabular}{p{0.2\textwidth}|p{0.4\textwidth}|p{0.39\textwidth}}
-			\textbf{Meilenstein} & \textbf{Ergebnis} & \textbf{Massnahme} \\ \hline
-			M02 Kick off & Die Projektplanung ist abgeschlossen und die Anforderungen sind erfasst. In einem nächsten Schritt müssen die Anforderungen geplant werden. Es ist bereits mit einem Mehraufwand bei den Lieferobjekten zu rechnen. & Die Aufwände für die Lieferobjekte müssen genau definiert und in regelmässigen Abständen kontrolliert werden. \\ \hline
-			M03 Abnahme Pflichtenheft & Durch die Detailplanung der Realisierung konnte festgestellt werden, dass aufgrund von fehlendem Know-How die Arbeitspakete der Realisierungsphase falsch geplant wurden. Die Ressourcen sowie die Kosten müssen aufgrund dieser Kenntnisse verändert werden. Es ist mit einem Anstieg der Projektkosten und Aufwände zu rechnen. & \\ \hline
-		\end{tabular}
-		\caption{Projektcontrolling}
-		\label{fig:projektcontrolling}
-	\end{table}
-	
 	\subsection{Meetingsprotokolle}
 Die Meetingsprotokolle befinden sich im Anhang an dieses Dokument.
 
@@ -494,6 +483,7 @@ Teil der Projektorganisiton waren:
 	\item Herr Jenzer jeweils als Mitglied des PSG (Projektsteuerungs-Gremium)
 \end{itemize}
 
+\noindent
 Das Endprodukt aus der Semesterarbeit des dritten Semesters, die RGB-LED-Matrix, gilt als Grundbaustein für dieses Projekt.
 Das Produkt wird um ein Tic-Tac-Toe Spiel ausgebaut.
 
@@ -1083,12 +1073,12 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\item \textbf{Bootstrap \& Bootstrap-Vue} für das Layout und Responsive Design der Webapplikation. Durch Bootstrap ist die Applikation Mobile Ready.
 		\item \textbf{MQTT} für die Spielkommunikation mit dem Backend
 		\item \textbf{AXIOS} für Rest Abfragen
-		\item \textbf{VueX} als zentralen Store um Benutzer und Game Daten zu temporär im Frontend zu speichern
-		\item \textbf{VueRouter} um erfolgreich zu Navigieren
+		\item \textbf{VueX} als zentraler Store, um Benutzer und Game Daten zu temporär im Frontend zu speichern
+		\item \textbf{VueRouter} um erfolgreich zu navigieren
 	\end{itemize}
 
 	\subsubsection{Aufbau}
-	Dem Benutzer wird zentral eine Navigation angezeigt über welche er die Unterseiten
+	Dem Benutzer wird zentral eine Navigation angezeigt, über welche er die Unterseiten
 	\begin{itemize}
 		\item Spielübersicht
 		\item Spielverlauf
@@ -1096,7 +1086,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\item Logout
 	\end{itemize}
 
-	Startpunkt nach dem Login ist immer die Spielübersicht auf welcher "Meine Spiele" und "Offene Spiele" angezeigt werden.
+	Startpunkt nach dem Login ist immer die Spielübersicht auf welcher Meine Spiele und Offene Spiele angezeigt werden.
 	\begin{figure}[!hbt]
 		\centering
 		\includegraphics[width=\columnwidth]{Spieluebersicht.png}
@@ -1105,7 +1095,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	\end{figure}
 	
 	\paragraph{Spielverlauf}
-	Das zweite Icon in der Navigation leitet den Benutzer auf den Spielverlauf. Dort kann der Benutzer seinen vergangen Spiele sehen und erkennt auf einen Blick ob er ein Spiel Gewonnen, Verloren oder ob das Spiel unentschieden geendet hat.
+	Das zweite Icon in der Navigation leitet den Benutzer zum Spielverlauf. Dort kann der Benutzer seinen vergangen Spiele sehen und erkennt auf einen Blick, ob er ein Spiel gewonnen, verloren oder ob das Spiel unentschieden geendet hat.
 	\begin{figure}[!hbt]
 		\centering
 		\includegraphics[width=\columnwidth]{Game-History.png}
@@ -1114,7 +1104,9 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	\end{figure}
 
 	\paragraph{Benutzerprofil}
-	Um persönliche Informationen wie Name, Spielername, Passwort, etc. anzupassen oder etwa die Kreuze oder Kreise durch ein persönliches Bild auszutauschen, kann der Benutzer unterm seinem Benutzerprofil die entsprechenden Anpassungen durchführen. Die Benutzerdaten werden nicht wie die Gamedaten über MQTT übertragen sondern aufgrund der Datensicherheit über einen Rest Enpoint.
+	Um persönliche Informationen wie Name, Spielername, Passwort, etc. anzupassen oder etwa die Kreuze oder Kreise durch ein persönliches Bild auszutauschen, kann der Benutzer unter seinem Benutzerprofil die entsprechenden Anpassungen durchführen. Die Benutzerdaten werden nicht wie die Gamedaten über MQTT, sondern aufgrund der Datensicherheit über einen Rest Enpoint übertragen.
+
+	\newpage
 
 	\begin{figure}[!hbt]
 		\centering
@@ -1131,7 +1123,9 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 \end{figure}
 
 	\paragraph{Registrieren, Login \& Logout}
-	Zu beginn muss sich ein Benutzer über eine Rest Schnittstelle beim Server Registrieren. Nach der Registration kann er sich anmelden wobei ein HttpOnly Session Cookie im Browser gespeichert wird. So wird eine bestmöglichste UserExpirience gewährleistet, da der Benutzer innerhalb der Session so viele Fenster mit dem Tic-Tac-Toe Spiel öffnen kann wie er möchte. Um sich auszuloggen kann der Benutzer das Icon ganz rechts in der Navigation anwählen.
+	Zu Beginn muss sich ein Benutzer über eine Rest Schnittstelle beim Server registrieren. Nach der Registration kann er sich anmelden, wobei ein HttpOnly Session Cookie im Browser gespeichert wird. So wird eine bestmöglichste UserExpirience gewährleistet, da der Benutzer innerhalb der Session so viele Fenster mit dem Tic-Tac-Toe Spiel öffnen kann, wie er möchte. Um sich auszuloggen kann der Benutzer das Icon ganz rechts in der Navigation anwählen.
+	
+	\newpage
 	
 	\begin{figure}[!hbt]
 		\centering
@@ -1148,12 +1142,12 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	\end{figure}
 	
 	\paragraph{Spiel}
-	Wird von einer Liste (Meine Spiele, Offene Spiele oder Spielverlauf) ein Spiel geöffnet so wird das Spiel aus dem Speicher geladen und in einer View dargstellt. Die View enthält sämtliche Business Logik um mit dem Server über Mqtt zu kommunizieren um die entsprechenden Spielständ eabzugleichen und anzuzeigen. Folgende Elemente sind innerhalb dieser View verfügbar:
+	Wird von einer Liste (Meine Spiele, Offene Spiele oder Spielverlauf) ein Spiel geöffnet, so wird das Spiel aus dem Speicher geladen und in einer View dargstellt. Die View enthält sämtliche Business Logik um mit dem Server über Mqtt zu kommunizieren, um die entsprechenden Spielständ abzugleichen und anzuzeigen. Folgende Elemente sind innerhalb dieser View verfügbar:
 	\begin{itemize}
 		\item Name des Spiels
 		\item Spieleranzeige
 		\item Historie aller Züge in diesem Spiel. Der Spieler kann so das gesamte Spiel nochmals erleben
-		\item Spielbrett auf welchem der Spieler seine Züge ausführen kann
+		\item Spielbrett, auf welchem der Spieler seine Züge ausführen kann
 	\end{itemize}
 
 	Sollte der Benutzer ein personalisiertes Zeichen besitzen, so wird dieses anstelle des X oder O angezeigt.
@@ -1179,14 +1173,13 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\label{fig:withPicture}
 	\end{figure}
 
-
-	
-	
+	\newpage
 		
 	\subsection{Klassendiagramm}
 	Im folgenden Klassendiagramm wurden die von uns erstellten und für die eigentliche Tic-Tac-Toe-Logik des Backends wichtigen Klassen beschrieben. Klassen, Interfaces etc. des Springframeworks oder von JPA wurden nicht beschrieben.
-	
-	Das Klassendiagramm ist dem Anhang beigelegt.
+
+\noindent
+Das Klassendiagramm ist dem Anhang beigelegt.
 	
 	\newpage
 	
@@ -1353,11 +1346,8 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 	
 	\newpage
 	
-	\section{Wirtschaftlichkeit und Risikoanalyse}
-	
-	\subsection{Wirtschaftlichkeit}
-	TODO mit oli und samuel
-	
+	\section{Risikoanalyse}
+
 
 \subsection{Risikoanalyse}
 	\subsubsection{Risiken}
@@ -1387,9 +1377,10 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
         \label{fig:risiken}
     \end{table}
 
-	Naturkatastrophen sind in der Schweiz ein kleines Risiko. Sie können sich aber trotzdem, z.B. durch Überschwemmungen oder Stürme, stark auf den Projektverlauf auswirken.
-
-	Den Coronavirus (COVID-19) haben wir mit als Risiko aufgenommen, da es die aktuelle Lage stark beeinflusst. Wir können nicht vorhersagen, welche Folgen der Coronavirus noch mit sich ziehen wird. Zum Beispiel, wie stark die Wirtschaft einbrechen und den Fortschritt des Projekts in jeder Hinsicht beeinflussen, oder jeder Beteiligte am Projekt Privat beeinflusst wird.
+\noindent
+Naturkatastrophen sind in der Schweiz ein kleines Risiko. Sie können sich aber trotzdem, z.B. durch Überschwemmungen oder Stürme, stark auf den Projektverlauf auswirken.
+\noindent
+Den Coronavirus (COVID-19) haben wir mit als Risiko aufgenommen, da es die aktuelle Lage stark beeinflusst. Wir können nicht vorhersagen, welche Folgen der Coronavirus noch mit sich ziehen wird. Zum Beispiel, wie stark die Wirtschaft einbrechen und den Fortschritt des Projekts in jeder Hinsicht beeinflussen, oder jeder Beteiligte am Projekt Privat beeinflusst wird.
 
 	\newpage
 
@@ -1434,14 +1425,10 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 
 	\newpage
 
-
-\section{Abschluss}
-
-
 \section{Abbildungsverzeichnis}
 \listoffigures
 
-
+\newpage
 \section{Tabellenverzeichnis}
 \listoftables
 
@@ -1466,8 +1453,6 @@ Sämtliche verwendeten Textausschnitte, Zitate oder Inhalte anderer Verfasser wu
 \newpage
 
 \section{Anhang}
-\newpage
-
 \subsection{Dokumente}
 
 \subsubsection{Pflichtenheft}
@@ -1506,10 +1491,26 @@ Sämtliche verwendeten Textausschnitte, Zitate oder Inhalte anderer Verfasser wu
 
 \newpage
 
-\subsection{Präsentationen}
-\subsubsection{Kick-Off Meeting vom 13.05.2020}
-    % commented out because of compiling speed
-     \includepdf[pages=-, landscape=true, pagecommand={}, scale=0.91]{../../06_Präsentationen/01_KickOff_Meeting/Gruppe_1_SA_KickOff_Meeting_VisualBoardGmbH.pdf}
+\subsubsection{Projektplan}
+\includepdf[pages=-, landscape=true, pagecommand={}, scale=0.91]{../02_Dokumente/08_Projektplan/projektplan.pdf}
 
+
+\subsubsection{Kostenplan}
+\includepdf[pages=-, landscape=true, pagecommand={}, scale=0.91]{../02_Dokumente/09_Kostenplan/OEG‐LWI‐SSA_Kostenplan_1.0_Closed.pdf}
+
+
+%\newpage
+
+%\subsection{Präsentationen}
+%\subsubsection{Kick-Off Meeting vom 13.05.2020}
+    % commented out because of compiling speed
+ %    \includepdf[pages=-, landscape=true, pagecommand={}, scale=0.91, fitpaper]{../../06_Präsentationen/01_KickOff_Meeting/Gruppe_1_SA_KickOff_Meeting_VisualBoardGmbH.pdf}
+
+%\newpage
+
+%\subsection{Jira Export}
+%\subsubsection{Export}
+% commented out because of compiling speed
+%\includepdf[pages=-, landscape=false, pagecommand={}, scale=0.91]{../../08_Jira/JIRA_Export.pdf}
 \end{document}
 
