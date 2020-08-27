@@ -188,7 +188,7 @@ Dieses soll dann via MQTT-Protokoll mit einem GameServer kommunizieren, welcher 
 Der GameServer sollte zudem die nötigen Infos an alle beteiligten Matrizen senden, damit die laufenden Spiele dort visuell dargestellt werden können.
 
 \paragraph{Herausforderungen}
-\\Das Projekt wird einige Herausforderungen an das gesamte Projektteam stellen:
+Das Projekt wird einige Herausforderungen an das gesamte Projektteam stellen:
 \begin{itemize}
 	\item Das orchestrieren der Kommunikation zwischen dem Frontend, GameServer und der LED-RGB-Matrix.
 	\item Das designen des Frontendes und des GamerServers, so dass alle Anforderungen erfüllt sind.
@@ -625,10 +625,10 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\centering
 		\includegraphics[width=\columnwidth]{01_Grafiken/architektur_vorschlag.png}
 		\caption{Architektur}
-		\label{fig:architektur}
+		\label{fig:architektur_vorschlag}
 	\end{figure}
 
-	Es wurde eine Variante erstellt, welche durch das Vorgängerprojekt, der LED-RGB-Matrix, den Rahmenbedingungen und dem Architekturvorschlag (Abbildung: \ref{fig:architektur}) definiert wurde.
+	Es wurde eine Variante erstellt, welche durch das Vorgängerprojekt, der LED-RGB-Matrix, den Rahmenbedingungen und dem Architekturvorschlag (Abbildung: \ref{fig:architektur_vorschlag}) definiert wurde.
 	\\ \\
 	Die LED-RGB-Matrix wurde als unabhängiger Service programmiert und kann daher ohne Anpassung in das laufende Projekt integriert werden. Es handelt sich um eine Rest-API, an welche Bilder mit gewünschten Transformationsparamtern gesendet und dargestellt werden können.
 	\\ \\
@@ -889,7 +889,7 @@ Die Ziele werden in System-, Prozess- und Mehrwert-Ziele unterteilt. Die Wichtig
 		\centering
 		\includegraphics[width=\columnwidth]{01_Grafiken/architektur_konzept.png}
 		\caption{Architektur}
-		\label{fig:architektur}
+		\label{fig:architektur_konzept}
 	\end{figure}
 
 	\newpage
@@ -1473,6 +1473,10 @@ Sämtliche verwendeten Textausschnitte, Zitate oder Inhalte anderer Verfasser wu
 
 \newpage
 
+%\subsubsection{Klassendiagramm}
+%\includepdf[pages=-, landscape=true, pagecommand={}, scale=0.91]{../01_Grafiken/Klassendiagramm_backend.pdf}
+%\newpage
+
 \subsubsection{Handbuch für Installation und Inbetriebnahme}
 % commented out because of compiling speed
 \includepdf[pages=-, landscape=false, pagecommand={}, scale=0.91]{../../07_Handbuecher/Installation und Inbetriebnahme.pdf}
@@ -1497,20 +1501,18 @@ Sämtliche verwendeten Textausschnitte, Zitate oder Inhalte anderer Verfasser wu
 
 \subsubsection{Kostenplan}
 \includepdf[pages=-, landscape=true, pagecommand={}, scale=0.91]{../02_Dokumente/09_Kostenplan/OEG‐LWI‐SSA_Kostenplan_1.0_Closed.pdf}
+\newpage
 
 
-%\newpage
 
 %\subsection{Präsentationen}
 %\subsubsection{Kick-Off Meeting vom 13.05.2020}
-    % commented out because of compiling speed
- %    \includepdf[pages=-, landscape=true, pagecommand={}, scale=0.91, fitpaper]{../../06_Präsentationen/01_KickOff_Meeting/Gruppe_1_SA_KickOff_Meeting_VisualBoardGmbH.pdf}
+     \includepdf[pages=-, landscape=true, pagecommand={}, scale=0.91, fitpaper]{../../06_Präsentationen/01_KickOff_Meeting/Gruppe_1_SA_KickOff_Meeting_VisualBoardGmbH.pdf}
 
 %\newpage
 
 %\subsection{Jira Export}
 %\subsubsection{Export}
-% commented out because of compiling speed
 %\includepdf[pages=-, landscape=false, pagecommand={}, scale=0.91]{../../08_Jira/JIRA_Export.pdf}
 \end{document}
 

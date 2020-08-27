@@ -1,0 +1,34 @@
+{
+  "gameId": 4,
+  "name": "<Name des Games>",
+  "state": "OPEN",
+  "lastModified": "<Wert Attribut lastModified>",
+  "matrixIds": 1,
+  "gameData": {
+    "host": 1,
+    "guest": 4,
+    "moves": [
+      {
+        "count": 1,
+        "player": "HOST",
+        "gridPosition": "MID_LEFT"
+      }
+    ],
+    "winner": "HOST"
+  },
+  "playerData": [
+    {
+      "player": "HOST",
+      "displayName": "<Name oder Nickname>",
+      "tilesImage": "<Link zum File>"
+    },
+    {
+      "player": "GUEST",
+      "displayName": "<Name oder Nickname>",
+      "tilesImage": "<Link zum File>"
+    }
+  ],
+  "statusCode": 200,
+  "serverResponse": false,
+  "requestId": 1234
+}
