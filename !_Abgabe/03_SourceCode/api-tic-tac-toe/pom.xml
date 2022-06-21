@@ -16,7 +16,7 @@
 
     <mockito-junit-jupiter.version>2.23.0</mockito-junit-jupiter.version>
     <junit-jupiter.version>5.5.2</junit-jupiter.version>
-    <mysql-connector-java.version>8.0.16</mysql-connector-java.version>
+    <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
     <flyway-core.version>6.5.1</flyway-core.version>
     <commons-codec.version>1.14</commons-codec.version>
     <swagger.version>2.9.2</swagger.version>
